@@ -12,7 +12,7 @@ const wrap: React.CSSProperties = { fontFamily: "-apple-system,Segoe UI,Roboto,H
 // Provider, purpose, data shared, processing region, and a link to the vendor's
 // security / DPA page so a DPO can verify each sub-processor directly.
 const SUBPROCESSORS: [string, string, string, string, string][] = [
-  ["Supabase", "Database, authentication, file storage", "Pupil/teacher/parent records (encrypted at rest)", "[CONFIRM REGION]", "https://supabase.com/security"],
+  ["Supabase", "Database, authentication, file storage", "Pupil/teacher/parent records (encrypted at rest)", "UK (AWS eu-west-2, London)", "https://supabase.com/security"],
   ["Anthropic (Claude)", "AI generation (lessons, feedforward, reports)", "Lesson/assessment content sent per request; not used to train models", "US", "https://www.anthropic.com/legal/commercial-terms"],
   ["Stripe", "Payments (optional, paid plans only)", "Billing details — no card data touches our servers", "EU/US", "https://stripe.com/gb/privacy"],
   ["Resend", "Parent-report email delivery (optional)", "Parent/teacher email addresses + report content", "EU/US", "https://resend.com/legal/dpa"],
@@ -69,15 +69,11 @@ export default function TrustCentre() {
 
         <Card>
           <H2>Data residency</H2>
-          {/* TODO (founder): confirm the Supabase project region from the Supabase
-              dashboard (Project Settings → General → Region) and replace the
-              placeholder below. Do not assume EU/UK without verifying. The AI
-              provider (Anthropic) processes per request in the US. */}
+          {/* Region confirmed 2026-07-08 from the Supabase dashboard: all
+              projects run in AWS eu-west-2 (London). The AI provider
+              (Anthropic) processes per request in the US. */}
           <P>
-            Primary data (the database, authentication and file storage) is hosted on Supabase in <strong>[CONFIRM REGION]</strong>. Content sent for AI generation is processed by Anthropic in the US per request and is not retained for model training. Other sub-processors are listed below with their regions.
-          </P>
-          <P style={{ color: COL.dim, fontSize: 12 }}>
-            [CONFIRM REGION] — to be set by Houchell Education from the live Supabase project before sharing with procurement.
+            Primary data (the database, authentication and file storage) is hosted on Supabase in the <strong>UK (AWS eu-west-2, London)</strong>. Content sent for AI generation is processed by Anthropic in the US per request and is not retained for model training. Other sub-processors are listed below with their regions.
           </P>
         </Card>
 

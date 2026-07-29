@@ -1,0 +1,86 @@
+[
+ {
+  "file": "6-governance-finance.md",
+  "severity": "critical",
+  "issue": "The budget costs a different school from the one the blueprint designs. Section 6 explicitly models 'an 8-form-entry, 1,200-place 11\u201316 secondary', while Section 1 specifies all-through 2\u201318 with 1,400\u20131,800 pupils and secondary year groups of ~120\u2013150, Section 3 specifies 3\u201318 with a 6FE secondary (~180/year) plus a 150-place sixth form, and Section 5 specifies '1\u20132 forms of entry per phase'. The income lines (\u00a310.2m NFF, \u00a3580k PP at 540 FSM6 secondary pupils) only fit the 11\u201316 model: there is no costing for the nursery/EYFS/primary phase, the sixth form, primary-rate pupil premium, early-years funding rates, or the SLT/coaching structure across phases. The financial spine therefore does not demonstrate that the actual design is affordable \u2014 the central claim of the whole document.",
+  "fix": "Fix one canonical structure (e.g. 3\u201318, 2FE primary + 6FE secondary + 150-place sixth form \u2248 1,600 pupils) and rebuild the Section 4 budget for that school: early-years funding rates and nursery staffing ratios, primary NFF (~\u00a35,000\u20136,000/pupil basic entitlement), primary PP rate (~\u00a31,480), 16\u201319 funding for the sixth form, and phase-specific staffing. Then propagate the same numbers into Sections 1, 3 and 5."
+ },
+ {
+  "file": "3-structure-operations.md",
+  "severity": "critical",
+  "issue": "Age range and size contradict the other sections: Section 3 says 'all-through 3\u201318' with 180 pupils/year, but Section 1 says '2\u201318' with year groups 'held to ~120\u2013150', and Section 5 commits to 2-year-old nursery places and '1\u20132 forms of entry per phase'. A 1.5\u20132FE primary (45\u201360/year) feeding a 6FE secondary (180/year) also silently abandons the all-through premise for two-thirds of the secondary intake. Readers cannot tell which school is being proposed, and every downstream number (crews, halls, staffing ratio, option blocks) depends on the answer.",
+  "fix": "State one age range (if the 2-year-old nursery in Section 5 stands, the school is 2\u201318) and one pupil-number model, and reconcile the primary-to-secondary form-of-entry ratio explicitly, acknowledging what fraction of Year 7 will be external joiners."
+ },
+ {
+  "file": "6-governance-finance.md",
+  "severity": "critical",
+  "issue": "The admissions section does not exist. Section 6 defers to 'the extended-services and admissions sections', but no admissions file is in the blueprint. For this design admissions is load-bearing: Bet 7 (Section 1) commits to 'in-year admissions and backfill by design'; the magnet-effect risk mitigation depends on 'negotiating admissions' and capped base places; the school plans ~15% EHCP intake (which arrives via LA consultation/naming in EHCPs, not the normal admissions round); and Section 5's 2-year-old nursery raises the question of whether nursery attendance confers a school place. There are no oversubscription criteria, no position on fair banding vs distance (which determines whether the intake actually matches the '45% FSM6' planning assumption), no Fair Access Protocol commitment, and no PAN.",
+  "fix": "Add an admissions section covering: PAN per phase, oversubscription criteria (and whether to band), the nursery\u2192Reception and Y6\u2192Y7 internal-progression rules, the published in-year/backfill commitment, Fair Access Protocol participation, and the process and cap for EHCP consultations naming the school (linked to the contractual base-place cap in Section 6)."
+ },
+ {
+  "file": "1-vision-principles.md",
+  "severity": "major",
+  "issue": "The funding logic rests on a claim the DfE has explicitly contradicted: Section 1 (and Section 5) say FSM auto-enrolment under the September 2026 Universal Credit expansion 'drives... the Pupil Premium (~\u00a31,075 per FSM6 secondary pupil) that funds the whole model'. DfE has confirmed Pupil Premium will NOT follow the expanded eligibility \u2014 it stays tied to the old \u00a37,400 targeted threshold, and newly eligible 'expanded' FSM pupils attract only the pro-rata NFF FSM factor (~\u00a3295\u2013\u00a3505), not PP (https://www.tes.com/magazine/news/general/free-school-meals-expanded-no-extra-pupil-premium-cash; https://www.gov.uk/government/publications/free-school-meals-expansion-grant-2026-to-2027/free-school-meals-expansion-grant-methodology). Since Pupil Premium is named as the funding line for tutoring (Sections 2, 3, 6) and much of the family offer, the model overstates the income that 'pushing registration higher' generates.",
+  "fix": "Separate the two mechanisms: auto-enrolment for expanded-eligibility families delivers family savings and the ~\u00a3295\u2013\u00a3505 NFF FSM factor only; PP income should be modelled solely on the targeted (\u2264\u00a37,400) cohort. Re-check whether the ~\u00a3580k PP figure and the tutoring/family-team budget lines survive, and restate the '45% FSM6' assumption against the new dual-eligibility definitions."
+ },
+ {
+  "file": "3-structure-operations.md",
+  "severity": "major",
+  "issue": "The compulsory-day arithmetic is wrong and the day design contradicts its own evidence claim. 'Compulsory day 08:00\u201316:30 (~33 hours/week)' is actually 42.5 hours/week \u2014 ten hours beyond the DfE 32.5-hour expectation, with major unexamined staffing-cost and burnout implications (a 2.5% pay uplift does not buy a 42.5-hour pupil week). Meanwhile the 16:30\u201317:00 enrichment/targeted-support slot sits OUTSIDE the stated compulsory day, yet Section 3 says this is 'the slot where the disadvantaged +2\u20133 months actually sits' \u2014 contradicting Sections 1\u20132's own argument that in-school, programmed, compulsory time beats voluntary after-school time (disadvantaged and SEND pupils are precisely those least likely to stay for optional twilight sessions). Section 1 also says site opens ~8am vs Section 3's 07:45.",
+  "fix": "Recompute the week honestly (e.g. 08:00\u201315:30 compulsory \u2248 34.5 hours with the 15:30\u201317:00 block as directed-but-tiered provision), decide whether the enrichment/tutoring slot is compulsory or voluntary, and if it is voluntary, stop attributing the EEF extended-time effect to it; align opening times across Sections 1 and 3."
+ },
+ {
+  "file": "3-structure-operations.md",
+  "severity": "major",
+  "issue": "The blueprint has no transition design for the majority of its intake. It repeatedly claims all-through structure 'removes the Year 6\u21927 cliff', but with a 1.5\u20132FE primary feeding a 6FE secondary, roughly two-thirds of each Year 7 will arrive from external primaries \u2014 and Year 6\u21927 transition is named in the same section as 'a known SEND risk point'. There is no enhanced-transition programme for external joiners (extra visits, transition passports, SEND data handover, pre-transfer EHCP planning meetings, summer induction), which is exactly where a high-SEND, high-anxiety intake will be lost in the first term.",
+  "fix": "Add a transition subsection: enhanced transition offer for all external Year 7 joiners, an extended programme for SEND/EHCP/vulnerable pupils (spring-term visits, key-worker allocation before entry, staged induction), structured data handover with feeder primaries, and drop or qualify the 'removes the Year 6\u21927 cliff' claim to the internal cohort only."
+ },
+ {
+  "file": "5-family-community.md",
+  "severity": "major",
+  "issue": "Safeguarding is structurally absent despite being uniquely complex in this design. It appears only as a line-management note (family team 'line-managed inside the safeguarding structure under the DSL'). But the model creates unusual safeguarding surface: staff conducting home visits at scale, HAF holiday provision, a 2-year-old-to-18 age span on one site, adult education and community services co-located with children, and \u2014 most importantly \u2014 a legally separate Foundation whose staff work with the same children under a different employer. There is no statement of KCSIE compliance architecture, safer recruitment and single-central-record arrangements spanning trust and Foundation, information-sharing agreements between the two entities, home-visit lone-working protocols, or DSL capacity given the DSL also leads behaviour, SEND, attendance and family support in one directorate.",
+  "fix": "Add a safeguarding subsection covering: a joint trust\u2013Foundation safeguarding agreement (shared policies, SCR, DBS, information sharing, named DSL cover for hub/HAF activity), home-visit and lone-working protocols for family practitioners, site-segregation rules for adult services, and a DSL/deputy-DSL staffing model showing the role is not swallowed by the Inclusion Directorate's other functions."
+ },
+ {
+  "file": "5-family-community.md",
+  "severity": "major",
+  "issue": "Post-16 is undesigned despite being load-bearing. Section 3 timetables a 150-place sixth form; Section 5 says a sixth form 'in partnership... is the target' (i.e. not settled); Section 6 costs an 11\u201316 school with no post-16 at all. Yet destinations are the blueprint's headline KPI, and the intake it claims to serve makes post-16 the hardest phase: there is no Level 2/resit route, no vocational/T-level offer, and \u2014 for a planned ~15% EHCP intake \u2014 no preparation-for-adulthood pathway (statutory in EHCP reviews from Year 9), no supported-internship route, and no answer to what the sixth form offers pupils who leave Y11 without grade 4 passes. The KIPP fade-out finding the blueprint itself cites says gains are lost exactly here.",
+  "fix": "Decide whether the school runs a sixth form or a partnership arrangement, and add a post-16 design: entry criteria that do not quietly exclude the school's own SEND/low-attainment leavers, an L2/resit and vocational pathway, preparation-for-adulthood and supported-internship provision for EHCP students, and 16\u201319 funding in the Section 6 budget."
+ },
+ {
+  "file": "4-send-inclusion.md",
+  "severity": "major",
+  "issue": "The design has no curriculum offer for the pupils who need it most, and its own rules make one hard to build. The bases guarantee only '\u226550% mainstream lesson time', but what pupils learn in the up-to-50% base time is never specified; the internal Support Centre and on-site internal AP likewise have no stated curriculum. Simultaneously the blueprint bans differentiation-by-task, bans 'must/should/could' objectives, and sets a 'no-withdrawal-from-lessons default' \u2014 while also planning (via the Reach comparison and 2029 'specialist tier') to admit children from specialist provision, some of whom will be working substantially below the age-related curriculum and need a semi-formal or heavily adapted offer. As written, a child for whom the full mainstream curriculum is genuinely inaccessible has no legitimate provision inside the model's own rules.",
+  "fix": "Specify the base/Support-Centre/internal-AP curriculum (pre-teaching, SaLT-integrated communication work, regulation curriculum, accreditation routes such as Entry Level/functional skills), and add an explicit carve-out: the differentiation-by-task ban and no-withdrawal default apply to the SEN-support majority, with a defined, criteria-gated adapted pathway for specialist-tier pupils, so the inclusion rhetoric doesn't become a barrier to lawful individualised provision under EHCP/ISP duties."
+ },
+ {
+  "file": "2-curriculum-pedagogy.md",
+  "severity": "major",
+  "issue": "The curriculum section designs only the secondary phase of an all-through school. Every mechanism is Y7+ (Y7 screening, Y7 bootcamp, Morning Meeting 'Years 7\u201311', KS3/KS4 structure, Y7 catch-up). There is no EYFS design, no systematic-synthetic-phonics scheme for Reception\u2013KS1, no KS1/KS2 curriculum or assessment model, and no primary pedagogy \u2014 despite the whole all-through case (Sections 1, 3, 5) resting on early language screening from Reception and a decade of curriculum continuity, and despite the intake argument that language deficits concentrated in poverty must be attacked early. The blueprint's strongest structural claim is therefore unsupported by any primary-phase design.",
+  "fix": "Add a primary/EYFS subsection: validated SSP programme and daily phonics, EYFS communication-and-language focus tied to the Reception language screen and in-house SaLT, KS1/KS2 curriculum spine (e.g. the same mastery providers' primary programmes), and how the primary assessment/coaching model connects to the secondary one."
+ },
+ {
+  "file": "6-governance-finance.md",
+  "severity": "minor",
+  "issue": "Duplicated content has drifted into contradictory numbers across sections: base places are '12\u201324 each' (Section 1) vs '12\u201316 each' (Section 4) vs '~24\u201336' total funded (Section 6); standardised assessment is '2\u20133 windows per year' (Section 2) vs 'one window per term (max twice-yearly per subject at KS3)' (Section 6); Progress 8 is unavailable 'for the 2025 and 2026 cohorts', returning 2027 (Sections 1\u20132) vs 'unavailable for the 2025\u20132027 cohorts' (Section 6); tutoring is '3\u00d730 min/week' (Sections 2\u20133) vs '3\u20135\u00d7/week' (Section 6). The same TA-conversion, magnet-effect and coaching arguments are restated in four files, which is how the drift arose.",
+  "fix": "Make each number canonical in one section and cross-reference elsewhere; sweep for the four listed discrepancies (P8 is suspended for 2025 and 2026 results, returning for 2027 \u2014 align Section 6's wording)."
+ },
+ {
+  "file": "3-structure-operations.md",
+  "severity": "minor",
+  "issue": "The section preamble cross-references sections that don't exist in the blueprint: 'Section 3-SEND', 'Section 6' (extended services \u2014 actually Section 5), 'Section 7' (funding \u2014 actually Section 6) and 'Section 10' (assessment \u2014 actually in Section 2). Research-file numbering has leaked into blueprint section references, so a reader following the pointers lands in the wrong place or nowhere.",
+  "fix": "Rename the references to the actual blueprint files (Section 4 SEND, Section 5 family/extended services, Section 6 governance/finance, Section 2 assessment)."
+ },
+ {
+  "file": "2-curriculum-pedagogy.md",
+  "severity": "minor",
+  "issue": "The claim that Year 7 screening 'pre-empts the statutory Year 8 reading test (from 2025)' misstates the policy timeline: the statutory Y8 reading test was announced in the government's November 2025 response to the Curriculum and Assessment Review and is being introduced alongside the reformed curriculum (published 2027, first teaching from 2028) \u2014 it was not statutory from 2025 (https://schoolleaders.thekeysupport.com/administration-and-management/government-policies-and-legislation/changes-and-challenges-education/curriculum-and-assessment-review-summary-of-the-governments-response/).",
+  "fix": "Reword to 'pre-empts the statutory Year 8 reading test announced in the November 2025 CAR response (expected alongside the 2028 curriculum rollout)'."
+ },
+ {
+  "file": "3-structure-operations.md",
+  "severity": "minor",
+  "issue": "The TA-conversion move is described inconsistently in a way that muddies the budget: the staffing section says the TA budget is converted 'into additional qualified subject teachers' producing a 1:16 pupil:teacher ratio, but Risk 1's mitigation says to treat the conversion as 'strictly cost-neutral (flexible grouping, not extra headcount)'. It cannot be both extra teacher headcount and 'not extra headcount'; Section 6's \u00a38.6m staffing line inherits the ambiguity.",
+  "fix": "State the intended meaning once: cost-neutral in total staff spend, achieved by fewer TAs and more teachers (net teacher headcount rises, net payroll does not), and align the Risk 1 wording."
+ }
+]

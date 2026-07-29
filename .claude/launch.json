@@ -2,6 +2,7 @@
   "version": "0.0.1",
   "configurations": [
     { "name": "houchell", "runtimeExecutable": "npm", "runtimeArgs": ["run", "dev"], "port": 3000 },
-    { "name": "learn-static", "runtimeExecutable": "python3", "runtimeArgs": ["-m", "http.server", "8011", "--directory", "apps/houchell/public/learn"], "port": 8011 }
+    { "name": "learn-static", "runtimeExecutable": "python3", "runtimeArgs": ["-m", "http.server", "8011", "--directory", "apps/houchell/public/learn"], "port": 8011 },
+    { "name": "scratch-static", "runtimeExecutable": "python3", "runtimeArgs": ["-m", "http.server", "8791", "--directory", "/private/tmp/claude-501/-Users-adamhouchell-Downloads-feynman-education/f8a3fb99-55bf-4b3d-ae9a-dc3faab0ff95/scratchpad"], "port": 8791 }
   ]
 }

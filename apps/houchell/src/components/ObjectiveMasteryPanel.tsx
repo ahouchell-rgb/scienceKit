@@ -9,6 +9,8 @@ import { C } from "@/lib/theme";
 export interface BlendedObjectiveRow {
   key: string;
   label: string;
+  objective_id?: string | null;
+  code?: string | null;
   blendedPct: number;
   marked: number;
   sources: ("retrieval" | "assessment")[];
@@ -33,7 +35,19 @@ function SourceChip({ kind }: { kind: "retrieval" | "assessment" }) {
   );
 }
 
-export function ObjectiveMasteryPanel({ rows, limit = 14, drillBase }: { rows?: BlendedObjectiveRow[]; limit?: number; drillBase?: string }) {
+export function ObjectiveMasteryPanel({
+  rows,
+  limit = 14,
+  drillBase,
+  objectiveBase,
+  classId,
+}: {
+  rows?: BlendedObjectiveRow[];
+  limit?: number;
+  drillBase?: string;
+  objectiveBase?: string;
+  classId?: string;
+}) {
   const list = (rows || []).slice(0, limit);
   if (list.length === 0) {
     return <div style={{ padding: "20px", color: C.dim, fontFamily: C.mono, fontSize: 12, marginBottom: 24 }}>No objective-level data yet — tag assessment questions to objectives or link retrieval classes.</div>;
@@ -44,13 +58,30 @@ export function ObjectiveMasteryPanel({ rows, limit = 14, drillBase }: { rows?: 
         <div key={o.key + i} style={{ display: "grid", gridTemplateColumns: "1fr 150px 110px", gap: 14, alignItems: "center", padding: "11px 16px", borderTop: i === 0 ? "none" : `1px solid ${C.rule}` }}>
           <div style={{ minWidth: 0 }}>
             <div style={{ fontSize: 14, color: C.text, display: "flex", alignItems: "center", gap: 7 }}>
-              {drillBase ? (
+              {objectiveBase ? (
+                <a
+                  href={`${objectiveBase}/${encodeURIComponent(o.objective_id || o.key)}${classId ? `?class=${encodeURIComponent(classId)}` : ""}`}
+                  title="Open Objective 360"
+                  style={{ color: C.text, textDecoration: "none", borderBottom: `1px dotted ${C.dim}`, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}
+                >
+                  {o.label}
+                </a>
+              ) : drillBase ? (
                 <a href={`${drillBase}?topic=${encodeURIComponent(o.label)}`} title="See the pupils below threshold on this objective"
                   style={{ color: C.text, textDecoration: "none", borderBottom: `1px dotted ${C.dim}`, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{o.label}</a>
               ) : (
                 <span style={{ overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{o.label}</span>
               )}
               {o.sources.map((s) => <SourceChip key={s} kind={s} />)}
+              {objectiveBase && drillBase && (
+                <a
+                  href={`${drillBase}?topic=${encodeURIComponent(o.label)}`}
+                  title="See the pupils below threshold on this objective"
+                  style={{ color: C.dim, fontFamily: C.mono, fontSize: 9, textDecoration: "none", whiteSpace: "nowrap" }}
+                >
+                  pupils →
+                </a>
+              )}
             </div>
             <div style={{ fontFamily: C.mono, fontSize: 10, color: C.dim, marginTop: 3 }}>
               {o.strand ? `${o.strand} · ` : ""}

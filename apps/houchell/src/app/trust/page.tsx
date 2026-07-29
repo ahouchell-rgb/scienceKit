@@ -151,7 +151,7 @@ function TrustContent() {
       {(data.objectiveMastery || []).length > 0 && (
         <>
           <SectionLabel>Per-objective mastery — retrieval + assessment</SectionLabel>
-          <ObjectiveMasteryPanel rows={data.objectiveMastery} />
+          <ObjectiveMasteryPanel rows={data.objectiveMastery} objectiveBase="/objective" />
         </>
       )}
 

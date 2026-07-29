@@ -627,7 +627,7 @@ function SchoolContent() {
       {(data.objectiveMastery || []).length > 0 && (
         <>
           <SectionLabel>Per-objective mastery — retrieval + assessment</SectionLabel>
-          <ObjectiveMasteryPanel rows={data.objectiveMastery} drillBase={data.role === "slt" ? "/school/intervention" : undefined} />
+          <ObjectiveMasteryPanel rows={data.objectiveMastery} objectiveBase="/objective" drillBase={data.role === "slt" ? "/school/intervention" : undefined} />
         </>
       )}
 
@@ -674,7 +674,7 @@ function SchoolContent() {
               <div style={{ minWidth: 0 }}>
                 <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
                   <span style={{ width: 7, height: 7, borderRadius: "50%", background: d.color, flexShrink: 0 }} />
-                  <span style={{ fontSize: 14, fontWeight: 500, color: C.text }}>{c.name}</span>
+                  <a href={`/class/${c.class_id}`} style={{ fontSize: 14, fontWeight: 500, color: C.text, textDecoration: "none", borderBottom: `1px dotted ${C.dim}` }}>{c.name}</a>
                   {c.year_group ? <span style={{ fontFamily: C.mono, fontSize: 10, color: C.dim }}>Y{c.year_group}</span> : null}
                 </div>
                 <div style={{ fontSize: 11, color: C.dim, fontFamily: C.mono, marginTop: 3, paddingLeft: 15 }}>{c.teacher_name || "—"}</div>

@@ -148,7 +148,7 @@ function TeacherContent() {
           From low-stakes retrieval practice. Assessment QLA isn&rsquo;t included in your private view yet.
         </p>
       )}
-      <ObjectiveMasteryPanel rows={data?.objectiveMastery} />
+      <ObjectiveMasteryPanel rows={data?.objectiveMastery} objectiveBase="/objective" />
 
       {/* per-class breakdown */}
       <SectionLabel>By class</SectionLabel>
@@ -161,7 +161,7 @@ function TeacherContent() {
               <div style={{ minWidth: 0 }}>
                 <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
                   <span style={{ width: 7, height: 7, borderRadius: "50%", background: d.color, flexShrink: 0 }} />
-                  <span style={{ fontSize: 14, fontWeight: 500, color: C.text }}>{c.name}</span>
+                  <a href={`/class/${c.class_id}`} style={{ fontSize: 14, fontWeight: 500, color: C.text, textDecoration: "none", borderBottom: `1px dotted ${C.dim}` }}>{c.name}</a>
                   {c.year_group ? <span style={{ fontFamily: C.mono, fontSize: 10, color: C.dim }}>Y{c.year_group}</span> : null}
                 </div>
               </div>
