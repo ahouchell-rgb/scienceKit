@@ -206,6 +206,58 @@ borderline" has drawn the wrong conclusion — and that is the documented failur
 every threshold accountability measure since C/D borderlining. The console states this
 caveat on the same screen as the finding, in red, deliberately.
 
+### Subject-level transition matrices
+
+Same source, one level down: for pupils who started at a given KS2 point, what share reached
+grade 4 **in each subject** — with entry counts, which is the column that stops you drawing
+the wrong conclusion.
+
+**% achieving grade 9–4, by subject and KS2 starting point**
+
+| KS2 band | Maths | Eng Lang | Comb Sci | History | Geography | French | Biology |
+|---|---|---|---|---|---|---|---|
+| 90–95.5 | 20 | 27 | 14 | 17 | 13 | 25 | 21 |
+| 96–99.5 | 42 | 46 | 29 | 29 | 28 | 35 | 44 |
+| 100–102 | 60 | 60 | **45** | 42 | 43 | 45 | 64 |
+| 102.5–104.5 | 73 | 71 | 58 | 54 | 57 | 54 | 79 |
+| 105–107 | 84 | 80 | 71 | 67 | 70 | 64 | 89 |
+| 107.5–109.5 | 92 | 88 | 82 | 78 | 82 | 75 | 95 |
+| 110–113 | 96 | 94 | 89 | 88 | 91 | 85 | 98 |
+
+**% achieving grade 9–5**
+
+| KS2 band | Maths | Eng Lang | Comb Sci | History | Geography | French | Biology |
+|---|---|---|---|---|---|---|---|
+| 96–99.5 | 16 | 23 | 10 | 16 | 14 | 20 | 24 |
+| 100–102 | **29** | **36** | 19 | 27 | 24 | 27 | 40 |
+| 102.5–104.5 | 43 | 48 | 29 | 38 | 37 | 36 | 56 |
+| 105–107 | 59 | 61 | 42 | 51 | 52 | 46 | 71 |
+
+**Entries at KS2 100–102** — the selection check: Maths 59.2k · English 59.1k ·
+Combined Science 52.1k · History 28.4k · Geography 25.5k · French 8.6k · **Biology 6.0k**
+
+#### Finding 1 — Combined Science is the harshest core conversion, and it is not selection
+
+At KS2 100–102: 60% reach grade 4 in maths, 60% in English Language, **45% in Combined
+Science**. Combined Science is sat by 52,000 of the 59,000 pupils in that band — very nearly
+the same children. It is the modal science pathway and it converts prior attainment into a
+pass about 15 points worse than the rest of the core, at every middle band.
+
+#### Finding 2 — maths is the easier pass and the harder strong pass
+
+At KS2 100–102 the grade-4 rate is *identical* (60% / 60%). At grade 5 they separate
+sharply: **36% English Language against 29% maths**. A department benchmarking itself on the
+wrong threshold will reach the opposite conclusion about where it stands.
+
+#### The trap this table sets
+
+**Biology looks like the easiest subject at almost every starting point. It is not.** Only
+~10% of pupils in the middle bands sit separate Biology rather than Combined Science, so that
+cohort is heavily selected *within* the band and its pass rate describes who was entered, not
+the qualification. Maths and English Language are the only near-universal entries and the
+only fair baseline. The console greys out any subject whose entry share falls below 50% and
+labels it "selected" rather than letting it be compared.
+
 ---
 
 ## 3. How it interlinks

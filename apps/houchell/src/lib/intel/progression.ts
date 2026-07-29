@@ -207,3 +207,203 @@ export const THRESHOLD_LEVERAGE = {
   caveat:
     "This is an argument about where a threshold measure is most sensitive, NOT about which children are most worth educating. A pupil at KS2 85 has the most ground to make up and the strongest moral claim on support; they simply will not show up in a grade-4 headline. Any school that reads this as 'work the borderline' has drawn the wrong conclusion, and it is the well-documented failure mode of every threshold accountability measure since C/D borderlining.",
 };
+
+/* ─── Subject-level transition matrices ────────────────────────────────── */
+/* Same source, one level down: for pupils who started at a given KS2 point,
+   what share reached grade 4 and grade 5 IN EACH SUBJECT — plus how many sat
+   it at all, which is the column that stops you drawing the wrong conclusion.
+
+   READ THE ENTRY COUNTS BEFORE THE PASS RATES. Biology looks like the easiest
+   subject in the table at every starting point. It is not. At KS2 100–102 only
+   6,000 pupils sat separate Biology against 52,000 sitting Combined Science —
+   so the Biology cohort inside that band is a heavily selected group and its
+   pass rate says more about who was entered than about the qualification.
+   Maths and English Language are the only near-universal entries and are the
+   only fair baseline. */
+
+export interface SubjectBandRow {
+  band: string;
+  /** % of entries at this KS2 starting point achieving grade 9–4. */
+  pct4: number;
+  /** % achieving grade 9–5. */
+  pct5: number;
+  /** Number of entries — the selection check. */
+  entries: number;
+}
+
+export interface SubjectTransition {
+  key: string;
+  name: string;
+  rows: SubjectBandRow[];
+}
+
+export const SUBJECT_TRANSITION: SubjectTransition[] = [
+  {
+    key: "maths", name: "Mathematics",
+    rows: [
+    { band: "under 80", pct4: 12, pct5: 6, entries: 4715 },
+    { band: "80–89.5", pct4: 7, pct5: 2, entries: 20127 },
+    { band: "90–95.5", pct4: 20, pct5: 6, entries: 40649 },
+    { band: "96–99.5", pct4: 42, pct5: 16, entries: 56826 },
+    { band: "100–102", pct4: 60, pct5: 29, entries: 59157 },
+    { band: "102.5–104.5", pct4: 73, pct5: 43, entries: 79481 },
+    { band: "105–107", pct4: 84, pct5: 59, entries: 88411 },
+    { band: "107.5–109.5", pct4: 92, pct5: 75, entries: 80825 },
+    { band: "110–113", pct4: 96, pct5: 87, entries: 83812 },
+    { band: "113.5–116.5", pct4: 99, pct5: 96, entries: 45058 },
+    { band: "117–120", pct4: 100, pct5: 99, entries: 12741 },
+    ],
+  },
+  {
+    key: "english", name: "English Language",
+    rows: [
+    { band: "under 80", pct4: 12, pct5: 5, entries: 4683 },
+    { band: "80–89.5", pct4: 10, pct5: 3, entries: 20081 },
+    { band: "90–95.5", pct4: 27, pct5: 11, entries: 40562 },
+    { band: "96–99.5", pct4: 46, pct5: 23, entries: 56793 },
+    { band: "100–102", pct4: 60, pct5: 36, entries: 59141 },
+    { band: "102.5–104.5", pct4: 71, pct5: 48, entries: 79455 },
+    { band: "105–107", pct4: 80, pct5: 61, entries: 88400 },
+    { band: "107.5–109.5", pct4: 88, pct5: 74, entries: 80800 },
+    { band: "110–113", pct4: 94, pct5: 85, entries: 83802 },
+    { band: "113.5–116.5", pct4: 98, pct5: 94, entries: 45049 },
+    { band: "117–120", pct4: 99, pct5: 97, entries: 12744 },
+    ],
+  },
+  {
+    key: "combinedScience", name: "Combined Science",
+    rows: [
+    { band: "under 80", pct4: 10, pct5: 4, entries: 3986 },
+    { band: "80–89.5", pct4: 5, pct5: 1, entries: 18025 },
+    { band: "90–95.5", pct4: 14, pct5: 4, entries: 36966 },
+    { band: "96–99.5", pct4: 29, pct5: 10, entries: 51286 },
+    { band: "100–102", pct4: 45, pct5: 19, entries: 52132 },
+    { band: "102.5–104.5", pct4: 58, pct5: 29, entries: 66937 },
+    { band: "105–107", pct4: 71, pct5: 42, entries: 68225 },
+    { band: "107.5–109.5", pct4: 82, pct5: 57, entries: 53934 },
+    { band: "110–113", pct4: 89, pct5: 71, entries: 43266 },
+    { band: "113.5–116.5", pct4: 95, pct5: 85, entries: 15866 },
+    { band: "117–120", pct4: 98, pct5: 92, entries: 2798 },
+    ],
+  },
+  {
+    key: "history", name: "History",
+    rows: [
+    { band: "under 80", pct4: 16, pct5: 11, entries: 1190 },
+    { band: "80–89.5", pct4: 8, pct5: 3, entries: 7121 },
+    { band: "90–95.5", pct4: 17, pct5: 8, entries: 16965 },
+    { band: "96–99.5", pct4: 29, pct5: 16, entries: 25633 },
+    { band: "100–102", pct4: 42, pct5: 27, entries: 28364 },
+    { band: "102.5–104.5", pct4: 54, pct5: 38, entries: 39467 },
+    { band: "105–107", pct4: 67, pct5: 51, entries: 45355 },
+    { band: "107.5–109.5", pct4: 78, pct5: 66, entries: 42543 },
+    { band: "110–113", pct4: 88, pct5: 80, entries: 45476 },
+    { band: "113.5–116.5", pct4: 95, pct5: 91, entries: 24887 },
+    { band: "117–120", pct4: 98, pct5: 96, entries: 6945 },
+    ],
+  },
+  {
+    key: "geography", name: "Geography",
+    rows: [
+    { band: "under 80", pct4: 11, pct5: 6, entries: 1417 },
+    { band: "80–89.5", pct4: 5, pct5: 2, entries: 7147 },
+    { band: "90–95.5", pct4: 13, pct5: 5, entries: 16084 },
+    { band: "96–99.5", pct4: 28, pct5: 14, entries: 24060 },
+    { band: "100–102", pct4: 43, pct5: 24, entries: 25511 },
+    { band: "102.5–104.5", pct4: 57, pct5: 37, entries: 34761 },
+    { band: "105–107", pct4: 70, pct5: 52, entries: 39221 },
+    { band: "107.5–109.5", pct4: 82, pct5: 68, entries: 36618 },
+    { band: "110–113", pct4: 91, pct5: 83, entries: 38257 },
+    { band: "113.5–116.5", pct4: 97, pct5: 93, entries: 20847 },
+    { band: "117–120", pct4: 99, pct5: 97, entries: 6185 },
+    ],
+  },
+  {
+    key: "french", name: "French",
+    rows: [
+    { band: "under 80", pct4: 37, pct5: 29, entries: 218 },
+    { band: "80–89.5", pct4: 18, pct5: 12, entries: 954 },
+    { band: "90–95.5", pct4: 25, pct5: 14, entries: 3103 },
+    { band: "96–99.5", pct4: 35, pct5: 20, entries: 6256 },
+    { band: "100–102", pct4: 45, pct5: 27, entries: 8578 },
+    { band: "102.5–104.5", pct4: 54, pct5: 36, entries: 14023 },
+    { band: "105–107", pct4: 64, pct5: 46, entries: 18614 },
+    { band: "107.5–109.5", pct4: 75, pct5: 58, entries: 19599 },
+    { band: "110–113", pct4: 85, pct5: 72, entries: 23400 },
+    { band: "113.5–116.5", pct4: 93, pct5: 86, entries: 14411 },
+    { band: "117–120", pct4: 97, pct5: 93, entries: 4522 },
+    ],
+  },
+  {
+    key: "biology", name: "Biology",
+    rows: [
+    { band: "under 80", pct4: 19, pct5: 14, entries: 398 },
+    { band: "80–89.5", pct4: 9, pct5: 4, entries: 1095 },
+    { band: "90–95.5", pct4: 21, pct5: 11, entries: 2265 },
+    { band: "96–99.5", pct4: 44, pct5: 24, entries: 4247 },
+    { band: "100–102", pct4: 64, pct5: 40, entries: 6020 },
+    { band: "102.5–104.5", pct4: 79, pct5: 56, entries: 11473 },
+    { band: "105–107", pct4: 89, pct5: 71, entries: 19360 },
+    { band: "107.5–109.5", pct4: 95, pct5: 83, entries: 26336 },
+    { band: "110–113", pct4: 98, pct5: 92, entries: 40124 },
+    { band: "113.5–116.5", pct4: 99, pct5: 97, entries: 29048 },
+    { band: "117–120", pct4: 100, pct5: 99, entries: 9912 },
+    ],
+  },
+];
+
+/** The near-universal entries, used as the fair comparison baseline. */
+export const BASELINE_SUBJECTS = ["maths", "english"];
+
+export interface SubjectPenalty {
+  key: string;
+  name: string;
+  /** Percentage points below the maths/English baseline at this band. */
+  pct4Delta: number;
+  pct5Delta: number;
+  /** Entries as a share of the maths entry at the same band. Below ~0.5 means
+   *  the subject is selectively entered and the delta is not comparable. */
+  entryShare: number;
+  /** True where entry is broad enough for the comparison to mean something. */
+  comparable: boolean;
+}
+
+/** How a subject converts a given starting point into grades, relative to the
+ *  universal core. This is the head-of-department number: "for pupils arriving
+ *  at this KS2 point, my subject converts N points lower than maths and English
+ *  nationally" — which separates a subject effect from a teaching effect. */
+export function subjectPenalties(band: string): SubjectPenalty[] {
+  const at = (k: string) => SUBJECT_TRANSITION.find((s) => s.key === k)?.rows.find((r) => r.band === band);
+  const base = BASELINE_SUBJECTS.map(at).filter(Boolean) as SubjectBandRow[];
+  if (!base.length) return [];
+  const b4 = base.reduce((a, r) => a + r.pct4, 0) / base.length;
+  const b5 = base.reduce((a, r) => a + r.pct5, 0) / base.length;
+  const mathsEntries = at("maths")?.entries ?? 1;
+
+  return SUBJECT_TRANSITION.map((s) => {
+    const r = at(s.key);
+    if (!r) return null;
+    const entryShare = Math.round((r.entries / mathsEntries) * 100) / 100;
+    return {
+      key: s.key, name: s.name,
+      pct4Delta: Math.round((r.pct4 - b4) * 10) / 10,
+      pct5Delta: Math.round((r.pct5 - b5) * 10) / 10,
+      entryShare,
+      comparable: entryShare >= 0.5,
+    };
+  }).filter(Boolean) as SubjectPenalty[];
+}
+
+/** The two findings this table supports, stated once. */
+export const SUBJECT_FINDINGS = {
+  combinedScience: {
+    headline: "Combined Science converts prior attainment into a grade 4 about 15 points worse than maths or English — and it is not a selection effect.",
+    detail:
+      "At KS2 100–102, 60% reach grade 4 in maths and 60% in English Language, but only 45% in Combined Science. Combined Science is entered by 52,000 of the 59,000 pupils in that band, so this is very nearly the same children. It is the modal science pathway and the harshest core conversion in the table.",
+  },
+  thresholdSwap: {
+    headline: "Maths is the easier pass and the harder strong pass. English is the reverse.",
+    detail:
+      "At KS2 100–102 the grade-4 rate is identical — 60% in both. At grade 5 they separate sharply: 36% in English Language against 29% in maths. A department comparing itself on the wrong threshold will reach the opposite conclusion about where it stands.",
+  },
+};

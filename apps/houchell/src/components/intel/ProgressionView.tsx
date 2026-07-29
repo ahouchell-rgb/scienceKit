@@ -12,8 +12,9 @@ import { useState } from "react";
 import { C } from "@/lib/theme";
 import { Chip, Micro, Rule } from "./ui";
 import {
-  DISADVANTAGE_SPLIT, MARGINAL_RETURN, PROGRESSION_SOURCE, THRESHOLD_LEVERAGE,
-  TRANSITION, narrate, outcomeFor,
+  DISADVANTAGE_SPLIT, MARGINAL_RETURN, PROGRESSION_SOURCE, SUBJECT_FINDINGS,
+  SUBJECT_TRANSITION, THRESHOLD_LEVERAGE, TRANSITION, narrate, outcomeFor,
+  subjectPenalties,
 } from "@/lib/intel/progression";
 
 export function ProgressionView({ initialKs2 = 101 }: { initialKs2?: number }) {
@@ -144,6 +145,9 @@ export function ProgressionView({ initialKs2 = 101 }: { initialKs2?: number }) {
         })}
       </div>
 
+      {/* ── Subject level ── */}
+      <SubjectSection band={o.row.band} />
+
       {/* ── The headline finding ── */}
       <Rule label="The threshold-leverage finding" />
       <div style={{
@@ -217,6 +221,133 @@ export function ProgressionView({ initialKs2 = 101 }: { initialKs2?: number }) {
 }
 
 const heat = (pct: number) => (pct < 35 ? C.red : pct < 70 ? C.amb : C.grn);
+
+/* ─── Subject level — the head-of-department view ──────────────────────── */
+
+function SubjectSection({ band }: { band: string }) {
+  const [threshold, setThreshold] = useState<"pct4" | "pct5">("pct4");
+  const penalties = subjectPenalties(band);
+  const key = threshold === "pct4" ? "pct4Delta" : "pct5Delta";
+  const maxAbs = Math.max(6, ...penalties.map((p) => Math.abs(p[key])));
+
+  return (
+    <>
+      <Rule label="Same starting point, different subject" />
+      <div style={{ display: "flex", gap: 8, marginBottom: 14, alignItems: "center", flexWrap: "wrap" }}>
+        {(["pct4", "pct5"] as const).map((t) => (
+          <button key={t} className="intel-btn" onClick={() => setThreshold(t)} style={{
+            fontFamily: C.mono, fontSize: 11, padding: "6px 12px", borderRadius: 7, cursor: "pointer",
+            border: `1px solid ${threshold === t ? C.accent : C.border}`,
+            background: threshold === t ? "rgba(88,224,194,0.14)" : "transparent", color: C.text,
+          }}>{t === "pct4" ? "grade 4 — standard pass" : "grade 5 — strong pass"}</button>
+        ))}
+        <span style={{ fontSize: 12.5, color: C.faint, marginLeft: 4 }}>
+          Percentage points above or below the maths / English Language baseline, for pupils who started at KS2 {band}.
+        </span>
+      </div>
+
+      <div style={{ border: `1px solid ${C.rule}`, borderRadius: 10, overflow: "hidden" }}>
+        {penalties.map((p, i) => {
+          const v = p[key];
+          const frac = Math.abs(v) / maxAbs;
+          return (
+            <div key={p.key} style={{
+              display: "grid", gridTemplateColumns: "150px 1fr 66px 108px",
+              gap: 12, padding: "10px 15px", alignItems: "center",
+              borderTop: i ? `1px solid ${C.rule}` : "none",
+              opacity: p.comparable ? 1 : 0.55,
+            }}>
+              <span style={{ fontSize: 13.5, color: C.text }}>{p.name}</span>
+              <div style={{ position: "relative", height: 8, background: "rgba(255,255,255,0.06)", borderRadius: 4 }}>
+                <span style={{ position: "absolute", left: "50%", top: -2, bottom: -2, width: 1, background: C.ruleStrong }} />
+                <span style={{
+                  position: "absolute", top: 0, bottom: 0,
+                  left: v < 0 ? "auto" : "50%", right: v < 0 ? "50%" : "auto",
+                  width: `${frac * 50}%`, borderRadius: 4,
+                  background: v < 0 ? C.red : C.grn, opacity: p.comparable ? 0.85 : 0.4,
+                }} />
+              </div>
+              <span style={{
+                fontFamily: C.mono, fontSize: 12.5, fontVariantNumeric: "tabular-nums",
+                color: v < 0 ? C.red : v > 0 ? C.grn : C.muted,
+              }}>{v > 0 ? "+" : ""}{v}pp</span>
+              {p.comparable
+                ? <Micro style={{ fontSize: 9 }}>{Math.round(p.entryShare * 100)}% take it</Micro>
+                : <Chip tone="warn">only {Math.round(p.entryShare * 100)}% — selected</Chip>}
+            </div>
+          );
+        })}
+      </div>
+
+      <div style={{
+        marginTop: 12, padding: "13px 15px", borderRadius: 10,
+        border: `1px solid ${C.amb}44`, background: C.ambS, maxWidth: "82ch",
+      }}>
+        <Chip tone="warn" style={{ marginBottom: 8, display: "inline-block" }}>Read the entry column first</Chip>
+        <div style={{ fontSize: 13.5, color: C.text, lineHeight: 1.7 }}>
+          Biology looks like the easiest subject in this table at almost every starting point. It is not.
+          Only about a tenth of pupils in the middle bands sit separate Biology rather than Combined Science,
+          so that cohort is heavily selected and its pass rate describes who was entered, not the
+          qualification. Maths and English Language are the only near-universal entries and the only fair
+          baseline — which is why the greyed rows are greyed.
+        </div>
+      </div>
+
+      <div style={{ display: "grid", gap: 9, marginTop: 12 }}>
+        {[SUBJECT_FINDINGS.combinedScience, SUBJECT_FINDINGS.thresholdSwap].map((f) => (
+          <div key={f.headline} style={{
+            padding: "14px 16px", borderRadius: 10,
+            border: `1px solid ${C.accent}44`, background: "rgba(88,224,194,0.05)",
+          }}>
+            <div style={{ fontFamily: C.serif, fontSize: 17, lineHeight: 1.4, color: C.text, marginBottom: 9 }}>{f.headline}</div>
+            <div style={{ fontSize: 13.5, color: C.muted, lineHeight: 1.7 }}>{f.detail}</div>
+          </div>
+        ))}
+      </div>
+
+      {/* the raw per-subject curves */}
+      <div style={{ marginTop: 16, border: `1px solid ${C.rule}`, borderRadius: 10, overflowX: "auto" }} className="intel-scroll">
+        <div style={{ minWidth: 700 }}>
+          <div style={{ display: "grid", gridTemplateColumns: `150px repeat(${TRANSITION.length}, 1fr)`, gap: 6, padding: "10px 15px", borderBottom: `1px solid ${C.ruleStrong}` }}>
+            <Micro style={{ fontSize: 9 }}>Subject · % {threshold === "pct4" ? "9–4" : "9–5"}</Micro>
+            {TRANSITION.map((t) => (
+              <Micro key={t.band} style={{ fontSize: 8, letterSpacing: "0.08em", textAlign: "center" }}>{t.mid}</Micro>
+            ))}
+          </div>
+          {SUBJECT_TRANSITION.map((s, i) => (
+            <div key={s.key} style={{
+              display: "grid", gridTemplateColumns: `150px repeat(${TRANSITION.length}, 1fr)`,
+              gap: 6, padding: "7px 15px", alignItems: "center",
+              borderTop: i ? `1px solid ${C.rule}` : "none",
+            }}>
+              <span style={{ fontSize: 12.5, color: C.text }}>{s.name}</span>
+              {TRANSITION.map((t) => {
+                const r = s.rows.find((x) => x.band === t.band);
+                const v = r ? r[threshold] : null;
+                const here = t.band === band;
+                return (
+                  <span key={t.band} style={{
+                    fontFamily: C.mono, fontSize: 10.5, textAlign: "center", padding: "3px 0",
+                    borderRadius: 4, fontVariantNumeric: "tabular-nums",
+                    // Ink flips with the fill: dark text needs a saturated cell
+                    // behind it, and low values leave the cell nearly
+                    // transparent against a dark page.
+                    color: v == null ? C.faint : v >= 45 ? "#06101e" : C.text,
+                    background: v == null ? "transparent" : `rgba(88,224,194,${0.1 + (v / 100) * 0.82})`,
+                    outline: here ? `1px solid ${C.accent}` : "none",
+                  }}>{v == null ? "—" : v}</span>
+                );
+              })}
+            </div>
+          ))}
+        </div>
+      </div>
+      <div style={{ fontSize: 12, color: C.faint, lineHeight: 1.6, marginTop: 9 }}>
+        Columns are KS2 band midpoints. The outlined column is the starting point selected above.
+      </div>
+    </>
+  );
+}
 
 /** 100 dots. Counts of children, not a percentage bar — a percentage invites
  *  you to round it away; a hundred dots make you look at the ones who did not. */
