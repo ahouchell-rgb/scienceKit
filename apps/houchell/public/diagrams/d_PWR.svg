@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 280" width="100%" height="100%" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Power">
+<style>[class*="sm-"]{transform-box:fill-box;transform-origin:center;}
+[data-part]{transition:opacity .55s ease;}
+.sm-spin{ animation:sm-spin 3s linear infinite; }
+.sm-spin-slow{ animation:sm-spin 9s linear infinite; }
+.sm-spin-rev{ animation:sm-spin 3s linear infinite reverse; }
+.sm-flow{ animation:sm-flow 1s linear infinite; }
+.sm-flow-slow{ animation:sm-flow 2.2s linear infinite; }
+.sm-flow-rev{ animation:sm-flow-rev 1.4s linear infinite; }
+.sm-pulse{ animation:sm-pulse 1.6s ease-in-out infinite; }
+.sm-throb{ animation:sm-throb 1s ease-in-out infinite; }
+.sm-drift{ animation:sm-drift 2.6s ease-in-out infinite; }
+.sm-osc{ animation:sm-osc 1.8s ease-in-out infinite; }
+.sm-osc-x{ animation:sm-osc-x 1.8s ease-in-out infinite; }
+.sm-rise{ animation:sm-rise 2.6s ease-in infinite; }
+.sm-fall{ animation:sm-fall 2.6s ease-in infinite; }
+.sm-blink{ animation:sm-blink 1.4s ease-in-out infinite; }
+.sm-glow{ animation:sm-glow 2s ease-in-out infinite; }
+.sm-shake{ animation:sm-shake .3s ease-in-out infinite; }
+.sm-sweep{ animation:sm-sweep 2.8s ease-in-out infinite; }
+@keyframes sm-spin{ to{ transform:rotate(360deg); } }
+@keyframes sm-flow{ to{ stroke-dashoffset:-24; } }
+@keyframes sm-flow-rev{ to{ stroke-dashoffset:24; } }
+@keyframes sm-pulse{ 0%,100%{ transform:scale(1); } 50%{ transform:scale(1.13); } }
+@keyframes sm-throb{ 0%,100%{ transform:scale(1); } 50%{ transform:scale(1.06); } }
+@keyframes sm-drift{ 0%{ transform:translate(0,0); } 25%{ transform:translate(2px,-2.5px); } 50%{ transform:translate(-2.5px,1.5px); } 75%{ transform:translate(1.5px,2px); } 100%{ transform:translate(0,0); } }
+@keyframes sm-osc{ 0%,100%{ transform:translateY(0); } 50%{ transform:translateY(-5px); } }
+@keyframes sm-osc-x{ 0%,100%{ transform:translateX(0); } 50%{ transform:translateX(5px); } }
+@keyframes sm-rise{ 0%{ transform:translateY(2px); opacity:0; } 25%{ opacity:.85; } 100%{ transform:translateY(-16px); opacity:0; } }
+@keyframes sm-fall{ 0%{ transform:translateY(-14px); opacity:0; } 25%{ opacity:.85; } 100%{ transform:translateY(4px); opacity:0; } }
+@keyframes sm-blink{ 0%,100%{ opacity:1; } 50%{ opacity:.3; } }
+@keyframes sm-glow{ 0%,100%{ opacity:.55; } 50%{ opacity:1; } }
+@keyframes sm-shake{ 0%,100%{ transform:translate(0,0); } 25%{ transform:translate(.9px,-.9px); } 75%{ transform:translate(-.9px,.9px); } }
+@keyframes sm-sweep{ 0%{ transform:translateX(-6px); opacity:.35; } 50%{ opacity:1; } 100%{ transform:translateX(6px); opacity:.35; } }
+@media (prefers-reduced-motion:reduce){[class*="sm-"]{animation:none !important;}}
+.dg-label text{font-family:'Century Gothic','Avenir Next',system-ui,sans-serif;font-weight:600;paint-order:stroke;stroke:#ffffff;stroke-width:3px;stroke-linejoin:round;fill:#1E2761;}
+.dg-label circle{fill:#1E2761;stroke:#ffffff;stroke-width:1.5;}</style>
+<g class="diagram-art">
+<rect x="0" y="0" width="320" height="280" fill="#FFFFFF"/>
+<g data-part="supply">
+  <rect x="26" y="96" width="58" height="72" rx="8" fill="#CDE5C6" stroke="#2C5F2D" stroke-width="3"/>
+  <rect x="42" y="86" width="26" height="10" rx="3" fill="#2C5F2D"/>
+  <path d="M58 108 l-12 22 h12 l-8 22 22 -28 h-12 l10 -16 Z" fill="#C99528" stroke="#8a6a1c" stroke-width="1.5" stroke-linejoin="round"/>
+</g>
+<path d="M84 132 H150" fill="none" stroke="#1E2761" stroke-width="3" stroke-linecap="round"/>
+<g data-part="energyFlow">
+  <path d="M90 132 H146" fill="none" stroke="#C99528" stroke-width="3" stroke-linecap="round" stroke-dasharray="7 6" class="sm-flow"/>
+  <g fill="#C99528" class="sm-flow">
+    <circle cx="100" cy="132" r="4"/>
+    <circle cx="118" cy="132" r="4"/>
+    <circle cx="136" cy="132" r="4"/>
+  </g>
+  <path d="M146 132 l-9 -5 M146 132 l-9 5" fill="none" stroke="#C99528" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<g data-part="device">
+  <circle cx="184" cy="132" r="26" fill="#F9E7B8" stroke="#1E2761" stroke-width="3" class="sm-glow"/>
+  <path d="M176 122 q8 -12 16 0" fill="none" stroke="#B4341E" stroke-width="2.6"/>
+  <path d="M176 132 q8 -12 16 0" fill="none" stroke="#B4341E" stroke-width="2.6"/>
+  <rect x="176" y="156" width="16" height="10" rx="2" fill="#7a8199"/>
+  <g stroke="#C99528" stroke-width="2.4" stroke-linecap="round" class="sm-pulse">
+    <line x1="184" y1="98" x2="184" y2="90"/>
+    <line x1="210" y1="112" x2="217" y2="106"/>
+    <line x1="158" y1="112" x2="151" y2="106"/>
+  </g>
+</g>
+<g data-part="clock">
+  <circle cx="70" cy="228" r="28" fill="#F4F6FC" stroke="#1E2761" stroke-width="3"/>
+  <circle cx="70" cy="228" r="3" fill="#1E2761"/>
+  <line x1="70" y1="228" x2="70" y2="210" stroke="#1E2761" stroke-width="3" stroke-linecap="round"/>
+  <line x1="70" y1="228" x2="84" y2="234" stroke="#B4341E" stroke-width="2.6" stroke-linecap="round" class="sm-spin-slow" style="transform-origin:70px 228px"/>
+  <g stroke="#1E2761" stroke-width="2" stroke-linecap="round">
+    <line x1="70" y1="204" x2="70" y2="208"/>
+    <line x1="94" y1="228" x2="90" y2="228"/>
+    <line x1="70" y1="252" x2="70" y2="248"/>
+    <line x1="46" y1="228" x2="50" y2="228"/>
+  </g>
+</g>
+<g data-part="powerRating">
+  <path d="M170 244 a44 44 0 0 1 88 0" fill="none" stroke="#7a8199" stroke-width="3" stroke-linecap="round"/>
+  <line x1="214" y1="244" x2="240" y2="216" stroke="#B4341E" stroke-width="3.4" stroke-linecap="round" class="sm-throb" style="transform-origin:214px 244px"/>
+  <circle cx="214" cy="244" r="5" fill="#1E2761"/>
+  <text x="214" y="236" text-anchor="middle" font-family="sans-serif" font-size="15" font-weight="700" fill="#1E2761">W</text>
+</g>
+<g data-part="formula">
+  <rect x="94" y="24" width="132" height="40" rx="8" fill="#F4F6FC" stroke="#1E2761" stroke-width="2.4"/>
+  <text x="160" y="52" text-anchor="middle" font-family="sans-serif" font-size="22" font-weight="700" fill="#1E2761">P = E &#247; t</text>
+</g>
+</g>
+<g data-part="device" class="dg-label"><circle cx="166.4" cy="112.0" r="3.4"/><text x="166.4" y="104.0" font-size="12" text-anchor="middle">Device</text></g>
+<g data-part="supply" class="dg-label"><circle cx="28.8" cy="109.2" r="3.4"/><text x="35.8" y="101.2" font-size="12" text-anchor="start">Energy supply</text></g>
+<g data-part="energyFlow" class="dg-label"><circle cx="256.0" cy="123.2" r="3.4"/><text x="249.0" y="115.2" font-size="12" text-anchor="end">Energy transferred</text></g>
+<g data-part="powerRating" class="dg-label"><circle cx="166.4" cy="168.0" r="3.4"/><text x="166.4" y="160.0" font-size="12" text-anchor="middle">Power rating</text></g>
+<g data-part="clock" class="dg-label"><circle cx="262.4" cy="210.0" r="3.4"/><text x="255.4" y="202.0" font-size="12" text-anchor="end">Time</text></g>
+<g data-part="formula" class="dg-label"><circle cx="86.4" cy="232.4" r="3.4"/><text x="86.4" y="224.4" font-size="12" text-anchor="middle">P = E ÷ t</text></g>
+</svg>

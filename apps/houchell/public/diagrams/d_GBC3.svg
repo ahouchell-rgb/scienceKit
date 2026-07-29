@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 250" width="100%" height="100%" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Cell division &amp; transport">
+<style>[class*="sm-"]{transform-box:fill-box;transform-origin:center;}
+[data-part]{transition:opacity .55s ease;}
+.sm-spin{ animation:sm-spin 3s linear infinite; }
+.sm-spin-slow{ animation:sm-spin 9s linear infinite; }
+.sm-spin-rev{ animation:sm-spin 3s linear infinite reverse; }
+.sm-flow{ animation:sm-flow 1s linear infinite; }
+.sm-flow-slow{ animation:sm-flow 2.2s linear infinite; }
+.sm-flow-rev{ animation:sm-flow-rev 1.4s linear infinite; }
+.sm-pulse{ animation:sm-pulse 1.6s ease-in-out infinite; }
+.sm-throb{ animation:sm-throb 1s ease-in-out infinite; }
+.sm-drift{ animation:sm-drift 2.6s ease-in-out infinite; }
+.sm-osc{ animation:sm-osc 1.8s ease-in-out infinite; }
+.sm-osc-x{ animation:sm-osc-x 1.8s ease-in-out infinite; }
+.sm-rise{ animation:sm-rise 2.6s ease-in infinite; }
+.sm-fall{ animation:sm-fall 2.6s ease-in infinite; }
+.sm-blink{ animation:sm-blink 1.4s ease-in-out infinite; }
+.sm-glow{ animation:sm-glow 2s ease-in-out infinite; }
+.sm-shake{ animation:sm-shake .3s ease-in-out infinite; }
+.sm-sweep{ animation:sm-sweep 2.8s ease-in-out infinite; }
+@keyframes sm-spin{ to{ transform:rotate(360deg); } }
+@keyframes sm-flow{ to{ stroke-dashoffset:-24; } }
+@keyframes sm-flow-rev{ to{ stroke-dashoffset:24; } }
+@keyframes sm-pulse{ 0%,100%{ transform:scale(1); } 50%{ transform:scale(1.13); } }
+@keyframes sm-throb{ 0%,100%{ transform:scale(1); } 50%{ transform:scale(1.06); } }
+@keyframes sm-drift{ 0%{ transform:translate(0,0); } 25%{ transform:translate(2px,-2.5px); } 50%{ transform:translate(-2.5px,1.5px); } 75%{ transform:translate(1.5px,2px); } 100%{ transform:translate(0,0); } }
+@keyframes sm-osc{ 0%,100%{ transform:translateY(0); } 50%{ transform:translateY(-5px); } }
+@keyframes sm-osc-x{ 0%,100%{ transform:translateX(0); } 50%{ transform:translateX(5px); } }
+@keyframes sm-rise{ 0%{ transform:translateY(2px); opacity:0; } 25%{ opacity:.85; } 100%{ transform:translateY(-16px); opacity:0; } }
+@keyframes sm-fall{ 0%{ transform:translateY(-14px); opacity:0; } 25%{ opacity:.85; } 100%{ transform:translateY(4px); opacity:0; } }
+@keyframes sm-blink{ 0%,100%{ opacity:1; } 50%{ opacity:.3; } }
+@keyframes sm-glow{ 0%,100%{ opacity:.55; } 50%{ opacity:1; } }
+@keyframes sm-shake{ 0%,100%{ transform:translate(0,0); } 25%{ transform:translate(.9px,-.9px); } 75%{ transform:translate(-.9px,.9px); } }
+@keyframes sm-sweep{ 0%{ transform:translateX(-6px); opacity:.35; } 50%{ opacity:1; } 100%{ transform:translateX(6px); opacity:.35; } }
+@media (prefers-reduced-motion:reduce){[class*="sm-"]{animation:none !important;}}
+.dg-label text{font-family:'Century Gothic','Avenir Next',system-ui,sans-serif;font-weight:600;paint-order:stroke;stroke:#ffffff;stroke-width:3px;stroke-linejoin:round;fill:#1E2761;}
+.dg-label circle{fill:#1E2761;stroke:#ffffff;stroke-width:1.5;}</style>
+<g class="diagram-art">
+
+<rect x="0" y="0" width="320" height="250" fill="#ffffff"/>
+<g data-part="membrane">
+  <line x1="160" y1="18" x2="160" y2="150" stroke="#1E2761" stroke-width="3"/>
+  <circle cx="160" cy="34" r="5" fill="#DCEAF6" stroke="#1E2761" stroke-width="2"/>
+  <circle cx="160" cy="66" r="5" fill="#DCEAF6" stroke="#1E2761" stroke-width="2"/>
+  <circle cx="160" cy="98" r="5" fill="#DCEAF6" stroke="#1E2761" stroke-width="2"/>
+  <circle cx="160" cy="130" r="5" fill="#DCEAF6" stroke="#1E2761" stroke-width="2"/>
+</g>
+<g data-part="diffusion">
+  <circle class="sm-drift" cx="30" cy="34" r="4" fill="#2C5F2D"/><circle class="sm-drift" cx="46" cy="46" r="4" fill="#2C5F2D"/>
+  <circle class="sm-drift" cx="24" cy="52" r="4" fill="#2C5F2D"/><circle class="sm-drift" cx="42" cy="28" r="4" fill="#2C5F2D"/>
+  <circle class="sm-drift" cx="58" cy="38" r="4" fill="#2C5F2D"/>
+  <path class="sm-flow" d="M70 40 H150" stroke="#2C5F2D" stroke-width="2.4" fill="none" stroke-dasharray="6 4" marker-end="url(#gb3g)"/>
+  <circle class="sm-drift" cx="212" cy="40" r="4" fill="#2C5F2D"/>
+  <circle class="sm-drift" cx="252" cy="52" r="4" fill="#2C5F2D"/>
+</g>
+<g data-part="osmosis">
+  <path class="sm-flow" d="M110 96 H150" stroke="#1E2761" stroke-width="2.4" fill="none" stroke-dasharray="5 4" marker-end="url(#gb3b)"/>
+  <circle cx="92" cy="96" r="5" fill="#DCEAF6" stroke="#1E2761" stroke-width="1.8"/>
+  <circle cx="108" cy="86" r="5" fill="#DCEAF6" stroke="#1E2761" stroke-width="1.8"/>
+  <text x="60" y="100" font-family="Arial" font-size="8" fill="#1E2761" text-anchor="middle">H&#8322;O</text>
+  <circle cx="200" cy="90" r="5" fill="#C99528"/><circle cx="216" cy="102" r="5" fill="#C99528"/><circle cx="230" cy="88" r="5" fill="#C99528"/>
+</g>
+<g data-part="activeTransport">
+  <path class="sm-flow" d="M112 130 H150" stroke="#B4341E" stroke-width="2.6" fill="none" stroke-dasharray="5 4" marker-end="url(#gb3r)"/>
+  <circle cx="98" cy="130" r="5" fill="#B4341E"/>
+  <rect x="152" y="120" width="16" height="20" rx="3" fill="#F1D2D8" stroke="#B4341E" stroke-width="2"/>
+  <path class="sm-blink" d="M170 116 l6 -9 l-3 7 l6 -2 l-7 8 l3 -7 z" fill="#C99528" stroke="#C99528" stroke-width="1"/>
+  <text x="182" y="118" font-family="Arial" font-size="7.5" fill="#C99528" font-weight="bold">ATP</text>
+  <circle cx="200" cy="130" r="5" fill="#B4341E"/><circle cx="216" cy="130" r="5" fill="#B4341E"/>
+</g>
+<g data-part="gradient">
+  <path d="M20 240 L120 240 L120 196 Z" fill="#CDE5C6" stroke="#2C5F2D" stroke-width="2.5"/>
+  <path d="M40 240 V222 M60 240 V214 M80 240 V208 M100 240 V202" stroke="#2C5F2D" stroke-width="1.4" opacity="0.6"/>
+  <path d="M124 236 H150" stroke="#2C5F2D" stroke-width="2" fill="none" marker-end="url(#gb3g)"/>
+</g>
+<g data-part="mitosis">
+  <circle cx="212" cy="216" r="20" fill="#DCEAF6" stroke="#1E2761" stroke-width="2.5"/>
+  <path d="M204 210 v12 M208 210 v12" stroke="#B4341E" stroke-width="2.4" stroke-linecap="round"/>
+  <path d="M216 210 v12 M220 210 v12" stroke="#B4341E" stroke-width="2.4" stroke-linecap="round"/>
+  <path d="M236 216 h20" stroke="#1E2761" stroke-width="2" fill="none" marker-end="url(#gb3b)"/>
+  <circle cx="278" cy="202" r="13" fill="#DCEAF6" stroke="#1E2761" stroke-width="2.5"/>
+  <path d="M274 197 v10 M280 197 v10" stroke="#B4341E" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="278" cy="234" r="13" fill="#DCEAF6" stroke="#1E2761" stroke-width="2.5"/>
+  <path d="M274 229 v10 M280 229 v10" stroke="#B4341E" stroke-width="2" stroke-linecap="round"/>
+</g>
+<defs>
+  <marker id="gb3g" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 z" fill="#2C5F2D"/></marker>
+  <marker id="gb3b" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 z" fill="#1E2761"/></marker>
+  <marker id="gb3r" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 z" fill="#B4341E"/></marker>
+</defs>
+
+</g>
+<g data-part="membrane" class="dg-label"><circle cx="115.2" cy="27.5" r="3.4"/><text x="115.2" y="19.5" font-size="12" text-anchor="middle">Partially permeable membrane</text></g>
+<g data-part="diffusion" class="dg-label"><circle cx="92.8" cy="62.5" r="3.4"/><text x="92.8" y="54.5" font-size="12" text-anchor="middle">Diffusion</text></g>
+<g data-part="osmosis" class="dg-label"><circle cx="76.8" cy="100.0" r="3.4"/><text x="76.8" y="92.0" font-size="12" text-anchor="middle">Osmosis (water)</text></g>
+<g data-part="activeTransport" class="dg-label"><circle cx="105.6" cy="130.0" r="3.4"/><text x="105.6" y="122.0" font-size="12" text-anchor="middle">Active transport</text></g>
+<g data-part="mitosis" class="dg-label"><circle cx="41.6" cy="195.0" r="3.4"/><text x="48.6" y="187.0" font-size="12" text-anchor="start">Mitosis</text></g>
+<g data-part="gradient" class="dg-label"><circle cx="240.0" cy="200.0" r="3.4"/><text x="240.0" y="192.0" font-size="12" text-anchor="middle">Concentration gradient</text></g>
+</svg>

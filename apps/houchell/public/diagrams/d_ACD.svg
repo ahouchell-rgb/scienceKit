@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 230" width="100%" height="100%" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Acids and alkalis">
+<style>[class*="sm-"]{transform-box:fill-box;transform-origin:center;}
+[data-part]{transition:opacity .55s ease;}
+.sm-spin{ animation:sm-spin 3s linear infinite; }
+.sm-spin-slow{ animation:sm-spin 9s linear infinite; }
+.sm-spin-rev{ animation:sm-spin 3s linear infinite reverse; }
+.sm-flow{ animation:sm-flow 1s linear infinite; }
+.sm-flow-slow{ animation:sm-flow 2.2s linear infinite; }
+.sm-flow-rev{ animation:sm-flow-rev 1.4s linear infinite; }
+.sm-pulse{ animation:sm-pulse 1.6s ease-in-out infinite; }
+.sm-throb{ animation:sm-throb 1s ease-in-out infinite; }
+.sm-drift{ animation:sm-drift 2.6s ease-in-out infinite; }
+.sm-osc{ animation:sm-osc 1.8s ease-in-out infinite; }
+.sm-osc-x{ animation:sm-osc-x 1.8s ease-in-out infinite; }
+.sm-rise{ animation:sm-rise 2.6s ease-in infinite; }
+.sm-fall{ animation:sm-fall 2.6s ease-in infinite; }
+.sm-blink{ animation:sm-blink 1.4s ease-in-out infinite; }
+.sm-glow{ animation:sm-glow 2s ease-in-out infinite; }
+.sm-shake{ animation:sm-shake .3s ease-in-out infinite; }
+.sm-sweep{ animation:sm-sweep 2.8s ease-in-out infinite; }
+@keyframes sm-spin{ to{ transform:rotate(360deg); } }
+@keyframes sm-flow{ to{ stroke-dashoffset:-24; } }
+@keyframes sm-flow-rev{ to{ stroke-dashoffset:24; } }
+@keyframes sm-pulse{ 0%,100%{ transform:scale(1); } 50%{ transform:scale(1.13); } }
+@keyframes sm-throb{ 0%,100%{ transform:scale(1); } 50%{ transform:scale(1.06); } }
+@keyframes sm-drift{ 0%{ transform:translate(0,0); } 25%{ transform:translate(2px,-2.5px); } 50%{ transform:translate(-2.5px,1.5px); } 75%{ transform:translate(1.5px,2px); } 100%{ transform:translate(0,0); } }
+@keyframes sm-osc{ 0%,100%{ transform:translateY(0); } 50%{ transform:translateY(-5px); } }
+@keyframes sm-osc-x{ 0%,100%{ transform:translateX(0); } 50%{ transform:translateX(5px); } }
+@keyframes sm-rise{ 0%{ transform:translateY(2px); opacity:0; } 25%{ opacity:.85; } 100%{ transform:translateY(-16px); opacity:0; } }
+@keyframes sm-fall{ 0%{ transform:translateY(-14px); opacity:0; } 25%{ opacity:.85; } 100%{ transform:translateY(4px); opacity:0; } }
+@keyframes sm-blink{ 0%,100%{ opacity:1; } 50%{ opacity:.3; } }
+@keyframes sm-glow{ 0%,100%{ opacity:.55; } 50%{ opacity:1; } }
+@keyframes sm-shake{ 0%,100%{ transform:translate(0,0); } 25%{ transform:translate(.9px,-.9px); } 75%{ transform:translate(-.9px,.9px); } }
+@keyframes sm-sweep{ 0%{ transform:translateX(-6px); opacity:.35; } 50%{ opacity:1; } 100%{ transform:translateX(6px); opacity:.35; } }
+@media (prefers-reduced-motion:reduce){[class*="sm-"]{animation:none !important;}}
+.dg-label text{font-family:'Century Gothic','Avenir Next',system-ui,sans-serif;font-weight:600;paint-order:stroke;stroke:#ffffff;stroke-width:3px;stroke-linejoin:round;fill:#1E2761;}
+.dg-label circle{fill:#1E2761;stroke:#ffffff;stroke-width:1.5;}</style>
+<g class="diagram-art">
+<rect x="0" y="0" width="320" height="230" fill="#F4F6FC"/><defs><linearGradient id="phGrad" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#B4341E"/><stop offset="0.28" stop-color="#E8913A"/><stop offset="0.5" stop-color="#2C5F2D"/><stop offset="0.72" stop-color="#3D6FB0"/><stop offset="1" stop-color="#5B2C83"/></linearGradient></defs><rect x="16" y="74" width="288" height="40" rx="8" fill="url(#phGrad)" stroke="#1E2761" stroke-width="2.5"/><g stroke="#1E2761" stroke-width="1.6" font-family="sans-serif" font-size="9" fill="#1E2761" text-anchor="middle"><line x1="16.0" y1="114" x2="16.0" y2="122"/><text x="16.0" y="133">0</text><line x1="36.6" y1="114" x2="36.6" y2="122"/><text x="36.6" y="133">1</text><line x1="57.1" y1="114" x2="57.1" y2="122"/><text x="57.1" y="133">2</text><line x1="77.7" y1="114" x2="77.7" y2="122"/><text x="77.7" y="133">3</text><line x1="98.3" y1="114" x2="98.3" y2="122"/><text x="98.3" y="133">4</text><line x1="118.9" y1="114" x2="118.9" y2="122"/><text x="118.9" y="133">5</text><line x1="139.4" y1="114" x2="139.4" y2="122"/><text x="139.4" y="133">6</text><line x1="160.0" y1="114" x2="160.0" y2="122"/><text x="160.0" y="133">7</text><line x1="180.6" y1="114" x2="180.6" y2="122"/><text x="180.6" y="133">8</text><line x1="201.1" y1="114" x2="201.1" y2="122"/><text x="201.1" y="133">9</text><line x1="221.7" y1="114" x2="221.7" y2="122"/><text x="221.7" y="133">10</text><line x1="242.3" y1="114" x2="242.3" y2="122"/><text x="242.3" y="133">11</text><line x1="262.9" y1="114" x2="262.9" y2="122"/><text x="262.9" y="133">12</text><line x1="283.4" y1="114" x2="283.4" y2="122"/><text x="283.4" y="133">13</text><line x1="304.0" y1="114" x2="304.0" y2="122"/><text x="304.0" y="133">14</text></g><g data-part="scale"><line x1="16" y1="114" x2="304" y2="114" stroke="#1E2761" stroke-width="2.5"/><text x="160" y="150" font-family="sans-serif" font-size="9" fill="#7a8199" text-anchor="middle">pH</text></g><g data-part="acidRegion"><rect x="16" y="74" width="123" height="40" fill="#B4341E" opacity="0.12"/><path d="M139 60 L24 60" fill="none" stroke="#B4341E" stroke-width="2.5" marker-end="url(#acA)"/></g><g data-part="alkaliRegion"><rect x="181" y="74" width="123" height="40" fill="#3D6FB0" opacity="0.12"/><path d="M181 60 L296 60" fill="none" stroke="#3D6FB0" stroke-width="2.5" marker-end="url(#acB)"/></g><g data-part="neutral7"><rect x="150" y="70" width="20" height="48" rx="3" fill="none" stroke="#2C5F2D" stroke-width="3" class="sm-pulse"/><circle cx="160" cy="52" r="8" fill="#2C5F2D"/><path d="M160 60 L160 70" stroke="#2C5F2D" stroke-width="2.5"/></g><g data-part="strongAcidEnd"><path d="M28 176 L28 210 Q28 216 34 216 L52 216 Q58 216 58 210 L58 176 Z" fill="#F1D2D8" stroke="#1E2761" stroke-width="2.5"/><path d="M31 190 L55 190 L55 210 Q55 213 52 213 L34 213 Q31 213 31 210 Z" fill="#B4341E" opacity="0.85"/><line x1="24" y1="176" x2="62" y2="176" stroke="#1E2761" stroke-width="2.5"/><path d="M43 176 L43 120" stroke="#B4341E" stroke-width="2" stroke-dasharray="4 4"/></g><g data-part="strongAlkaliEnd"><path d="M262 176 L262 210 Q262 216 268 216 L286 216 Q292 216 292 210 L292 176 Z" fill="#DCEAF6" stroke="#1E2761" stroke-width="2.5"/><path d="M265 190 L289 190 L289 210 Q289 213 286 213 L268 213 Q265 213 265 210 Z" fill="#5B2C83" opacity="0.8"/><line x1="258" y1="176" x2="296" y2="176" stroke="#1E2761" stroke-width="2.5"/><path d="M277 176 L277 120" stroke="#5B2C83" stroke-width="2" stroke-dasharray="4 4"/></g><g data-part="indicatorKey"><g stroke="#1E2761" stroke-width="1.5"><path d="M100 200 Q100 192 105 188 Q110 192 110 200 Q110 206 105 206 Q100 206 100 200 Z" fill="#B4341E"/><path d="M155 200 Q155 192 160 188 Q165 192 165 200 Q165 206 160 206 Q155 206 155 200 Z" fill="#2C5F2D"/><path d="M210 200 Q210 192 215 188 Q220 192 220 200 Q220 206 215 206 Q210 206 210 200 Z" fill="#5B2C83"/></g></g><defs><marker id="acA" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 Z" fill="#B4341E"/></marker><marker id="acB" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 Z" fill="#3D6FB0"/></marker></defs>
+</g>
+<g data-part="scale" class="dg-label"><circle cx="160.0" cy="204.7" r="3.4"/><text x="160.0" y="196.7" font-size="12" text-anchor="middle">pH scale</text></g>
+<g data-part="neutral7" class="dg-label"><circle cx="118.4" cy="108.1" r="3.4"/><text x="118.4" y="100.1" font-size="12" text-anchor="middle">Neutral (pH 7)</text></g>
+<g data-part="acidRegion" class="dg-label"><circle cx="70.4" cy="193.2" r="3.4"/><text x="70.4" y="185.2" font-size="12" text-anchor="middle">Acid (below 7)</text></g>
+<g data-part="alkaliRegion" class="dg-label"><circle cx="230.4" cy="193.2" r="3.4"/><text x="230.4" y="185.2" font-size="12" text-anchor="middle">Alkali (above 7)</text></g>
+<g data-part="strongAcidEnd" class="dg-label"><circle cx="28.8" cy="138.0" r="3.4"/><text x="35.8" y="130.0" font-size="12" text-anchor="start">Strong acid (0-2)</text></g>
+<g data-part="strongAlkaliEnd" class="dg-label"><circle cx="230.4" cy="138.0" r="3.4"/><text x="230.4" y="130.0" font-size="12" text-anchor="middle">Strong alkali (12-14)</text></g>
+<g data-part="indicatorKey" class="dg-label"><circle cx="160.0" cy="46.0" r="3.4"/><text x="160.0" y="38.0" font-size="12" text-anchor="middle">Universal indicator</text></g>
+</svg>

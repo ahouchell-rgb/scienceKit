@@ -4,7 +4,7 @@ import type { CSSProperties } from "react";
 import katex from "katex";
 import "katex/dist/katex.min.css";
 import { C } from "@/lib/theme";
-import { sanitizeHtml } from "@/lib/sanitize";
+import { sanitizeHtml, sanitizeSvg } from "@/lib/sanitize";
 import { ErrorBoundary } from "@/components/ErrorBoundary";
 import { RETRIEVAL_ORIGIN } from "@/lib/interactive";
 
@@ -77,6 +77,13 @@ export function elStyle(el: any): CSSProperties {
       border: el.stroke ? `${el.strokeW || 3}px solid ${el.stroke}` : "none",
       boxShadow: el.shadow ? SHADOW : undefined, boxSizing: "border-box",
     };
+  if (el.type === "diagram")
+    return {
+      ...base, height: finite(el.height),
+      background: el.fill || "transparent", borderRadius: el.radius ?? 10, overflow: "hidden",
+      border: el.stroke ? `${el.strokeW || 3}px solid ${el.stroke}` : "none",
+      boxShadow: el.shadow ? SHADOW : undefined, boxSizing: "border-box",
+    };
   if (el.type === "video" || el.type === "visualiser" || el.type === "retrieval")
     return { ...base, height: finite(el.height), background: "#0f0f12", borderRadius: 8, overflow: "hidden", boxSizing: "border-box" };
   if (el.type === "table")
@@ -104,7 +111,30 @@ export function ElInner({ el }) {
   if (el.type === "html") return <HtmlInner el={el} />;
   if (el.type === "equation") return <EqInner el={el} />;
   if (el.type === "chart") return <ChartInner el={el} />;
+  if (el.type === "diagram") return <DiagramInner el={el} />;
   return null;
+}
+
+/* A living curriculum diagram from the library (public/diagrams/): self-contained
+   SVG whose data-part groups are the labelled build-up steps. `stage` caps how many
+   parts (in partIds order) are visible — undefined shows the finished diagram
+   (editor, thumbnails, print). Hidden parts fade in via the SVG's own opacity
+   transition when the teacher reveals them in Present. */
+function DiagramInner({ el, stage }: { el: any; stage?: number }) {
+  const html = useMemo(() => {
+    if (!el.svg) return null;
+    const clean = sanitizeSvg(el.svg);
+    if (!clean) return null;
+    const ids: string[] = Array.isArray(el.partIds) ? el.partIds : [];
+    if (stage === undefined || stage >= ids.length) return clean;
+    // Scope by element id: hide every part group, then re-show the first `stage`.
+    const scope = `dg-${String(el.id).replace(/[^a-zA-Z0-9_-]/g, "")}`;
+    const shown = ids.slice(0, Math.max(0, stage))
+      .map((p) => `.${scope} [data-part~="${String(p).replace(/["\\]/g, "")}"]{opacity:1;}`).join("");
+    return `<style>.${scope} [data-part]{opacity:0;}${shown}</style><div class="${scope}" style="width:100%;height:100%">${clean}</div>`;
+  }, [el.svg, el.partIds, el.id, stage]);
+  if (!html) return <Placeholder icon="🔬" label={el.title || "Diagram"} />;
+  return <div style={{ width: "100%", height: "100%" }} dangerouslySetInnerHTML={{ __html: html }} />;
 }
 
 /* Default chart palette (chem orange, physics blue, bio green, …). */
@@ -539,8 +569,13 @@ export function ArrowSvg({ el, selected, hitProps }: { el: any; selected?: boole
   );
 }
 
-/* How many elements on a slide are marked "reveal on click". */
-export const revealCount = (slide) => (slide?.elements || []).filter((e) => e.reveal).length;
+/* How many click-to-reveal steps a slide has: reveal-flagged elements, plus one
+   step per part of any build-mode diagram (the diagram assembles click by click). */
+export const revealCount = (slide) =>
+  (slide?.elements || []).reduce(
+    (n, e) => n + (e.reveal ? 1 : 0) + (e.type === "diagram" && e.build ? (e.partIds?.length || 0) : 0),
+    0,
+  );
 
 /* Whether a slide contains a live visualiser (camera) element — used by Present
    to pre-check camera permission before the teacher reaches the slide. */
@@ -614,8 +649,16 @@ export function StaticSlide({ slide, width, style, reveal = Infinity, live = fal
             rIdx += 1;
             if (!show) return null;
           }
+          // A build-mode diagram consumes one reveal step per part: the base art
+          // shows immediately and each click assembles the next labelled part.
+          let diagramStage;
+          if (el.type === "diagram" && el.build && el.partIds?.length) {
+            diagramStage = Math.max(0, Math.min(el.partIds.length, reveal - rIdx));
+            rIdx += el.partIds.length;
+          }
           let node;
           if (el.type === "arrow") node = <ArrowSvg el={el} />;
+          else if (el.type === "diagram" && diagramStage !== undefined) node = <div style={elStyle(el)}><DiagramInner el={el} stage={diagramStage} /></div>;
           else if (el.type === "timer" && live) node = <LiveTimer el={el} />;
           else if (el.type === "video" && live) node = <div style={elStyle(el)}><VideoFrame el={el} /></div>;
           else if (el.type === "visualiser" && live) node = <div style={elStyle(el)}><LiveCamera /></div>;

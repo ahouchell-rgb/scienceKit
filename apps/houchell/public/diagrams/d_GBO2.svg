@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 300" width="100%" height="100%" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Circulatory system &amp; health">
+<style>[class*="sm-"]{transform-box:fill-box;transform-origin:center;}
+[data-part]{transition:opacity .55s ease;}
+.sm-spin{ animation:sm-spin 3s linear infinite; }
+.sm-spin-slow{ animation:sm-spin 9s linear infinite; }
+.sm-spin-rev{ animation:sm-spin 3s linear infinite reverse; }
+.sm-flow{ animation:sm-flow 1s linear infinite; }
+.sm-flow-slow{ animation:sm-flow 2.2s linear infinite; }
+.sm-flow-rev{ animation:sm-flow-rev 1.4s linear infinite; }
+.sm-pulse{ animation:sm-pulse 1.6s ease-in-out infinite; }
+.sm-throb{ animation:sm-throb 1s ease-in-out infinite; }
+.sm-drift{ animation:sm-drift 2.6s ease-in-out infinite; }
+.sm-osc{ animation:sm-osc 1.8s ease-in-out infinite; }
+.sm-osc-x{ animation:sm-osc-x 1.8s ease-in-out infinite; }
+.sm-rise{ animation:sm-rise 2.6s ease-in infinite; }
+.sm-fall{ animation:sm-fall 2.6s ease-in infinite; }
+.sm-blink{ animation:sm-blink 1.4s ease-in-out infinite; }
+.sm-glow{ animation:sm-glow 2s ease-in-out infinite; }
+.sm-shake{ animation:sm-shake .3s ease-in-out infinite; }
+.sm-sweep{ animation:sm-sweep 2.8s ease-in-out infinite; }
+@keyframes sm-spin{ to{ transform:rotate(360deg); } }
+@keyframes sm-flow{ to{ stroke-dashoffset:-24; } }
+@keyframes sm-flow-rev{ to{ stroke-dashoffset:24; } }
+@keyframes sm-pulse{ 0%,100%{ transform:scale(1); } 50%{ transform:scale(1.13); } }
+@keyframes sm-throb{ 0%,100%{ transform:scale(1); } 50%{ transform:scale(1.06); } }
+@keyframes sm-drift{ 0%{ transform:translate(0,0); } 25%{ transform:translate(2px,-2.5px); } 50%{ transform:translate(-2.5px,1.5px); } 75%{ transform:translate(1.5px,2px); } 100%{ transform:translate(0,0); } }
+@keyframes sm-osc{ 0%,100%{ transform:translateY(0); } 50%{ transform:translateY(-5px); } }
+@keyframes sm-osc-x{ 0%,100%{ transform:translateX(0); } 50%{ transform:translateX(5px); } }
+@keyframes sm-rise{ 0%{ transform:translateY(2px); opacity:0; } 25%{ opacity:.85; } 100%{ transform:translateY(-16px); opacity:0; } }
+@keyframes sm-fall{ 0%{ transform:translateY(-14px); opacity:0; } 25%{ opacity:.85; } 100%{ transform:translateY(4px); opacity:0; } }
+@keyframes sm-blink{ 0%,100%{ opacity:1; } 50%{ opacity:.3; } }
+@keyframes sm-glow{ 0%,100%{ opacity:.55; } 50%{ opacity:1; } }
+@keyframes sm-shake{ 0%,100%{ transform:translate(0,0); } 25%{ transform:translate(.9px,-.9px); } 75%{ transform:translate(-.9px,.9px); } }
+@keyframes sm-sweep{ 0%{ transform:translateX(-6px); opacity:.35; } 50%{ opacity:1; } 100%{ transform:translateX(6px); opacity:.35; } }
+@media (prefers-reduced-motion:reduce){[class*="sm-"]{animation:none !important;}}
+.dg-label text{font-family:'Century Gothic','Avenir Next',system-ui,sans-serif;font-weight:600;paint-order:stroke;stroke:#ffffff;stroke-width:3px;stroke-linejoin:round;fill:#1E2761;}
+.dg-label circle{fill:#1E2761;stroke:#ffffff;stroke-width:1.5;}</style>
+<g class="diagram-art">
+<rect x='0' y='0' width='320' height='300' fill='#ffffff'/><g data-part='lungs'><path d='M118 34 q-20 4 -22 30 q-2 24 10 30 q10 4 12 -8 v-46 q0 -8 0 -6 z' fill='#F1D2D8' stroke='#B4341E' stroke-width='2.5' stroke-linejoin='round'/><path d='M154 34 q20 4 22 30 q2 24 -10 30 q-10 4 -12 -8 v-46 q0 -8 0 -6 z' fill='#F1D2D8' stroke='#B4341E' stroke-width='2.5' stroke-linejoin='round'/><rect x='134' y='30' width='4' height='34' fill='#7a8199'/></g><g data-part='heart'><path d='M136 132 q-22 -22 -40 -6 q-16 16 4 36 l36 34 l36 -34 q20 -20 4 -36 q-18 -16 -40 6 z' fill='#B4341E' stroke='#7a1a10' stroke-width='2.5' stroke-linejoin='round'/><path class='sm-throb' d='M136 132 q-22 -22 -40 -6 q-16 16 4 36 l36 34 l36 -34 q20 -20 4 -36 q-18 -16 -40 6 z' fill='none' stroke='#ffffff' stroke-width='1.5' opacity='0.5'/></g><g data-part='artery'><path class='sm-flow' d='M118 116 q-30 -6 -34 -46' fill='none' stroke='#B4341E' stroke-width='6' stroke-dasharray='8 6' stroke-linecap='round'/><polygon points='80,74 84,62 90,74' fill='#B4341E'/></g><g data-part='vein'><path class='sm-flow' d='M156 116 q30 -6 34 -46' fill='none' stroke='#1E5A9E' stroke-width='6' stroke-dasharray='8 6' stroke-linecap='round'/><line x1='182' y1='96' x2='196' y2='96' stroke='#1E5A9E' stroke-width='2'/><line x1='182' y1='84' x2='196' y2='84' stroke='#1E5A9E' stroke-width='2'/></g><g data-part='coronaryArtery'><path d='M132 150 q-14 6 -12 22 q1 12 12 16' fill='none' stroke='#C99528' stroke-width='4' stroke-linecap='round'/><circle cx='121' cy='168' r='4' fill='#3a2f14'/><circle cx='125' cy='183' r='3.5' fill='#3a2f14'/></g><g data-part='body'><rect x='118' y='236' width='84' height='34' rx='8' fill='#CDE5C6' stroke='#2C5F2D' stroke-width='2.5'/><line x1='134' y1='246' x2='186' y2='246' stroke='#2C5F2D' stroke-width='2'/><line x1='134' y1='254' x2='186' y2='254' stroke='#2C5F2D' stroke-width='2'/><line x1='134' y1='262' x2='170' y2='262' stroke='#2C5F2D' stroke-width='2'/></g><g data-part='capillary'><path class='sm-flow' d='M136 202 v30' fill='none' stroke='#8a4a55' stroke-width='2.5' stroke-dasharray='4 4'/><line x1='128' y1='214' x2='120' y2='214' stroke='#2C5F2D' stroke-width='2'/><polygon points='120,211 113,214 120,217' fill='#2C5F2D'/><line x1='144' y1='222' x2='152' y2='222' stroke='#2C5F2D' stroke-width='2'/><polygon points='152,219 159,222 152,225' fill='#2C5F2D'/></g><g data-part='bloodComposition'><rect x='232' y='150' width='60' height='96' rx='10' fill='#F1D2D8' stroke='#1E2761' stroke-width='2.5'/><path d='M232 160 v-10 q0 0 10 0 h40 q10 0 10 0 v10 z' fill='#F7E7B8'/><line x1='232' y1='180' x2='292' y2='180' stroke='#1E2761' stroke-width='1.5'/><circle cx='248' cy='200' r='6' fill='#B4341E' stroke='#7a1a10' stroke-width='1.5'/><circle cx='268' cy='214' r='6' fill='#B4341E' stroke='#7a1a10' stroke-width='1.5'/><circle cx='276' cy='196' r='5.5' fill='#DCEAF6' stroke='#1E2761' stroke-width='1.5'/><circle cx='252' cy='228' r='3' fill='#C99528'/><circle cx='272' cy='232' r='3' fill='#C99528'/></g>
+</g>
+<g data-part="lungs" class="dg-label"><circle cx="112.0" cy="45.0" r="3.4"/><text x="112.0" y="37.0" font-size="12" text-anchor="middle">Lungs</text></g>
+<g data-part="artery" class="dg-label"><circle cx="73.6" cy="90.0" r="3.4"/><text x="73.6" y="82.0" font-size="12" text-anchor="middle">Artery</text></g>
+<g data-part="vein" class="dg-label"><circle cx="134.4" cy="90.0" r="3.4"/><text x="134.4" y="82.0" font-size="12" text-anchor="middle">Vein</text></g>
+<g data-part="heart" class="dg-label"><circle cx="89.6" cy="165.0" r="3.4"/><text x="89.6" y="157.0" font-size="12" text-anchor="middle">Heart</text></g>
+<g data-part="coronaryArtery" class="dg-label"><circle cx="137.6" cy="150.0" r="3.4"/><text x="137.6" y="142.0" font-size="12" text-anchor="middle">Coronary artery</text></g>
+<g data-part="body" class="dg-label"><circle cx="112.0" cy="252.0" r="3.4"/><text x="112.0" y="244.0" font-size="12" text-anchor="middle">Body tissues</text></g>
+<g data-part="capillary" class="dg-label"><circle cx="172.8" cy="114.0" r="3.4"/><text x="172.8" y="106.0" font-size="12" text-anchor="middle">Capillary</text></g>
+<g data-part="bloodComposition" class="dg-label"><circle cx="249.6" cy="117.0" r="3.4"/><text x="249.6" y="109.0" font-size="12" text-anchor="middle">Blood components</text></g>
+</svg>

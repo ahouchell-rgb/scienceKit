@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 130" width="100%" height="100%" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Ecosystems">
+<style>[class*="sm-"]{transform-box:fill-box;transform-origin:center;}
+[data-part]{transition:opacity .55s ease;}
+.sm-spin{ animation:sm-spin 3s linear infinite; }
+.sm-spin-slow{ animation:sm-spin 9s linear infinite; }
+.sm-spin-rev{ animation:sm-spin 3s linear infinite reverse; }
+.sm-flow{ animation:sm-flow 1s linear infinite; }
+.sm-flow-slow{ animation:sm-flow 2.2s linear infinite; }
+.sm-flow-rev{ animation:sm-flow-rev 1.4s linear infinite; }
+.sm-pulse{ animation:sm-pulse 1.6s ease-in-out infinite; }
+.sm-throb{ animation:sm-throb 1s ease-in-out infinite; }
+.sm-drift{ animation:sm-drift 2.6s ease-in-out infinite; }
+.sm-osc{ animation:sm-osc 1.8s ease-in-out infinite; }
+.sm-osc-x{ animation:sm-osc-x 1.8s ease-in-out infinite; }
+.sm-rise{ animation:sm-rise 2.6s ease-in infinite; }
+.sm-fall{ animation:sm-fall 2.6s ease-in infinite; }
+.sm-blink{ animation:sm-blink 1.4s ease-in-out infinite; }
+.sm-glow{ animation:sm-glow 2s ease-in-out infinite; }
+.sm-shake{ animation:sm-shake .3s ease-in-out infinite; }
+.sm-sweep{ animation:sm-sweep 2.8s ease-in-out infinite; }
+@keyframes sm-spin{ to{ transform:rotate(360deg); } }
+@keyframes sm-flow{ to{ stroke-dashoffset:-24; } }
+@keyframes sm-flow-rev{ to{ stroke-dashoffset:24; } }
+@keyframes sm-pulse{ 0%,100%{ transform:scale(1); } 50%{ transform:scale(1.13); } }
+@keyframes sm-throb{ 0%,100%{ transform:scale(1); } 50%{ transform:scale(1.06); } }
+@keyframes sm-drift{ 0%{ transform:translate(0,0); } 25%{ transform:translate(2px,-2.5px); } 50%{ transform:translate(-2.5px,1.5px); } 75%{ transform:translate(1.5px,2px); } 100%{ transform:translate(0,0); } }
+@keyframes sm-osc{ 0%,100%{ transform:translateY(0); } 50%{ transform:translateY(-5px); } }
+@keyframes sm-osc-x{ 0%,100%{ transform:translateX(0); } 50%{ transform:translateX(5px); } }
+@keyframes sm-rise{ 0%{ transform:translateY(2px); opacity:0; } 25%{ opacity:.85; } 100%{ transform:translateY(-16px); opacity:0; } }
+@keyframes sm-fall{ 0%{ transform:translateY(-14px); opacity:0; } 25%{ opacity:.85; } 100%{ transform:translateY(4px); opacity:0; } }
+@keyframes sm-blink{ 0%,100%{ opacity:1; } 50%{ opacity:.3; } }
+@keyframes sm-glow{ 0%,100%{ opacity:.55; } 50%{ opacity:1; } }
+@keyframes sm-shake{ 0%,100%{ transform:translate(0,0); } 25%{ transform:translate(.9px,-.9px); } 75%{ transform:translate(-.9px,.9px); } }
+@keyframes sm-sweep{ 0%{ transform:translateX(-6px); opacity:.35; } 50%{ opacity:1; } 100%{ transform:translateX(6px); opacity:.35; } }
+@media (prefers-reduced-motion:reduce){[class*="sm-"]{animation:none !important;}}
+.dg-label text{font-family:'Century Gothic','Avenir Next',system-ui,sans-serif;font-weight:600;paint-order:stroke;stroke:#ffffff;stroke-width:3px;stroke-linejoin:round;fill:#1E2761;}
+.dg-label circle{fill:#1E2761;stroke:#ffffff;stroke-width:1.5;}</style>
+<g class="diagram-art">
+<rect x="0" y="0" width="330" height="130" fill="#F4F6FC"/><g data-part="producer"><rect x="10" y="30" width="86" height="80" rx="12" fill="#EAF4E6" stroke="#2C5F2D" stroke-width="3"/><line x1="18" y1="104" x2="88" y2="104" stroke="#2C5F2D" stroke-width="3" stroke-linecap="round"/><g class="sm-osc-x" stroke="#2C5F2D" stroke-width="3.5" fill="none" stroke-linecap="round"><path d="M34 104 Q28 74 22 60"/><path d="M46 104 Q46 70 44 54"/><path d="M58 104 Q60 72 66 58"/><path d="M70 104 Q76 76 84 64"/></g></g><g class="sm-flow"><line x1="100" y1="70" x2="116" y2="70" stroke="#C99528" stroke-width="3.5" stroke-dasharray="6 6" stroke-linecap="round"/></g><path d="M122 70 l-12 -6 v12 z" fill="#C99528"/><g data-part="prey"><rect x="122" y="30" width="86" height="80" rx="12" fill="#fff" stroke="#1E2761" stroke-width="3"/><ellipse cx="168" cy="82" rx="24" ry="15" fill="#B8BEDC" stroke="#1E2761" stroke-width="2.5"/><circle cx="146" cy="70" r="11" fill="#B8BEDC" stroke="#1E2761" stroke-width="2.5"/><ellipse cx="142" cy="52" rx="4" ry="11" fill="#B8BEDC" stroke="#1E2761" stroke-width="2"/><ellipse cx="151" cy="52" rx="4" ry="11" fill="#B8BEDC" stroke="#1E2761" stroke-width="2"/><circle cx="142" cy="70" r="1.8" fill="#1E2761"/><circle cx="191" cy="90" r="4" fill="#fff" stroke="#1E2761" stroke-width="1.5"/></g><g class="sm-flow"><line x1="212" y1="70" x2="228" y2="70" stroke="#C99528" stroke-width="3.5" stroke-dasharray="6 6" stroke-linecap="round"/></g><path d="M234 70 l-12 -6 v12 z" fill="#C99528"/><g data-part="predator"><rect x="234" y="30" width="86" height="80" rx="12" fill="#FBF1DE" stroke="#1E2761" stroke-width="3"/><ellipse cx="284" cy="84" rx="26" ry="14" fill="#D98A4A" stroke="#9c5a22" stroke-width="2.5"/><circle cx="260" cy="72" r="12" fill="#D98A4A" stroke="#9c5a22" stroke-width="2.5"/><path d="M251 64 l3 -12 l7 8 z" fill="#D98A4A" stroke="#9c5a22" stroke-width="2"/><path d="M269 64 l-3 -12 l-7 8 z" fill="#D98A4A" stroke="#9c5a22" stroke-width="2"/><circle cx="256" cy="72" r="1.8" fill="#1E2761"/><path d="M248 72 l-6 2" stroke="#9c5a22" stroke-width="1.5" stroke-linecap="round"/><path d="M304 80 q10 -4 12 6" fill="none" stroke="#9c5a22" stroke-width="3" stroke-linecap="round"/></g>
+</g>
+<g data-part="producer" class="dg-label"><circle cx="56.1" cy="70.2" r="3.4"/><text x="63.1" y="62.2" font-size="12" text-anchor="start">Producer (grass)</text></g>
+<g data-part="prey" class="dg-label"><circle cx="165.0" cy="70.2" r="3.4"/><text x="165.0" y="62.2" font-size="12" text-anchor="middle">Prey (rabbit)</text></g>
+<g data-part="predator" class="dg-label"><circle cx="273.9" cy="70.2" r="3.4"/><text x="266.9" y="62.2" font-size="12" text-anchor="end">Predator (fox)</text></g>
+</svg>

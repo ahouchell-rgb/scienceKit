@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 250" width="100%" height="100%" preserveAspectRatio="xMidYMid meet" role="img" aria-label="The electromagnetic spectrum">
+<style>[class*="sm-"]{transform-box:fill-box;transform-origin:center;}
+[data-part]{transition:opacity .55s ease;}
+.sm-spin{ animation:sm-spin 3s linear infinite; }
+.sm-spin-slow{ animation:sm-spin 9s linear infinite; }
+.sm-spin-rev{ animation:sm-spin 3s linear infinite reverse; }
+.sm-flow{ animation:sm-flow 1s linear infinite; }
+.sm-flow-slow{ animation:sm-flow 2.2s linear infinite; }
+.sm-flow-rev{ animation:sm-flow-rev 1.4s linear infinite; }
+.sm-pulse{ animation:sm-pulse 1.6s ease-in-out infinite; }
+.sm-throb{ animation:sm-throb 1s ease-in-out infinite; }
+.sm-drift{ animation:sm-drift 2.6s ease-in-out infinite; }
+.sm-osc{ animation:sm-osc 1.8s ease-in-out infinite; }
+.sm-osc-x{ animation:sm-osc-x 1.8s ease-in-out infinite; }
+.sm-rise{ animation:sm-rise 2.6s ease-in infinite; }
+.sm-fall{ animation:sm-fall 2.6s ease-in infinite; }
+.sm-blink{ animation:sm-blink 1.4s ease-in-out infinite; }
+.sm-glow{ animation:sm-glow 2s ease-in-out infinite; }
+.sm-shake{ animation:sm-shake .3s ease-in-out infinite; }
+.sm-sweep{ animation:sm-sweep 2.8s ease-in-out infinite; }
+@keyframes sm-spin{ to{ transform:rotate(360deg); } }
+@keyframes sm-flow{ to{ stroke-dashoffset:-24; } }
+@keyframes sm-flow-rev{ to{ stroke-dashoffset:24; } }
+@keyframes sm-pulse{ 0%,100%{ transform:scale(1); } 50%{ transform:scale(1.13); } }
+@keyframes sm-throb{ 0%,100%{ transform:scale(1); } 50%{ transform:scale(1.06); } }
+@keyframes sm-drift{ 0%{ transform:translate(0,0); } 25%{ transform:translate(2px,-2.5px); } 50%{ transform:translate(-2.5px,1.5px); } 75%{ transform:translate(1.5px,2px); } 100%{ transform:translate(0,0); } }
+@keyframes sm-osc{ 0%,100%{ transform:translateY(0); } 50%{ transform:translateY(-5px); } }
+@keyframes sm-osc-x{ 0%,100%{ transform:translateX(0); } 50%{ transform:translateX(5px); } }
+@keyframes sm-rise{ 0%{ transform:translateY(2px); opacity:0; } 25%{ opacity:.85; } 100%{ transform:translateY(-16px); opacity:0; } }
+@keyframes sm-fall{ 0%{ transform:translateY(-14px); opacity:0; } 25%{ opacity:.85; } 100%{ transform:translateY(4px); opacity:0; } }
+@keyframes sm-blink{ 0%,100%{ opacity:1; } 50%{ opacity:.3; } }
+@keyframes sm-glow{ 0%,100%{ opacity:.55; } 50%{ opacity:1; } }
+@keyframes sm-shake{ 0%,100%{ transform:translate(0,0); } 25%{ transform:translate(.9px,-.9px); } 75%{ transform:translate(-.9px,.9px); } }
+@keyframes sm-sweep{ 0%{ transform:translateX(-6px); opacity:.35; } 50%{ opacity:1; } 100%{ transform:translateX(6px); opacity:.35; } }
+@media (prefers-reduced-motion:reduce){[class*="sm-"]{animation:none !important;}}
+.dg-label text{font-family:'Century Gothic','Avenir Next',system-ui,sans-serif;font-weight:600;paint-order:stroke;stroke:#ffffff;stroke-width:3px;stroke-linejoin:round;fill:#1E2761;}
+.dg-label circle{fill:#1E2761;stroke:#ffffff;stroke-width:1.5;}</style>
+<g class="diagram-art">
+<rect x="6" y="6" width="308" height="238" rx="12" fill="#F4F6FC" stroke="#1E2761" stroke-width="2.5"/>
+<g data-part="spectrumBand">
+  <g stroke="#1E2761" stroke-width="2">
+    <rect x="26" y="34" width="38" height="34" rx="2" fill="#CDE5C6"/>
+    <rect x="64" y="34" width="38" height="34" fill="#DCEAF6"/>
+    <rect x="102" y="34" width="38" height="34" fill="#F7F2E6"/>
+    <rect x="140" y="34" width="38" height="34" fill="#F1D2D8"/>
+    <rect x="178" y="34" width="38" height="34" fill="#AEB6D6"/>
+    <rect x="216" y="34" width="38" height="34" fill="#DCEAF6"/>
+    <rect x="254" y="34" width="40" height="34" rx="2" fill="#F1D2D8"/>
+  </g>
+</g>
+<g data-part="transverseWave">
+  <path class="sm-osc" d="M26 92 Q40 74 54 92 T82 92 T110 92 M110 92 Q120 78 130 92 T150 92 T170 92 T190 92 M190 92 Q197 81 204 92 T218 92 T232 92 T246 92 T260 92 T274 92 T288 92" fill="none" stroke="#1E2761" stroke-width="2.6" stroke-linecap="round"/>
+</g>
+<g data-part="radioEnd">
+  <rect x="26" y="34" width="38" height="34" rx="2" fill="none" stroke="#2C5F2D" stroke-width="3"/>
+  <path d="M45 74 Q30 84 30 100" fill="none" stroke="#2C5F2D" stroke-width="2.4" stroke-linecap="round"/>
+</g>
+<g data-part="gammaEnd">
+  <rect x="254" y="34" width="40" height="34" rx="2" fill="none" stroke="#B4341E" stroke-width="3"/>
+  <path d="M274 74 Q290 84 290 100" fill="none" stroke="#B4341E" stroke-width="2.4" stroke-linecap="round"/>
+</g>
+<g data-part="wavelengthAxis">
+  <line x1="160" y1="122" x2="30" y2="122" stroke="#2C5F2D" stroke-width="2.4" stroke-linecap="round"/>
+  <polygon points="28,122 37,118 37,126" fill="#2C5F2D"/>
+</g>
+<g data-part="frequencyAxis">
+  <line x1="160" y1="122" x2="290" y2="122" stroke="#B4341E" stroke-width="2.4" stroke-linecap="round"/>
+  <polygon points="292,122 283,118 283,126" fill="#B4341E"/>
+</g>
+<line x1="160" y1="30" x2="160" y2="126" stroke="#7a8199" stroke-width="1.4" stroke-dasharray="3 3"/>
+<g data-part="refractedRay">
+  <rect x="26" y="150" width="268" height="82" rx="8" fill="#FFFFFF" stroke="#1E2761" stroke-width="1.6"/>
+  <rect x="160" y="150" width="134" height="82" fill="#DCEAF6"/>
+  <line x1="160" y1="150" x2="160" y2="232" stroke="#1E2761" stroke-width="2"/>
+  <line x1="160" y1="150" x2="160" y2="232" stroke="#1E2761" stroke-width="1" stroke-dasharray="4 4"/>
+  <line x1="160" y1="146" x2="160" y2="236" stroke="#7a8199" stroke-width="1.2" stroke-dasharray="4 4"/>
+  <line class="sm-flow" x1="42" y1="160" x2="160" y2="200" stroke="#B4341E" stroke-width="2.8" stroke-linecap="round" stroke-dasharray="7 6"/>
+  <line class="sm-flow" x1="160" y1="200" x2="280" y2="220" stroke="#B4341E" stroke-width="2.8" stroke-linecap="round" stroke-dasharray="7 6"/>
+  <polygon points="280,220 270,218 273,227" fill="#B4341E"/>
+</g>
+</g>
+<g data-part="spectrumBand" class="dg-label"><circle cx="160.0" cy="57.5" r="3.4"/><text x="160.0" y="49.5" font-size="12" text-anchor="middle">Electromagnetic spectrum</text></g>
+<g data-part="radioEnd" class="dg-label"><circle cx="48.0" cy="57.5" r="3.4"/><text x="55.0" y="49.5" font-size="12" text-anchor="start">Radio waves</text></g>
+<g data-part="gammaEnd" class="dg-label"><circle cx="275.2" cy="57.5" r="3.4"/><text x="268.2" y="49.5" font-size="12" text-anchor="end">Gamma rays</text></g>
+<g data-part="transverseWave" class="dg-label"><circle cx="128.0" cy="95.0" r="3.4"/><text x="128.0" y="87.0" font-size="12" text-anchor="middle">Transverse wave</text></g>
+<g data-part="wavelengthAxis" class="dg-label"><circle cx="89.6" cy="130.0" r="3.4"/><text x="89.6" y="122.0" font-size="12" text-anchor="middle">Increasing wavelength</text></g>
+<g data-part="frequencyAxis" class="dg-label"><circle cx="230.4" cy="130.0" r="3.4"/><text x="230.4" y="122.0" font-size="12" text-anchor="middle">Increasing frequency</text></g>
+<g data-part="refractedRay" class="dg-label"><circle cx="160.0" cy="220.0" r="3.4"/><text x="160.0" y="212.0" font-size="12" text-anchor="middle">Refraction at a boundary</text></g>
+</svg>

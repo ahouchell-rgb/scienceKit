@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 230" width="100%" height="100%" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Electrical power &amp; energy">
+<style>[class*="sm-"]{transform-box:fill-box;transform-origin:center;}
+[data-part]{transition:opacity .55s ease;}
+.sm-spin{ animation:sm-spin 3s linear infinite; }
+.sm-spin-slow{ animation:sm-spin 9s linear infinite; }
+.sm-spin-rev{ animation:sm-spin 3s linear infinite reverse; }
+.sm-flow{ animation:sm-flow 1s linear infinite; }
+.sm-flow-slow{ animation:sm-flow 2.2s linear infinite; }
+.sm-flow-rev{ animation:sm-flow-rev 1.4s linear infinite; }
+.sm-pulse{ animation:sm-pulse 1.6s ease-in-out infinite; }
+.sm-throb{ animation:sm-throb 1s ease-in-out infinite; }
+.sm-drift{ animation:sm-drift 2.6s ease-in-out infinite; }
+.sm-osc{ animation:sm-osc 1.8s ease-in-out infinite; }
+.sm-osc-x{ animation:sm-osc-x 1.8s ease-in-out infinite; }
+.sm-rise{ animation:sm-rise 2.6s ease-in infinite; }
+.sm-fall{ animation:sm-fall 2.6s ease-in infinite; }
+.sm-blink{ animation:sm-blink 1.4s ease-in-out infinite; }
+.sm-glow{ animation:sm-glow 2s ease-in-out infinite; }
+.sm-shake{ animation:sm-shake .3s ease-in-out infinite; }
+.sm-sweep{ animation:sm-sweep 2.8s ease-in-out infinite; }
+@keyframes sm-spin{ to{ transform:rotate(360deg); } }
+@keyframes sm-flow{ to{ stroke-dashoffset:-24; } }
+@keyframes sm-flow-rev{ to{ stroke-dashoffset:24; } }
+@keyframes sm-pulse{ 0%,100%{ transform:scale(1); } 50%{ transform:scale(1.13); } }
+@keyframes sm-throb{ 0%,100%{ transform:scale(1); } 50%{ transform:scale(1.06); } }
+@keyframes sm-drift{ 0%{ transform:translate(0,0); } 25%{ transform:translate(2px,-2.5px); } 50%{ transform:translate(-2.5px,1.5px); } 75%{ transform:translate(1.5px,2px); } 100%{ transform:translate(0,0); } }
+@keyframes sm-osc{ 0%,100%{ transform:translateY(0); } 50%{ transform:translateY(-5px); } }
+@keyframes sm-osc-x{ 0%,100%{ transform:translateX(0); } 50%{ transform:translateX(5px); } }
+@keyframes sm-rise{ 0%{ transform:translateY(2px); opacity:0; } 25%{ opacity:.85; } 100%{ transform:translateY(-16px); opacity:0; } }
+@keyframes sm-fall{ 0%{ transform:translateY(-14px); opacity:0; } 25%{ opacity:.85; } 100%{ transform:translateY(4px); opacity:0; } }
+@keyframes sm-blink{ 0%,100%{ opacity:1; } 50%{ opacity:.3; } }
+@keyframes sm-glow{ 0%,100%{ opacity:.55; } 50%{ opacity:1; } }
+@keyframes sm-shake{ 0%,100%{ transform:translate(0,0); } 25%{ transform:translate(.9px,-.9px); } 75%{ transform:translate(-.9px,.9px); } }
+@keyframes sm-sweep{ 0%{ transform:translateX(-6px); opacity:.35; } 50%{ opacity:1; } 100%{ transform:translateX(6px); opacity:.35; } }
+@media (prefers-reduced-motion:reduce){[class*="sm-"]{animation:none !important;}}
+.dg-label text{font-family:'Century Gothic','Avenir Next',system-ui,sans-serif;font-weight:600;paint-order:stroke;stroke:#ffffff;stroke-width:3px;stroke-linejoin:round;fill:#1E2761;}
+.dg-label circle{fill:#1E2761;stroke:#ffffff;stroke-width:1.5;}</style>
+<g class="diagram-art">
+
+<rect x="2" y="2" width="316" height="226" rx="12" fill="#F4F6FC" stroke="#1E2761" stroke-width="2"/>
+
+<!-- the wire loop (shared scaffold) -->
+<path d="M50 50 H270 V180 H50 Z" fill="none" stroke="#1E2761" stroke-width="3" stroke-linejoin="round"/>
+
+<!-- cell : left side -->
+<g data-part="cell">
+  <line x1="50" y1="100" x2="50" y2="130" stroke="#F4F6FC" stroke-width="6"/>
+  <line x1="40" y1="102" x2="60" y2="102" stroke="#1E2761" stroke-width="3.5" stroke-linecap="round"/>
+  <line x1="42" y1="110" x2="58" y2="110" stroke="#1E2761" stroke-width="6" stroke-linecap="round"/>
+  <line x1="40" y1="118" x2="60" y2="118" stroke="#1E2761" stroke-width="3.5" stroke-linecap="round"/>
+  <line x1="42" y1="126" x2="58" y2="126" stroke="#1E2761" stroke-width="6" stroke-linecap="round"/>
+</g>
+
+<!-- potentialDifference : voltmeter-style bracket across the cell -->
+<g data-part="potentialDifference">
+  <path d="M74 96 H92 V134 H74" fill="none" stroke="#B4341E" stroke-width="2.5"/>
+  <text x="97" y="119" font-family="Georgia,serif" font-size="12" fill="#B4341E">V</text>
+</g>
+
+<!-- current : arrows along the top wire -->
+<g data-part="current">
+  <line x1="120" y1="50" x2="200" y2="50" stroke="#C99528" stroke-width="0"/>
+  <g fill="#C99528" class="sm-drift">
+    <path d="M140 44 l12 6 -12 6 z"/>
+    <path d="M172 44 l12 6 -12 6 z"/>
+  </g>
+  <text x="150" y="38" font-family="Georgia,serif" font-size="11" fill="#C99528">I</text>
+</g>
+
+<!-- charge : a moving charge dot on the bottom wire -->
+<g data-part="charge">
+  <circle cx="150" cy="180" r="8" fill="#C99528" stroke="#1E2761" stroke-width="2" class="sm-osc-x"/>
+  <text x="150" y="184" text-anchor="middle" font-family="Georgia,serif" font-size="9" font-weight="bold" fill="#1E2761">+</text>
+</g>
+
+<!-- resistor : right side -->
+<g data-part="resistor">
+  <line x1="270" y1="98" x2="270" y2="132" stroke="#F4F6FC" stroke-width="8"/>
+  <rect x="258" y="98" width="24" height="34" rx="3" fill="#F1D2D8" stroke="#1E2761" stroke-width="3"/>
+</g>
+
+<!-- energyOut : heat + light radiating from the resistor -->
+<g data-part="energyOut">
+  <g stroke="#B4341E" stroke-width="2.5" stroke-linecap="round" fill="none" class="sm-rise">
+    <path d="M286 96 q6 -6 0 -12"/>
+    <path d="M294 104 q6 -6 0 -12"/>
+  </g>
+  <g stroke="#C99528" stroke-width="2.5" stroke-linecap="round" class="sm-glow">
+    <line x1="290" y1="115" x2="302" y2="115"/>
+    <line x1="288" y1="128" x2="299" y2="134"/>
+    <line x1="288" y1="102" x2="299" y2="96"/>
+  </g>
+</g>
+
+</g>
+<g data-part="cell" class="dg-label"><circle cx="160.0" cy="59.8" r="3.4"/><text x="160.0" y="51.8" font-size="12" text-anchor="middle">Cell</text></g>
+<g data-part="potentialDifference" class="dg-label"><circle cx="118.4" cy="75.9" r="3.4"/><text x="118.4" y="67.9" font-size="12" text-anchor="middle">Potential difference</text></g>
+<g data-part="current" class="dg-label"><circle cx="281.6" cy="101.2" r="3.4"/><text x="274.6" y="93.2" font-size="12" text-anchor="end">Current</text></g>
+<g data-part="resistor" class="dg-label"><circle cx="160.0" cy="149.5" r="3.4"/><text x="160.0" y="141.5" font-size="12" text-anchor="middle">Resistor</text></g>
+<g data-part="charge" class="dg-label"><circle cx="60.8" cy="105.8" r="3.4"/><text x="67.8" y="97.8" font-size="12" text-anchor="start">Charge</text></g>
+<g data-part="energyOut" class="dg-label"><circle cx="160.0" cy="108.1" r="3.4"/><text x="160.0" y="100.1" font-size="12" text-anchor="middle">Energy transferred</text></g>
+</svg>

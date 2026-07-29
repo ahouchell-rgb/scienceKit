@@ -93,6 +93,27 @@ async function cropToDataURL(src, crop) {
   return canvas.toDataURL("image/png"); // throws if the canvas is tainted
 }
 
+/* Rasterize a library diagram's SVG markup to a crisp 2× PNG for the export —
+   PowerPoint can't run the CSS animations, so we freeze the finished frame.
+   Same-document SVG via a blob URL: no external fetches, so the canvas stays
+   untainted. */
+async function diagramToDataURL(svg, wPx, hPx) {
+  const w = Math.max(2, Math.round(wPx * 2)), h = Math.max(2, Math.round(hPx * 2));
+  // Percentage dimensions give the SVG no intrinsic size (drawImage then renders
+  // nothing in some browsers) — pin explicit pixel dimensions on the root first.
+  const sized = svg.replace(/<svg([^>]*?)\swidth="[^"]*"\sheight="[^"]*"/, `<svg$1 width="${w}" height="${h}"`);
+  const url = URL.createObjectURL(new Blob([sized], { type: "image/svg+xml" }));
+  try {
+    const img = await loadImage(url);
+    const canvas = document.createElement("canvas");
+    canvas.width = w; canvas.height = h;
+    canvas.getContext("2d").drawImage(img, 0, 0, w, h);
+    return canvas.toDataURL("image/png");
+  } finally {
+    URL.revokeObjectURL(url);
+  }
+}
+
 /* Render a single element onto a pptx slide. Async only because images may
    need cropping; everything else resolves synchronously. */
 async function renderEl(pptx, slide, el) {
@@ -168,6 +189,15 @@ async function renderEl(pptx, slide, el) {
     if (el.crop) { try { data = await cropToDataURL(el.src, el.crop); } catch { data = null; } }
     if (data) slide.addImage({ ...box, data, rotate: rot(el) });
     else slide.addImage({ ...box, path: el.src, rotate: rot(el) });
+  } else if (el.type === "diagram") {
+    try {
+      const data = await diagramToDataURL(el.svg || "", el.width || 420, el.height || 300);
+      slide.addImage({ ...box, data, rotate: rot(el) });
+    } catch {
+      slide.addText(`[Diagram: ${el.title || el.diagramId || "see app"}]`, {
+        ...box, fontSize: 11, color: "8A8A8A", fontFace: "Arial", align: "center", valign: "middle",
+      });
+    }
   } else if (el.type === "text") {
     const richRuns = el.rich ? richToRuns(el.rich) : null;
     slide.addText(richRuns || (el.text || ""), {

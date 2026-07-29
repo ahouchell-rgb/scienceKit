@@ -1,0 +1,6300 @@
+[
+ {
+  "id": "d_GD3",
+  "title": "Specific latent heat",
+  "discipline": "physics",
+  "unitCode": "GD3",
+  "unitTitle": "Specific latent heat",
+  "vb": "0 0 320 250",
+  "parts": [
+   {
+    "id": "yAxis",
+    "label": "Temperature",
+    "note": "This axis tracks the temperature of the substance, so we can watch when it climbs and when it stays stubbornly flat."
+   },
+   {
+    "id": "xAxis",
+    "label": "Energy added",
+    "note": "Moving right, we keep pumping in energy; the graph shows what that energy does to the substance as it arrives."
+   },
+   {
+    "id": "meltSlope",
+    "label": "Solid warming up",
+    "note": "Here the solid soaks up energy and its particles vibrate faster, so the line climbs steadily as temperature rises."
+   },
+   {
+    "id": "fusionPlateau",
+    "label": "Melting (latent heat of fusion)",
+    "note": "The line goes flat: energy now melts the solid into liquid, no temperature rise, using the latent heat of fusion."
+   },
+   {
+    "id": "vapPlateau",
+    "label": "Boiling (latent heat of vaporisation)",
+    "note": "A second, longer flat section: energy boils liquid into gas, using the much larger latent heat of vaporisation."
+   },
+   {
+    "id": "breakingBonds",
+    "label": "Bonds breaking, temp constant",
+    "note": "During each flat bit, incoming energy pulls particles apart rather than speeding them up, so the temperature holds steady."
+   }
+  ],
+  "keywords": [
+   "specific",
+   "latent",
+   "heat",
+   "specific latent heat",
+   "latent heat of fusion",
+   "latent heat of vaporisation",
+   "temperature",
+   "energy added",
+   "solid warming up",
+   "melting (latent heat of fusion)",
+   "boiling (latent heat of vaporisation)",
+   "bonds breaking, temp constant"
+  ]
+ },
+ {
+  "id": "d_GE3",
+  "title": "Specific heat capacity",
+  "discipline": "physics",
+  "unitCode": "GE3",
+  "unitTitle": "Specific heat capacity",
+  "vb": "0 0 320 270",
+  "parts": [
+   {
+    "id": "block",
+    "label": "Heated block",
+    "note": "We start with a block of known mass — pumping energy in raises its temperature, and how much it needs tells us its specific heat capacity."
+   },
+   {
+    "id": "insulation",
+    "label": "Insulation",
+    "note": "We wrap the block in insulation so heat stays inside instead of leaking to the surroundings, making the measured temperature rise more accurate."
+   },
+   {
+    "id": "heater",
+    "label": "Electric heater",
+    "note": "The electric heater slots into the block and delivers a steady flow of energy, warming it from the inside out."
+   },
+   {
+    "id": "thermometer",
+    "label": "Thermometer",
+    "note": "A thermometer sits in the block to track its temperature rise, so we know exactly how many degrees the energy warmed it by."
+   },
+   {
+    "id": "powerSupply",
+    "label": "Power supply",
+    "note": "The power supply drives current through the heater; its power multiplied by the heating time gives the total energy supplied."
+   },
+   {
+    "id": "energyMeter",
+    "label": "Joulemeter",
+    "note": "The joulemeter counts the energy flowing into the heater, so we can divide it by mass and temperature rise to find c."
+   }
+  ],
+  "keywords": [
+   "specific",
+   "heat",
+   "capacity",
+   "specific heat capacity",
+   "temperature change",
+   "thermal energy",
+   "heated block",
+   "insulation",
+   "electric heater",
+   "thermometer",
+   "power supply",
+   "joulemeter"
+  ]
+ },
+ {
+  "id": "d_GCC2",
+  "title": "Acids, bases & salts",
+  "discipline": "chemistry",
+  "unitCode": "GCC2",
+  "unitTitle": "Acids, bases & salts",
+  "vb": "0 0 320 210",
+  "parts": [
+   {
+    "id": "phScale",
+    "label": "pH scale",
+    "note": "We lay out a number line from 0 to 14 that measures how acidic or alkaline a solution is, so we can compare them."
+   },
+   {
+    "id": "indicatorBar",
+    "label": "Universal indicator",
+    "note": "Adding universal indicator turns the solution a colour, and matching that colour to the chart tells us the pH straight away."
+   },
+   {
+    "id": "acidicEnd",
+    "label": "Acidic (H+)",
+    "note": "Down the low end sit acids: they release hydrogen ions (H+) into the water, and more H+ means a lower pH, redder colour."
+   },
+   {
+    "id": "neutralPoint",
+    "label": "Neutral pH 7",
+    "note": "Right in the middle at pH 7 the H+ and OH- have cancelled, combining as H+ + OH- making water, leaving a neutral salt solution."
+   },
+   {
+    "id": "alkalineEnd",
+    "label": "Alkaline (OH-)",
+    "note": "Up the high end sit alkalis: they release hydroxide ions (OH-), pushing the pH above 7 towards the purple end."
+   }
+  ],
+  "keywords": [
+   "acids",
+   "bases",
+   "salts",
+   "acid",
+   "alkali",
+   "neutralisation",
+   "salt",
+   "ph scale",
+   "universal indicator",
+   "acidic (h+)",
+   "neutral ph 7",
+   "alkaline (oh-)"
+  ]
+ },
+ {
+  "id": "d_GCE1",
+  "title": "Exothermic & endothermic reactions",
+  "discipline": "chemistry",
+  "unitCode": "GCE1",
+  "unitTitle": "Exothermic & endothermic reactions",
+  "vb": "0 0 320 240",
+  "parts": [
+   {
+    "id": "reactants",
+    "label": "Reactants",
+    "note": "We start with the reactants sitting here, holding chemical energy in their bonds, ready to react and rearrange into new substances."
+   },
+   {
+    "id": "activation",
+    "label": "Activation energy",
+    "note": "First we climb this energy hill: activation energy is put in to break the starting bonds before any new bonds can form."
+   },
+   {
+    "id": "products",
+    "label": "Products",
+    "note": "New products settle here, lower down, because making their bonds released more energy than breaking the old bonds took in."
+   },
+   {
+    "id": "energyOut",
+    "label": "Energy released",
+    "note": "The drop from reactants to products is energy dumped into the surroundings, warming them up, like in combustion or a hand warmer."
+   },
+   {
+    "id": "endoCurve",
+    "label": "Endothermic profile",
+    "note": "Now the endothermic case: products end up higher than reactants, so this reaction has soaked up energy overall."
+   },
+   {
+    "id": "energyIn",
+    "label": "Energy taken in",
+    "note": "This upward gap is energy pulled in from the surroundings, cooling them down, as a sports cold pack chills an injury."
+   }
+  ],
+  "keywords": [
+   "exothermic",
+   "endothermic",
+   "reactions",
+   "reactants",
+   "activation energy",
+   "products",
+   "energy released",
+   "endothermic profile",
+   "energy taken in"
+  ]
+ },
+ {
+  "id": "d_GCN1",
+  "title": "Purity, formulations & chromatography",
+  "discipline": "chemistry",
+  "unitCode": "GCN1",
+  "unitTitle": "Purity, formulations & chromatography",
+  "vb": "0 0 300 280",
+  "parts": [
+   {
+    "id": "paper",
+    "label": "Chromatography paper (stationary phase)",
+    "note": "The paper stays still as the stationary phase, holding onto each dye more or less strongly as the solvent creeps up it."
+   },
+   {
+    "id": "solvent",
+    "label": "Solvent (mobile phase)",
+    "note": "The solvent soaks up the paper as the mobile phase, carrying the dissolved substances along with it as it rises."
+   },
+   {
+    "id": "baseline",
+    "label": "Pencil baseline",
+    "note": "We mark the start line in pencil, not ink, so it won't dissolve and run up the paper, spoiling our measurement."
+   },
+   {
+    "id": "solventFront",
+    "label": "Solvent front",
+    "note": "The highest point the solvent reaches; we mark it fast before it dries, as it's the bottom of our Rf sum."
+   },
+   {
+    "id": "spot",
+    "label": "Separated spot",
+    "note": "Each substance travels its own distance and separates into a spot, because some cling to the paper while others race up with the solvent."
+   },
+   {
+    "id": "distance",
+    "label": "Distance moved (Rf)",
+    "note": "We divide the spot's distance by the solvent's distance to get the Rf value, always between 0 and 1, to identify the substance."
+   }
+  ],
+  "keywords": [
+   "purity",
+   "formulations",
+   "chromatography",
+   "pure substance",
+   "formulation",
+   "rf value",
+   "chromatography paper (stationary phase)",
+   "solvent (mobile phase)",
+   "pencil baseline",
+   "solvent front",
+   "separated spot",
+   "distance moved (rf)"
+  ]
+ },
+ {
+  "id": "d_GCN2",
+  "title": "Tests for gases",
+  "discipline": "chemistry",
+  "unitCode": "GCN2",
+  "unitTitle": "Tests for gases",
+  "vb": "0 0 320 220",
+  "parts": [
+   {
+    "id": "hydrogenTest",
+    "label": "Hydrogen: squeaky pop",
+    "note": "Hold a lighted splint at the tube mouth: the hydrogen ignites suddenly, giving that tell-tale squeaky pop as it burns."
+   },
+   {
+    "id": "oxygenTest",
+    "label": "Oxygen: relights splint",
+    "note": "Push a glowing splint into the gas: oxygen feeds the embers so fiercely the flame bursts back to life and relights."
+   },
+   {
+    "id": "limewater",
+    "label": "Limewater turns milky",
+    "note": "Bubble the gas through clear limewater: carbon dioxide reacts with it, forming a solid that turns the liquid cloudy and milky."
+   },
+   {
+    "id": "litmusPaper",
+    "label": "Chlorine: bleaches litmus",
+    "note": "Hold damp litmus paper in the gas: chlorine strips out its colour, bleaching the paper white to reveal itself."
+   },
+   {
+    "id": "splint",
+    "label": "Splint",
+    "note": "A thin wooden splint is your basic tool here — lit or glowing, it reacts differently depending on which gas surrounds it."
+   }
+  ],
+  "keywords": [
+   "tests",
+   "for",
+   "gases",
+   "limewater",
+   "splint",
+   "hydrogen: squeaky pop",
+   "oxygen: relights splint",
+   "limewater turns milky",
+   "chlorine: bleaches litmus"
+  ]
+ },
+ {
+  "id": "d_GCO1",
+  "title": "Crude oil & hydrocarbons",
+  "discipline": "chemistry",
+  "unitCode": "GCO1",
+  "unitTitle": "Crude oil & hydrocarbons",
+  "vb": "0 0 320 300",
+  "parts": [
+   {
+    "id": "crudeOilInlet",
+    "label": "Crude oil in",
+    "note": "Crude oil, a finite mixture of hydrocarbon chains of many different lengths, is pumped in ready to be separated."
+   },
+   {
+    "id": "column",
+    "label": "Fractionating column",
+    "note": "The mixture is heated so it evaporates, then the vapours rise up this tall tower to be split into useful fractions."
+   },
+   {
+    "id": "coolTop",
+    "label": "Cool top",
+    "note": "Up here it's coolest, so only the lightest vapours reach this far before condensing back into liquid and being tapped off."
+   },
+   {
+    "id": "topFraction",
+    "label": "Short-chain fraction",
+    "note": "Short chains have low boiling points, so they rise highest as vapour; runny, volatile and flammable, ideal for fuels like petrol."
+   },
+   {
+    "id": "bottomFraction",
+    "label": "Long-chain fraction",
+    "note": "Long chains have high boiling points, so they barely rise and drain out low down; thick, sticky liquids like bitumen."
+   },
+   {
+    "id": "hotBottom",
+    "label": "Hot bottom (furnace)",
+    "note": "The furnace heats the base hardest, boiling the mixture so vapours rise and each fraction condenses where the tower cools enough."
+   }
+  ],
+  "keywords": [
+   "crude",
+   "oil",
+   "hydrocarbons",
+   "hydrocarbon",
+   "alkane",
+   "crude oil",
+   "fractional distillation",
+   "crude oil in",
+   "fractionating column",
+   "cool top",
+   "short-chain fraction",
+   "long-chain fraction",
+   "hot bottom (furnace)"
+  ]
+ },
+ {
+  "id": "d_GCO2",
+  "title": "Cracking & alkenes",
+  "discipline": "chemistry",
+  "unitCode": "GCO2",
+  "unitTitle": "Cracking & alkenes",
+  "vb": "0 0 320 240",
+  "parts": [
+   {
+    "id": "largeHydrocarbon",
+    "label": "Large hydrocarbon",
+    "note": "A long, less useful hydrocarbon chain arrives from crude oil, ready to be broken down into smaller molecules people actually want."
+   },
+   {
+    "id": "catalyst",
+    "label": "Hot catalyst",
+    "note": "The big molecule is heated and passed over a hot catalyst, which snaps the long chain apart into shorter pieces."
+   },
+   {
+    "id": "smallAlkane",
+    "label": "Small alkane (fuel)",
+    "note": "Out comes a short-chain alkane, a saturated molecule burned as fuel like petrol, meeting the high demand for fuels."
+   },
+   {
+    "id": "alkene",
+    "label": "Alkene",
+    "note": "The leftover piece is an alkene, a shorter unsaturated molecule that becomes a building block for making polymers like plastics."
+   },
+   {
+    "id": "doubleBond",
+    "label": "C=C double bond",
+    "note": "Two carbons share a double bond here, so the molecule holds fewer hydrogens (CnH2n) and is far more reactive than an alkane."
+   },
+   {
+    "id": "bromineTest",
+    "label": "Bromine water test",
+    "note": "Shake the alkene with orange bromine water and its double bond grabs the bromine, turning the mixture colourless to prove it is unsaturated."
+   }
+  ],
+  "keywords": [
+   "cracking",
+   "alkenes",
+   "alkene",
+   "unsaturated",
+   "large hydrocarbon",
+   "hot catalyst",
+   "small alkane (fuel)",
+   "c=c double bond",
+   "bromine water test"
+  ]
+ },
+ {
+  "id": "d_GCQ1",
+  "title": "Conservation of mass & Mr",
+  "discipline": "chemistry",
+  "unitCode": "GCQ1",
+  "unitTitle": "Conservation of mass & Mr",
+  "vb": "0 0 320 240",
+  "parts": [
+   {
+    "id": "balanceBeam",
+    "label": "Balance beam",
+    "note": "The beam sits level to show the reaction's total mass never changes: atoms are only rearranged, never made or destroyed."
+   },
+   {
+    "id": "reactantsPan",
+    "label": "Reactants",
+    "note": "We load the starting chemicals onto this side; these atoms will be shuffled into new arrangements during the reaction."
+   },
+   {
+    "id": "productsPan",
+    "label": "Products",
+    "note": "The new substances land here, built from exactly the same atoms, so this pan weighs the same as the reactants."
+   },
+   {
+    "id": "atoms",
+    "label": "Atoms (same on both sides)",
+    "note": "Count each type of atom: the numbers match on both sides, which is why the beam stays perfectly balanced."
+   },
+   {
+    "id": "escapingGas",
+    "label": "Gas escaping (mass falls)",
+    "note": "A gas bubbles off into the air and drifts away, so the mass left on the pan seems to drop."
+   },
+   {
+    "id": "incomingGas",
+    "label": "Gas taken in (mass rises)",
+    "note": "Gas from the air joins the solid, like a metal rusting, so extra atoms are added and the mass seems to climb."
+   }
+  ],
+  "keywords": [
+   "conservation",
+   "mass",
+   "relative formula mass",
+   "conservation of mass",
+   "balanced equation",
+   "balance beam",
+   "reactants",
+   "products",
+   "atoms (same on both sides)",
+   "gas escaping (mass falls)",
+   "gas taken in (mass rises)"
+  ]
+ },
+ {
+  "id": "d_GCQ2",
+  "title": "Moles, % mass & concentration",
+  "discipline": "chemistry",
+  "unitCode": "GCQ2",
+  "unitTitle": "Moles, % mass & concentration",
+  "vb": "0 0 320 230",
+  "parts": [
+   {
+    "id": "balance",
+    "label": "Balance (mass)",
+    "note": "The balance weighs out an exact mass of substance; divide that mass by the relative formula mass to count how many moles you have."
+   },
+   {
+    "id": "solute",
+    "label": "Solute",
+    "note": "This is the solid you dissolve; weighing it lets you work out what fraction of its mass is each element inside the compound."
+   },
+   {
+    "id": "solution",
+    "label": "Solution",
+    "note": "As the solute dissolves it spreads through the liquid, making a solution whose concentration is that dissolved mass divided by the volume."
+   },
+   {
+    "id": "solvent",
+    "label": "Solvent (water)",
+    "note": "Water is added as the solvent to dissolve the solute; more water for the same mass gives a lower concentration in g/dm cubed."
+   },
+   {
+    "id": "meniscus",
+    "label": "Meniscus",
+    "note": "The liquid curves at the surface; read the bottom of this meniscus at eye level so your volume measurement is accurate and repeatable."
+   },
+   {
+    "id": "scaleMarks",
+    "label": "Volume scale",
+    "note": "These marks let you read the volume, but every reading carries some uncertainty, so measure carefully and repeat to improve reliability."
+   }
+  ],
+  "keywords": [
+   "moles",
+   "mass",
+   "concentration",
+   "percentage by mass",
+   "mole",
+   "balance (mass)",
+   "solute",
+   "solution",
+   "solvent (water)",
+   "meniscus",
+   "volume scale"
+  ]
+ },
+ {
+  "id": "d_GCR1",
+  "title": "Rate of reaction",
+  "discipline": "chemistry",
+  "unitCode": "GCR1",
+  "unitTitle": "Rate of reaction",
+  "vb": "0 0 320 280",
+  "parts": [
+   {
+    "id": "reactants",
+    "label": "Reactant particles",
+    "note": "We start with reactant particles zipping about, each carrying energy and needing to meet another to react."
+   },
+   {
+    "id": "collision",
+    "label": "Collision",
+    "note": "Two particles smash together with enough energy and the right angle, so old bonds break and the reaction happens."
+   },
+   {
+    "id": "products",
+    "label": "Product particles",
+    "note": "That successful collision rearranges the atoms, and out come the product particles the reaction was making."
+   },
+   {
+    "id": "temperature",
+    "label": "Faster particles (heat)",
+    "note": "Heating gives particles more energy, so they zoom faster and collide more often and harder, speeding the reaction up."
+   },
+   {
+    "id": "activationEnergy",
+    "label": "Activation energy",
+    "note": "Collisions only work if they clear this energy barrier; below it particles just bounce off without reacting."
+   },
+   {
+    "id": "catalystPath",
+    "label": "Catalyst pathway",
+    "note": "A catalyst opens a lower-energy route over the barrier, so more collisions succeed, yet it emerges unchanged itself."
+   }
+  ],
+  "keywords": [
+   "rate",
+   "reaction",
+   "rate of reaction",
+   "collision theory",
+   "catalyst",
+   "surface area",
+   "reactant particles",
+   "collision",
+   "product particles",
+   "faster particles (heat)",
+   "activation energy",
+   "catalyst pathway"
+  ]
+ },
+ {
+  "id": "d_GCR2",
+  "title": "Reversible reactions & equilibrium",
+  "discipline": "chemistry",
+  "unitCode": "GCR2",
+  "unitTitle": "Reversible reactions & equilibrium",
+  "vb": "0 0 320 250",
+  "parts": [
+   {
+    "id": "closedSystem",
+    "label": "Closed system",
+    "note": "Seal everything in a closed container so nothing escapes; this lets the forward and reverse reactions balance and settle into equilibrium."
+   },
+   {
+    "id": "reactants",
+    "label": "Reactants",
+    "note": "The starting substances go in on the left; once at equilibrium their amount stays steady even though they keep reacting."
+   },
+   {
+    "id": "products",
+    "label": "Products",
+    "note": "The new substances build up on the right, but they don't run out or pile up endlessly because their amount now holds constant."
+   },
+   {
+    "id": "forwardReaction",
+    "label": "Forward reaction",
+    "note": "Reactants turn into products, racing left to right; this forward change happens at exactly the same rate as the reverse one."
+   },
+   {
+    "id": "reverseReaction",
+    "label": "Reverse reaction",
+    "note": "Meanwhile products change back into reactants, running right to left, so nothing truly stops; the two directions just cancel out."
+   },
+   {
+    "id": "doubleArrow",
+    "label": "Reversible arrow",
+    "note": "The special double arrow replaces the single one, signalling the reaction runs both ways so products can reform the original reactants."
+   }
+  ],
+  "keywords": [
+   "reversible",
+   "reactions",
+   "equilibrium",
+   "reversible reaction",
+   "closed system",
+   "reactants",
+   "products",
+   "forward reaction",
+   "reverse reaction",
+   "reversible arrow"
+  ]
+ },
+ {
+  "id": "d_GCT1",
+  "title": "Earth's atmosphere & its evolution",
+  "discipline": "chemistry",
+  "unitCode": "GCT1",
+  "unitTitle": "Earth's atmosphere & its evolution",
+  "vb": "0 0 320 240",
+  "parts": [
+   {
+    "id": "atmosphere",
+    "label": "Atmosphere (N₂ + O₂)",
+    "note": "The air we breathe today settles at roughly 80% nitrogen and 20% oxygen, plus traces of carbon dioxide and noble gases."
+   },
+   {
+    "id": "volcano",
+    "label": "Volcano (CO₂ + steam)",
+    "note": "Erupting volcanoes belch out carbon dioxide and steam, filling the early atmosphere with gases but almost no oxygen."
+   },
+   {
+    "id": "ocean",
+    "label": "Ocean",
+    "note": "As Earth cools, that volcanic steam condenses into rain, collecting on the surface to form the first oceans."
+   },
+   {
+    "id": "algae",
+    "label": "Algae",
+    "note": "Algae in the oceans photosynthesise, releasing oxygen that slowly builds up and begins changing the atmosphere."
+   },
+   {
+    "id": "plants",
+    "label": "Plants",
+    "note": "Plants take in carbon dioxide for photosynthesis, pulling it from the air and releasing yet more oxygen."
+   },
+   {
+    "id": "sedimentaryRock",
+    "label": "Sedimentary rock",
+    "note": "Dead organisms and dissolved carbon dioxide get buried, locking carbon into sedimentary rocks and fossil fuels underground."
+   }
+  ],
+  "keywords": [
+   "earth",
+   "atmosphere",
+   "its",
+   "evolution",
+   "atmosphere (n₂ + o₂)",
+   "volcano (co₂ + steam)",
+   "ocean",
+   "algae",
+   "plants",
+   "sedimentary rock"
+  ]
+ },
+ {
+  "id": "d_GCT2",
+  "title": "Greenhouse gases & pollutants",
+  "discipline": "chemistry",
+  "unitCode": "GCT2",
+  "unitTitle": "Greenhouse gases & pollutants",
+  "vb": "0 0 320 240",
+  "parts": [
+   {
+    "id": "sun",
+    "label": "Sun",
+    "note": "The Sun pours energy at the Earth as light, the free heat source that drives our whole climate system."
+   },
+   {
+    "id": "sunlight",
+    "label": "Incoming sunlight",
+    "note": "Sunlight streams down through the atmosphere and warms the ground, land and sea soaking up its energy."
+   },
+   {
+    "id": "greenhouseGases",
+    "label": "Greenhouse gases",
+    "note": "Gases like carbon dioxide, methane and water vapour form a blanket that traps outgoing heat, keeping Earth warm enough for life."
+   },
+   {
+    "id": "infrared",
+    "label": "Re-emitted infrared",
+    "note": "The warm Earth radiates heat back as infrared; greenhouse gases absorb it instead of letting it escape to space."
+   },
+   {
+    "id": "factory",
+    "label": "Burning fossil fuels",
+    "note": "Burning fossil fuels pumps extra carbon dioxide into the air, thickening the blanket and driving global warming."
+   },
+   {
+    "id": "soot",
+    "label": "Soot (particulates)",
+    "note": "Incomplete burning also throws out soot particulates that dirty the air and can trigger breathing problems."
+   },
+   {
+    "id": "acidRain",
+    "label": "Acid rain",
+    "note": "Sulfur dioxide and nitrogen oxides dissolve in rain clouds, falling as acid rain that damages buildings, trees and lakes."
+   }
+  ],
+  "keywords": [
+   "greenhouse",
+   "gases",
+   "pollutants",
+   "greenhouse gas",
+   "global warming",
+   "carbon footprint",
+   "sun",
+   "incoming sunlight",
+   "greenhouse gases",
+   "re-emitted infrared",
+   "burning fossil fuels",
+   "soot (particulates)",
+   "acid rain"
+  ]
+ },
+ {
+  "id": "d_GCU1",
+  "title": "Resources & potable water",
+  "discipline": "chemistry",
+  "unitCode": "GCU1",
+  "unitTitle": "Resources & potable water",
+  "vb": "0 0 320 230",
+  "parts": [
+   {
+    "id": "sourceWater",
+    "label": "Fresh water source",
+    "note": "We start with fresh water from a river or reservoir; it looks clean but carries mud, grit and microbes we must remove."
+   },
+   {
+    "id": "filterBed",
+    "label": "Filtration",
+    "note": "The water trickles through beds of sand and gravel that trap solid bits, so insoluble dirt is left behind and the water clears."
+   },
+   {
+    "id": "steriliser",
+    "label": "Sterilising",
+    "note": "Next we kill remaining microbes by adding chlorine or bubbling ozone, or shining ultraviolet light through, making the water safe to drink."
+   },
+   {
+    "id": "potableTap",
+    "label": "Potable water",
+    "note": "Out comes potable water, safe to drink; it still holds dissolved salts, so it is safe but not chemically pure."
+   },
+   {
+    "id": "desalUnit",
+    "label": "Desalination",
+    "note": "Where fresh water is scarce, we feed in salty seawater instead and desalinate it, though this step swallows a lot of energy."
+   },
+   {
+    "id": "settlingTank",
+    "label": "Sedimentation tank",
+    "note": "In waste-water treatment, sewage sits still in a tank so heavy solids sink out as sludge, separating it from the liquid above."
+   },
+   {
+    "id": "reverseOsmosis",
+    "label": "Reverse osmosis",
+    "note": "Here the salty water is forced under high pressure through a membrane that blocks the salt, letting only pure water squeeze through."
+   }
+  ],
+  "keywords": [
+   "resources",
+   "potable",
+   "water",
+   "finite resource",
+   "potable water",
+   "desalination",
+   "fresh water source",
+   "filtration",
+   "sterilising",
+   "sedimentation tank",
+   "reverse osmosis"
+  ]
+ },
+ {
+  "id": "d_GCU2",
+  "title": "Life cycle assessment & recycling",
+  "discipline": "chemistry",
+  "unitCode": "GCU2",
+  "unitTitle": "Life cycle assessment & recycling",
+  "vb": "0 0 320 300",
+  "parts": [
+   {
+    "id": "rawMaterials",
+    "label": "Raw materials",
+    "note": "The story starts here: we dig up or grow the raw materials, tracking the energy used and habitats disturbed to extract them."
+   },
+   {
+    "id": "manufacture",
+    "label": "Manufacture",
+    "note": "Next, factories turn those raw materials into the product, burning energy and often releasing pollutants we must add to the tally."
+   },
+   {
+    "id": "use",
+    "label": "Use product",
+    "note": "Now the product is used, sometimes for years; any energy, water or waste it needs while working also counts in the assessment."
+   },
+   {
+    "id": "disposal",
+    "label": "Disposal",
+    "note": "At the end, the product is thrown away, burned or buried, so we weigh up the waste and pollution its disposal creates."
+   },
+   {
+    "id": "recycleLoop",
+    "label": "Recycle loop",
+    "note": "Instead of dumping it, we can loop the material back to be reused or recycled, saving resources and energy since recycling metal beats extracting fresh ore."
+   },
+   {
+    "id": "biasScale",
+    "label": "Bias / judgement",
+    "note": "Some impacts, like pollution effects, are hard to measure and judged differently, so an LCA can be tilted to make a product look greener than it is."
+   }
+  ],
+  "keywords": [
+   "life",
+   "cycle",
+   "assessment",
+   "recycling",
+   "life cycle assessment",
+   "raw materials",
+   "manufacture",
+   "use product",
+   "disposal",
+   "recycle loop",
+   "bias / judgement"
+  ]
+ },
+ {
+  "id": "d_GD1",
+  "title": "Density",
+  "discipline": "physics",
+  "unitCode": "GD1",
+  "unitTitle": "Density",
+  "vb": "0 0 320 250",
+  "parts": [
+   {
+    "id": "cylinder",
+    "label": "Measuring cylinder",
+    "note": "We start with a measuring cylinder: its scale lets us read off a volume of liquid precisely, in cubic centimetres."
+   },
+   {
+    "id": "water",
+    "label": "Water",
+    "note": "Pour in water and note the starting level. This water will do the measuring for us when the solid goes in."
+   },
+   {
+    "id": "irregularSolid",
+    "label": "Irregular solid",
+    "note": "Lower in an odd-shaped solid you can't measure with a ruler. It sinks and pushes the water aside to make room."
+   },
+   {
+    "id": "displacedLevel",
+    "label": "Displaced level",
+    "note": "The water rises: the volume it climbs by exactly equals the solid's volume, since it shoved that much water out of the way."
+   },
+   {
+    "id": "balance",
+    "label": "Balance",
+    "note": "Now we weigh the solid on a balance to find its mass in grams, the top number in the density sum."
+   },
+   {
+    "id": "regularSolid",
+    "label": "Regular solid",
+    "note": "For a neat block, skip the water: measure its sides with a ruler and multiply to get volume, then divide mass by it."
+   },
+   {
+    "id": "floatingObject",
+    "label": "Floating object",
+    "note": "Drop an object in liquid and it floats if it's less dense: gram-for-gram it's lighter than the water it would replace."
+   }
+  ],
+  "keywords": [
+   "density",
+   "volume",
+   "mass",
+   "measuring cylinder",
+   "water",
+   "irregular solid",
+   "displaced level",
+   "balance",
+   "regular solid",
+   "floating object"
+  ]
+ },
+ {
+  "id": "d_GD2",
+  "title": "States & internal energy",
+  "discipline": "physics",
+  "unitCode": "GD2",
+  "unitTitle": "States & internal energy",
+  "vb": "0 0 320 230",
+  "parts": [
+   {
+    "id": "solid",
+    "label": "Solid",
+    "note": "We start cold: particles locked in a fixed regular pattern, only vibrating on the spot, so the solid holds its shape."
+   },
+   {
+    "id": "liquid",
+    "label": "Liquid",
+    "note": "Add energy and bonds loosen: particles now slip and slide past each other, so the liquid flows and takes its container's shape."
+   },
+   {
+    "id": "gas",
+    "label": "Gas",
+    "note": "Add more energy still: particles break free and zoom apart in all directions, spreading out to fill whatever space they're in."
+   },
+   {
+    "id": "meltFreeze",
+    "label": "Melting / Freezing",
+    "note": "Heating in melts solid to liquid; cooling reverses it, freezing liquid back to solid and giving that energy out again."
+   },
+   {
+    "id": "boilCondense",
+    "label": "Boiling / Condensing",
+    "note": "Boiling takes energy in to fling liquid particles into gas; condensing gives it out as gas collapses back to liquid."
+   },
+   {
+    "id": "sublime",
+    "label": "Sublimation",
+    "note": "Sometimes a solid skips liquid entirely, taking energy in to jump straight to gas — like dry ice smoking away."
+   }
+  ],
+  "keywords": [
+   "states",
+   "internal",
+   "energy",
+   "internal energy",
+   "change of state",
+   "particle model",
+   "solid",
+   "liquid",
+   "gas",
+   "melting / freezing",
+   "boiling / condensing",
+   "sublimation"
+  ]
+ },
+ {
+  "id": "d_GD4",
+  "title": "Gas pressure & temperature",
+  "discipline": "physics",
+  "unitCode": "GD4",
+  "unitTitle": "Gas pressure & temperature",
+  "vb": "0 0 320 240",
+  "parts": [
+   {
+    "id": "container",
+    "label": "Container",
+    "note": "The gas is trapped inside sealed walls. Every particle is bouncing about, and it is those walls the particles will keep hitting."
+   },
+   {
+    "id": "gasParticle",
+    "label": "Gas particle",
+    "note": "One tiny particle zooms across the space, moving in a straight line until it strikes something. Billions of these are racing around at once."
+   },
+   {
+    "id": "collision",
+    "label": "Collision with wall",
+    "note": "The particle slams into the wall and bounces back. Each tiny push adds up over billions of hits, and that total force is the pressure."
+   },
+   {
+    "id": "piston",
+    "label": "Piston (movable wall)",
+    "note": "This wall slides in, squashing the gas smaller. The particles now hit it more often, so the pressure pushing back climbs higher."
+   },
+   {
+    "id": "pushForce",
+    "label": "Pushing in / doing work",
+    "note": "Pushing the piston does work on the gas, handing energy to the particles. They speed up and warm the gas, even with no heating."
+   }
+  ],
+  "keywords": [
+   "gas",
+   "pressure",
+   "temperature",
+   "gas pressure",
+   "container",
+   "gas particle",
+   "collision with wall",
+   "piston (movable wall)",
+   "pushing in / doing work"
+  ]
+ },
+ {
+  "id": "d_GE1",
+  "title": "Energy stores & transfers",
+  "discipline": "physics",
+  "unitCode": "GE1",
+  "unitTitle": "Energy stores & transfers",
+  "vb": "0 0 320 240",
+  "parts": [
+   {
+    "id": "systemBoundary",
+    "label": "System",
+    "note": "We draw a boundary to pick out the objects we're studying; energy moves between stores inside, or across this line to the surroundings."
+   },
+   {
+    "id": "sourceStore",
+    "label": "Energy store",
+    "note": "Inside the system, energy starts filled up in one store here, ready to be shifted somewhere else in the process."
+   },
+   {
+    "id": "receivingStore",
+    "label": "Second store",
+    "note": "The energy has to arrive somewhere, so a second store fills up as the first one empties out."
+   },
+   {
+    "id": "transfer",
+    "label": "Transfer",
+    "note": "Energy flows from the first store to the second, carried across mechanically, electrically, by heating, or by radiation like light and sound."
+   },
+   {
+    "id": "dissipation",
+    "label": "Wasted energy",
+    "note": "As the transfer happens, some energy leaks away as wasted heat, spreading out and no longer useful to us."
+   },
+   {
+    "id": "surroundings",
+    "label": "Surroundings",
+    "note": "The wasted energy warms the surroundings, but nothing is lost overall; the total energy across everything stays exactly the same."
+   }
+  ],
+  "keywords": [
+   "energy",
+   "stores",
+   "transfers",
+   "energy store",
+   "system",
+   "dissipation",
+   "conservation of energy",
+   "useful energy",
+   "wasted energy",
+   "second store",
+   "transfer",
+   "surroundings"
+  ]
+ },
+ {
+  "id": "d_GE2",
+  "title": "Kinetic & potential energy",
+  "discipline": "physics",
+  "unitCode": "GE2",
+  "unitTitle": "Kinetic & potential energy",
+  "vb": "0 0 320 280",
+  "parts": [
+   {
+    "id": "gpeStore",
+    "label": "GPE store",
+    "note": "The raised object holds a full gravitational store: lift it higher or make it heavier and this store grows, ready to be spent."
+   },
+   {
+    "id": "height",
+    "label": "Height (h)",
+    "note": "The height above the ground sets how much is stored, since energy equals mass times gravitational field strength times this height."
+   },
+   {
+    "id": "fallPath",
+    "label": "Object falls",
+    "note": "As it drops, the gravitational store empties and pours into the kinetic store, with the total energy staying the same throughout."
+   },
+   {
+    "id": "keStore",
+    "label": "Kinetic store",
+    "note": "The object speeds up as it falls, filling its kinetic store; double the speed and the store grows four times, since speed is squared."
+   },
+   {
+    "id": "workArrow",
+    "label": "Work done",
+    "note": "Gravity does work by pulling the object through a distance, and this work is exactly how the energy gets transferred, measured in joules."
+   },
+   {
+    "id": "spring",
+    "label": "Spring extension",
+    "note": "Stretching the spring stores energy elastically; pull it further and the extension grows, so long as it springs back to its original length."
+   },
+   {
+    "id": "elasticForce",
+    "label": "Elastic PE",
+    "note": "The stretched spring now holds an elastic store; released, it snaps back and pushes this energy into the object's kinetic store."
+   }
+  ],
+  "keywords": [
+   "kinetic",
+   "potential",
+   "energy",
+   "kinetic energy",
+   "gravitational potential energy",
+   "elastic potential energy",
+   "gpe store",
+   "height (h)",
+   "object falls",
+   "kinetic store",
+   "work done",
+   "spring extension",
+   "elastic pe"
+  ]
+ },
+ {
+  "id": "d_GE4",
+  "title": "Power & efficiency",
+  "discipline": "physics",
+  "unitCode": "GE4",
+  "unitTitle": "Power & efficiency",
+  "vb": "0 0 320 250",
+  "parts": [
+   {
+    "id": "inputEnergy",
+    "label": "Input energy",
+    "note": "Energy flows into the device every second; how fast it arrives is the power, measured in joules per second (watts)."
+   },
+   {
+    "id": "device",
+    "label": "Device",
+    "note": "Inside the device, the input energy is transferred into different forms; how well it does this is its efficiency."
+   },
+   {
+    "id": "usefulOutput",
+    "label": "Useful output",
+    "note": "Some energy leaves as the useful transfer we actually want; the bigger this share, the more efficient the device."
+   },
+   {
+    "id": "wastedEnergy",
+    "label": "Wasted (dissipated) energy",
+    "note": "The rest is dissipated to the surroundings, usually as heat; this is why no device can ever reach 100% efficient."
+   },
+   {
+    "id": "insulation",
+    "label": "Insulation",
+    "note": "Insulation with low thermal conductivity wraps the device, slowing heat escaping so less useful energy is wasted."
+   },
+   {
+    "id": "lubrication",
+    "label": "Lubricated part",
+    "note": "Oil between moving parts cuts friction, so less energy is wasted as heat and more becomes useful output."
+   },
+   {
+    "id": "wall",
+    "label": "Thick wall",
+    "note": "A thicker wall of low-conductivity material slows heat passing through, trapping warmth and reducing wasted energy transfer."
+   }
+  ],
+  "keywords": [
+   "power",
+   "efficiency",
+   "watt",
+   "thermal conductivity",
+   "lubrication",
+   "input energy",
+   "device",
+   "useful output",
+   "wasted (dissipated) energy",
+   "insulation",
+   "lubricated part",
+   "thick wall"
+  ]
+ },
+ {
+  "id": "d_GE5",
+  "title": "Energy resources",
+  "discipline": "physics",
+  "unitCode": "GE5",
+  "unitTitle": "Energy resources",
+  "vb": "0 0 320 230",
+  "parts": [
+   {
+    "id": "windTurbine",
+    "label": "Wind turbine",
+    "note": "Moving air pushes the blades round, spinning a generator to make electricity — and the wind keeps blowing, so it never runs out."
+   },
+   {
+    "id": "solarPanel",
+    "label": "Solar panel",
+    "note": "Sunlight falls on the panel and is turned straight into electricity — a renewable supply that's topped up every day the sun shines."
+   },
+   {
+    "id": "hydroDam",
+    "label": "Hydroelectric dam",
+    "note": "Water held behind the dam rushes down through turbines, spinning them to generate electricity from the never-ending rain cycle."
+   },
+   {
+    "id": "pylon",
+    "label": "Pylon (electricity grid)",
+    "note": "Pylons carry the electricity along the grid, delivering it from every power source to homes, schools and factories that need it."
+   },
+   {
+    "id": "powerStation",
+    "label": "Fossil-fuel power station",
+    "note": "Here coal, oil or gas is burned to boil water; the steam spins turbines — reliable, high-energy, but the fuel eventually runs out."
+   },
+   {
+    "id": "emissions",
+    "label": "CO2 emissions",
+    "note": "Burning fossil fuels sends carbon dioxide into the air, a greenhouse gas warming the planet — the very reason we're shifting to renewables."
+   }
+  ],
+  "keywords": [
+   "energy",
+   "resources",
+   "renewable",
+   "non-renewable",
+   "fossil fuel",
+   "nuclear fuel",
+   "biofuel",
+   "wind turbine",
+   "solar panel",
+   "hydroelectric dam",
+   "pylon (electricity grid)",
+   "fossil-fuel power station",
+   "co2 emissions"
+  ]
+ },
+ {
+  "id": "d_GF1",
+  "title": "Forces, weight & resultants",
+  "discipline": "physics",
+  "unitCode": "GF1",
+  "unitTitle": "Forces, weight & resultants",
+  "vb": "0 0 320 250",
+  "parts": [
+   {
+    "id": "object",
+    "label": "Object",
+    "note": "Here is the object sitting still on a surface; several forces push and pull on it at once, and we track each one."
+   },
+   {
+    "id": "normalForce",
+    "label": "Normal contact force",
+    "note": "The surface pushes straight up on the object, a contact force balancing it so it does not sink downward through the ground."
+   },
+   {
+    "id": "weight",
+    "label": "Weight (W = mg)",
+    "note": "Gravity pulls the whole mass downward; multiply the mass by gravitational field strength (W = mg) to get this downward weight force."
+   },
+   {
+    "id": "centreOfMass",
+    "label": "Centre of mass",
+    "note": "Weight acts from this single balance point, the centre of mass, so we draw the whole arrow starting neatly from here."
+   },
+   {
+    "id": "resultant",
+    "label": "Resultant force",
+    "note": "Add the forces together: here the up and down forces cancel, so the resultant is zero and the object stays still."
+   },
+   {
+    "id": "component",
+    "label": "Resolved component",
+    "note": "A slanted force is split into two perpendicular parts, letting us handle each direction separately and find the true resultant."
+   }
+  ],
+  "keywords": [
+   "forces",
+   "weight",
+   "resultants",
+   "scalar",
+   "vector",
+   "resultant force",
+   "centre of mass",
+   "object",
+   "normal contact force",
+   "weight (w = mg)",
+   "resolved component"
+  ]
+ },
+ {
+  "id": "d_GF2",
+  "title": "Work, springs & Hooke's law",
+  "discipline": "physics",
+  "unitCode": "GF2",
+  "unitTitle": "Work, springs & Hooke's law",
+  "vb": "0 0 320 250",
+  "parts": [
+   {
+    "id": "spring",
+    "label": "Spring",
+    "note": "This coiled spring hangs from a stand, ready to stretch when we load it — the object whose stiffness we are measuring."
+   },
+   {
+    "id": "mass",
+    "label": "Mass (force)",
+    "note": "We hang known masses on the spring; their weight pulls down, providing the measured force that stretches the spring further."
+   },
+   {
+    "id": "ruler",
+    "label": "Ruler",
+    "note": "A ruler beside the spring lets us read how far the bottom moves, measuring the stretch caused by each added weight."
+   },
+   {
+    "id": "extension",
+    "label": "Extension",
+    "note": "Extension is how much longer the spring gets; doubling the force doubles it, so together they give the spring constant k."
+   },
+   {
+    "id": "linearRegion",
+    "label": "Hooke's law (linear)",
+    "note": "Here force and extension climb in a straight line: F equals k times e, so the spring stretches steadily and springs back."
+   },
+   {
+    "id": "limitPoint",
+    "label": "Limit of proportionality",
+    "note": "Past this point the line bends: the spring is overstretched and deforms inelastically, no longer springing fully back when unloaded."
+   }
+  ],
+  "keywords": [
+   "work",
+   "springs",
+   "hooke",
+   "law",
+   "work done",
+   "spring constant",
+   "limit of proportionality",
+   "elastic deformation",
+   "spring",
+   "mass (force)",
+   "ruler",
+   "extension",
+   "hooke's law (linear)"
+  ]
+ },
+ {
+  "id": "d_GF3",
+  "title": "Speed, velocity & motion graphs",
+  "discipline": "physics",
+  "unitCode": "GF3",
+  "unitTitle": "Speed, velocity & motion graphs",
+  "vb": "0 0 320 250",
+  "parts": [
+   {
+    "id": "distanceAxis",
+    "label": "Distance axis",
+    "note": "We plot distance up the side; as the object travels, its position climbs higher and higher up this axis over time."
+   },
+   {
+    "id": "timeAxis",
+    "label": "Time axis",
+    "note": "Time runs along the bottom, always moving forward; every point across shows how far the object has got by that moment."
+   },
+   {
+    "id": "gradient",
+    "label": "Gradient = speed",
+    "note": "The steepness of the line tells you the speed: a steeper slope means more distance covered each second, so the object is moving faster."
+   },
+   {
+    "id": "flatLine",
+    "label": "Flat (stationary)",
+    "note": "When the line goes flat, distance stops rising even though time ticks on, so the object is stationary, just waiting."
+   },
+   {
+    "id": "curve",
+    "label": "Curved line",
+    "note": "A curving line means the slope keeps changing, so the object is speeding up or slowing down rather than moving at a steady speed."
+   },
+   {
+    "id": "tangent",
+    "label": "Tangent",
+    "note": "To read the speed at one instant on a curve, draw a tangent touching that point; its gradient gives the exact speed there."
+   }
+  ],
+  "keywords": [
+   "speed",
+   "velocity",
+   "motion",
+   "graphs",
+   "distance",
+   "displacement",
+   "distance axis",
+   "time axis",
+   "gradient = speed",
+   "flat (stationary)",
+   "curved line",
+   "tangent"
+  ]
+ },
+ {
+  "id": "d_GF4",
+  "title": "Acceleration & equations of motion",
+  "discipline": "physics",
+  "unitCode": "GF4",
+  "unitTitle": "Acceleration & equations of motion",
+  "vb": "0 0 320 250",
+  "parts": [
+   {
+    "id": "velocityAxis",
+    "label": "Velocity axis",
+    "note": "We plot how fast the object moves up this side, so higher up the graph means it is travelling faster."
+   },
+   {
+    "id": "timeAxis",
+    "label": "Time axis",
+    "note": "Time runs along the bottom, so reading left to right shows how the velocity changes as the seconds tick by."
+   },
+   {
+    "id": "gradient",
+    "label": "Gradient = acceleration",
+    "note": "The line's steepness tells us the acceleration: a steeper slope means velocity is changing faster each second, in metres per second squared."
+   },
+   {
+    "id": "areaDistance",
+    "label": "Area = distance",
+    "note": "Filling in the space beneath the line gives the distance travelled, since fast speeds over time cover more ground."
+   },
+   {
+    "id": "terminalVelocity",
+    "label": "Terminal velocity",
+    "note": "The line flattens out here: drag has grown to balance weight, the resultant force is zero, so it falls at steady speed."
+   },
+   {
+    "id": "deceleration",
+    "label": "Deceleration",
+    "note": "When the line slopes downward the velocity is dropping, so the acceleration is negative and the object is slowing down."
+   }
+  ],
+  "keywords": [
+   "acceleration",
+   "equations",
+   "motion",
+   "terminal velocity",
+   "velocity axis",
+   "time axis",
+   "gradient = acceleration",
+   "area = distance",
+   "deceleration"
+  ]
+ },
+ {
+  "id": "d_GF5",
+  "title": "Newton's laws of motion",
+  "discipline": "physics",
+  "unitCode": "GF5",
+  "unitTitle": "Newton's laws of motion",
+  "vb": "0 0 320 240",
+  "parts": [
+   {
+    "id": "trolley",
+    "label": "Trolley (mass)",
+    "note": "Here is our trolley with a set mass; we will push it and measure how quickly it speeds up along the track."
+   },
+   {
+    "id": "track",
+    "label": "Track",
+    "note": "The trolley runs along this smooth, level track, so we can watch its motion without friction hiding the effect of our force."
+   },
+   {
+    "id": "pullForce",
+    "label": "Resultant force",
+    "note": "We pull the trolley with a resultant force; a bigger force makes it accelerate faster, since force equals mass times acceleration."
+   },
+   {
+    "id": "weight",
+    "label": "Weight",
+    "note": "Gravity pulls the trolley down with its weight; on a level track this alone cannot change its forward motion."
+   },
+   {
+    "id": "normalForce",
+    "label": "Normal (reaction) force",
+    "note": "The track pushes up with a normal force, exactly balancing the weight, so the trolley neither sinks nor lifts off."
+   },
+   {
+    "id": "acceleration",
+    "label": "Acceleration",
+    "note": "The resultant force makes the trolley accelerate, gaining speed each second; double the force and the acceleration doubles too."
+   }
+  ],
+  "keywords": [
+   "newton",
+   "laws",
+   "motion",
+   "inertia",
+   "newton's second law",
+   "trolley (mass)",
+   "track",
+   "resultant force",
+   "weight",
+   "normal (reaction) force",
+   "acceleration"
+  ]
+ },
+ {
+  "id": "d_GF6",
+  "title": "Stopping distance & momentum",
+  "discipline": "physics",
+  "unitCode": "GF6",
+  "unitTitle": "Stopping distance & momentum",
+  "vb": "0 0 320 230",
+  "parts": [
+   {
+    "id": "stoppingDistance",
+    "label": "Stopping distance",
+    "note": "The whole gap the car covers before it halts splits into two stretches: the thinking part plus the braking part added together."
+   },
+   {
+    "id": "thinkingDistance",
+    "label": "Thinking distance",
+    "note": "Before the brakes even touch, the car keeps rolling while the driver notices the hazard; tiredness, alcohol or distraction stretch this further."
+   },
+   {
+    "id": "brakingDistance",
+    "label": "Braking distance",
+    "note": "Once the brakes bite, the car still travels forward as it slows; wet, icy roads or worn tyres lengthen this stretch."
+   },
+   {
+    "id": "reactionPoint",
+    "label": "Driver reacts",
+    "note": "Here the driver spots the danger and decides to act, but their reaction time means the car has already moved on."
+   },
+   {
+    "id": "brakesApplied",
+    "label": "Brakes applied",
+    "note": "Now the driver presses the pedal and the brakes start slowing the car, beginning the braking part of the journey."
+   },
+   {
+    "id": "wheel",
+    "label": "Braking wheel",
+    "note": "The brake grips the wheel, and a bigger braking force decelerates the car harder, though huge decelerations can be dangerous and overheat the brakes."
+   },
+   {
+    "id": "momentumArrow",
+    "label": "Momentum (p = mv)",
+    "note": "The moving car carries momentum, mass times velocity; in a crash this total momentum is shared out but never lost overall."
+   }
+  ],
+  "keywords": [
+   "stopping",
+   "distance",
+   "momentum",
+   "stopping distance",
+   "thinking distance",
+   "braking distance",
+   "driver reacts",
+   "brakes applied",
+   "braking wheel",
+   "momentum (p = mv)"
+  ]
+ },
+ {
+  "id": "d_GL1",
+  "title": "Circuit basics & symbols",
+  "discipline": "physics",
+  "unitCode": "GL1",
+  "unitTitle": "Circuit basics & symbols",
+  "vb": "0 0 320 220",
+  "parts": [
+   {
+    "id": "cell",
+    "label": "Cell",
+    "note": "The cell is the pump: it provides the potential difference that pushes electric charge round the whole circuit."
+   },
+   {
+    "id": "switch",
+    "label": "Switch",
+    "note": "The switch is the gate: closed it lets charge flow, open it breaks the loop and everything stops."
+   },
+   {
+    "id": "ammeter",
+    "label": "Ammeter (A)",
+    "note": "The ammeter sits in the line, in series, counting how much charge flows past each second, measured in amperes."
+   },
+   {
+    "id": "resistor",
+    "label": "Resistor",
+    "note": "The resistor squeezes the flow, opposing the charge and limiting how big the current can grow around the loop."
+   },
+   {
+    "id": "lamp",
+    "label": "Lamp",
+    "note": "Charge pushed through the lamp heats its thin filament until it glows, turning electrical energy into light."
+   },
+   {
+    "id": "loop",
+    "label": "Closed loop",
+    "note": "Now the loop is complete with no breaks, so charge can flow all the way round and the lamp lights."
+   }
+  ],
+  "keywords": [
+   "circuit",
+   "basics",
+   "symbols",
+   "charge",
+   "current",
+   "coulomb",
+   "ampere",
+   "ammeter",
+   "cell",
+   "switch",
+   "ammeter (a)",
+   "resistor",
+   "lamp",
+   "closed loop"
+  ]
+ },
+ {
+  "id": "d_GL2",
+  "title": "Resistance & Ohm's law",
+  "discipline": "physics",
+  "unitCode": "GL2",
+  "unitTitle": "Resistance & Ohm's law",
+  "vb": "0 0 320 250",
+  "parts": [
+   {
+    "id": "cell",
+    "label": "Cell",
+    "note": "The cell pushes charge round the whole circuit, providing the potential difference that drives a current through the test wire."
+   },
+   {
+    "id": "ammeter",
+    "label": "Ammeter",
+    "note": "Wired in series, the ammeter counts the current flowing through the wire in amps, one of your two key readings."
+   },
+   {
+    "id": "testWire",
+    "label": "Test wire",
+    "note": "Current squeezes along this wire; make it longer and it resists more, so the same voltage pushes a smaller current through."
+   },
+   {
+    "id": "voltmeter",
+    "label": "Voltmeter",
+    "note": "Connected in parallel across the wire, this reads the potential difference in volts, the energy given to each coulomb passing through."
+   },
+   {
+    "id": "leads",
+    "label": "Connecting leads",
+    "note": "These low-resistance leads connect everything into one loop, so charge flows from cell, through wire and meters, and back."
+   }
+  ],
+  "keywords": [
+   "resistance",
+   "ohm",
+   "law",
+   "potential difference",
+   "voltmeter",
+   "cell",
+   "ammeter",
+   "test wire",
+   "connecting leads"
+  ]
+ },
+ {
+  "id": "d_GL3",
+  "title": "Components & I–V graphs",
+  "discipline": "physics",
+  "unitCode": "GL3",
+  "unitTitle": "Components & I–V graphs",
+  "vb": "0 0 320 300",
+  "parts": [
+   {
+    "id": "ohmicResistor",
+    "label": "Resistor",
+    "note": "Push harder with more p.d. and the current climbs in step, so the I-V line stays perfectly straight through the origin."
+   },
+   {
+    "id": "filamentLamp",
+    "label": "Filament lamp",
+    "note": "As current heats the thin wire, its resistance rises and chokes the flow, bending the line into an S-shaped curve."
+   },
+   {
+    "id": "diode",
+    "label": "Diode",
+    "note": "Current pours through one way but hits a near-infinite wall the other way, so the graph only rises on one side."
+   },
+   {
+    "id": "thermistor",
+    "label": "Thermistor",
+    "note": "Warm it up and its resistance drops, letting more current through, which lets circuits sense temperature and respond automatically."
+   },
+   {
+    "id": "ldr",
+    "label": "LDR",
+    "note": "Shine more light on it and its resistance falls, so current rises, letting a circuit detect brightness and switch things on."
+   },
+   {
+    "id": "testCircuit",
+    "label": "Test circuit (A & V)",
+    "note": "The ammeter counts current while the voltmeter reads p.d., so we can plot each component's I-V graph point by point."
+   }
+  ],
+  "keywords": [
+   "components",
+   "graphs",
+   "ohmic conductor",
+   "filament lamp",
+   "diode",
+   "thermistor",
+   "light-dependent resistor",
+   "resistor",
+   "ldr",
+   "test circuit (a & v)"
+  ]
+ },
+ {
+  "id": "d_GL4",
+  "title": "Series & parallel circuits",
+  "discipline": "physics",
+  "unitCode": "GL4",
+  "unitTitle": "Series & parallel circuits",
+  "vb": "0 0 320 240",
+  "parts": [
+   {
+    "id": "battery",
+    "label": "Battery (supply)",
+    "note": "The battery pushes charge out and drives the whole circuit; this potential difference is shared out to everything connected to it."
+   },
+   {
+    "id": "seriesLoop",
+    "label": "Series loop",
+    "note": "Here the parts sit in one single loop, so the same current flows through every component, one after another, all the way round."
+   },
+   {
+    "id": "seriesResistor",
+    "label": "Resistor",
+    "note": "Each resistor added to the loop squeezes the current more, so the total resistance grows and less current flows overall."
+   },
+   {
+    "id": "seriesBreak",
+    "label": "Single break",
+    "note": "Snap the loop anywhere and the current has no path back, so everything switches off at once, like old fairy lights."
+   },
+   {
+    "id": "parallelJunction",
+    "label": "Junction",
+    "note": "At this junction the current splits, giving it extra paths to flow through; more paths mean the total resistance actually drops."
+   },
+   {
+    "id": "parallelBranch",
+    "label": "Parallel branch",
+    "note": "Each branch feels the full supply voltage; their separate currents rejoin, adding up to the total current leaving the battery."
+   }
+  ],
+  "keywords": [
+   "series",
+   "parallel",
+   "circuits",
+   "series circuit",
+   "parallel circuit",
+   "battery (supply)",
+   "series loop",
+   "resistor",
+   "single break",
+   "junction",
+   "parallel branch"
+  ]
+ },
+ {
+  "id": "d_GL5",
+  "title": "Electrical power & energy",
+  "discipline": "physics",
+  "unitCode": "GL5",
+  "unitTitle": "Electrical power & energy",
+  "vb": "0 0 320 230",
+  "parts": [
+   {
+    "id": "cell",
+    "label": "Cell",
+    "note": "The cell pushes charge round the circuit, driving the current that will deliver electrical power to the components."
+   },
+   {
+    "id": "potentialDifference",
+    "label": "Potential difference",
+    "note": "The potential difference is the push per unit charge; multiply it by the current and you get the power transferred."
+   },
+   {
+    "id": "current",
+    "label": "Current",
+    "note": "Current is the flow of charge each second; a bigger current squared through resistance means more power delivered."
+   },
+   {
+    "id": "resistor",
+    "label": "Resistor",
+    "note": "Charge squeezing through the resistor transfers energy as heat; a higher power rating shifts that energy faster."
+   },
+   {
+    "id": "charge",
+    "label": "Charge",
+    "note": "As each unit of charge crosses the potential difference, it hands over energy equal to charge times voltage."
+   },
+   {
+    "id": "energyOut",
+    "label": "Energy transferred",
+    "note": "Energy pours out here as heat and light; the higher the power, the quicker this energy is transferred."
+   }
+  ],
+  "keywords": [
+   "electrical",
+   "power",
+   "energy",
+   "electrical power",
+   "energy transferred",
+   "cell",
+   "potential difference",
+   "current",
+   "resistor",
+   "charge"
+  ]
+ },
+ {
+  "id": "d_GL6",
+  "title": "Mains electricity & the National Grid",
+  "discipline": "physics",
+  "unitCode": "GL6",
+  "unitTitle": "Mains electricity & the National Grid",
+  "vb": "0 0 320 260",
+  "parts": [
+   {
+    "id": "powerStation",
+    "label": "Power station",
+    "note": "Here the journey begins: the power station generates alternating current, the back-and-forth mains electricity that will feed the whole grid."
+   },
+   {
+    "id": "stepUpTransformer",
+    "label": "Step-up transformer",
+    "note": "Straight away the voltage is boosted right up. Raising the voltage drops the current flowing on into the transmission lines."
+   },
+   {
+    "id": "stepDownTransformer",
+    "label": "Step-down transformer",
+    "note": "The low current wasted little heat along the cables, so now this transformer drops the voltage back down for safe use in homes."
+   },
+   {
+    "id": "liveWire",
+    "label": "Live wire",
+    "note": "Inside the home cable, the brown live wire arrives carrying the full 230 V, delivering the energy that drives the appliance."
+   },
+   {
+    "id": "neutralWire",
+    "label": "Neutral wire",
+    "note": "The blue neutral wire sits near 0 V and carries the current back out, completing the circuit so charge keeps flowing."
+   },
+   {
+    "id": "earthWire",
+    "label": "Earth wire",
+    "note": "The green-and-yellow earth wire stays quiet as a safety line, only carrying current if a fault sends charge astray."
+   },
+   {
+    "id": "fuse",
+    "label": "Fuse",
+    "note": "If too big a current flows in a fault, the fuse wire melts and breaks the circuit, cutting the danger off."
+   }
+  ],
+  "keywords": [
+   "mains",
+   "electricity",
+   "the",
+   "national",
+   "grid",
+   "alternating current",
+   "direct current",
+   "live wire",
+   "earth wire",
+   "step-up transformer",
+   "power station",
+   "step-down transformer",
+   "neutral wire",
+   "fuse"
+  ]
+ },
+ {
+  "id": "d_GM1",
+  "title": "Magnets & magnetic fields",
+  "discipline": "physics",
+  "unitCode": "GM1",
+  "unitTitle": "Magnets & magnetic fields",
+  "vb": "0 0 320 230",
+  "parts": [
+   {
+    "id": "northPole",
+    "label": "North pole",
+    "note": "One end of the magnet is the north pole. Push another north near it and they repel, shoving apart without touching."
+   },
+   {
+    "id": "southPole",
+    "label": "South pole",
+    "note": "The other end is the south pole. A north and south pull towards each other, attracting across the gap as a non-contact force."
+   },
+   {
+    "id": "fieldLine",
+    "label": "Field line",
+    "note": "Now trace a field line looping out of the north pole and curving back into the south; where lines crowd together, the field is strongest."
+   },
+   {
+    "id": "compass",
+    "label": "Plotting compass",
+    "note": "Drop a plotting compass in the field and its tiny magnet needle swings to line up, pointing along the field line's direction."
+   },
+   {
+    "id": "earth",
+    "label": "Earth's field",
+    "note": "The Earth acts like one huge bar magnet inside, so its field tugs your compass needle round to point roughly north."
+   }
+  ],
+  "keywords": [
+   "magnets",
+   "magnetic",
+   "fields",
+   "permanent magnet",
+   "induced magnet",
+   "magnetic field",
+   "magnetic field line",
+   "north pole",
+   "south pole",
+   "field line",
+   "plotting compass",
+   "earth's field"
+  ]
+ },
+ {
+  "id": "d_GM2",
+  "title": "Electromagnetism",
+  "discipline": "physics",
+  "unitCode": "GM2",
+  "unitTitle": "Electromagnetism",
+  "vb": "0 0 320 250",
+  "parts": [
+   {
+    "id": "coilTurns",
+    "label": "Coil turns",
+    "note": "Winding the wire into a coil stacks each loop's field, adding them up into a strong, uniform field like a bar magnet's."
+   },
+   {
+    "id": "ironCore",
+    "label": "Iron core",
+    "note": "Slotting an iron core inside concentrates the field, boosting the magnetism and letting you switch it on and off with the current."
+   },
+   {
+    "id": "northPole",
+    "label": "North pole",
+    "note": "The lined-up field bursts out one end as a north pole, giving the electromagnet a magnet's pulling power while the current flows."
+   },
+   {
+    "id": "battery",
+    "label": "Battery (current)",
+    "note": "The battery pushes a current through the wire, and every moving current wraps a magnetic field around itself as it flows."
+   },
+   {
+    "id": "fieldLine",
+    "label": "Magnetic field",
+    "note": "Circular magnetic field lines curl around the wire; reverse the current and they flip direction, showing the field depends on current flow."
+   }
+  ],
+  "keywords": [
+   "electromagnetism",
+   "solenoid",
+   "electromagnet",
+   "coil turns",
+   "iron core",
+   "north pole",
+   "battery (current)",
+   "magnetic field"
+  ]
+ },
+ {
+  "id": "d_GM3",
+  "title": "The motor effect",
+  "discipline": "physics",
+  "unitCode": "GM3",
+  "unitTitle": "The motor effect",
+  "vb": "0 0 320 240",
+  "parts": [
+   {
+    "id": "northPole",
+    "label": "North pole",
+    "note": "The north pole sends invisible field lines out into the gap, ready to push on any current flowing through the wire here."
+   },
+   {
+    "id": "southPole",
+    "label": "South pole",
+    "note": "The south pole pulls the field lines in, so the field runs straight across the gap from north to south."
+   },
+   {
+    "id": "fieldLines",
+    "label": "Magnetic field",
+    "note": "These lines mark the field crossing the gap; the wire sits at 90 degrees to them, giving the biggest possible push."
+   },
+   {
+    "id": "coil",
+    "label": "Current-carrying coil",
+    "note": "Current flows along the wire through this field, and where the two meet a force is created that shoves the wire sideways."
+   },
+   {
+    "id": "forceUp",
+    "label": "Upward force",
+    "note": "One side gets pushed up while the other is pushed down, so the coil turns, spinning the motor round."
+   },
+   {
+    "id": "commutator",
+    "label": "Split-ring commutator",
+    "note": "This split ring flips the current each half-turn, so the forces keep pushing the same way and the spin never stops."
+   },
+   {
+    "id": "battery",
+    "label": "Battery",
+    "note": "The battery drives the current round the circuit and into the coil, powering the whole spinning motor."
+   }
+  ],
+  "keywords": [
+   "the",
+   "motor",
+   "effect",
+   "motor effect",
+   "magnetic flux density",
+   "fleming's left-hand rule",
+   "north pole",
+   "south pole",
+   "magnetic field",
+   "current-carrying coil",
+   "upward force",
+   "split-ring commutator",
+   "battery"
+  ]
+ },
+ {
+  "id": "d_GS1",
+  "title": "The solar system & orbits",
+  "discipline": "physics",
+  "unitCode": "GS1",
+  "unitTitle": "The solar system & orbits",
+  "vb": "0 0 320 250",
+  "parts": [
+   {
+    "id": "sun",
+    "label": "Sun (a star)",
+    "note": "We start with the Sun, our own star, sitting at the centre; its huge mass anchors everything else in the solar system."
+   },
+   {
+    "id": "planet",
+    "label": "Planet",
+    "note": "Now a planet sweeps around the Sun, one of eight held in place as it travels its path through space."
+   },
+   {
+    "id": "moon",
+    "label": "Moon (natural satellite)",
+    "note": "A moon circles the planet as its natural satellite, going round the planet the same way the planet goes round the Sun."
+   },
+   {
+    "id": "artificialSatellite",
+    "label": "Artificial satellite",
+    "note": "Here we launch an artificial satellite into orbit ourselves, sending it up to handle communications, weather-watching or GPS positioning."
+   },
+   {
+    "id": "gravityForce",
+    "label": "Gravity (pulls inward)",
+    "note": "Gravity now pulls inward on the satellite, and this constant tug is the force that curves its path into an orbit."
+   },
+   {
+    "id": "orbitPath",
+    "label": "Orbit",
+    "note": "The satellite settles into a stable orbit; at this radius one exact speed works, and closer orbits must travel faster."
+   }
+  ],
+  "keywords": [
+   "the",
+   "solar",
+   "system",
+   "orbits",
+   "solar system",
+   "satellite",
+   "orbit",
+   "sun (a star)",
+   "planet",
+   "moon (natural satellite)",
+   "artificial satellite",
+   "gravity (pulls inward)"
+  ]
+ },
+ {
+  "id": "d_GS2",
+  "title": "The life cycle of stars",
+  "discipline": "physics",
+  "unitCode": "GS2",
+  "unitTitle": "The life cycle of stars",
+  "vb": "0 0 320 300",
+  "parts": [
+   {
+    "id": "nebula",
+    "label": "Nebula",
+    "note": "Here gravity slowly pulls a huge cloud of dust and gas together, tugging it inwards and squeezing it to start building a star."
+   },
+   {
+    "id": "protostar",
+    "label": "Protostar",
+    "note": "The squeezed gas heats up into a spinning protostar; once hot and dense enough, hydrogen nuclei begin to fuse and it starts to shine."
+   },
+   {
+    "id": "mainSequence",
+    "label": "Main sequence",
+    "note": "Now fusion pushes outwards while gravity pulls inwards; these forces balance, so the star holds a steady size for billions of years."
+   },
+   {
+    "id": "redGiant",
+    "label": "Red giant",
+    "note": "As fuel runs low the balance tips, and a Sun-like star swells outwards, cooling its surface to red as it becomes a red giant."
+   },
+   {
+    "id": "whiteDwarf",
+    "label": "White dwarf",
+    "note": "The giant sheds its outer layers, leaving behind a small, hot, dense core called a white dwarf that gradually cools and fades."
+   },
+   {
+    "id": "supernova",
+    "label": "Supernova",
+    "note": "A far heavier star's core collapses and rebounds in a huge supernova explosion, scattering heavy elements beyond iron out into space."
+   },
+   {
+    "id": "blackHole",
+    "label": "Black hole",
+    "note": "For the most massive stars, gravity crushes the leftover core so tightly that not even light can escape, forming a black hole."
+   }
+  ],
+  "keywords": [
+   "the",
+   "life",
+   "cycle",
+   "stars",
+   "protostar",
+   "main sequence",
+   "supernova",
+   "black hole",
+   "nebula",
+   "red giant",
+   "white dwarf"
+  ]
+ },
+ {
+  "id": "d_GS3",
+  "title": "Red-shift & the Big Bang",
+  "discipline": "physics",
+  "unitCode": "GS3",
+  "unitTitle": "Red-shift & the Big Bang",
+  "vb": "0 0 320 250",
+  "parts": [
+   {
+    "id": "bigBang",
+    "label": "Big Bang",
+    "note": "It all starts here: the universe erupts from a tiny, hot, dense point and has been expanding outward ever since."
+   },
+   {
+    "id": "farGalaxy",
+    "label": "Distant galaxy",
+    "note": "This galaxy sits far out in space, and being furthest away it races away from us the fastest."
+   },
+   {
+    "id": "nearGalaxy",
+    "label": "Nearer galaxy",
+    "note": "A closer galaxy is still fleeing, but being nearer it moves away more slowly than the distant one."
+   },
+   {
+    "id": "expansion",
+    "label": "Moving apart",
+    "note": "Space itself stretches, carrying every galaxy apart from every other, like dots on an inflating balloon."
+   },
+   {
+    "id": "shortWave",
+    "label": "Source light",
+    "note": "Each galaxy sends out light with its own wavelengths, our starting ruler before the journey across expanding space."
+   },
+   {
+    "id": "redWave",
+    "label": "Red-shifted light",
+    "note": "As the galaxy speeds away, its light gets stretched to longer wavelengths, shifting towards red and proving the universe expands."
+   }
+  ],
+  "keywords": [
+   "red",
+   "shift",
+   "the",
+   "big",
+   "bang",
+   "red-shift",
+   "big bang",
+   "distant galaxy",
+   "nearer galaxy",
+   "moving apart",
+   "source light",
+   "red-shifted light"
+  ]
+ },
+ {
+  "id": "d_GW1",
+  "title": "Wave properties",
+  "discipline": "physics",
+  "unitCode": "GW1",
+  "unitTitle": "Wave properties",
+  "vb": "0 0 320 260",
+  "parts": [
+   {
+    "id": "transverseWave",
+    "label": "Transverse wave",
+    "note": "Watch the wave travel sideways while the particles bob up and down at right angles to it, carrying energy along without moving matter."
+   },
+   {
+    "id": "amplitude",
+    "label": "Amplitude",
+    "note": "Measure from the rest line up to the crest: the bigger this height, the more energy the wave carries as it travels."
+   },
+   {
+    "id": "wavelength",
+    "label": "Wavelength",
+    "note": "Measure from one crest across to the next crest: that gap is one complete wave repeating over and over as it moves."
+   },
+   {
+    "id": "longitudinalWave",
+    "label": "Longitudinal wave",
+    "note": "Now the particles jiggle back and forth along the same direction the wave travels, squashing and stretching as sound does through air."
+   },
+   {
+    "id": "compression",
+    "label": "Compression",
+    "note": "Here the particles bunch up tightly, squeezing together as the wave pushes through and momentarily raising the pressure."
+   },
+   {
+    "id": "rarefaction",
+    "label": "Rarefaction",
+    "note": "Here the particles spread far apart, stretched thin between compressions, lowering the pressure before the next squeeze arrives."
+   }
+  ],
+  "keywords": [
+   "wave",
+   "properties",
+   "transverse wave",
+   "longitudinal wave",
+   "amplitude",
+   "wavelength",
+   "frequency",
+   "compression",
+   "rarefaction"
+  ]
+ },
+ {
+  "id": "d_GW2",
+  "title": "The wave equation",
+  "discipline": "physics",
+  "unitCode": "GW2",
+  "unitTitle": "The wave equation",
+  "vb": "0 0 320 240",
+  "parts": [
+   {
+    "id": "crest",
+    "label": "Crest",
+    "note": "Here's the top of the wave, its highest point. Count how many crests pass each second and you have the frequency."
+   },
+   {
+    "id": "trough",
+    "label": "Trough",
+    "note": "The wave dips to its lowest point here. A crest plus a trough makes one full wave carrying energy along."
+   },
+   {
+    "id": "wavelength",
+    "label": "Wavelength",
+    "note": "Measure crest-to-crest and you have the wavelength. Multiply it by frequency and you get how fast the wave travels."
+   },
+   {
+    "id": "amplitude",
+    "label": "Amplitude",
+    "note": "Measured from rest to the crest, this shows how much energy the wave carries, though it never changes the wave speed."
+   },
+   {
+    "id": "restPosition",
+    "label": "Rest Position",
+    "note": "This is where the water or string sits still. The wave makes it wobble up and down about this line as energy passes."
+   },
+   {
+    "id": "rippleTank",
+    "label": "Ripple Tank",
+    "note": "Send ripples across shallow water here, then time and measure them to work out the wave speed for real."
+   }
+  ],
+  "keywords": [
+   "the",
+   "wave",
+   "equation",
+   "wave speed",
+   "period",
+   "crest",
+   "trough",
+   "wavelength",
+   "amplitude",
+   "rest position",
+   "ripple tank"
+  ]
+ },
+ {
+  "id": "d_GW3",
+  "title": "The electromagnetic spectrum",
+  "discipline": "physics",
+  "unitCode": "GW3",
+  "unitTitle": "The electromagnetic spectrum",
+  "vb": "0 0 320 250",
+  "parts": [
+   {
+    "id": "spectrumBand",
+    "label": "Electromagnetic spectrum",
+    "note": "Here is the whole family of electromagnetic waves laid out in a band; every one is a transverse wave racing through vacuum at the speed of light."
+   },
+   {
+    "id": "radioEnd",
+    "label": "Radio waves",
+    "note": "At this end sit radio waves, the lowest frequency and longest wavelength members, where the spectrum begins before frequency climbs across the band."
+   },
+   {
+    "id": "gammaEnd",
+    "label": "Gamma rays",
+    "note": "At the far end come gamma rays, the highest frequency and shortest wavelength waves, showing how far frequency rises across the spectrum."
+   },
+   {
+    "id": "transverseWave",
+    "label": "Transverse wave",
+    "note": "Each wave wobbles up and down at right angles to its direction of travel, marking every member of this family as transverse."
+   },
+   {
+    "id": "wavelengthAxis",
+    "label": "Increasing wavelength",
+    "note": "Reading this way the waves stretch out longer, so wavelength grows towards the radio end while frequency drops the same direction."
+   },
+   {
+    "id": "frequencyAxis",
+    "label": "Increasing frequency",
+    "note": "Reading the other way the waves pack tighter, so frequency climbs towards gamma rays even though the speed in vacuum never changes."
+   },
+   {
+    "id": "refractedRay",
+    "label": "Refraction at a boundary",
+    "note": "Crossing a boundary the wave changes speed, and meeting it at an angle bends the ray as the change of speed refracts it."
+   }
+  ],
+  "keywords": [
+   "the",
+   "electromagnetic",
+   "spectrum",
+   "electromagnetic spectrum",
+   "refraction",
+   "radio waves",
+   "gamma rays",
+   "transverse wave",
+   "increasing wavelength",
+   "increasing frequency",
+   "refraction at a boundary"
+  ]
+ },
+ {
+  "id": "d_GW4",
+  "title": "Uses & dangers of EM waves",
+  "discipline": "physics",
+  "unitCode": "GW4",
+  "unitTitle": "Uses & dangers of EM waves",
+  "vb": "0 0 320 240",
+  "parts": [
+   {
+    "id": "radioBand",
+    "label": "Radio waves",
+    "note": "We start at the low-frequency end: radio waves carry TV and radio broadcasts through the air to aerials in your home."
+   },
+   {
+    "id": "infraredBand",
+    "label": "Infrared",
+    "note": "Further along, infrared carries heat. Black matt surfaces pour it out best, so warm objects glow strongly in the infrared."
+   },
+   {
+    "id": "uvBand",
+    "label": "Ultraviolet",
+    "note": "Push higher and waves turn harmful: ultraviolet packs enough energy to damage skin cells, causing sunburn and, over time, skin cancer."
+   },
+   {
+    "id": "gammaBand",
+    "label": "X-rays & gamma",
+    "note": "At the top sit X-rays and gamma rays. These ionise atoms, tearing at cells and DNA, so exposure can trigger cancer."
+   },
+   {
+    "id": "freqArrow",
+    "label": "Increasing frequency",
+    "note": "This arrow tracks frequency climbing left to right; as it rises the waves carry more energy and grow more dangerous."
+   },
+   {
+    "id": "leslieCube",
+    "label": "Leslie cube",
+    "note": "The Leslie cube tests this: fill it with hot water and each face radiates infrared, letting us compare surfaces fairly."
+   },
+   {
+    "id": "mattFace",
+    "label": "Black matt face",
+    "note": "Point the detector here and the reading spikes: the black matt face emits far more infrared than the cube's shiny sides."
+   }
+  ],
+  "keywords": [
+   "uses",
+   "dangers",
+   "waves",
+   "infrared",
+   "ultraviolet",
+   "ionising radiation",
+   "radio waves",
+   "x-rays & gamma",
+   "increasing frequency",
+   "leslie cube",
+   "black matt face"
+  ]
+ },
+ {
+  "id": "d_INH",
+  "title": "Inheritance",
+  "discipline": "biology",
+  "unitCode": "INH",
+  "unitTitle": "Inheritance",
+  "vb": "0 0 320 296",
+  "parts": [
+   {
+    "id": "nucleus",
+    "label": "Nucleus",
+    "note": "Inside the nucleus the genetic information is stored; when a sperm's 23 chromosomes join an ovum's 23, the zygote gets a full set of 46."
+   },
+   {
+    "id": "chromosome",
+    "label": "Chromosome",
+    "note": "Zooming in, we see one chromosome; your body cells each pack 46 of these thread-like structures, arranged neatly into 23 matching pairs."
+   },
+   {
+    "id": "chromosomePair",
+    "label": "Chromosome Pair",
+    "note": "The two chromosomes pair up because one came from your mother and one from your father, so each parent contributes half your instructions."
+   },
+   {
+    "id": "doubleHelix",
+    "label": "Double Helix",
+    "note": "Unwinding a chromosome reveals DNA: a long molecule twisted into a double helix, like a ladder spiralled round, holding all the code."
+   },
+   {
+    "id": "base",
+    "label": "DNA Base Pair",
+    "note": "The ladder's rungs are pairs of bases; their exact order along the strand spells out the coded instructions the cell reads."
+   },
+   {
+    "id": "gene",
+    "label": "Gene",
+    "note": "A short stretch of this base sequence is one gene, carrying the code to build a single protein; each chromosome holds many genes."
+   }
+  ],
+  "keywords": [
+   "inheritance",
+   "dna",
+   "chromosome",
+   "gene",
+   "nucleus",
+   "heredity",
+   "double helix",
+   "variation",
+   "competition",
+   "natural selection",
+   "species",
+   "chromosome pair",
+   "dna base pair"
+  ]
+ },
+ {
+  "id": "d_LGT",
+  "title": "Light",
+  "discipline": "physics",
+  "unitCode": "LGT",
+  "unitTitle": "Light",
+  "vb": "0 0 320 250",
+  "parts": [
+   {
+    "id": "incidentRay",
+    "label": "Incident ray",
+    "note": "This is the incoming beam of light travelling in a straight line towards the surface, ready to hit it and be reflected."
+   },
+   {
+    "id": "normal",
+    "label": "Normal",
+    "note": "This dashed line sits at right angles to the mirror; we measure both angles from it to compare them fairly."
+   },
+   {
+    "id": "reflectedRay",
+    "label": "Reflected ray",
+    "note": "The light bounces off and heads away in a new straight line; if it reaches your eye, you see the object."
+   },
+   {
+    "id": "mirror",
+    "label": "Mirror",
+    "note": "The smooth shiny surface reflects nearly all the light back rather than absorbing or letting it pass through."
+   },
+   {
+    "id": "refractedRay",
+    "label": "Refracted ray",
+    "note": "Entering the glass, the light slows down and bends, so its path kinks towards the normal as it crosses over."
+   },
+   {
+    "id": "prism",
+    "label": "Prism",
+    "note": "The angled glass block refracts the white light, bending each colour by a slightly different amount as it passes through."
+   },
+   {
+    "id": "spectrum",
+    "label": "Spectrum",
+    "note": "The colours fan out and emerge separated as red, orange, yellow, green, blue, indigo and violet, revealing white light's hidden mix."
+   }
+  ],
+  "keywords": [
+   "light",
+   "ray",
+   "vacuum",
+   "reflection",
+   "refraction",
+   "transparent",
+   "translucent",
+   "opaque",
+   "normal",
+   "spectrum",
+   "filter",
+   "incident ray",
+   "reflected ray",
+   "mirror",
+   "refracted ray",
+   "prism"
+  ]
+ },
+ {
+  "id": "d_MAT",
+  "title": "Materials",
+  "discipline": "chemistry",
+  "unitCode": "MAT",
+  "unitTitle": "Materials",
+  "vb": "0 0 340 300",
+  "parts": [
+   {
+    "id": "acidReaction",
+    "label": "Metal + acid",
+    "note": "Drop a metal into acid and it fizzes: the acid attacks it, giving a salt plus hydrogen gas that streams off as bubbles."
+   },
+   {
+    "id": "reactivitySeries",
+    "label": "Reactivity series",
+    "note": "Some metals fizz furiously, others barely react, so we rank them by how vigorously they react into a league table of reactivity."
+   },
+   {
+    "id": "furnace",
+    "label": "Furnace",
+    "note": "In the furnace we heat the metal's ore with carbon; the carbon grabs the oxygen away, freeing the pure metal like iron."
+   },
+   {
+    "id": "ceramic",
+    "label": "Ceramic",
+    "note": "Heating wet clay drives off the water, so the molecules can no longer slide past each other, setting hard and brittle."
+   },
+   {
+    "id": "polymer",
+    "label": "Polymer chain",
+    "note": "Many small monomers join into one long chain; where chains slide over each other you get a plastic that stretches and melts."
+   },
+   {
+    "id": "composite",
+    "label": "Composite",
+    "note": "Combine flexible steel bars with strong concrete and the composite gains both: it bends without snapping yet resists being crushed."
+   }
+  ],
+  "keywords": [
+   "materials",
+   "reactivity series",
+   "displacement reaction",
+   "ore",
+   "extraction",
+   "reduction",
+   "ceramic",
+   "polymer",
+   "monomer",
+   "composite",
+   "furnace",
+   "metal + acid",
+   "polymer chain"
+  ]
+ },
+ {
+  "id": "d_PRS",
+  "title": "Pressure",
+  "discipline": "physics",
+  "unitCode": "PRS",
+  "unitTitle": "Pressure",
+  "vb": "0 0 320 280",
+  "parts": [
+   {
+    "id": "atmosphere",
+    "label": "Atmosphere",
+    "note": "Up here the air is thin, so less weight of air pushes down and atmospheric pressure is low; it climbs as you descend."
+   },
+   {
+    "id": "waterBody",
+    "label": "Fluid (water)",
+    "note": "Below the air sits water, a fluid that flows and presses on anything inside it as its particles collide with surfaces."
+   },
+   {
+    "id": "floatingBoat",
+    "label": "Floating object",
+    "note": "The boat is spread into a wide hull, touching lots of water, so more upthrust pushes up and it stays afloat."
+   },
+   {
+    "id": "weightArrow",
+    "label": "Weight",
+    "note": "Gravity pulls the boat straight down with its weight, the downward force the water must somehow match to stop it sinking."
+   },
+   {
+    "id": "upthrustArrow",
+    "label": "Upthrust",
+    "note": "The water pushes back up with an upthrust; here it exactly equals the weight, so forces balance and the boat floats."
+   },
+   {
+    "id": "depthArrows",
+    "label": "Pressure with depth",
+    "note": "Go deeper and the arrows grow longer: more water weighs down from above, so the pressure pushing outwards keeps increasing."
+   }
+  ],
+  "keywords": [
+   "pressure",
+   "fluid",
+   "upthrust",
+   "weight",
+   "density",
+   "atmosphere",
+   "atmospheric pressure",
+   "pascal",
+   "area",
+   "resultant force",
+   "fluid (water)",
+   "floating object",
+   "pressure with depth"
+  ]
+ },
+ {
+  "id": "d_PUR",
+  "title": "Pure and impure substances",
+  "discipline": "chemistry",
+  "unitCode": "PUR",
+  "unitTitle": "Pure and impure substances",
+  "vb": "0 0 320 250",
+  "parts": [
+   {
+    "id": "funnel",
+    "label": "Filter funnel",
+    "note": "We pour the muddy mixture in here; the filter paper acts as a sieve, letting the liquid slip through but stopping the solid."
+   },
+   {
+    "id": "residue",
+    "label": "Residue",
+    "note": "The insoluble solid can't fit through the tiny holes, so it stays trapped on the paper as the leftover residue."
+   },
+   {
+    "id": "filtrate",
+    "label": "Filtrate",
+    "note": "The clear liquid drips through the paper into the beaker below; this collected liquid is called the filtrate."
+   },
+   {
+    "id": "solute",
+    "label": "Solute",
+    "note": "This is the solid we stir in to dissolve; its particles don't vanish, they spread out and hide between the liquid particles."
+   },
+   {
+    "id": "solvent",
+    "label": "Solvent",
+    "note": "This is the liquid doing the dissolving; its particles make room so the solute spreads through and forms a clear solution."
+   },
+   {
+    "id": "crystals",
+    "label": "Crystals",
+    "note": "As the solvent boils away into the air, the dissolved solute is left behind, growing back into solid crystals."
+   },
+   {
+    "id": "evapDish",
+    "label": "Evaporating dish",
+    "note": "We heat the solution in this shallow dish; its wide surface lets the solvent evaporate quickly, leaving the solute behind."
+   }
+  ],
+  "keywords": [
+   "pure",
+   "and",
+   "impure",
+   "substances",
+   "pure substance",
+   "mixture",
+   "solute",
+   "solvent",
+   "solution",
+   "soluble",
+   "insoluble",
+   "filtrate",
+   "chromatography",
+   "filter funnel",
+   "residue",
+   "crystals",
+   "evaporating dish"
+  ]
+ },
+ {
+  "id": "d_PWR",
+  "title": "Power",
+  "discipline": "physics",
+  "unitCode": "PWR",
+  "unitTitle": "Power",
+  "vb": "0 0 320 280",
+  "parts": [
+   {
+    "id": "device",
+    "label": "Device",
+    "note": "Here is our device, doing a job. As it works it transfers energy from its supply out into the world every second."
+   },
+   {
+    "id": "supply",
+    "label": "Energy supply",
+    "note": "Energy flows in from the supply to feed the device. Without this store of energy, the device has nothing to transfer."
+   },
+   {
+    "id": "energyFlow",
+    "label": "Energy transferred",
+    "note": "Energy pours through in joules. Power will measure how fast this flow moves, not just the total amount transferred."
+   },
+   {
+    "id": "powerRating",
+    "label": "Power rating",
+    "note": "The power rating in watts tells us the speed: 1 watt means 1 joule is transferred every single second."
+   },
+   {
+    "id": "clock",
+    "label": "Time",
+    "note": "The clock times how long energy is transferred. We convert to seconds first, multiplying any minutes by 60."
+   },
+   {
+    "id": "formula",
+    "label": "P = E ÷ t",
+    "note": "Divide the energy transferred by the time taken and out pops the power: P = E ÷ t."
+   }
+  ],
+  "keywords": [
+   "power",
+   "energy transferred",
+   "watt",
+   "joule",
+   "kilowatt",
+   "kilojoule",
+   "power rating",
+   "time",
+   "device",
+   "energy supply",
+   "p = e ÷ t"
+  ]
+ },
+ {
+  "id": "d_RES",
+  "title": "Respiration",
+  "discipline": "biology",
+  "unitCode": "RES",
+  "unitTitle": "Respiration",
+  "vb": "0 0 320 250",
+  "parts": [
+   {
+    "id": "glucose",
+    "label": "Glucose",
+    "note": "Glucose is the fuel going in; its chemical bonds hold the energy the cell is about to release, not burn as breathing."
+   },
+   {
+    "id": "oxygen",
+    "label": "Oxygen",
+    "note": "Oxygen joins the glucose, breathed in through the lungs and delivered by blood, so the fuel can be broken down fully."
+   },
+   {
+    "id": "mitochondria",
+    "label": "Mitochondria",
+    "note": "Inside these tiny structures the glucose and oxygen react, making mitochondria the power stations where energy is actually released."
+   },
+   {
+    "id": "cell",
+    "label": "Cell",
+    "note": "Everything happens inside the living cell, where digested glucose and breathed-in oxygen arrive together to keep the cell alive."
+   },
+   {
+    "id": "products",
+    "label": "CO₂ + Water",
+    "note": "Carbon dioxide and water leave as waste; they are breathed out and removed once the energy has been released from glucose."
+   },
+   {
+    "id": "lacticAcid",
+    "label": "Lactic Acid",
+    "note": "Without enough oxygen, human cells break glucose only into lactic acid, releasing far less energy and making muscles ache."
+   },
+   {
+    "id": "fermentation",
+    "label": "Fermentation",
+    "note": "In yeast the oxygen-free route splits glucose into ethanol and carbon dioxide, the reaction that makes bread rise and brews alcohol."
+   }
+  ],
+  "keywords": [
+   "respiration",
+   "glucose",
+   "aerobic respiration",
+   "anaerobic respiration",
+   "mitochondria",
+   "lactic acid",
+   "fermentation",
+   "ethanol",
+   "reactant",
+   "product",
+   "oxygen",
+   "cell",
+   "co₂ + water"
+  ]
+ },
+ {
+  "id": "d_SND",
+  "title": "Waves and sound",
+  "discipline": "physics",
+  "unitCode": "SND",
+  "unitTitle": "Waves and sound",
+  "vb": "0 0 320 260",
+  "parts": [
+   {
+    "id": "transverseWave",
+    "label": "Transverse wave",
+    "note": "We start by drawing the wave that carries the energy along; here the wobble is up-and-down, across the direction it travels."
+   },
+   {
+    "id": "wavelength",
+    "label": "Wavelength",
+    "note": "One full ripple, crest to crest, is the wavelength; squeeze more ripples per second and the pitch you hear climbs higher."
+   },
+   {
+    "id": "amplitude",
+    "label": "Amplitude",
+    "note": "How tall the wave rises measures the amplitude; the bigger this swing, the more energy carried, so the louder the sound."
+   },
+   {
+    "id": "source",
+    "label": "Vibrating source",
+    "note": "Every sound begins here as something vibrates back and forth, shaking whatever surrounds it and starting the wave off."
+   },
+   {
+    "id": "airParticles",
+    "label": "Air particles (medium)",
+    "note": "The vibrating source pushes the air particles, making them oscillate and knock into neighbours, passing energy along without travelling themselves."
+   },
+   {
+    "id": "compression",
+    "label": "Compression",
+    "note": "As particles bunch up they form a compression, a squeezed patch that moves outward, carrying the sound energy through the air."
+   },
+   {
+    "id": "earDrum",
+    "label": "Ear drum / diaphragm",
+    "note": "Finally the wave hits your ear drum, or a microphone's diaphragm, making it vibrate so the sound gets detected."
+   }
+  ],
+  "keywords": [
+   "waves",
+   "and",
+   "sound",
+   "wave",
+   "oscillate",
+   "transverse wave",
+   "longitudinal wave",
+   "amplitude",
+   "wavelength",
+   "frequency",
+   "hertz",
+   "medium",
+   "ultrasound",
+   "vibrating source",
+   "air particles (medium)",
+   "compression",
+   "ear drum / diaphragm"
+  ]
+ },
+ {
+  "id": "d_SPC",
+  "title": "Space",
+  "discipline": "physics",
+  "unitCode": "SPC",
+  "unitTitle": "Space",
+  "vb": "0 0 320 260",
+  "parts": [
+   {
+    "id": "sun",
+    "label": "Sun (a star)",
+    "note": "It all starts here: the Sun, a giant ball of glowing gas, sits at the centre while eight planets circle around it."
+   },
+   {
+    "id": "orbitPath",
+    "label": "Orbit",
+    "note": "Each planet travels this looping path, held in place by the Sun's gravity constantly pulling it inwards so it never flies off into space."
+   },
+   {
+    "id": "rockyPlanet",
+    "label": "Rocky planet",
+    "note": "Closest to the Sun sit the four rocky planets — Mercury, Venus, Earth and Mars — small worlds with solid, stony surfaces you could stand on."
+   },
+   {
+    "id": "moon",
+    "label": "Moon",
+    "note": "Some planets have moons, which loop around the planet the same way the planet loops the Sun, tugged along by the planet's gravity."
+   },
+   {
+    "id": "gasPlanet",
+    "label": "Gas planet",
+    "note": "Further out sit the giant gas planets — Jupiter, Saturn, Uranus and Neptune — huge worlds with no solid ground, just thick swirling gas."
+   },
+   {
+    "id": "galaxy",
+    "label": "Galaxy (Milky Way)",
+    "note": "Zoom right out and our whole Solar System is one tiny speck in the Milky Way, a spiral galaxy holding billions of stars."
+   },
+   {
+    "id": "tiltAxis",
+    "label": "Tilted axis",
+    "note": "Earth spins around this tilted line once a day, turning us towards the Sun for daytime and away into darkness for night."
+   }
+  ],
+  "keywords": [
+   "space",
+   "star",
+   "planet",
+   "moon",
+   "orbit",
+   "galaxy",
+   "light year",
+   "axis",
+   "mass",
+   "weight",
+   "gravitational field strength",
+   "solar system",
+   "dwarf planet",
+   "equator",
+   "hemisphere",
+   "sun (a star)",
+   "rocky planet",
+   "gas planet",
+   "galaxy (milky way)",
+   "tilted axis"
+  ]
+ },
+ {
+  "id": "d_STA",
+  "title": "Static electricity",
+  "discipline": "physics",
+  "unitCode": "STA",
+  "unitTitle": "Static electricity",
+  "vb": "0 0 320 240",
+  "parts": [
+   {
+    "id": "protonCharge",
+    "label": "Proton (+)",
+    "note": "Deep inside every atom sit positive protons; normally equal numbers of electrons balance them, so the whole material starts with no charge."
+   },
+   {
+    "id": "posObject",
+    "label": "Positively Charged Object",
+    "note": "This object has lost some electrons to the cloth, leaving more protons than electrons, so it now carries an overall positive charge."
+   },
+   {
+    "id": "cloth",
+    "label": "Rubbing Cloth",
+    "note": "As the cloth rubs the insulator, friction drags electrons across the surface, moving negative charge from one material to the other."
+   },
+   {
+    "id": "negObject",
+    "label": "Negatively Charged Object",
+    "note": "The cloth's electrons pile up here, giving this object extra negative charge, so it now attracts the opposite positive object nearby."
+   },
+   {
+    "id": "fieldLines",
+    "label": "Field Lines",
+    "note": "Field lines map the space around the charges where forces act; packed tightly they show a strong field, spread out they show a weaker one."
+   },
+   {
+    "id": "fieldArrow",
+    "label": "Field Line Arrow",
+    "note": "Each arrow shows which way a positive charge would be pushed: away from the positive object and towards the negative one."
+   },
+   {
+    "id": "electricField",
+    "label": "Electric Field",
+    "note": "The whole field region lets the charges push and pull each other without touching, exerting an electrostatic force across empty space."
+   }
+  ],
+  "keywords": [
+   "static",
+   "electricity",
+   "charge",
+   "electron",
+   "friction",
+   "insulator",
+   "neutral",
+   "static electricity",
+   "electrostatic force",
+   "non-contact force",
+   "electric field",
+   "field lines",
+   "proton (+)",
+   "positively charged object",
+   "rubbing cloth",
+   "negatively charged object",
+   "field line arrow"
+  ]
+ },
+ {
+  "id": "d_BIO",
+  "title": "Biodiversity",
+  "discipline": "biology",
+  "unitCode": "BIO",
+  "unitTitle": "Biodiversity",
+  "vb": "0 0 320 280",
+  "parts": [
+   {
+    "id": "classification",
+    "label": "Classification",
+    "note": "We begin by sorting living things into groups by their features, called classification, using the system Carl Linnaeus built to make sense of nature."
+   },
+   {
+    "id": "fiveKingdoms",
+    "label": "Five Kingdoms",
+    "note": "The biggest sort splits every organism into five kingdoms, so a bacterium and an oak tree land in completely different branches."
+   },
+   {
+    "id": "vertebrate",
+    "label": "Vertebrate",
+    "note": "Zoom into animals and we split again: vertebrates have a backbone running down them, giving support and protecting the nerve cord inside."
+   },
+   {
+    "id": "invertebrate",
+    "label": "Invertebrate",
+    "note": "Everything without a backbone, like insects and worms, drops into invertebrates, the far larger group making up most animal species."
+   },
+   {
+    "id": "species",
+    "label": "Species",
+    "note": "The smallest group is a species: two organisms belong together only if they can breed and produce fertile offspring that can breed too."
+   },
+   {
+    "id": "conservation",
+    "label": "Conservation",
+    "note": "When species start disappearing we step in with conservation, protecting habitats and running breeding programmes to keep biodiversity high."
+   },
+   {
+    "id": "seedVault",
+    "label": "Seed Vault",
+    "note": "As a backup, a global seed vault freezes millions of seeds, so if disease wipes out a crop we can regrow it."
+   }
+  ],
+  "keywords": [
+   "biodiversity",
+   "species",
+   "classification",
+   "vertebrate",
+   "invertebrate",
+   "extinct",
+   "endangered",
+   "habitat",
+   "conservation",
+   "afforestation",
+   "five kingdoms",
+   "seed vault"
+  ]
+ },
+ {
+  "id": "d_CHR",
+  "title": "Chemical reactions",
+  "discipline": "chemistry",
+  "unitCode": "CHR",
+  "unitTitle": "Chemical reactions",
+  "vb": "0 0 320 226",
+  "parts": [
+   {
+    "id": "reactants",
+    "label": "Reactants",
+    "note": "We start on the left with the reactants — the starting substances whose atoms are about to be rearranged into something new."
+   },
+   {
+    "id": "arrow",
+    "label": "Reaction arrow",
+    "note": "The arrow means 'turns into', not equals — it shows the reactants changing one way into fresh products, never back again."
+   },
+   {
+    "id": "products",
+    "label": "Products",
+    "note": "On the right we get the products: brand-new substances built from the same atoms, but now with different properties."
+   },
+   {
+    "id": "combustion",
+    "label": "Combustion",
+    "note": "In combustion a fuel burns in oxygen, releasing energy and usually giving out carbon dioxide and water as products."
+   },
+   {
+    "id": "thermalDecomp",
+    "label": "Thermal decomposition",
+    "note": "Here heat alone splits one reactant apart — a metal carbonate breaks into a metal oxide plus carbon dioxide gas."
+   },
+   {
+    "id": "oxidation",
+    "label": "Oxidation (rust)",
+    "note": "In oxidation an element grabs oxygen — iron slowly joins with oxygen to form iron oxide, which we see as rust."
+   },
+   {
+    "id": "signsOfReaction",
+    "label": "Signs of reaction",
+    "note": "Watch for the tell-tale signs a reaction is happening: heat change, light, colour change, fizzing, or a solid precipitate appearing."
+   },
+   {
+    "id": "conservationMass",
+    "label": "Mass conserved",
+    "note": "No atoms vanish — they're only rearranged, so the products always weigh exactly the same as the reactants did."
+   }
+  ],
+  "keywords": [
+   "chemical",
+   "reactions",
+   "chemical reaction",
+   "reactant",
+   "product",
+   "word equation",
+   "combustion",
+   "thermal decomposition",
+   "oxidation",
+   "precipitate",
+   "effervescence",
+   "conservation of mass",
+   "reactants",
+   "reaction arrow",
+   "products",
+   "oxidation (rust)",
+   "signs of reaction",
+   "mass conserved"
+  ]
+ },
+ {
+  "id": "d_DEN",
+  "title": "Particle model and density",
+  "discipline": "physics",
+  "unitCode": "DEN",
+  "unitTitle": "Particle model and density",
+  "vb": "0 0 320 250",
+  "parts": [
+   {
+    "id": "solid",
+    "label": "Solid (densest)",
+    "note": "Here the particles are jammed tightly together with little space between them, so the most mass fits in the smallest volume, making solids densest."
+   },
+   {
+    "id": "liquid",
+    "label": "Liquid",
+    "note": "Now the particles have loosened and can slide past each other, spreading out a little, so a liquid is usually less dense than its solid."
+   },
+   {
+    "id": "gas",
+    "label": "Gas (least dense)",
+    "note": "Here the particles fly far apart into the empty space, so very little mass fills a big volume, making a gas the least dense state."
+   },
+   {
+    "id": "waterSurface",
+    "label": "Water surface",
+    "note": "At the water surface the particles are constantly jiggling and moving randomly, Brownian motion, proving the particles inside are never truly still."
+   },
+   {
+    "id": "iceCube",
+    "label": "Floating ice",
+    "note": "Water is odd: its solid packs less tightly than the liquid, so ice is less dense than water and floats on top."
+   },
+   {
+    "id": "sinkingObject",
+    "label": "Denser object sinks",
+    "note": "This object is denser than the water around it, so it cannot stay up and sinks straight to the bottom."
+   }
+  ],
+  "keywords": [
+   "particle",
+   "model",
+   "and",
+   "density",
+   "mass",
+   "volume",
+   "particle model",
+   "brownian motion",
+   "change of state",
+   "melting point",
+   "boiling point",
+   "reproducible",
+   "solid (densest)",
+   "liquid",
+   "gas (least dense)",
+   "water surface",
+   "floating ice",
+   "denser object sinks"
+  ]
+ },
+ {
+  "id": "d_DIET",
+  "title": "Diet and health",
+  "discipline": "biology",
+  "unitCode": "DIET",
+  "unitTitle": "Diet and health",
+  "vb": "0 0 320 250",
+  "parts": [
+   {
+    "id": "carbsSlice",
+    "label": "Carbohydrates",
+    "note": "We start the plate with carbohydrates, the fuel that gives your body most of its energy for moving, thinking and staying warm."
+   },
+   {
+    "id": "proteinSlice",
+    "label": "Protein",
+    "note": "Next we add protein, which the body uses to grow new cells and repair damaged ones, like building blocks for your muscles."
+   },
+   {
+    "id": "fatSlice",
+    "label": "Fats",
+    "note": "A small slice of fats goes on to insulate and cushion your organs, though too much on the plate can harm your health."
+   },
+   {
+    "id": "fibreSlice",
+    "label": "Fibre",
+    "note": "Fibre joins the plate to keep food moving through your gut, preventing constipation and keeping digestion healthy."
+   },
+   {
+    "id": "vitMinSlice",
+    "label": "Vitamins & Minerals",
+    "note": "Vitamins and minerals fill the last slice: calcium builds bones, iron helps blood carry oxygen, and vitamins protect eyesight and immunity."
+   },
+   {
+    "id": "plate",
+    "label": "Balanced Plate",
+    "note": "Together these slices make a balanced plate, since no single food holds all seven nutrients, we must eat a variety."
+   },
+   {
+    "id": "water",
+    "label": "Water",
+    "note": "Finally we pour water over everything, letting chemical reactions happen inside cells and carrying substances around your whole body."
+   }
+  ],
+  "keywords": [
+   "diet",
+   "and",
+   "health",
+   "nutrient",
+   "balanced diet",
+   "carbohydrate",
+   "protein",
+   "fibre",
+   "mineral",
+   "energy requirement",
+   "deficiency disease",
+   "anaemia",
+   "obesity",
+   "carbohydrates",
+   "fats",
+   "vitamins & minerals",
+   "balanced plate",
+   "water"
+  ]
+ },
+ {
+  "id": "d_EAR",
+  "title": "Earth and atmosphere",
+  "discipline": "earth",
+  "unitCode": "EAR",
+  "unitTitle": "Earth and atmosphere",
+  "vb": "0 0 320 300",
+  "parts": [
+   {
+    "id": "atmosphere",
+    "label": "Atmosphere",
+    "note": "A thin blanket of gas wraps the planet: mostly nitrogen, about a fifth oxygen for breathing, plus tiny traces like carbon dioxide."
+   },
+   {
+    "id": "crust",
+    "label": "Crust",
+    "note": "This is the thin rocky skin we live on, only tens of kilometres deep, floating on the hotter layers pressing up beneath it."
+   },
+   {
+    "id": "mantle",
+    "label": "Mantle",
+    "note": "Beneath the crust sits the vast, slowly flowing mantle, whose heat drives movement in the rock above it."
+   },
+   {
+    "id": "outerCore",
+    "label": "Outer core",
+    "note": "Deeper still, iron here is so hot it melts into molten liquid, churning around the solid centre below."
+   },
+   {
+    "id": "innerCore",
+    "label": "Inner core",
+    "note": "At the very centre the pressure squeezes the iron so hard it stays solid, forming the planet's hot inner heart."
+   }
+  ],
+  "keywords": [
+   "earth",
+   "and",
+   "atmosphere",
+   "crust",
+   "mantle",
+   "core",
+   "igneous rock",
+   "sedimentary rock",
+   "metamorphic rock",
+   "weathering",
+   "greenhouse effect",
+   "recycling",
+   "outer core",
+   "inner core"
+  ]
+ },
+ {
+  "id": "d_ELC",
+  "title": "Elements and compounds",
+  "discipline": "chemistry",
+  "unitCode": "ELC",
+  "unitTitle": "Elements and compounds",
+  "vb": "0 0 320 250",
+  "parts": [
+   {
+    "id": "elementBox",
+    "label": "Element",
+    "note": "We start with an element: a pure substance built from only one type of atom, like the copper in a wire or oxygen gas."
+   },
+   {
+    "id": "compoundBox",
+    "label": "Compound",
+    "note": "Now join different atoms together with chemical bonds and you make a compound, a brand-new substance holding two or more types of atom."
+   },
+   {
+    "id": "mixtureBox",
+    "label": "Mixture",
+    "note": "In a mixture the substances just sit together, not bonded, so you can pull them apart again, like lifting iron filings out of sulfur with a magnet."
+   },
+   {
+    "id": "bond",
+    "label": "Chemical bond",
+    "note": "The chemical bond is the glue: it locks different atoms together so tightly they now behave as one whole new substance, not a mixture."
+   },
+   {
+    "id": "formulaUnit",
+    "label": "Molecule (formula)",
+    "note": "We write the result as a formula, using symbols and small numbers to count each atom, so H₂O tells us two hydrogen atoms joined to one oxygen."
+   },
+   {
+    "id": "newProperties",
+    "label": "New properties",
+    "note": "Bonding transforms everything: soft sodium metal and toxic chlorine gas combine to give ordinary table salt, with completely new properties of its own."
+   }
+  ],
+  "keywords": [
+   "elements",
+   "and",
+   "compounds",
+   "chemical symbol",
+   "chemical formula",
+   "element",
+   "compound",
+   "mixture",
+   "molecule",
+   "physical property",
+   "chemical property",
+   "chemical bond",
+   "molecule (formula)",
+   "new properties"
+  ]
+ },
+ {
+  "id": "d_ENC",
+  "title": "Energy changes",
+  "discipline": "chemistry",
+  "unitCode": "ENC",
+  "unitTitle": "Energy changes",
+  "vb": "0 0 320 230",
+  "parts": [
+   {
+    "id": "exoBeaker",
+    "label": "Exothermic",
+    "note": "In an exothermic change, energy pours out of the reaction into everything around it, so the surroundings warm up."
+   },
+   {
+    "id": "energyOut",
+    "label": "Energy out",
+    "note": "Energy escapes to the surroundings here, just like a hand warmer or self-heating can pushing out heat when it reacts."
+   },
+   {
+    "id": "endoBeaker",
+    "label": "Endothermic",
+    "note": "In an endothermic change, the reaction pulls energy in from around it, so the surroundings cool down instead."
+   },
+   {
+    "id": "energyIn",
+    "label": "Energy in",
+    "note": "Energy is dragged in from the surroundings here, the way an instant icepack sucks heat away and turns cold."
+   },
+   {
+    "id": "thermometer",
+    "label": "Thermometer",
+    "note": "The thermometer reads the temperature: if it rises the change is exothermic, if it falls it is endothermic."
+   },
+   {
+    "id": "surroundings",
+    "label": "Surroundings",
+    "note": "The surroundings include the thermometer itself, which is exactly why it can sense the energy moving in or out."
+   }
+  ],
+  "keywords": [
+   "energy",
+   "changes",
+   "energy change",
+   "surroundings",
+   "exothermic",
+   "endothermic",
+   "thermometer",
+   "temperature change",
+   "neutralisation",
+   "combustion",
+   "mean",
+   "range",
+   "energy out",
+   "energy in"
+  ]
+ },
+ {
+  "id": "d_ENR",
+  "title": "Energy resources",
+  "discipline": "physics",
+  "unitCode": "ENR",
+  "unitTitle": "Energy resources",
+  "vb": "0 0 320 230",
+  "parts": [
+   {
+    "id": "fossilFuel",
+    "label": "Fossil fuel",
+    "note": "Coal, oil or gas arrives first, packed with stored energy from living things that died millions of years ago."
+   },
+   {
+    "id": "boiler",
+    "label": "Boiler / steam",
+    "note": "The fuel is burned to heat water in the boiler until it boils, and the hot steam rushes out to spin the turbine."
+   },
+   {
+    "id": "turbine",
+    "label": "Turbine",
+    "note": "The fast-moving steam pushes the turbine blades round, so this spinning is what every power station really needs."
+   },
+   {
+    "id": "generator",
+    "label": "Generator",
+    "note": "The spinning turbine turns the generator, and it is here that the movement is converted into an electric current."
+   },
+   {
+    "id": "dam",
+    "label": "Dam (hydro)",
+    "note": "A hydro station skips burning fuel: water released from behind the dam rushes down and spins the same turbine instead."
+   },
+   {
+    "id": "nationalGrid",
+    "label": "National Grid",
+    "note": "The current flows out along the National Grid's cables, carrying electricity to homes, businesses and factories everywhere."
+   }
+  ],
+  "keywords": [
+   "energy",
+   "resources",
+   "energy resource",
+   "fossil fuel",
+   "generator",
+   "turbine",
+   "national grid",
+   "renewable",
+   "non-renewable",
+   "carbon dioxide",
+   "hydroelectric",
+   "biofuel",
+   "boiler / steam",
+   "dam (hydro)"
+  ]
+ },
+ {
+  "id": "d_GA1",
+  "title": "The atom & isotopes",
+  "discipline": "physics",
+  "unitCode": "GA1",
+  "unitTitle": "The atom & isotopes",
+  "vb": "0 0 320 280",
+  "parts": [
+   {
+    "id": "nucleus",
+    "label": "Nucleus",
+    "note": "At the centre sits a tiny nucleus — only a ten-thousandth of the atom's width, yet it packs in almost all the mass."
+   },
+   {
+    "id": "proton",
+    "label": "Proton",
+    "note": "Inside the nucleus we pack positive protons; how many there are decides which element this atom actually is."
+   },
+   {
+    "id": "neutron",
+    "label": "Neutron",
+    "note": "Alongside them sit neutral neutrons, adding mass but no charge, helping bind the crowded nucleus together."
+   },
+   {
+    "id": "electron",
+    "label": "Electron",
+    "note": "Now tiny negative electrons appear, far lighter than protons, whizzing around the nucleus in the mostly empty space."
+   },
+   {
+    "id": "shell",
+    "label": "Electron shell",
+    "note": "The electrons settle into shells — energy levels at set distances — filling from the innermost outwards around the nucleus."
+   },
+   {
+    "id": "ejectedElectron",
+    "label": "Ejected electron (ion)",
+    "note": "Absorbing electromagnetic radiation can knock an electron clean out, leaving the atom with extra positive charge — now a positive ion."
+   }
+  ],
+  "keywords": [
+   "the",
+   "atom",
+   "isotopes",
+   "nucleus",
+   "atomic number",
+   "mass number",
+   "isotope",
+   "ion",
+   "proton",
+   "neutron",
+   "electron",
+   "electron shell",
+   "ejected electron (ion)"
+  ]
+ },
+ {
+  "id": "d_GA2",
+  "title": "Development of the model",
+  "discipline": "physics",
+  "unitCode": "GA2",
+  "unitTitle": "Development of the model",
+  "vb": "0 0 330 250",
+  "parts": [
+   {
+    "id": "alphaSource",
+    "label": "Alpha source",
+    "note": "Here we fire a beam of tiny positive alpha particles at the foil, testing whether Thomson's soft plum-pudding atom really holds up."
+   },
+   {
+    "id": "goldFoil",
+    "label": "Gold foil",
+    "note": "The beam hits gold hammered incredibly thin, just a few atoms deep, so we can watch how each particle passes through the atoms."
+   },
+   {
+    "id": "straightPath",
+    "label": "Passes straight through",
+    "note": "Almost every particle sails straight through undeflected, telling us the atom is mostly empty space with nothing solid in the way."
+   },
+   {
+    "id": "deflectedPath",
+    "label": "Deflected / bounced back",
+    "note": "A few particles swerve sharply or bounce right back, so something tiny, dense and positive must be repelling them."
+   },
+   {
+    "id": "nucleus",
+    "label": "Nucleus",
+    "note": "That something is the nucleus: a minuscule, dense, positively charged core at the centre where nearly all the atom's mass is packed."
+   },
+   {
+    "id": "electronShell",
+    "label": "Electron shell",
+    "note": "Bohr adds electrons orbiting the nucleus at fixed distances in shells, each shell a set energy level rather than a random cloud."
+   },
+   {
+    "id": "neutron",
+    "label": "Neutron",
+    "note": "Finally Chadwick finds neutrons sitting in the nucleus, uncharged particles that add mass and complete our picture of the atom."
+   }
+  ],
+  "keywords": [
+   "development",
+   "the",
+   "model",
+   "plum pudding model",
+   "alpha scattering",
+   "nuclear model",
+   "alpha source",
+   "gold foil",
+   "passes straight through",
+   "deflected / bounced back",
+   "nucleus",
+   "electron shell",
+   "neutron"
+  ]
+ },
+ {
+  "id": "d_GA3",
+  "title": "Radioactive decay & radiation",
+  "discipline": "physics",
+  "unitCode": "GA3",
+  "unitTitle": "Radioactive decay & radiation",
+  "vb": "0 0 320 250",
+  "parts": [
+   {
+    "id": "alpha",
+    "label": "Alpha particle",
+    "note": "An unstable nucleus flings out an alpha particle, a heavy clump of 2 protons and 2 neutrons, losing energy as it decays."
+   },
+   {
+    "id": "beta",
+    "label": "Beta particle",
+    "note": "Instead a fast-moving electron shoots out of the nucleus, carrying energy away much lighter and quicker than an alpha particle."
+   },
+   {
+    "id": "gamma",
+    "label": "Gamma ray",
+    "note": "The nucleus also releases a burst of pure electromagnetic energy, a gamma ray, needing no particle to carry it away."
+   },
+   {
+    "id": "neutron",
+    "label": "Neutron",
+    "note": "Sometimes a lone neutron is thrown out of the nucleus, a neutral particle with no charge to attract or repel it."
+   },
+   {
+    "id": "paper",
+    "label": "Paper",
+    "note": "The heavy alpha barely gets anywhere: a single sheet of paper absorbs it completely, blocking its path here."
+   },
+   {
+    "id": "aluminium",
+    "label": "Aluminium",
+    "note": "Beta pushes further, but a few millimetres of aluminium soak it up, stopping the electrons dead."
+   },
+   {
+    "id": "leadConcrete",
+    "label": "Lead / concrete",
+    "note": "Gamma streaks through almost everything; only thick lead or concrete can absorb enough to weaken the beam."
+   },
+   {
+    "id": "gmTube",
+    "label": "Geiger-Muller tube",
+    "note": "A Geiger-Muller tube catches each particle as it arrives, clicking out a count-rate that reveals the source's activity in becquerel."
+   }
+  ],
+  "keywords": [
+   "radioactive",
+   "decay",
+   "radiation",
+   "alpha particle",
+   "beta particle",
+   "gamma ray",
+   "activity",
+   "neutron",
+   "paper",
+   "aluminium",
+   "lead / concrete",
+   "geiger-muller tube"
+  ]
+ },
+ {
+  "id": "d_GA4",
+  "title": "Nuclear equations & half-life",
+  "discipline": "physics",
+  "unitCode": "GA4",
+  "unitTitle": "Nuclear equations & half-life",
+  "vb": "0 0 320 260",
+  "parts": [
+   {
+    "id": "parentNucleus",
+    "label": "Parent nucleus",
+    "note": "We start with an unstable parent nucleus, packed with too many protons and neutrons, so it is about to break apart to become more stable."
+   },
+   {
+    "id": "alphaParticle",
+    "label": "Alpha particle",
+    "note": "The nucleus flings out an alpha particle of 2 protons and 2 neutrons, dropping its mass number by 4 and atomic number by 2."
+   },
+   {
+    "id": "betaParticle",
+    "label": "Beta particle (electron)",
+    "note": "In beta decay a neutron flips into a proton and fires out a fast electron, so the atomic number climbs by 1 while mass stays the same."
+   },
+   {
+    "id": "decayCurve",
+    "label": "Activity curve",
+    "note": "As nuclei decay, the count-rate drops, tracing this falling curve; the time for the activity to halve is one half-life."
+   },
+   {
+    "id": "oneHalfLife",
+    "label": "After 1 half-life",
+    "note": "After one half-life, half the unstable nuclei have decayed, so the activity has dropped to exactly half its starting value."
+   },
+   {
+    "id": "twoHalfLives",
+    "label": "After 2 half-lives",
+    "note": "After a second half-life, the activity halves again, leaving just a quarter of the original count-rate on the curve."
+   }
+  ],
+  "keywords": [
+   "nuclear",
+   "equations",
+   "half",
+   "life",
+   "half-life",
+   "alpha decay",
+   "beta decay",
+   "parent nucleus",
+   "alpha particle",
+   "beta particle (electron)",
+   "activity curve",
+   "after 1 half-life",
+   "after 2 half-lives"
+  ]
+ },
+ {
+  "id": "d_GA5",
+  "title": "Hazards & uses of radiation",
+  "discipline": "physics",
+  "unitCode": "GA5",
+  "unitTitle": "Hazards & uses of radiation",
+  "vb": "0 0 320 250",
+  "parts": [
+   {
+    "id": "externalSource",
+    "label": "External source",
+    "note": "The story starts here: a radioactive source sits outside the body, firing radiation across the gap without ever touching you."
+   },
+   {
+    "id": "rays",
+    "label": "Radiation rays",
+    "note": "The rays stream from the source and pass through the body from outside; this exposure is irradiation, but no radioactive atoms are left behind."
+   },
+   {
+    "id": "contaminant",
+    "label": "Contaminant on body",
+    "note": "Now radioactive atoms land on the body itself; unlike irradiation, this source sticks around and keeps firing radiation from where it clings."
+   },
+   {
+    "id": "body",
+    "label": "Exposed body",
+    "note": "The exposed body absorbs the incoming radiation, but once the external source is removed the person is no longer radioactive."
+   },
+   {
+    "id": "shield",
+    "label": "Shield (precaution)",
+    "note": "Slide a dense shield between source and body and it blocks most rays, cutting your dose alongside keeping distance and limiting time."
+   },
+   {
+    "id": "backgroundSource",
+    "label": "Background source",
+    "note": "All around, low-level background radiation drips in constantly from radon, rocks, soil, space and food, the baseline dose we all receive."
+   }
+  ],
+  "keywords": [
+   "hazards",
+   "uses",
+   "radiation",
+   "irradiation",
+   "contamination",
+   "background radiation",
+   "external source",
+   "radiation rays",
+   "contaminant on body",
+   "exposed body",
+   "shield (precaution)",
+   "background source"
+  ]
+ },
+ {
+  "id": "d_GBC1",
+  "title": "Cell structure",
+  "discipline": "biology",
+  "unitCode": "GBC1",
+  "unitTitle": "Cell structure",
+  "vb": "0 0 320 250",
+  "parts": [
+   {
+    "id": "cellWall",
+    "label": "Cell wall",
+    "note": "A tough cellulose wall builds around the plant cell, giving it a rigid shape and stopping it bursting when it fills with water."
+   },
+   {
+    "id": "cellMembrane",
+    "label": "Cell membrane",
+    "note": "Just inside sits the thin membrane, controlling what enters and leaves so useful substances get in and waste passes out."
+   },
+   {
+    "id": "chloroplast",
+    "label": "Chloroplast",
+    "note": "Green chloroplasts, packed with chlorophyll, trap sunlight energy to make food for the plant in photosynthesis."
+   },
+   {
+    "id": "mitochondria",
+    "label": "Mitochondria",
+    "note": "Tiny mitochondria carry out aerobic respiration, releasing the energy the cell needs to power everything it does."
+   },
+   {
+    "id": "nucleus",
+    "label": "Nucleus",
+    "note": "The nucleus sits in the centre, holding the DNA instructions and acting as the control room directing all the cell's activities."
+   },
+   {
+    "id": "cytoplasm",
+    "label": "Cytoplasm",
+    "note": "Jelly-like cytoplasm fills the cell, a watery space where the chemical reactions of life keep happening."
+   },
+   {
+    "id": "ribosomes",
+    "label": "Ribosomes",
+    "note": "Scattered through the cytoplasm, tiny ribosomes read the instructions and build the proteins the cell needs to work."
+   }
+  ],
+  "keywords": [
+   "cell",
+   "structure",
+   "eukaryotic cell",
+   "prokaryotic cell",
+   "nucleus",
+   "mitochondria",
+   "chloroplast",
+   "cell wall",
+   "cell membrane",
+   "cytoplasm",
+   "ribosomes"
+  ]
+ },
+ {
+  "id": "d_GBC2",
+  "title": "Microscopy & specialised cells",
+  "discipline": "biology",
+  "unitCode": "GBC2",
+  "unitTitle": "Microscopy & specialised cells",
+  "vb": "0 0 320 300",
+  "parts": [
+   {
+    "id": "eyepiece",
+    "label": "Eyepiece lens",
+    "note": "You look through the eyepiece lens first; it magnifies the image again, so total magnification equals eyepiece times objective magnification."
+   },
+   {
+    "id": "objective",
+    "label": "Objective lens",
+    "note": "The objective lens sits close to the specimen and does the first magnifying, gathering light to enlarge the tiny object before the eyepiece."
+   },
+   {
+    "id": "specialisedCell",
+    "label": "Specialised cell",
+    "note": "Under magnification you see a specialised cell: it differentiated from a general cell, gaining features that let it do one particular job well."
+   },
+   {
+    "id": "rootHair",
+    "label": "Root hair cell",
+    "note": "This root hair cell grew a long projection, giving a huge surface area so water and minerals are absorbed faster from the soil."
+   },
+   {
+    "id": "stemCell",
+    "label": "Stem cell",
+    "note": "A stem cell stays unspecialised, dividing and differentiating into any needed cell type, supplying replacements from embryos, bone marrow or plant meristems."
+   }
+  ],
+  "keywords": [
+   "microscopy",
+   "specialised",
+   "cells",
+   "magnification",
+   "differentiation",
+   "stem cell",
+   "eyepiece lens",
+   "objective lens",
+   "specialised cell",
+   "root hair cell"
+  ]
+ },
+ {
+  "id": "d_GBC3",
+  "title": "Cell division & transport",
+  "discipline": "biology",
+  "unitCode": "GBC3",
+  "unitTitle": "Cell division & transport",
+  "vb": "0 0 320 250",
+  "parts": [
+   {
+    "id": "membrane",
+    "label": "Partially permeable membrane",
+    "note": "This barrier lets some particles through but not others, so it controls what enters and leaves the cell."
+   },
+   {
+    "id": "diffusion",
+    "label": "Diffusion",
+    "note": "Particles spread out on their own, moving from where they are crowded to where they are sparse, needing no energy."
+   },
+   {
+    "id": "osmosis",
+    "label": "Osmosis (water)",
+    "note": "Water slips across the membrane towards the more concentrated side, evening out the solution without any energy used."
+   },
+   {
+    "id": "activeTransport",
+    "label": "Active transport",
+    "note": "Here substances are pumped uphill against the gradient, so the cell must spend energy from respiration to do it."
+   },
+   {
+    "id": "mitosis",
+    "label": "Mitosis",
+    "note": "The cell copies its DNA then splits, producing two identical cells to grow the organism or repair damaged tissue."
+   },
+   {
+    "id": "gradient",
+    "label": "Concentration gradient",
+    "note": "A steeper drop in concentration, more surface area and a shorter path all speed up how fast particles diffuse across."
+   }
+  ],
+  "keywords": [
+   "cell",
+   "division",
+   "transport",
+   "mitosis",
+   "diffusion",
+   "osmosis",
+   "active transport",
+   "partially permeable membrane",
+   "osmosis (water)",
+   "concentration gradient"
+  ]
+ },
+ {
+  "id": "d_GBE1",
+  "title": "Photosynthesis",
+  "discipline": "biology",
+  "unitCode": "GBE1",
+  "unitTitle": "Photosynthesis",
+  "vb": "0 0 320 300",
+  "parts": [
+   {
+    "id": "sunlight",
+    "label": "Light energy",
+    "note": "Light energy pours in from the Sun, powering the whole reaction — without it, nothing else can start."
+   },
+   {
+    "id": "chlorophyll",
+    "label": "Chlorophyll",
+    "note": "The green pigment chlorophyll traps that light energy, capturing it so the leaf can drive the reaction forward."
+   },
+   {
+    "id": "leaf",
+    "label": "Leaf",
+    "note": "Inside the leaf's cells, the trapped energy joins the raw materials together, turning them into glucose and oxygen."
+   },
+   {
+    "id": "carbonDioxide",
+    "label": "Carbon dioxide in",
+    "note": "Carbon dioxide seeps in through tiny holes in the leaf, supplying the carbon needed to build glucose."
+   },
+   {
+    "id": "water",
+    "label": "Water from roots",
+    "note": "Water is pulled up from the roots into the leaf, providing the hydrogen that helps form the glucose."
+   },
+   {
+    "id": "oxygen",
+    "label": "Oxygen out",
+    "note": "Oxygen is made as a waste product and escapes out through the leaf's holes into the air around it."
+   },
+   {
+    "id": "starch",
+    "label": "Starch store",
+    "note": "Spare glucose is packed away as starch, storing the trapped energy for the plant to use later."
+   }
+  ],
+  "keywords": [
+   "photosynthesis",
+   "chlorophyll",
+   "limiting factor",
+   "light energy",
+   "leaf",
+   "carbon dioxide in",
+   "water from roots",
+   "oxygen out",
+   "starch store"
+  ]
+ },
+ {
+  "id": "d_GBE2",
+  "title": "Respiration",
+  "discipline": "biology",
+  "unitCode": "GBE2",
+  "unitTitle": "Respiration",
+  "vb": "0 0 320 300",
+  "parts": [
+   {
+    "id": "glucose",
+    "label": "Glucose",
+    "note": "Glucose is the fuel: this sugar carries the stored energy that respiration will unlock, feeding into every living cell nonstop."
+   },
+   {
+    "id": "oxygen",
+    "label": "Oxygen in",
+    "note": "Oxygen is breathed in and delivered to the cell, where it will react with the glucose to release far more energy."
+   },
+   {
+    "id": "cell",
+    "label": "Living cell",
+    "note": "Inside every living cell the glucose and oxygen meet and react, running the exothermic reaction that powers the whole organism."
+   },
+   {
+    "id": "aerobicProducts",
+    "label": "CO₂ + water",
+    "note": "The reaction makes carbon dioxide and water as waste; these leave the cell to be breathed out and removed by the blood."
+   },
+   {
+    "id": "energy",
+    "label": "Energy released",
+    "note": "The real prize: energy is released for movement, growth and warmth, driving all the cell's other reactions."
+   },
+   {
+    "id": "lacticAcid",
+    "label": "Lactic acid",
+    "note": "Without enough oxygen the muscle switches to anaerobic respiration, releasing less energy and building up lactic acid that makes muscles ache."
+   }
+  ],
+  "keywords": [
+   "respiration",
+   "aerobic respiration",
+   "anaerobic respiration",
+   "metabolism",
+   "glucose",
+   "oxygen in",
+   "living cell",
+   "co₂ + water",
+   "energy released",
+   "lactic acid"
+  ]
+ },
+ {
+  "id": "d_GBH1",
+  "title": "Homeostasis & the nervous system",
+  "discipline": "biology",
+  "unitCode": "GBH1",
+  "unitTitle": "Homeostasis & the nervous system",
+  "vb": "0 0 320 250",
+  "parts": [
+   {
+    "id": "receptor",
+    "label": "Receptor",
+    "note": "It all starts here: the receptor detects a change (the stimulus), like heat or pressure, and fires off a tiny electrical impulse."
+   },
+   {
+    "id": "sensoryNeurone",
+    "label": "Sensory neurone",
+    "note": "The sensory neurone carries that impulse away from the receptor, racing it inwards towards the spinal cord to report what was detected."
+   },
+   {
+    "id": "coordinationCentre",
+    "label": "Coordination centre",
+    "note": "The spinal cord receives the incoming signal and decides on a response, coordinating what happens next without waiting for the conscious brain."
+   },
+   {
+    "id": "synapse",
+    "label": "Synapse",
+    "note": "The neurones don't quite touch: a chemical squirts across this tiny gap and triggers a fresh impulse in the next neurone."
+   },
+   {
+    "id": "motorNeurone",
+    "label": "Motor neurone",
+    "note": "The motor neurone now carries the outgoing command back out from the spinal cord, heading straight for the muscle that must act."
+   },
+   {
+    "id": "effector",
+    "label": "Effector (muscle)",
+    "note": "The message arrives and the effector responds: the muscle contracts, pulling you away fast to protect the body from harm."
+   }
+  ],
+  "keywords": [
+   "homeostasis",
+   "the",
+   "nervous",
+   "system",
+   "receptor",
+   "reflex action",
+   "synapse",
+   "sensory neurone",
+   "coordination centre",
+   "motor neurone",
+   "effector (muscle)"
+  ]
+ },
+ {
+  "id": "d_GBH2",
+  "title": "Hormones & the endocrine system",
+  "discipline": "biology",
+  "unitCode": "GBH2",
+  "unitTitle": "Hormones & the endocrine system",
+  "vb": "0 0 300 300",
+  "parts": [
+   {
+    "id": "pituitary",
+    "label": "Pituitary gland",
+    "note": "Sitting in the brain, this master gland fires out FSH and LH that travel down to switch other glands like the ovaries on."
+   },
+   {
+    "id": "thyroid",
+    "label": "Thyroid gland",
+    "note": "Here in the neck, this gland drips its hormone straight into passing blood, giving a slow, steady message rather than a quick nerve zap."
+   },
+   {
+    "id": "liver",
+    "label": "Liver",
+    "note": "When insulin arrives, the liver mops up spare glucose from the blood and locks it away as glycogen, dropping blood sugar back down."
+   },
+   {
+    "id": "pancreas",
+    "label": "Pancreas",
+    "note": "This gland senses blood glucose climbing too high and releases insulin, the chemical signal telling the body to store the extra sugar."
+   },
+   {
+    "id": "bloodHormone",
+    "label": "Hormone in blood",
+    "note": "The released hormone rides the bloodstream to every organ, but only its target organ recognises it and responds to the message."
+   },
+   {
+    "id": "ovaries",
+    "label": "Ovaries",
+    "note": "Once the pituitary signals them, the ovaries pump out oestrogen, the main female hormone that drives the menstrual cycle each month."
+   }
+  ],
+  "keywords": [
+   "hormones",
+   "the",
+   "endocrine",
+   "system",
+   "hormone",
+   "endocrine system",
+   "insulin",
+   "pituitary gland",
+   "thyroid gland",
+   "liver",
+   "pancreas",
+   "hormone in blood",
+   "ovaries"
+  ]
+ },
+ {
+  "id": "d_GBI1",
+  "title": "Pathogens & disease",
+  "discipline": "biology",
+  "unitCode": "GBI1",
+  "unitTitle": "Pathogens & disease",
+  "vb": "0 0 320 240",
+  "parts": [
+   {
+    "id": "pathogenTypes",
+    "label": "Pathogen types",
+    "note": "Meet the culprits: tiny microorganisms — bacteria, viruses, fungi and protists — that invade the body and cause communicable diseases you can catch from others."
+   },
+   {
+    "id": "hostCell",
+    "label": "Host cell",
+    "note": "Here's one of your body cells, working normally — but it's about to be hijacked by a pathogen that needs it to survive."
+   },
+   {
+    "id": "virus",
+    "label": "Virus",
+    "note": "The virus slips inside the cell and forces it to make copies of the virus, damaging the cell as new viruses burst out."
+   },
+   {
+    "id": "droplet",
+    "label": "Droplet (air)",
+    "note": "When someone coughs or sneezes, pathogens ride tiny droplets through the air, ready to be breathed in by the next person."
+   },
+   {
+    "id": "mosquito",
+    "label": "Vector",
+    "note": "A vector like a mosquito carries the pathogen from person to person, injecting malaria protists into the blood as it bites."
+   },
+   {
+    "id": "vaccine",
+    "label": "Vaccination",
+    "note": "A vaccine trains the body to recognise the pathogen in advance, so far fewer people catch it and the spread is stopped."
+   }
+  ],
+  "keywords": [
+   "pathogens",
+   "disease",
+   "pathogen",
+   "communicable disease",
+   "virus",
+   "pathogen types",
+   "host cell",
+   "droplet (air)",
+   "vector",
+   "vaccination"
+  ]
+ },
+ {
+  "id": "d_GBI2",
+  "title": "Defence & medicines",
+  "discipline": "biology",
+  "unitCode": "GBI2",
+  "unitTitle": "Defence & medicines",
+  "vb": "0 0 320 300",
+  "parts": [
+   {
+    "id": "skin",
+    "label": "Skin barrier",
+    "note": "First line of defence: the skin forms a tough physical wall that stops most pathogens ever getting inside the body."
+   },
+   {
+    "id": "airwayCilia",
+    "label": "Mucus & cilia",
+    "note": "In the airways, sticky mucus traps pathogens and tiny hair-like cilia sweep the trapped mucus back up and out."
+   },
+   {
+    "id": "stomachAcid",
+    "label": "Stomach acid",
+    "note": "Any pathogens swallowed down are met by strong stomach acid, which kills them before they can invade the gut."
+   },
+   {
+    "id": "whiteBloodCell",
+    "label": "White blood cell",
+    "note": "If pathogens slip past, white blood cells hunt them down and engulf them in phagocytosis, swallowing them whole."
+   },
+   {
+    "id": "pathogen",
+    "label": "Pathogen",
+    "note": "This invading pathogen carries unique markers, triggering white blood cells to make matching antibodies and antitoxins against it."
+   },
+   {
+    "id": "antibiotic",
+    "label": "Antibiotic vs bacteria",
+    "note": "Antibiotics kill bacteria inside the body, but not viruses; overusing them breeds resistant strains like MRSA that survive."
+   },
+   {
+    "id": "drugTrial",
+    "label": "Drug trial test",
+    "note": "New drugs are trialled for safety, correct dose and effectiveness, using placebos and double-blind tests before approval."
+   }
+  ],
+  "keywords": [
+   "defence",
+   "medicines",
+   "immune system",
+   "antibody",
+   "vaccination",
+   "antibiotic",
+   "skin barrier",
+   "mucus & cilia",
+   "stomach acid",
+   "white blood cell",
+   "pathogen",
+   "antibiotic vs bacteria",
+   "drug trial test"
+  ]
+ },
+ {
+  "id": "d_GBO1",
+  "title": "Enzymes & digestion",
+  "discipline": "biology",
+  "unitCode": "GBO1",
+  "unitTitle": "Enzymes & digestion",
+  "vb": "0 0 320 230",
+  "parts": [
+   {
+    "id": "enzyme",
+    "label": "Enzyme",
+    "note": "Here comes the enzyme, a protein that speeds up a reaction and then walks away unchanged, ready to do it all again."
+   },
+   {
+    "id": "activeSite",
+    "label": "Active site",
+    "note": "This notch is the active site, a shape that fits just one substrate like a key fits one lock, so only the right molecule slots in."
+   },
+   {
+    "id": "substrate",
+    "label": "Substrate",
+    "note": "The substrate drops into the active site; held snugly in place, its bonds are put under strain and made easier to break."
+   },
+   {
+    "id": "products",
+    "label": "Products",
+    "note": "The bonds snap and the products fall away, like starch cut into sugars, freeing the enzyme to grab the next substrate."
+   },
+   {
+    "id": "denatured",
+    "label": "Denatured enzyme",
+    "note": "Too much heat or the wrong pH warps the active site; now the substrate no longer fits, so the reaction grinds to a halt."
+   }
+  ],
+  "keywords": [
+   "enzymes",
+   "digestion",
+   "enzyme",
+   "substrate",
+   "active site",
+   "products",
+   "denatured enzyme"
+  ]
+ },
+ {
+  "id": "d_GBO2",
+  "title": "Circulatory system & health",
+  "discipline": "biology",
+  "unitCode": "GBO2",
+  "unitTitle": "Circulatory system & health",
+  "vb": "0 0 320 300",
+  "parts": [
+   {
+    "id": "lungs",
+    "label": "Lungs",
+    "note": "Blood is pumped to the lungs first, picking up oxygen and dropping off waste carbon dioxide before returning to the heart."
+   },
+   {
+    "id": "artery",
+    "label": "Artery",
+    "note": "This artery carries oxygen-rich blood away from the heart, its thick muscular walls withstanding the high pressure of each pump."
+   },
+   {
+    "id": "vein",
+    "label": "Vein",
+    "note": "This vein returns blood to the heart at low pressure; its valves stop the slow-moving blood from flowing backwards."
+   },
+   {
+    "id": "heart",
+    "label": "Heart",
+    "note": "The heart sits at the centre, pumping blood twice: once out to the lungs and once out around the whole body."
+   },
+   {
+    "id": "coronaryArtery",
+    "label": "Coronary artery",
+    "note": "Coronary arteries feed the heart muscle itself; if fatty deposits narrow them, the starved muscle causes coronary heart disease."
+   },
+   {
+    "id": "body",
+    "label": "Body tissues",
+    "note": "At the body tissues, blood delivers oxygen and collects waste, then heads back to the heart to be pumped round again."
+   },
+   {
+    "id": "capillary",
+    "label": "Capillary",
+    "note": "Here blood slows through tiny capillaries whose walls are one cell thick, letting oxygen and food pass into the tissues."
+   },
+   {
+    "id": "bloodComposition",
+    "label": "Blood components",
+    "note": "The blood itself carries red cells for oxygen, white cells to fight pathogens, platelets to clot, and plasma dissolving everything else."
+   }
+  ],
+  "keywords": [
+   "circulatory",
+   "system",
+   "health",
+   "artery",
+   "vein",
+   "capillary",
+   "non-communicable disease",
+   "lungs",
+   "heart",
+   "coronary artery",
+   "body tissues",
+   "blood components"
+  ]
+ },
+ {
+  "id": "d_GBO3",
+  "title": "Plant tissues & transport",
+  "discipline": "biology",
+  "unitCode": "GBO3",
+  "unitTitle": "Plant tissues & transport",
+  "vb": "0 0 320 300",
+  "parts": [
+   {
+    "id": "leaf",
+    "label": "Leaf",
+    "note": "Start at the leaf, the plant's food factory: it traps sunlight for photosynthesis and is where the water journey ends."
+   },
+   {
+    "id": "stem",
+    "label": "Stem",
+    "note": "The stem holds the plant up and forms the highway between roots and leaves, carrying water up and sugars back down."
+   },
+   {
+    "id": "root",
+    "label": "Roots",
+    "note": "Roots anchor the plant and soak up water and dissolved minerals from the soil, feeding them into the transport system."
+   },
+   {
+    "id": "xylem",
+    "label": "Xylem",
+    "note": "Xylem pipes, made of dead hollow cells, carry water and minerals one way: upwards from the roots to the thirsty leaves."
+   },
+   {
+    "id": "phloem",
+    "label": "Phloem",
+    "note": "Living phloem tubes flow the other way, carrying sugars made in the leaves out to growing roots and stems (translocation)."
+   },
+   {
+    "id": "stomata",
+    "label": "Stomata",
+    "note": "Tiny stomata on the leaf underside open to let water vapour escape, releasing water lost through the leaf surface."
+   },
+   {
+    "id": "transpirationStream",
+    "label": "Transpiration stream",
+    "note": "As water evaporates out, it drags more water up the xylem behind it: this continuous pull is the transpiration stream."
+   }
+  ],
+  "keywords": [
+   "plant",
+   "tissues",
+   "transport",
+   "xylem",
+   "phloem",
+   "transpiration",
+   "stomata",
+   "leaf",
+   "stem",
+   "roots",
+   "transpiration stream"
+  ]
+ },
+ {
+  "id": "d_GBV1",
+  "title": "Reproduction & DNA",
+  "discipline": "biology",
+  "unitCode": "GBV1",
+  "unitTitle": "Reproduction & DNA",
+  "vb": "0 0 320 220",
+  "parts": [
+   {
+    "id": "eggCell",
+    "label": "Egg (gamete)",
+    "note": "The mother makes an egg, a sex cell carrying just half her genetic information, waiting to be joined by the other parent."
+   },
+   {
+    "id": "spermCell",
+    "label": "Sperm (gamete)",
+    "note": "The father's sperm swims in carrying his half of the genes, ready to fuse with the egg and mix two sets of information."
+   },
+   {
+    "id": "zygote",
+    "label": "Fertilised cell",
+    "note": "Egg and sperm fuse at fertilisation, restoring the full set of chromosomes; this single cell now divides by mitosis to grow."
+   },
+   {
+    "id": "asexualParent",
+    "label": "Single parent (clone)",
+    "note": "With no gametes and no mixing, one parent simply copies itself, so every offspring is an identical clone with no variation."
+   },
+   {
+    "id": "chromosomes",
+    "label": "Chromosomes (halved)",
+    "note": "Meiosis halves the chromosomes when making gametes, so two joining cells add back to the normal number rather than doubling it."
+   },
+   {
+    "id": "dnaHelix",
+    "label": "DNA double helix",
+    "note": "Zoom into a chromosome and you find DNA: two long strands twisted together into a double helix that stores all the instructions."
+   },
+   {
+    "id": "basePair",
+    "label": "Gene / base pair",
+    "note": "The strands are held by paired bases; a short run of these forms one gene, coding for a single feature of the organism."
+   }
+  ],
+  "keywords": [
+   "reproduction",
+   "dna",
+   "sexual reproduction",
+   "asexual reproduction",
+   "meiosis",
+   "gamete",
+   "egg (gamete)",
+   "sperm (gamete)",
+   "fertilised cell",
+   "single parent (clone)",
+   "chromosomes (halved)",
+   "dna double helix",
+   "gene / base pair"
+  ]
+ },
+ {
+  "id": "d_GBV2",
+  "title": "Genetics & inheritance",
+  "discipline": "biology",
+  "unitCode": "GBV2",
+  "unitTitle": "Genetics & inheritance",
+  "vb": "0 0 320 280",
+  "parts": [
+   {
+    "id": "parentAlleles",
+    "label": "Parent alleles",
+    "note": "Each parent carries two alleles for the gene; here both are Bb, so each can pass on either a B or a b to their offspring."
+   },
+   {
+    "id": "dominantOffspring",
+    "label": "Dominant offspring",
+    "note": "Where a dominant B lands in the square, it overrides the other allele, so the offspring shows the dominant characteristic even with just one copy."
+   },
+   {
+    "id": "heterozygous",
+    "label": "Heterozygous (Bb)",
+    "note": "A B pairs with a b, giving two different alleles; the dominant B is expressed, so the phenotype still shows the dominant characteristic."
+   },
+   {
+    "id": "recessiveOffspring",
+    "label": "Recessive (bb)",
+    "note": "Only when two recessive b alleles meet does the recessive characteristic finally appear, since no dominant allele is present to mask it."
+   },
+   {
+    "id": "ratio",
+    "label": "3 : 1 ratio",
+    "note": "Counting the four squares gives three offspring showing dominant to one showing recessive, the classic 3:1 ratio from two heterozygous parents."
+   },
+   {
+    "id": "sexChromosomes",
+    "label": "XX / XY sex",
+    "note": "Sex is set the same way: an X from mum pairs with an X or Y from dad, giving XX females or XY males."
+   }
+  ],
+  "keywords": [
+   "genetics",
+   "inheritance",
+   "allele",
+   "dominant",
+   "recessive",
+   "genotype",
+   "parent alleles",
+   "dominant offspring",
+   "heterozygous (bb)",
+   "recessive (bb)",
+   "3 : 1 ratio",
+   "xx / xy sex"
+  ]
+ },
+ {
+  "id": "d_GBV3",
+  "title": "Variation & evolution",
+  "discipline": "biology",
+  "unitCode": "GBV3",
+  "unitTitle": "Variation & evolution",
+  "vb": "0 0 320 230",
+  "parts": [
+   {
+    "id": "population",
+    "label": "Varied population",
+    "note": "We start with a population where individuals differ — their genes, environment, or both make no two exactly alike, giving natural selection something to act on."
+   },
+   {
+    "id": "mutation",
+    "label": "Mutation / new allele",
+    "note": "A random mutation copies a gene wrongly, creating a brand-new allele — a fresh variation that may turn out helpful, harmful, or make no difference."
+   },
+   {
+    "id": "selectPressure",
+    "label": "Selection pressure",
+    "note": "The environment throws a challenge — a predator, cold, or disease — that tests everyone; only the best-suited traits help individuals cope with it."
+   },
+   {
+    "id": "survivor",
+    "label": "Survivor (best adapted)",
+    "note": "The best-adapted individuals survive this pressure and reproduce, while poorly-suited ones die out before passing their alleles on."
+   },
+   {
+    "id": "nextGen",
+    "label": "Next generation",
+    "note": "Survivors pass their helpful alleles to offspring, so the next generation carries more of them — over many generations the whole species shifts."
+   },
+   {
+    "id": "selectiveBreeding",
+    "label": "Selective breeding",
+    "note": "Humans speed this up by choosing individuals with useful traits, like high yield, and breeding them together generation after generation."
+   },
+   {
+    "id": "fossil",
+    "label": "Fossil evidence",
+    "note": "Fossils capture how species looked long ago, letting us track gradual changes over time — solid evidence that evolution really happened."
+   }
+  ],
+  "keywords": [
+   "variation",
+   "evolution",
+   "natural selection",
+   "selective breeding",
+   "varied population",
+   "mutation / new allele",
+   "selection pressure",
+   "survivor (best adapted)",
+   "next generation",
+   "fossil evidence"
+  ]
+ },
+ {
+  "id": "d_GBY1",
+  "title": "Ecosystems & adaptation",
+  "discipline": "biology",
+  "unitCode": "GBY1",
+  "unitTitle": "Ecosystems & adaptation",
+  "vb": "0 0 320 260",
+  "parts": [
+   {
+    "id": "sun",
+    "label": "Sun (light)",
+    "note": "It starts with the Sun: its light pours energy into the ecosystem, and how much reaches an area helps decide what can live there."
+   },
+   {
+    "id": "cactus",
+    "label": "Cactus (adapted)",
+    "note": "Here a cactus thrives where water is scarce, storing water in its stem and using spines so it wins the fight for survival."
+   },
+   {
+    "id": "producer",
+    "label": "Producer",
+    "note": "The producer, a green plant, traps sunlight to make its own food, feeding itself and everything else that follows in the chain."
+   },
+   {
+    "id": "herbivore",
+    "label": "Herbivore",
+    "note": "Now a herbivore eats the producer, passing that stored food energy up the chain from plant into animal."
+   },
+   {
+    "id": "predator",
+    "label": "Predator",
+    "note": "Next the predator hunts and eats the herbivore, carrying the energy one more step and controlling how many herbivores there are."
+   },
+   {
+    "id": "soil",
+    "label": "Soil & water",
+    "note": "Underneath, soil and water are the non-living factors supplying minerals and moisture, tying the whole community together into one ecosystem."
+   }
+  ],
+  "keywords": [
+   "ecosystems",
+   "adaptation",
+   "ecosystem",
+   "community",
+   "food chain",
+   "sun (light)",
+   "cactus (adapted)",
+   "producer",
+   "herbivore",
+   "predator",
+   "soil & water"
+  ]
+ },
+ {
+  "id": "d_GBY2",
+  "title": "Cycles & biodiversity",
+  "discipline": "biology",
+  "unitCode": "GBY2",
+  "unitTitle": "Cycles & biodiversity",
+  "vb": "0 0 320 240",
+  "parts": [
+   {
+    "id": "carbonDioxide",
+    "label": "Carbon dioxide",
+    "note": "Carbon dioxide floats in the air, the shared pool of carbon that plants pull in and living things breathe back out."
+   },
+   {
+    "id": "rainCloud",
+    "label": "Rain cloud",
+    "note": "Water vapour rises, cools and condenses into this cloud, then falls as rain to water the land below."
+   },
+   {
+    "id": "plant",
+    "label": "Plant (photosynthesis)",
+    "note": "The plant soaks up carbon dioxide and uses sunlight in photosynthesis, locking that carbon into sugars and new growth."
+   },
+   {
+    "id": "animal",
+    "label": "Animal",
+    "note": "Animals eat plants and breathe out carbon dioxide; many different species here mean a stable, healthy ecosystem."
+   },
+   {
+    "id": "factory",
+    "label": "Combustion",
+    "note": "Burning fossil fuels here releases stored carbon dioxide and methane back into the air, warming the planet and harming habitats."
+   },
+   {
+    "id": "decomposer",
+    "label": "Decomposer",
+    "note": "When plants and animals die, decomposers break them down, freeing nutrients into the soil for new plants to reuse."
+   }
+  ],
+  "keywords": [
+   "cycles",
+   "biodiversity",
+   "decomposer",
+   "carbon cycle",
+   "carbon dioxide",
+   "rain cloud",
+   "plant (photosynthesis)",
+   "animal",
+   "combustion"
+  ]
+ },
+ {
+  "id": "d_GCA1",
+  "title": "Atoms, elements, compounds & mixtures",
+  "discipline": "chemistry",
+  "unitCode": "GCA1",
+  "unitTitle": "Atoms, elements, compounds & mixtures",
+  "vb": "0 0 324 240",
+  "parts": [
+   {
+    "id": "element",
+    "label": "Element",
+    "note": "We start pure: every particle here is the same kind of atom, nothing else mixed in. About 100 of these building blocks exist."
+   },
+   {
+    "id": "compound",
+    "label": "Compound",
+    "note": "Now two elements chemically bond together, locking into a brand-new substance whose properties differ completely from the atoms that joined."
+   },
+   {
+    "id": "mixture",
+    "label": "Mixture",
+    "note": "Here substances just sit side by side, not bonded, so each keeps its own properties and can be pulled apart physically."
+   },
+   {
+    "id": "filtration",
+    "label": "Filtration",
+    "note": "Pour the mixture through paper: the insoluble solid gets trapped as residue while the liquid drains straight through as filtrate."
+   },
+   {
+    "id": "crystallisation",
+    "label": "Crystallisation",
+    "note": "Now gently heat the solution so the solvent evaporates away, leaving the dissolved solid behind as solid crystals forming."
+   },
+   {
+    "id": "chromatography",
+    "label": "Chromatography",
+    "note": "Solvent creeps up the paper, carrying each substance a different distance, so the mixture spreads into separate coloured spots."
+   }
+  ],
+  "keywords": [
+   "atoms",
+   "elements",
+   "compounds",
+   "mixtures",
+   "element",
+   "compound",
+   "mixture",
+   "filtration",
+   "crystallisation",
+   "chromatography"
+  ]
+ },
+ {
+  "id": "d_GCA2",
+  "title": "Atomic structure & isotopes",
+  "discipline": "chemistry",
+  "unitCode": "GCA2",
+  "unitTitle": "Atomic structure & isotopes",
+  "vb": "0 0 320 300",
+  "parts": [
+   {
+    "id": "nucleus",
+    "label": "Nucleus",
+    "note": "Right at the centre we pack a tiny dense nucleus of protons and neutrons; it holds nearly all the atom's mass in a minute space."
+   },
+   {
+    "id": "proton",
+    "label": "Proton",
+    "note": "Inside the nucleus each proton carries a +1 charge and a mass of 1; counting these protons tells us which element the atom is."
+   },
+   {
+    "id": "neutron",
+    "label": "Neutron",
+    "note": "Neutrons sit alongside the protons with no charge but a mass of 1, adding weight and helping hold the nucleus together."
+   },
+   {
+    "id": "innerShell",
+    "label": "First Shell",
+    "note": "Electrons now orbit in shells, filling from the inside out; this first shell fills up first and holds a maximum of 2 electrons."
+   },
+   {
+    "id": "outerShell",
+    "label": "Outer Shell",
+    "note": "Once the inner shell is full, electrons spill into the next shell out, which can take up to 8, building the arrangement outwards."
+   },
+   {
+    "id": "electron",
+    "label": "Electron",
+    "note": "Each electron carries a -1 charge and almost no mass; in a neutral atom their number matches the protons, so charges cancel out."
+   }
+  ],
+  "keywords": [
+   "atomic",
+   "structure",
+   "isotopes",
+   "proton",
+   "neutron",
+   "electron",
+   "isotope",
+   "electronic structure",
+   "nucleus",
+   "first shell",
+   "outer shell"
+  ]
+ },
+ {
+  "id": "d_GCA3",
+  "title": "The periodic table",
+  "discipline": "chemistry",
+  "unitCode": "GCA3",
+  "unitTitle": "The periodic table",
+  "vb": "0 0 320 232",
+  "parts": [
+   {
+    "id": "atomicOrder",
+    "label": "Increasing atomic number",
+    "note": "We lay the elements out in order of increasing atomic number, left to right, row by row, so each has one more proton than the last."
+   },
+   {
+    "id": "group",
+    "label": "Group (column)",
+    "note": "Reading down a column, every element shares the same number of outer electrons, which is why a group behaves in similar ways."
+   },
+   {
+    "id": "period",
+    "label": "Period (row)",
+    "note": "Moving across a row, we cross a full period, adding one proton and one electron at each step until the shell fills."
+   },
+   {
+    "id": "metals",
+    "label": "Metals",
+    "note": "The left and centre fill with metals, which readily lose electrons, giving them their shine, strength and ability to conduct."
+   },
+   {
+    "id": "nonMetals",
+    "label": "Non-metals",
+    "note": "Over on the right sit the non-metals, which tend to gain or share electrons, behaving quite differently from the metals opposite."
+   },
+   {
+    "id": "group1",
+    "label": "Group 1 (alkali metals)",
+    "note": "Group 1, the alkali metals, throw off their single outer electron to react with water, making hydrogen and an alkali, faster down the group."
+   },
+   {
+    "id": "group0",
+    "label": "Group 0 (noble gases)",
+    "note": "The far-right column is Group 0, the noble gases, whose full outer shells leave nothing to gain or lose, so they stay unreactive."
+   }
+  ],
+  "keywords": [
+   "the",
+   "periodic",
+   "table",
+   "group",
+   "period",
+   "alkali metal",
+   "halogen",
+   "noble gas",
+   "increasing atomic number",
+   "group (column)",
+   "period (row)",
+   "metals",
+   "non-metals",
+   "group 1 (alkali metals)",
+   "group 0 (noble gases)"
+  ]
+ },
+ {
+  "id": "d_GCB1",
+  "title": "Ionic, covalent & metallic bonding",
+  "discipline": "chemistry",
+  "unitCode": "GCB1",
+  "unitTitle": "Ionic, covalent & metallic bonding",
+  "vb": "0 0 320 240",
+  "parts": [
+   {
+    "id": "ionicPanel",
+    "label": "Ionic bond",
+    "note": "Here a metal hands its outer electrons to a non-metal, making oppositely charged ions that pull together with a strong ionic bond."
+   },
+   {
+    "id": "covalentPanel",
+    "label": "Covalent bond",
+    "note": "Between two non-metals, no electrons are given away — instead the atoms share electrons, and this shared pair bonds them together."
+   },
+   {
+    "id": "sharedPair",
+    "label": "Shared electron pair",
+    "note": "This pair of electrons is shared between both atoms, sitting in the middle and pulling the two non-metal nuclei together into one molecule."
+   },
+   {
+    "id": "metalIon",
+    "label": "Positive metal ion",
+    "note": "In a metal, each atom has lost its outer electrons, leaving a positive metal ion locked in a regular, tightly-packed pattern."
+   },
+   {
+    "id": "electronSea",
+    "label": "Sea of delocalised electrons",
+    "note": "The lost electrons drift freely around all the ions as a shared sea, gluing the positive ions together and letting metals conduct."
+   },
+   {
+    "id": "positiveIon",
+    "label": "Metal loses electron",
+    "note": "Losing this outer electron leaves the metal atom with a full shell beneath, and a positive charge because it now has more protons than electrons."
+   }
+  ],
+  "keywords": [
+   "ionic",
+   "covalent",
+   "metallic",
+   "bonding",
+   "ionic bond",
+   "covalent bond",
+   "metallic bond",
+   "ion",
+   "delocalised electron",
+   "shared electron pair",
+   "positive metal ion",
+   "sea of delocalised electrons",
+   "metal loses electron"
+  ]
+ },
+ {
+  "id": "d_GCB2",
+  "title": "Structures & properties",
+  "discipline": "chemistry",
+  "unitCode": "GCB2",
+  "unitTitle": "Structures & properties",
+  "vb": "0 0 320 300",
+  "parts": [
+   {
+    "id": "ionicLattice",
+    "label": "Giant ionic lattice",
+    "note": "Millions of oppositely charged ions lock into a giant grid; breaking so many strong bonds needs huge heat, so melting points soar."
+   },
+   {
+    "id": "simpleMolecule",
+    "label": "Simple molecular",
+    "note": "Only weak forces hold these separate molecules together, so they pull apart easily, giving low melting points and no charge to carry current."
+   },
+   {
+    "id": "giantCovalent",
+    "label": "Giant covalent",
+    "note": "Here every atom bonds strongly to its neighbours in one huge network, so enormous heat is needed to break them apart and melt it."
+   },
+   {
+    "id": "metalStructure",
+    "label": "Metal structure",
+    "note": "Positive metal ions sit in a sea of loose electrons that drift freely, carrying charge and heat while layers slide to bend the metal."
+   },
+   {
+    "id": "alloy",
+    "label": "Alloy (distorted)",
+    "note": "Mixing in different-sized atoms jams the neat layers so they cannot slide past each other, making the alloy harder than the pure metal."
+   },
+   {
+    "id": "nanoparticle",
+    "label": "Nanoparticle",
+    "note": "Shrunk to 1-100 nm, so much surface is exposed for their size that they speed up reactions as catalysts and block UV in sunscreens."
+   }
+  ],
+  "keywords": [
+   "structures",
+   "properties",
+   "giant ionic lattice",
+   "simple molecular",
+   "giant covalent",
+   "alloy",
+   "nanoparticle",
+   "metal structure",
+   "alloy (distorted)"
+  ]
+ },
+ {
+  "id": "d_GCC1",
+  "title": "Reactivity & extracting metals",
+  "discipline": "chemistry",
+  "unitCode": "GCC1",
+  "unitTitle": "Reactivity & extracting metals",
+  "vb": "0 0 320 296",
+  "parts": [
+   {
+    "id": "reactivitySeries",
+    "label": "Reactivity series",
+    "note": "We line the metals up from most to least reactive; this ladder predicts every reaction, because a metal higher up displaces one below it from its compound."
+   },
+   {
+    "id": "reactiveMetals",
+    "label": "Very reactive metals",
+    "note": "At the top sit potassium, sodium, calcium and magnesium; they grab oxygen and other elements eagerly, so they are locked tightly inside compounds in the ground."
+   },
+   {
+    "id": "unreactiveMetals",
+    "label": "Unreactive metals",
+    "note": "Down here copper, silver and gold barely react, so they cling weakly to compounds and are easily pushed out by any metal above them."
+   },
+   {
+    "id": "carbonLine",
+    "label": "Carbon's position",
+    "note": "We slot carbon into the ladder as a dividing line; whether a metal sits above or below it decides how we tear that metal from its ore."
+   },
+   {
+    "id": "reduction",
+    "label": "Reduction (with carbon)",
+    "note": "For metals below carbon, like iron, we heat the ore with carbon; carbon steals the oxygen away, reducing the ore back to pure metal."
+   },
+   {
+    "id": "electrolysis",
+    "label": "Electrolysis",
+    "note": "Metals above carbon, like aluminium, hold oxygen too tightly for carbon; instead electricity splits the molten compound apart to release the metal."
+   }
+  ],
+  "keywords": [
+   "reactivity",
+   "extracting",
+   "metals",
+   "reactivity series",
+   "displacement reaction",
+   "oxidation",
+   "reduction",
+   "ore",
+   "very reactive metals",
+   "unreactive metals",
+   "carbon's position",
+   "reduction (with carbon)",
+   "electrolysis"
+  ]
+ },
+ {
+  "id": "d_GCC3",
+  "title": "Electrolysis",
+  "discipline": "chemistry",
+  "unitCode": "GCC3",
+  "unitTitle": "Electrolysis",
+  "vb": "0 0 320 270",
+  "parts": [
+   {
+    "id": "powerSupply",
+    "label": "Power supply (d.c.)",
+    "note": "The d.c. supply pushes electrons round the circuit, giving one electrode a negative charge and the other a positive charge."
+   },
+   {
+    "id": "cathode",
+    "label": "Cathode (negative)",
+    "note": "This electrode is now negative, so it pulls in positive metal ions and hands them electrons, forming the metal here."
+   },
+   {
+    "id": "anode",
+    "label": "Anode (positive)",
+    "note": "This electrode is now positive, so it attracts negative ions and takes electrons from them, forming the non-metal here."
+   },
+   {
+    "id": "electrolyte",
+    "label": "Electrolyte",
+    "note": "Melting or dissolving the compound frees its ions to move, letting charge flow so the compound can be split apart."
+   },
+   {
+    "id": "cation",
+    "label": "Positive ion (cation)",
+    "note": "The positive ion is drawn to the negative cathode, where it gains electrons and turns into a neutral atom."
+   },
+   {
+    "id": "anion",
+    "label": "Negative ion (anion)",
+    "note": "The negative ion is drawn to the positive anode, where it loses electrons and becomes a neutral atom."
+   }
+  ],
+  "keywords": [
+   "electrolysis",
+   "electrolyte",
+   "cathode",
+   "anode",
+   "power supply (d.c.)",
+   "cathode (negative)",
+   "anode (positive)",
+   "positive ion (cation)",
+   "negative ion (anion)"
+  ]
+ },
+ {
+  "id": "d_GCE2",
+  "title": "Reaction profiles",
+  "discipline": "chemistry",
+  "unitCode": "GCE2",
+  "unitTitle": "Reaction profiles",
+  "vb": "0 0 320 240",
+  "parts": [
+   {
+    "id": "energyAxis",
+    "label": "Energy axis",
+    "note": "We plot energy going up the side, so we can track how much the reacting particles hold as the reaction runs left to right."
+   },
+   {
+    "id": "reactants",
+    "label": "Reactants",
+    "note": "Here sit the starting chemicals, storing their energy before anything reacts; this height is where the whole story begins."
+   },
+   {
+    "id": "products",
+    "label": "Products",
+    "note": "After reacting, the new substances settle here; where they land compared to the start tells us if energy was released or absorbed."
+   },
+   {
+    "id": "activationEnergy",
+    "label": "Activation energy",
+    "note": "Particles must climb this hump first, gaining enough energy on collision to break bonds and get the reaction started."
+   },
+   {
+    "id": "catalystPath",
+    "label": "Catalyst path",
+    "note": "A catalyst carves a lower route over the hump, so more collisions succeed and the reaction speeds up without being used up."
+   },
+   {
+    "id": "energyChange",
+    "label": "Energy change",
+    "note": "The drop from reactants to products is the energy given out; here products sit lower, so this reaction releases heat overall."
+   }
+  ],
+  "keywords": [
+   "reaction",
+   "profiles",
+   "reaction profile",
+   "activation energy",
+   "energy axis",
+   "reactants",
+   "products",
+   "catalyst path",
+   "energy change"
+  ]
+ },
+ {
+  "id": "d_P1",
+  "title": "Energy",
+  "discipline": "physics",
+  "unitCode": "P1",
+  "unitTitle": "Energy",
+  "vb": "0 0 320 230",
+  "parts": [
+   {
+    "id": "fuel",
+    "label": "Fuel (chemical store)",
+    "note": "The fuel holds energy in its chemical store. As it burns, that store empties and the energy is released."
+   },
+   {
+    "id": "boiler",
+    "label": "Boiler (thermal store)",
+    "note": "The released energy heats water in the boiler — filling its thermal store and boiling it to steam."
+   },
+   {
+    "id": "turbine",
+    "label": "Turbine",
+    "note": "The rushing steam pushes the angled blades, so the turbine spins: energy is now in a kinetic store."
+   },
+   {
+    "id": "generator",
+    "label": "Generator",
+    "note": "The spinning turbine turns the generator, which transfers the energy electrically as a current."
+   },
+   {
+    "id": "pylon",
+    "label": "Pylon (electricity)",
+    "note": "Pylons carry that current along the wires to homes and factories — the useful output."
+   },
+   {
+    "id": "windTurbine",
+    "label": "Wind turbine (renewable)",
+    "note": "Wind can spin a turbine directly instead of steam — a renewable way to drive the same generator."
+   }
+  ],
+  "keywords": [
+   "energy",
+   "fuel",
+   "joule",
+   "chemical store",
+   "thermal store",
+   "kinetic store",
+   "gravitational store",
+   "elastic store",
+   "power",
+   "renewable",
+   "fuel (chemical store)",
+   "boiler (thermal store)",
+   "turbine",
+   "generator",
+   "pylon (electricity)",
+   "wind turbine (renewable)"
+  ]
+ },
+ {
+  "id": "d_SKL",
+  "title": "Human skeleton and muscles",
+  "discipline": "biology",
+  "unitCode": "SKL",
+  "unitTitle": "Human skeleton and muscles",
+  "vb": "0 0 330 250",
+  "parts": [
+   {
+    "id": "bone",
+    "label": "Bone",
+    "note": "The bone is stiffened by calcium, giving it the hardness to hold you upright and take your body's weight without bending."
+   },
+   {
+    "id": "biceps",
+    "label": "Biceps muscle",
+    "note": "The biceps sits on the front of the upper arm; when it contracts it shortens and pulls the forearm up, bending the elbow."
+   },
+   {
+    "id": "triceps",
+    "label": "Triceps muscle",
+    "note": "The triceps lies on the back of the upper arm; it contracts to pull the forearm back down, straightening the elbow again."
+   },
+   {
+    "id": "tendon",
+    "label": "Tendon",
+    "note": "A tough tendon anchors the muscle to the bone, so the muscle's pull is passed straight into the bone and moves it."
+   },
+   {
+    "id": "cartilage",
+    "label": "Cartilage",
+    "note": "Smooth cartilage caps each bone end, cushioning the meeting point and letting the bones slide without grinding against each other."
+   },
+   {
+    "id": "joint",
+    "label": "Joint",
+    "note": "Here two bones meet at a joint; this movable junction is where bending happens as the muscles pull the bones."
+   },
+   {
+    "id": "ligament",
+    "label": "Ligament",
+    "note": "Strong ligaments strap the two bones together, holding the joint stable so it bends smoothly without the bones pulling apart."
+   }
+  ],
+  "keywords": [
+   "human",
+   "skeleton",
+   "and",
+   "muscles",
+   "bone marrow",
+   "joint",
+   "cartilage",
+   "synovial fluid",
+   "ligament",
+   "tendon",
+   "contract",
+   "antagonistic pair",
+   "tissue",
+   "bone",
+   "biceps muscle",
+   "triceps muscle"
+  ]
+ },
+ {
+  "id": "d_FRC",
+  "title": "Forces",
+  "discipline": "physics",
+  "unitCode": "FRC",
+  "unitTitle": "Forces",
+  "vb": "0 0 320 250",
+  "parts": [
+   {
+    "id": "forceArrow",
+    "label": "Applied force",
+    "note": "We draw the push as an arrow: it points the way the force acts, and a longer arrow means a bigger pull in newtons."
+   },
+   {
+    "id": "springExtension",
+    "label": "Extension",
+    "note": "The force stretches the spring longer; this extra length is the extension, and doubling the force doubles it up to the elastic limit."
+   },
+   {
+    "id": "weightArrow",
+    "label": "Weight",
+    "note": "Gravity pulls the object straight down as weight — a non-contact force acting across a gap, needing nothing to touch it."
+   },
+   {
+    "id": "pivot",
+    "label": "Pivot",
+    "note": "The force now turns the object about this fixed pivot; the further out it acts, the bigger the turning moment it makes."
+   },
+   {
+    "id": "leverArm",
+    "label": "Lever arm",
+    "note": "The long lever arm multiplies the distance from the pivot, so a small push at the end delivers a big turning moment."
+   },
+   {
+    "id": "resultant",
+    "label": "Resultant force",
+    "note": "These forces don't cancel, leaving a resultant force that pushes the object into motion in the direction that arrow points."
+   }
+  ],
+  "keywords": [
+   "forces",
+   "force",
+   "newton",
+   "weight",
+   "friction",
+   "contact force",
+   "non-contact force",
+   "extension",
+   "spring constant",
+   "moment",
+   "resultant force",
+   "applied force",
+   "pivot",
+   "lever arm"
+  ]
+ },
+ {
+  "id": "d_ELE",
+  "title": "Electricity in circuits",
+  "discipline": "physics",
+  "unitCode": "ELE",
+  "unitTitle": "Electricity in circuits",
+  "vb": "0 0 320 260",
+  "parts": [
+   {
+    "id": "cell",
+    "label": "Cell / Battery",
+    "note": "The cell pushes charge out of one terminal and back into the other; connect both ends to power the loop."
+   },
+   {
+    "id": "bulb",
+    "label": "Bulb (component)",
+    "note": "Charge flowing through the bulb makes it light up; this is where the circuit's energy is transferred and used."
+   },
+   {
+    "id": "resistor",
+    "label": "Resistor",
+    "note": "The resistor pushes back against the flowing charge; add more resistance and the current drops, so the bulb dims."
+   },
+   {
+    "id": "voltmeter",
+    "label": "Voltmeter (across)",
+    "note": "Wired across the bulb, the voltmeter reads how many volts of energy the charge gives up passing through it."
+   },
+   {
+    "id": "ammeter",
+    "label": "Ammeter (series)",
+    "note": "Placed in the loop itself, the ammeter counts the charge flowing past each second, reading the current in amps."
+   },
+   {
+    "id": "wire",
+    "label": "Conducting wire",
+    "note": "The metal wire carries the charge round, ferrying energy from the cell to the bulb and back again."
+   },
+   {
+    "id": "symbol",
+    "label": "Resistance (Ω)",
+    "note": "Resistance ties it together: current equals potential difference divided by resistance, so voltage and resistance decide the flow."
+   }
+  ],
+  "keywords": [
+   "electricity",
+   "circuits",
+   "circuit",
+   "conductor",
+   "insulator",
+   "current",
+   "potential difference",
+   "resistance",
+   "ammeter",
+   "voltmeter",
+   "series",
+   "parallel",
+   "cell / battery",
+   "bulb (component)",
+   "resistor",
+   "voltmeter (across)",
+   "ammeter (series)",
+   "conducting wire",
+   "resistance (ω)"
+  ]
+ },
+ {
+  "id": "d_PHO",
+  "title": "Photosynthesis",
+  "discipline": "biology",
+  "unitCode": "PHO",
+  "unitTitle": "Photosynthesis",
+  "vb": "0 0 320 270",
+  "parts": [
+   {
+    "id": "sunlight",
+    "label": "Sunlight",
+    "note": "Light energy pours down from the Sun. This energy powers the whole reaction, and green chlorophyll traps it inside the leaf."
+   },
+   {
+    "id": "chloroplast",
+    "label": "Chloroplast",
+    "note": "Inside leaf cells sit tiny green chloroplasts. Their chlorophyll captures the sunlight, so this is where photosynthesis actually takes place."
+   },
+   {
+    "id": "carbonDioxide",
+    "label": "Carbon dioxide",
+    "note": "Carbon dioxide gas drifts in from the air. It is one of two raw ingredients the leaf needs to build sugar."
+   },
+   {
+    "id": "water",
+    "label": "Water",
+    "note": "Water is pulled up from the roots to the leaf. It joins carbon dioxide as the second reactant fed into the reaction."
+   },
+   {
+    "id": "oxygen",
+    "label": "Oxygen",
+    "note": "As sugar is built, oxygen is released as waste. It escapes from the leaf into the air for other living things to breathe."
+   },
+   {
+    "id": "glucose",
+    "label": "Glucose",
+    "note": "The reaction makes glucose, a sugar. The plant burns it in respiration, builds cell walls, or stores it as starch."
+   },
+   {
+    "id": "stoma",
+    "label": "Stoma",
+    "note": "Tiny stomata open on the leaf's underside. Carbon dioxide slips in and oxygen slips out through these gas doorways."
+   }
+  ],
+  "keywords": [
+   "photosynthesis",
+   "chlorophyll",
+   "chloroplast",
+   "glucose",
+   "reactant",
+   "product",
+   "stomata",
+   "guard cell",
+   "palisade mesophyll",
+   "variegated leaf",
+   "sunlight",
+   "carbon dioxide",
+   "water",
+   "oxygen",
+   "stoma"
+  ]
+ },
+ {
+  "id": "d_ACD",
+  "title": "Acids and alkalis",
+  "discipline": "chemistry",
+  "unitCode": "ACD",
+  "unitTitle": "Acids and alkalis",
+  "vb": "0 0 320 230",
+  "parts": [
+   {
+    "id": "scale",
+    "label": "pH scale",
+    "note": "We draw the pH scale as a number line from 0 to 14, measuring how acidic or alkaline any substance is."
+   },
+   {
+    "id": "neutral7",
+    "label": "Neutral (pH 7)",
+    "note": "Right in the middle sits pH 7, where the substance is neutral, like pure water, neither acid nor alkali."
+   },
+   {
+    "id": "acidRegion",
+    "label": "Acid (below 7)",
+    "note": "Everything below 7 on the left is acidic, so the lower the number, the more strongly acidic the substance becomes."
+   },
+   {
+    "id": "alkaliRegion",
+    "label": "Alkali (above 7)",
+    "note": "Everything above 7 on the right is alkaline, so the higher the number, the more strongly alkaline it gets."
+   },
+   {
+    "id": "strongAcidEnd",
+    "label": "Strong acid (0-2)",
+    "note": "At the far left, pH 0 to 2, we find strong lab acids; weaker acids like vinegar sit higher at pH 4 to 6."
+   },
+   {
+    "id": "strongAlkaliEnd",
+    "label": "Strong alkali (12-14)",
+    "note": "At the far right, pH 12 to 14, sit strong alkalis like sodium hydroxide; weak ones like soap sit lower around pH 8 to 10."
+   },
+   {
+    "id": "indicatorKey",
+    "label": "Universal indicator",
+    "note": "Adding universal indicator colours the solution: red for strong acids, green at neutral and purple for strong alkalis, revealing its pH."
+   }
+  ],
+  "keywords": [
+   "acids",
+   "and",
+   "alkalis",
+   "acid",
+   "alkali",
+   "neutral",
+   "ph scale",
+   "indicator",
+   "universal indicator",
+   "base",
+   "neutralisation",
+   "salt",
+   "corrosive",
+   "neutral (ph 7)",
+   "acid (below 7)",
+   "alkali (above 7)",
+   "strong acid (0-2)",
+   "strong alkali (12-14)"
+  ]
+ },
+ {
+  "id": "d_PER",
+  "title": "The periodic table",
+  "discipline": "chemistry",
+  "unitCode": "PER",
+  "unitTitle": "The periodic table",
+  "vb": "0 0 320 240",
+  "parts": [
+   {
+    "id": "group1",
+    "label": "Group 1 (alkali metals)",
+    "note": "This far-left column holds the alkali metals; reading down the column, each one reacts more violently, so reactivity climbs as you go."
+   },
+   {
+    "id": "metals",
+    "label": "Metals",
+    "note": "Most of the table fills with metals: strong, shiny, bendy conductors of heat and electricity, so the vast bulk of elements sit on this side."
+   },
+   {
+    "id": "divide",
+    "label": "Metal / non-metal divide",
+    "note": "This zig-zag line splits the table: metals on the left give basic oxides, while non-metals on the right form mostly acidic oxides."
+   },
+   {
+    "id": "nonMetals",
+    "label": "Non-metals",
+    "note": "Squeezed into the top-right corner sit the roughly 18 non-metals: brittle, dull insulators that behave the opposite way to metals."
+   },
+   {
+    "id": "group0",
+    "label": "Group 0 (noble gases)",
+    "note": "The final column holds the noble gases; their outer shells are already full, so they barely react and drift about as loners."
+   },
+   {
+    "id": "period",
+    "label": "Period (row)",
+    "note": "Reading across a row is a period; the properties shift steadily from reactive metal on the left to unreactive gas on the right."
+   },
+   {
+    "id": "group7",
+    "label": "Group 7 (halogens)",
+    "note": "This column holds the halogens; unlike Group 1, going down makes them less reactive, so the top one grabs electrons most fiercely."
+   }
+  ],
+  "keywords": [
+   "the",
+   "periodic",
+   "table",
+   "element",
+   "property",
+   "metal",
+   "non-metal",
+   "group",
+   "period",
+   "alkali metal",
+   "halogen",
+   "noble gas",
+   "mendeleev",
+   "group 1 (alkali metals)",
+   "metals",
+   "metal / non-metal divide",
+   "non-metals",
+   "group 0 (noble gases)",
+   "period (row)",
+   "group 7 (halogens)"
+  ]
+ },
+ {
+  "id": "d_SPD",
+  "title": "Speed",
+  "discipline": "physics",
+  "unitCode": "SPD",
+  "unitTitle": "Speed",
+  "vb": "0 0 320 250",
+  "parts": [
+   {
+    "id": "yAxis",
+    "label": "Distance axis",
+    "note": "This upward axis tracks distance travelled. As we climb it, the object has moved further from its starting point."
+   },
+   {
+    "id": "xAxis",
+    "label": "Time axis",
+    "note": "Time runs along the bottom, ticking forward second by second. Reading left to right, we watch the journey unfold."
+   },
+   {
+    "id": "shallowSlope",
+    "label": "Moving (slope)",
+    "note": "The line climbs as time passes, so distance grows each second. That sloping rise tells us the object is on the move."
+   },
+   {
+    "id": "flatLine",
+    "label": "Stationary (flat)",
+    "note": "Here the line goes flat: time passes but distance stops growing, so the object has halted and is standing still."
+   },
+   {
+    "id": "steepSlope",
+    "label": "Faster (steeper)",
+    "note": "Now the line rockets up steeply, covering lots of distance per second. A steeper slope always means a faster object."
+   }
+  ],
+  "keywords": [
+   "speed",
+   "distance",
+   "metres per second",
+   "miles per hour",
+   "stationary",
+   "distance–time graph",
+   "slope",
+   "relative speed",
+   "distance axis",
+   "time axis",
+   "moving (slope)",
+   "stationary (flat)",
+   "faster (steeper)"
+  ]
+ },
+ {
+  "id": "d_REP",
+  "title": "Reproduction",
+  "discipline": "biology",
+  "unitCode": "REP",
+  "unitTitle": "Reproduction",
+  "vb": "0 0 320 280",
+  "parts": [
+   {
+    "id": "ovary",
+    "label": "Ovary",
+    "note": "Here, once a month, the ovary ripens and releases a single ovum, ready to begin its journey and possibly be fertilised."
+   },
+   {
+    "id": "oviduct",
+    "label": "Oviduct",
+    "note": "The ovum travels down the oviduct, and it is here that a sperm's nucleus fuses with it to form a zygote."
+   },
+   {
+    "id": "sperm",
+    "label": "Sperm",
+    "note": "Sperm swim up using their tails, powered by mitochondria, then use enzymes to break into the ovum's outer layer."
+   },
+   {
+    "id": "placenta",
+    "label": "Placenta",
+    "note": "At the placenta, oxygen and nutrients diffuse from mother to fetus while waste passes back the other way to be removed."
+   },
+   {
+    "id": "umbilicalCord",
+    "label": "Umbilical cord",
+    "note": "The umbilical cord is the lifeline carrying blood between fetus and placenta, ferrying supplies in and waste out."
+   },
+   {
+    "id": "fetus",
+    "label": "Fetus",
+    "note": "The growing fetus develops here, cushioned by amniotic fluid that absorbs knocks and keeps it safe until birth."
+   }
+  ],
+  "keywords": [
+   "reproduction",
+   "gamete",
+   "sperm",
+   "ovum",
+   "fertilisation",
+   "zygote",
+   "embryo",
+   "fetus",
+   "placenta",
+   "gestation",
+   "pollination",
+   "seminal fluid",
+   "ovulation",
+   "menstruation",
+   "pollen tube",
+   "germination",
+   "dispersal",
+   "ovary",
+   "oviduct",
+   "umbilical cord"
+  ]
+ },
+ {
+  "id": "d_MAG",
+  "title": "Magnets",
+  "discipline": "physics",
+  "unitCode": "MAG",
+  "unitTitle": "Magnets",
+  "vb": "0 0 320 250",
+  "parts": [
+   {
+    "id": "northPole",
+    "label": "North pole",
+    "note": "One end of the magnet is the north pole, where the magnetism is concentrated and pulling power is at its strongest."
+   },
+   {
+    "id": "southPole",
+    "label": "South pole",
+    "note": "The opposite end is the south pole; every magnet always has both, and a north will attract this south."
+   },
+   {
+    "id": "fieldLine",
+    "label": "Field line",
+    "note": "Invisible field lines loop out from north and curve back into south, crowding tightest at the poles where the field is strongest."
+   },
+   {
+    "id": "ironObject",
+    "label": "Iron object",
+    "note": "A steel object contains iron, so the field grabs it and pulls it towards the magnet across the gap."
+   },
+   {
+    "id": "compass",
+    "label": "Compass",
+    "note": "The compass needle is a tiny magnet that swings until it lines up with Earth's iron-nickel field, pointing north."
+   },
+   {
+    "id": "solenoid",
+    "label": "Solenoid (coil)",
+    "note": "Coiling wire into a solenoid and switching on a current builds an electromagnet you can strengthen with more turns or turn off."
+   }
+  ],
+  "keywords": [
+   "magnets",
+   "magnetic field",
+   "pole",
+   "attract",
+   "repel",
+   "magnetic field line",
+   "compass",
+   "solenoid",
+   "electromagnet",
+   "magnetic material",
+   "core",
+   "north pole",
+   "south pole",
+   "field line",
+   "iron object",
+   "solenoid (coil)"
+  ]
+ },
+ {
+  "id": "animalCell",
+  "title": "Cells",
+  "discipline": "biology",
+  "unitCode": "B1",
+  "unitTitle": "Cells",
+  "vb": "0 0 320 240",
+  "parts": [
+   {
+    "id": "nucleus",
+    "label": "Nucleus",
+    "note": "The nucleus is the control centre — it holds the genetic material and directs everything the cell does."
+   },
+   {
+    "id": "membrane",
+    "label": "Cell membrane",
+    "note": "A thin cell membrane wraps the whole cell, controlling what is allowed in and out."
+   },
+   {
+    "id": "cytoplasm",
+    "label": "Cytoplasm",
+    "note": "Inside, jelly-like cytoplasm fills the cell; this is where most of its chemical reactions happen."
+   },
+   {
+    "id": "mitochondria",
+    "label": "Mitochondria",
+    "note": "Dotted through the cytoplasm are the mitochondria, where respiration releases energy from food."
+   }
+  ],
+  "keywords": [
+   "cells",
+   "cell",
+   "nucleus",
+   "cytoplasm",
+   "cell membrane",
+   "chloroplast",
+   "mitochondria",
+   "magnification",
+   "diffusion",
+   "specialised cell"
+  ]
+ },
+ {
+  "id": "atom",
+  "title": "Atoms and elements",
+  "discipline": "chemistry",
+  "unitCode": "C2",
+  "unitTitle": "Atoms and elements",
+  "vb": "0 0 320 240",
+  "parts": [
+   {
+    "id": "nucleus",
+    "label": "Nucleus",
+    "note": "Start at the centre: the tiny, dense nucleus holds the protons and neutrons, and nearly all the atom's mass."
+   },
+   {
+    "id": "electron",
+    "label": "Electron",
+    "note": "Around it sit the much lighter electrons, moving in the space surrounding the nucleus."
+   },
+   {
+    "id": "shell",
+    "label": "Electron shell",
+    "note": "The electrons are arranged in shells — fixed energy levels at set distances from the nucleus."
+   }
+  ],
+  "keywords": [
+   "atoms",
+   "and",
+   "elements",
+   "atom",
+   "element",
+   "compound",
+   "molecule",
+   "proton",
+   "neutron",
+   "electron",
+   "nucleus",
+   "periodic table",
+   "electron shell"
+  ]
+ },
+ {
+  "id": "circuit",
+  "title": "Simple circuit",
+  "discipline": "physics",
+  "unitCode": null,
+  "unitTitle": null,
+  "vb": "0 0 320 200",
+  "parts": [
+   {
+    "id": "bulb",
+    "label": "Bulb",
+    "note": "Add a bulb; when current flows through it, it lights up, transferring energy to the surroundings."
+   },
+   {
+    "id": "cell",
+    "label": "Cell (battery)",
+    "note": "Start with the cell — it pushes the current around the circuit, supplying the energy."
+   },
+   {
+    "id": "switch",
+    "label": "Switch",
+    "note": "A switch controls the loop — closed, it lets current flow; open, it breaks the circuit and the bulb goes out."
+   }
+  ],
+  "keywords": [
+   "simple",
+   "circuit",
+   "bulb",
+   "cell (battery)",
+   "switch"
+  ]
+ },
+ {
+  "id": "plantCell",
+  "title": "Plant cell",
+  "discipline": "biology",
+  "unitCode": null,
+  "unitTitle": null,
+  "vb": "0 0 320 240",
+  "parts": [
+   {
+    "id": "wall",
+    "label": "Cell wall",
+    "note": "A plant cell has a stiff cell wall outside the membrane, giving it a fixed shape and support."
+   },
+   {
+    "id": "nucleus",
+    "label": "Nucleus",
+    "note": "Like an animal cell, it has a nucleus controlling the cell and holding its genetic material."
+   },
+   {
+    "id": "vacuole",
+    "label": "Permanent vacuole",
+    "note": "A large permanent vacuole in the middle is full of sap, pushing outwards to keep the cell firm."
+   },
+   {
+    "id": "chloroplast",
+    "label": "Chloroplast",
+    "note": "Green chloroplasts trap light energy so the plant can make its own food by photosynthesis."
+   }
+  ],
+  "keywords": [
+   "plant",
+   "cell",
+   "cell wall",
+   "nucleus",
+   "permanent vacuole",
+   "chloroplast"
+  ]
+ },
+ {
+  "id": "microscope",
+  "title": "Microscopes & magnification",
+  "discipline": "biology",
+  "unitCode": "MIC",
+  "unitTitle": "Microscopes & magnification",
+  "vb": "0 0 240 260",
+  "parts": [
+   {
+    "id": "eyepiece",
+    "label": "Eyepiece lens",
+    "note": "This is the eyepiece — the lens you look down. It magnifies the image a little before it reaches your eye."
+   },
+   {
+    "id": "objective",
+    "label": "Objective lens",
+    "note": "Just above the slide sits the objective lens. You swap between objectives to choose how magnified the image is."
+   },
+   {
+    "id": "stage",
+    "label": "Stage",
+    "note": "The slide clips onto the flat stage, holding your specimen still in the path of the light."
+   },
+   {
+    "id": "mirror",
+    "label": "Mirror",
+    "note": "A mirror at the bottom reflects light up through the specimen, so it looks bright when you look down."
+   }
+  ],
+  "keywords": [
+   "microscopes",
+   "magnification",
+   "microscope",
+   "naked eye",
+   "magnify",
+   "focus",
+   "image",
+   "eyepiece lens",
+   "objective lens",
+   "stage",
+   "actual size",
+   "mirror"
+  ]
+ },
+ {
+  "id": "particleStates",
+  "title": "The particle model",
+  "discipline": "chemistry",
+  "unitCode": "C1",
+  "unitTitle": "The particle model",
+  "vb": "0 0 330 150",
+  "parts": [
+   {
+    "id": "solid",
+    "label": "Solid",
+    "note": "In a solid the particles are packed in a fixed, regular pattern, touching and only able to vibrate on the spot."
+   },
+   {
+    "id": "liquid",
+    "label": "Liquid",
+    "note": "Warm it to a liquid and the particles stay touching, but can now slide past each other in a random jumble."
+   },
+   {
+    "id": "gas",
+    "label": "Gas",
+    "note": "Heat it more and the particles break free — in a gas they are far apart and move quickly in every direction."
+   }
+  ],
+  "keywords": [
+   "the",
+   "particle",
+   "model",
+   "solid",
+   "liquid",
+   "gas",
+   "melting",
+   "boiling",
+   "evaporation",
+   "compress",
+   "gas pressure"
+  ]
+ },
+ {
+  "id": "arm",
+  "title": "Arm — muscles and bones",
+  "discipline": "biology",
+  "unitCode": null,
+  "unitTitle": null,
+  "vb": "0 0 320 200",
+  "parts": [
+   {
+    "id": "biceps",
+    "label": "Biceps",
+    "note": "The biceps runs along the front of the upper arm; when it contracts it shortens and pulls the forearm up."
+   },
+   {
+    "id": "triceps",
+    "label": "Triceps",
+    "note": "The triceps lies on the back; it contracts to straighten the arm, pulling the opposite way to the biceps."
+   },
+   {
+    "id": "tendon",
+    "label": "Tendon",
+    "note": "Tough tendons anchor each muscle to the bone, so when the muscle pulls, the bone moves with it."
+   }
+  ],
+  "keywords": [
+   "arm",
+   "muscles",
+   "and",
+   "bones",
+   "biceps",
+   "triceps",
+   "tendon"
+  ]
+ },
+ {
+  "id": "lungs",
+  "title": "Gas exchange systems",
+  "discipline": "biology",
+  "unitCode": "GAS",
+  "unitTitle": "Gas exchange systems",
+  "vb": "0 0 280 270",
+  "parts": [
+   {
+    "id": "trachea",
+    "label": "Trachea",
+    "note": "Air enters down the trachea, the windpipe leading from your throat into the chest."
+   },
+   {
+    "id": "bronchi",
+    "label": "Bronchus",
+    "note": "The trachea splits into two bronchi, one carrying air into each lung."
+   },
+   {
+    "id": "alveoli",
+    "label": "Alveoli",
+    "note": "The bronchi branch into millions of tiny air sacs called alveoli, where gases pass into and out of the blood."
+   },
+   {
+    "id": "diaphragm",
+    "label": "Diaphragm",
+    "note": "Below the lungs sits the diaphragm, a sheet of muscle that flattens to pull air in and relaxes to push it out."
+   }
+  ],
+  "keywords": [
+   "gas",
+   "exchange",
+   "systems",
+   "ventilation",
+   "trachea",
+   "bronchi",
+   "bronchioles",
+   "alveoli",
+   "diaphragm",
+   "gas exchange",
+   "diffusion",
+   "intercostal muscles",
+   "asthma",
+   "bronchus"
+  ]
+ },
+ {
+  "id": "digestive",
+  "title": "Digestive organs and gut bacteria",
+  "discipline": "biology",
+  "unitCode": "DIG",
+  "unitTitle": "Digestive organs and gut bacteria",
+  "vb": "0 0 220 280",
+  "parts": [
+   {
+    "id": "oesophagus",
+    "label": "Oesophagus",
+    "note": "Food is swallowed and squeezed down the oesophagus, the muscular tube leading to the stomach."
+   },
+   {
+    "id": "liver",
+    "label": "Liver",
+    "note": "The liver makes bile, which breaks large fat droplets into smaller ones so they are easier to digest."
+   },
+   {
+    "id": "stomach",
+    "label": "Stomach",
+    "note": "In the stomach, acid and muscular churning break the food down into a soupy mixture."
+   },
+   {
+    "id": "intestine",
+    "label": "Small intestine",
+    "note": "In the small intestine the digested food is absorbed into the blood through its thin, folded wall."
+   }
+  ],
+  "keywords": [
+   "digestive",
+   "organs",
+   "and",
+   "gut",
+   "bacteria",
+   "digestion",
+   "soluble",
+   "insoluble",
+   "enzyme",
+   "oesophagus",
+   "absorb",
+   "villi",
+   "microvilli",
+   "bile",
+   "gut bacteria",
+   "liver",
+   "stomach",
+   "small intestine"
+  ]
+ },
+ {
+  "id": "wave",
+  "title": "Wave — amplitude and wavelength",
+  "discipline": "physics",
+  "unitCode": null,
+  "unitTitle": null,
+  "vb": "0 0 320 200",
+  "parts": [
+   {
+    "id": "crest",
+    "label": "Crest",
+    "note": "The crest is the highest point of the wave — the top of each hump."
+   },
+   {
+    "id": "trough",
+    "label": "Trough",
+    "note": "The trough is the lowest point — the dip between two crests."
+   },
+   {
+    "id": "wavelength",
+    "label": "Wavelength",
+    "note": "The wavelength is the distance from one crest to the next: one complete wave."
+   },
+   {
+    "id": "amplitude",
+    "label": "Amplitude",
+    "note": "The amplitude is the height from the middle rest line up to a crest; a bigger amplitude carries more energy."
+   }
+  ],
+  "keywords": [
+   "wave",
+   "amplitude",
+   "and",
+   "wavelength",
+   "crest",
+   "trough"
+  ]
+ },
+ {
+  "id": "reflection",
+  "title": "Reflection — ray diagram",
+  "discipline": "physics",
+  "unitCode": null,
+  "unitTitle": null,
+  "vb": "0 0 320 220",
+  "parts": [
+   {
+    "id": "normal",
+    "label": "Normal",
+    "note": "Draw the normal — an imaginary line at 90° to the mirror where the ray hits. Every angle is measured from it."
+   },
+   {
+    "id": "incident",
+    "label": "Incident ray",
+    "note": "The incident ray is the light travelling in towards the mirror."
+   },
+   {
+    "id": "reflected",
+    "label": "Reflected ray",
+    "note": "The reflected ray leaves on the other side of the normal at the same angle: angle of incidence = angle of reflection."
+   },
+   {
+    "id": "mirror",
+    "label": "Mirror",
+    "note": "Light meets the shiny surface of the mirror, which bounces it back instead of letting it pass through."
+   }
+  ],
+  "keywords": [
+   "reflection",
+   "ray",
+   "diagram",
+   "normal",
+   "incident ray",
+   "reflected ray",
+   "mirror"
+  ]
+ },
+ {
+  "id": "forces",
+  "title": "Forces on an object",
+  "discipline": "physics",
+  "unitCode": null,
+  "unitTitle": null,
+  "vb": "0 0 300 240",
+  "parts": [
+   {
+    "id": "weight",
+    "label": "Weight",
+    "note": "Weight pulls the object straight down — the force of gravity acting on its mass."
+   },
+   {
+    "id": "reaction",
+    "label": "Reaction force",
+    "note": "The surface pushes straight back up with an equal reaction force, which stops the object sinking through it."
+   },
+   {
+    "id": "push",
+    "label": "Push (applied force)",
+    "note": "An applied push or pull acts in the direction you are trying to move the object."
+   },
+   {
+    "id": "friction",
+    "label": "Friction",
+    "note": "Friction acts along the surface in the opposite direction to the motion, trying to slow the object down."
+   }
+  ],
+  "keywords": [
+   "forces",
+   "object",
+   "weight",
+   "reaction force",
+   "push (applied force)",
+   "friction"
+  ]
+ },
+ {
+  "id": "foodChain",
+  "title": "Ecosystems",
+  "discipline": "biology",
+  "unitCode": "ECO",
+  "unitTitle": "Ecosystems",
+  "vb": "0 0 330 130",
+  "parts": [
+   {
+    "id": "producer",
+    "label": "Producer (grass)",
+    "note": "Every food chain starts with a producer like grass, which makes its own food using light energy."
+   },
+   {
+    "id": "prey",
+    "label": "Prey (rabbit)",
+    "note": "The arrow points to the rabbit, the prey that eats the producer and takes in its energy."
+   },
+   {
+    "id": "predator",
+    "label": "Predator (fox)",
+    "note": "At the end, the predator (a fox) eats the prey — energy passes along the chain with every arrow."
+   }
+  ],
+  "keywords": [
+   "ecosystems",
+   "producer",
+   "consumer",
+   "food chain",
+   "food web",
+   "interdependence",
+   "predator",
+   "prey",
+   "bioaccumulation",
+   "pollination",
+   "food security",
+   "producer (grass)",
+   "prey (rabbit)",
+   "predator (fox)"
+  ]
+ },
+ {
+  "id": "skeleton",
+  "title": "Skeleton",
+  "discipline": "biology",
+  "unitCode": null,
+  "unitTitle": null,
+  "vb": "0 0 180 280",
+  "parts": [
+   {
+    "id": "skull",
+    "label": "Skull",
+    "note": "The skull is the hard bony case that surrounds and protects the brain."
+   },
+   {
+    "id": "ribcage",
+    "label": "Ribcage",
+    "note": "The ribcage forms a protective basket around the heart and lungs."
+   },
+   {
+    "id": "spine",
+    "label": "Spine",
+    "note": "The spine is a column of small bones that holds you upright and shields the spinal cord."
+   },
+   {
+    "id": "femur",
+    "label": "Femur (thigh bone)",
+    "note": "The femur, or thigh bone, is the body's longest, strongest bone and carries your weight when you stand."
+   }
+  ],
+  "keywords": [
+   "skeleton",
+   "skull",
+   "ribcage",
+   "spine",
+   "femur (thigh bone)"
+  ]
+ }
+]

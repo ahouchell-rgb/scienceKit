@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 230" width="100%" height="100%" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Energy resources">
+<style>[class*="sm-"]{transform-box:fill-box;transform-origin:center;}
+[data-part]{transition:opacity .55s ease;}
+.sm-spin{ animation:sm-spin 3s linear infinite; }
+.sm-spin-slow{ animation:sm-spin 9s linear infinite; }
+.sm-spin-rev{ animation:sm-spin 3s linear infinite reverse; }
+.sm-flow{ animation:sm-flow 1s linear infinite; }
+.sm-flow-slow{ animation:sm-flow 2.2s linear infinite; }
+.sm-flow-rev{ animation:sm-flow-rev 1.4s linear infinite; }
+.sm-pulse{ animation:sm-pulse 1.6s ease-in-out infinite; }
+.sm-throb{ animation:sm-throb 1s ease-in-out infinite; }
+.sm-drift{ animation:sm-drift 2.6s ease-in-out infinite; }
+.sm-osc{ animation:sm-osc 1.8s ease-in-out infinite; }
+.sm-osc-x{ animation:sm-osc-x 1.8s ease-in-out infinite; }
+.sm-rise{ animation:sm-rise 2.6s ease-in infinite; }
+.sm-fall{ animation:sm-fall 2.6s ease-in infinite; }
+.sm-blink{ animation:sm-blink 1.4s ease-in-out infinite; }
+.sm-glow{ animation:sm-glow 2s ease-in-out infinite; }
+.sm-shake{ animation:sm-shake .3s ease-in-out infinite; }
+.sm-sweep{ animation:sm-sweep 2.8s ease-in-out infinite; }
+@keyframes sm-spin{ to{ transform:rotate(360deg); } }
+@keyframes sm-flow{ to{ stroke-dashoffset:-24; } }
+@keyframes sm-flow-rev{ to{ stroke-dashoffset:24; } }
+@keyframes sm-pulse{ 0%,100%{ transform:scale(1); } 50%{ transform:scale(1.13); } }
+@keyframes sm-throb{ 0%,100%{ transform:scale(1); } 50%{ transform:scale(1.06); } }
+@keyframes sm-drift{ 0%{ transform:translate(0,0); } 25%{ transform:translate(2px,-2.5px); } 50%{ transform:translate(-2.5px,1.5px); } 75%{ transform:translate(1.5px,2px); } 100%{ transform:translate(0,0); } }
+@keyframes sm-osc{ 0%,100%{ transform:translateY(0); } 50%{ transform:translateY(-5px); } }
+@keyframes sm-osc-x{ 0%,100%{ transform:translateX(0); } 50%{ transform:translateX(5px); } }
+@keyframes sm-rise{ 0%{ transform:translateY(2px); opacity:0; } 25%{ opacity:.85; } 100%{ transform:translateY(-16px); opacity:0; } }
+@keyframes sm-fall{ 0%{ transform:translateY(-14px); opacity:0; } 25%{ opacity:.85; } 100%{ transform:translateY(4px); opacity:0; } }
+@keyframes sm-blink{ 0%,100%{ opacity:1; } 50%{ opacity:.3; } }
+@keyframes sm-glow{ 0%,100%{ opacity:.55; } 50%{ opacity:1; } }
+@keyframes sm-shake{ 0%,100%{ transform:translate(0,0); } 25%{ transform:translate(.9px,-.9px); } 75%{ transform:translate(-.9px,.9px); } }
+@keyframes sm-sweep{ 0%{ transform:translateX(-6px); opacity:.35; } 50%{ opacity:1; } 100%{ transform:translateX(6px); opacity:.35; } }
+@media (prefers-reduced-motion:reduce){[class*="sm-"]{animation:none !important;}}
+.dg-label text{font-family:'Century Gothic','Avenir Next',system-ui,sans-serif;font-weight:600;paint-order:stroke;stroke:#ffffff;stroke-width:3px;stroke-linejoin:round;fill:#1E2761;}
+.dg-label circle{fill:#1E2761;stroke:#ffffff;stroke-width:1.5;}</style>
+<g class="diagram-art">
+<rect x="0" y="0" width="320" height="230" fill="#DCEAF6"/>
+<rect x="0" y="170" width="320" height="60" fill="#CDE5C6"/>
+<line x1="0" y1="170" x2="320" y2="170" stroke="#2C5F2D" stroke-width="2.5"/>
+<circle cx="150" cy="40" r="16" fill="#C99528" opacity="0.35"/>
+<g data-part="windTurbine">
+  <line x1="40" y1="170" x2="40" y2="96" stroke="#1E2761" stroke-width="3.5" stroke-linecap="round"/>
+  <g class="sm-spin" style="transform-origin:40px 96px">
+    <ellipse cx="40" cy="74" rx="4" ry="20" fill="#fff" stroke="#1E2761" stroke-width="2"/>
+    <ellipse cx="59" cy="107" rx="4" ry="20" fill="#fff" stroke="#1E2761" stroke-width="2" transform="rotate(120 40 96)"/>
+    <ellipse cx="21" cy="107" rx="4" ry="20" fill="#fff" stroke="#1E2761" stroke-width="2" transform="rotate(240 40 96)"/>
+  </g>
+  <circle cx="40" cy="96" r="4" fill="#1E2761"/>
+</g>
+<g data-part="solarPanel">
+  <g transform="rotate(-14 118 140)">
+    <rect x="96" y="126" width="46" height="30" rx="2" fill="#1E2761" stroke="#1E2761" stroke-width="2"/>
+    <line x1="107" y1="126" x2="107" y2="156" stroke="#DCEAF6" stroke-width="1.5"/>
+    <line x1="119" y1="126" x2="119" y2="156" stroke="#DCEAF6" stroke-width="1.5"/>
+    <line x1="131" y1="126" x2="131" y2="156" stroke="#DCEAF6" stroke-width="1.5"/>
+    <line x1="96" y1="141" x2="142" y2="141" stroke="#DCEAF6" stroke-width="1.5"/>
+  </g>
+  <line x1="118" y1="156" x2="118" y2="170" stroke="#7a8199" stroke-width="3" stroke-linecap="round"/>
+</g>
+<g data-part="hydroDam">
+  <path d="M164 120 q10 -12 26 0 l0 50 -26 0 z" fill="#7a8199" stroke="#1E2761" stroke-width="2.5"/>
+  <rect x="146" y="112" width="18" height="20" fill="#DCEAF6" stroke="#1E2761" stroke-width="1.5"/>
+  <path class="sm-fall" d="M164 152 l-8 18" stroke="#1E2761" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <path class="sm-fall" d="M170 156 l-6 14" stroke="#1E2761" stroke-width="3" fill="none" stroke-linecap="round"/>
+</g>
+<g data-part="powerStation">
+  <rect x="228" y="128" width="34" height="42" fill="#7a8199" stroke="#1E2761" stroke-width="2.5"/>
+  <rect x="266" y="104" width="14" height="66" fill="#F4F6FC" stroke="#1E2761" stroke-width="2.5"/>
+  <path class="sm-throb" d="M236 150 q8 -10 16 0" fill="none" stroke="#B4341E" stroke-width="2.5" stroke-linecap="round"/>
+</g>
+<g data-part="emissions">
+  <g class="sm-rise" fill="#7a8199" opacity="0.85">
+    <ellipse cx="273" cy="90" rx="9" ry="6"/>
+    <ellipse cx="284" cy="80" rx="8" ry="6"/>
+    <ellipse cx="294" cy="88" rx="7" ry="5"/>
+  </g>
+</g>
+<g data-part="pylon">
+  <line x1="290" y1="200" x2="290" y2="176" stroke="#1E2761" stroke-width="2.5"/>
+  <line x1="290" y1="200" x2="300" y2="220" stroke="#1E2761" stroke-width="2.5"/>
+  <line x1="290" y1="200" x2="280" y2="220" stroke="#1E2761" stroke-width="2.5"/>
+  <line x1="276" y1="184" x2="304" y2="184" stroke="#1E2761" stroke-width="2.5"/>
+  <line x1="280" y1="192" x2="300" y2="192" stroke="#1E2761" stroke-width="2.5"/>
+  <polyline points="290,176 283,183 297,183 290,176" fill="#F7F2E6" stroke="#1E2761" stroke-width="2"/>
+  <path class="sm-flow" d="M276 184 q-40 6 -80 0" fill="none" stroke="#C99528" stroke-width="2" stroke-dasharray="5 5"/>
+</g>
+</g>
+<g data-part="windTurbine" class="dg-label"><circle cx="51.2" cy="78.2" r="3.4"/><text x="58.2" y="70.2" font-size="12" text-anchor="start">Wind turbine</text></g>
+<g data-part="solarPanel" class="dg-label"><circle cx="118.4" cy="133.4" r="3.4"/><text x="118.4" y="125.4" font-size="12" text-anchor="middle">Solar panel</text></g>
+<g data-part="hydroDam" class="dg-label"><circle cx="182.4" cy="142.6" r="3.4"/><text x="182.4" y="134.6" font-size="12" text-anchor="middle">Hydroelectric dam</text></g>
+<g data-part="pylon" class="dg-label"><circle cx="150.4" cy="75.9" r="3.4"/><text x="150.4" y="67.9" font-size="12" text-anchor="middle">Pylon (electricity grid)</text></g>
+<g data-part="powerStation" class="dg-label"><circle cx="240.0" cy="133.4" r="3.4"/><text x="240.0" y="125.4" font-size="12" text-anchor="middle">Fossil-fuel power station</text></g>
+<g data-part="emissions" class="dg-label"><circle cx="288.0" cy="82.8" r="3.4"/><text x="281.0" y="74.8" font-size="12" text-anchor="end">CO2 emissions</text></g>
+</svg>

@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 230" width="100%" height="100%" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Variation &amp; evolution">
+<style>[class*="sm-"]{transform-box:fill-box;transform-origin:center;}
+[data-part]{transition:opacity .55s ease;}
+.sm-spin{ animation:sm-spin 3s linear infinite; }
+.sm-spin-slow{ animation:sm-spin 9s linear infinite; }
+.sm-spin-rev{ animation:sm-spin 3s linear infinite reverse; }
+.sm-flow{ animation:sm-flow 1s linear infinite; }
+.sm-flow-slow{ animation:sm-flow 2.2s linear infinite; }
+.sm-flow-rev{ animation:sm-flow-rev 1.4s linear infinite; }
+.sm-pulse{ animation:sm-pulse 1.6s ease-in-out infinite; }
+.sm-throb{ animation:sm-throb 1s ease-in-out infinite; }
+.sm-drift{ animation:sm-drift 2.6s ease-in-out infinite; }
+.sm-osc{ animation:sm-osc 1.8s ease-in-out infinite; }
+.sm-osc-x{ animation:sm-osc-x 1.8s ease-in-out infinite; }
+.sm-rise{ animation:sm-rise 2.6s ease-in infinite; }
+.sm-fall{ animation:sm-fall 2.6s ease-in infinite; }
+.sm-blink{ animation:sm-blink 1.4s ease-in-out infinite; }
+.sm-glow{ animation:sm-glow 2s ease-in-out infinite; }
+.sm-shake{ animation:sm-shake .3s ease-in-out infinite; }
+.sm-sweep{ animation:sm-sweep 2.8s ease-in-out infinite; }
+@keyframes sm-spin{ to{ transform:rotate(360deg); } }
+@keyframes sm-flow{ to{ stroke-dashoffset:-24; } }
+@keyframes sm-flow-rev{ to{ stroke-dashoffset:24; } }
+@keyframes sm-pulse{ 0%,100%{ transform:scale(1); } 50%{ transform:scale(1.13); } }
+@keyframes sm-throb{ 0%,100%{ transform:scale(1); } 50%{ transform:scale(1.06); } }
+@keyframes sm-drift{ 0%{ transform:translate(0,0); } 25%{ transform:translate(2px,-2.5px); } 50%{ transform:translate(-2.5px,1.5px); } 75%{ transform:translate(1.5px,2px); } 100%{ transform:translate(0,0); } }
+@keyframes sm-osc{ 0%,100%{ transform:translateY(0); } 50%{ transform:translateY(-5px); } }
+@keyframes sm-osc-x{ 0%,100%{ transform:translateX(0); } 50%{ transform:translateX(5px); } }
+@keyframes sm-rise{ 0%{ transform:translateY(2px); opacity:0; } 25%{ opacity:.85; } 100%{ transform:translateY(-16px); opacity:0; } }
+@keyframes sm-fall{ 0%{ transform:translateY(-14px); opacity:0; } 25%{ opacity:.85; } 100%{ transform:translateY(4px); opacity:0; } }
+@keyframes sm-blink{ 0%,100%{ opacity:1; } 50%{ opacity:.3; } }
+@keyframes sm-glow{ 0%,100%{ opacity:.55; } 50%{ opacity:1; } }
+@keyframes sm-shake{ 0%,100%{ transform:translate(0,0); } 25%{ transform:translate(.9px,-.9px); } 75%{ transform:translate(-.9px,.9px); } }
+@keyframes sm-sweep{ 0%{ transform:translateX(-6px); opacity:.35; } 50%{ opacity:1; } 100%{ transform:translateX(6px); opacity:.35; } }
+@media (prefers-reduced-motion:reduce){[class*="sm-"]{animation:none !important;}}
+.dg-label text{font-family:'Century Gothic','Avenir Next',system-ui,sans-serif;font-weight:600;paint-order:stroke;stroke:#ffffff;stroke-width:3px;stroke-linejoin:round;fill:#1E2761;}
+.dg-label circle{fill:#1E2761;stroke:#ffffff;stroke-width:1.5;}</style>
+<g class="diagram-art">
+<rect x='0' y='0' width='320' height='230' fill='#ffffff'/><g data-part='population'><circle cx='30' cy='40' r='11' fill='#CDE5C6' stroke='#2C5F2D' stroke-width='2'/><circle cx='58' cy='52' r='14' fill='#A9D69E' stroke='#2C5F2D' stroke-width='2'/><circle cx='40' cy='72' r='9' fill='#CDE5C6' stroke='#2C5F2D' stroke-width='2'/><circle cx='70' cy='30' r='8' fill='#DCEAF6' stroke='#2C5F2D' stroke-width='2'/></g><g data-part='mutation'><circle class='sm-glow' cx='58' cy='52' r='4' fill='#C99528' stroke='#3a2f14' stroke-width='1.5'/><path d='M58 20 l3 8 l8 -2 l-5 7 l6 6 l-9 0 l-1 8 l-4 -7 l-7 3 l3 -8 l-6 -5 l8 -1 z' fill='none' stroke='#C99528' stroke-width='1.5' opacity='0.6'/></g><g data-part='selectPressure'><path class='sm-throb' d='M116 40 q-8 -14 6 -18 q6 -2 8 4 q10 -8 16 2 q10 -2 8 10 q8 4 0 12 q4 10 -8 10 q-2 8 -12 2 q-8 6 -14 -2 q-12 2 -10 -10 q-8 -4 0 -12 z' fill='#F1D2D8' stroke='#B4341E' stroke-width='2.5' stroke-linejoin='round'/><text x='128' y='58' font-size='9' fill='#B4341E' text-anchor='middle' font-weight='bold'>cold</text><line x1='84' y1='52' x2='104' y2='52' stroke='#B4341E' stroke-width='3'/><polygon points='104,47 114,52 104,57' fill='#B4341E'/></g><g data-part='survivor'><circle cx='210' cy='50' r='16' fill='#A9D69E' stroke='#2C5F2D' stroke-width='3'/><circle cx='210' cy='45' r='4' fill='#C99528' stroke='#3a2f14' stroke-width='1.2'/><path d='M198 66 l6 8 M222 66 l-6 8' stroke='#2C5F2D' stroke-width='2' stroke-linecap='round'/><path d='M180 44 l-14 10 M182 58 l-14 4' stroke='#7a8199' stroke-width='2' stroke-linecap='round' opacity='0.5'/></g><g data-part='nextGen'><line x1='230' y1='50' x2='252' y2='50' stroke='#2C5F2D' stroke-width='3'/><polygon points='252,44 264,50 252,56' fill='#2C5F2D'/><circle cx='284' cy='36' r='11' fill='#A9D69E' stroke='#2C5F2D' stroke-width='2'/><circle cx='284' cy='33' r='3' fill='#C99528'/><circle cx='288' cy='62' r='11' fill='#A9D69E' stroke='#2C5F2D' stroke-width='2'/><circle cx='288' cy='59' r='3' fill='#C99528'/></g><g data-part='selectiveBreeding'><rect x='24' y='150' width='60' height='50' rx='8' fill='#F4F6FC' stroke='#2C5F2D' stroke-width='2'/><circle cx='40' cy='174' r='8' fill='#A9D69E' stroke='#2C5F2D' stroke-width='2'/><circle cx='68' cy='174' r='8' fill='#A9D69E' stroke='#2C5F2D' stroke-width='2'/><text x='54' y='166' font-size='12' fill='#C99528' text-anchor='middle' font-weight='bold'>&#9733;</text><line x1='54' y1='184' x2='54' y2='194' stroke='#2C5F2D' stroke-width='2'/><polygon points='49,192 54,200 59,192' fill='#2C5F2D'/></g><g data-part='fossil'><rect x='210' y='150' width='80' height='56' rx='8' fill='#E8D9C0' stroke='#8a6a3a' stroke-width='2.5'/><path d='M224 190 q6 -22 26 -22 q20 0 26 22' fill='none' stroke='#5a4326' stroke-width='2.5'/><circle cx='236' cy='176' r='2' fill='#5a4326'/><path d='M250 168 l0 24 M244 174 l12 0 M242 182 l16 0' stroke='#5a4326' stroke-width='1.5'/></g>
+</g>
+<g data-part="population" class="dg-label"><circle cx="44.8" cy="36.8" r="3.4"/><text x="51.8" y="28.8" font-size="12" text-anchor="start">Varied population</text></g>
+<g data-part="mutation" class="dg-label"><circle cx="105.6" cy="92.0" r="3.4"/><text x="105.6" y="84.0" font-size="12" text-anchor="middle">Mutation / new allele</text></g>
+<g data-part="selectPressure" class="dg-label"><circle cx="211.2" cy="46.0" r="3.4"/><text x="211.2" y="38.0" font-size="12" text-anchor="middle">Selection pressure</text></g>
+<g data-part="survivor" class="dg-label"><circle cx="281.6" cy="92.0" r="3.4"/><text x="274.6" y="84.0" font-size="12" text-anchor="end">Survivor (best adapted)</text></g>
+<g data-part="nextGen" class="dg-label"><circle cx="249.6" cy="188.6" r="3.4"/><text x="249.6" y="180.6" font-size="12" text-anchor="middle">Next generation</text></g>
+<g data-part="selectiveBreeding" class="dg-label"><circle cx="128.0" cy="165.6" r="3.4"/><text x="128.0" y="157.6" font-size="12" text-anchor="middle">Selective breeding</text></g>
+<g data-part="fossil" class="dg-label"><circle cx="44.8" cy="188.6" r="3.4"/><text x="51.8" y="180.6" font-size="12" text-anchor="start">Fossil evidence</text></g>
+</svg>

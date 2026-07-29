@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 230" width="100%" height="100%" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Energy resources">
+<style>[class*="sm-"]{transform-box:fill-box;transform-origin:center;}
+[data-part]{transition:opacity .55s ease;}
+.sm-spin{ animation:sm-spin 3s linear infinite; }
+.sm-spin-slow{ animation:sm-spin 9s linear infinite; }
+.sm-spin-rev{ animation:sm-spin 3s linear infinite reverse; }
+.sm-flow{ animation:sm-flow 1s linear infinite; }
+.sm-flow-slow{ animation:sm-flow 2.2s linear infinite; }
+.sm-flow-rev{ animation:sm-flow-rev 1.4s linear infinite; }
+.sm-pulse{ animation:sm-pulse 1.6s ease-in-out infinite; }
+.sm-throb{ animation:sm-throb 1s ease-in-out infinite; }
+.sm-drift{ animation:sm-drift 2.6s ease-in-out infinite; }
+.sm-osc{ animation:sm-osc 1.8s ease-in-out infinite; }
+.sm-osc-x{ animation:sm-osc-x 1.8s ease-in-out infinite; }
+.sm-rise{ animation:sm-rise 2.6s ease-in infinite; }
+.sm-fall{ animation:sm-fall 2.6s ease-in infinite; }
+.sm-blink{ animation:sm-blink 1.4s ease-in-out infinite; }
+.sm-glow{ animation:sm-glow 2s ease-in-out infinite; }
+.sm-shake{ animation:sm-shake .3s ease-in-out infinite; }
+.sm-sweep{ animation:sm-sweep 2.8s ease-in-out infinite; }
+@keyframes sm-spin{ to{ transform:rotate(360deg); } }
+@keyframes sm-flow{ to{ stroke-dashoffset:-24; } }
+@keyframes sm-flow-rev{ to{ stroke-dashoffset:24; } }
+@keyframes sm-pulse{ 0%,100%{ transform:scale(1); } 50%{ transform:scale(1.13); } }
+@keyframes sm-throb{ 0%,100%{ transform:scale(1); } 50%{ transform:scale(1.06); } }
+@keyframes sm-drift{ 0%{ transform:translate(0,0); } 25%{ transform:translate(2px,-2.5px); } 50%{ transform:translate(-2.5px,1.5px); } 75%{ transform:translate(1.5px,2px); } 100%{ transform:translate(0,0); } }
+@keyframes sm-osc{ 0%,100%{ transform:translateY(0); } 50%{ transform:translateY(-5px); } }
+@keyframes sm-osc-x{ 0%,100%{ transform:translateX(0); } 50%{ transform:translateX(5px); } }
+@keyframes sm-rise{ 0%{ transform:translateY(2px); opacity:0; } 25%{ opacity:.85; } 100%{ transform:translateY(-16px); opacity:0; } }
+@keyframes sm-fall{ 0%{ transform:translateY(-14px); opacity:0; } 25%{ opacity:.85; } 100%{ transform:translateY(4px); opacity:0; } }
+@keyframes sm-blink{ 0%,100%{ opacity:1; } 50%{ opacity:.3; } }
+@keyframes sm-glow{ 0%,100%{ opacity:.55; } 50%{ opacity:1; } }
+@keyframes sm-shake{ 0%,100%{ transform:translate(0,0); } 25%{ transform:translate(.9px,-.9px); } 75%{ transform:translate(-.9px,.9px); } }
+@keyframes sm-sweep{ 0%{ transform:translateX(-6px); opacity:.35; } 50%{ opacity:1; } 100%{ transform:translateX(6px); opacity:.35; } }
+@media (prefers-reduced-motion:reduce){[class*="sm-"]{animation:none !important;}}
+.dg-label text{font-family:'Century Gothic','Avenir Next',system-ui,sans-serif;font-weight:600;paint-order:stroke;stroke:#ffffff;stroke-width:3px;stroke-linejoin:round;fill:#1E2761;}
+.dg-label circle{fill:#1E2761;stroke:#ffffff;stroke-width:1.5;}</style>
+<g class="diagram-art">
+<rect x="0" y="0" width="320" height="230" fill="#F4F6FC"/><rect x="0" y="196" width="320" height="34" fill="#CDE5C6"/><line x1="0" y1="196" x2="320" y2="196" stroke="#2C5F2D" stroke-width="2"/><g data-part="fossilFuel"><rect x="14" y="150" width="60" height="46" rx="4" fill="#3A3550" stroke="#1E2761" stroke-width="2.5"/><circle cx="30" cy="150" r="9" fill="#4A4560" stroke="#1E2761" stroke-width="2"/><circle cx="46" cy="146" r="10" fill="#3A3550" stroke="#1E2761" stroke-width="2"/><circle cx="62" cy="150" r="9" fill="#4A4560" stroke="#1E2761" stroke-width="2"/><path class="sm-rise" d="M40 168 q-4 -8 2 -14 q6 6 2 14 z" fill="#B4341E" stroke="#B4341E" stroke-width="1"/><path class="sm-rise" d="M52 170 q-4 -6 2 -11 q5 5 1 11 z" fill="#C99528" stroke="#C99528" stroke-width="1"/></g><g data-part="boiler"><rect x="80" y="120" width="54" height="76" rx="6" fill="#F1D2D8" stroke="#1E2761" stroke-width="3"/><path d="M88 176 q9 -10 18 0 t18 0" fill="none" stroke="#1E2761" stroke-width="2"/><path d="M88 186 q9 -10 18 0 t18 0" fill="none" stroke="#1E2761" stroke-width="2"/><path class="sm-flow" d="M107 120 L107 96 L150 96" fill="none" stroke="#8CC0EA" stroke-width="6" stroke-linecap="round" stroke-dasharray="7 6"/><circle class="sm-rise" cx="98" cy="112" r="4" fill="#DCEAF6" stroke="#8CC0EA" stroke-width="1.5"/><circle class="sm-rise" cx="118" cy="108" r="4" fill="#DCEAF6" stroke="#8CC0EA" stroke-width="1.5"/></g><g data-part="turbine"><circle cx="176" cy="96" r="26" fill="#ffffff" stroke="#1E2761" stroke-width="3"/><g class="sm-spin" transform-origin="176 96"><path d="M176 96 L176 72 L186 78 Z" fill="#C99528" stroke="#1E2761" stroke-width="1.5"/><path d="M176 96 L200 96 L194 106 Z" fill="#C99528" stroke="#1E2761" stroke-width="1.5"/><path d="M176 96 L176 120 L166 114 Z" fill="#C99528" stroke="#1E2761" stroke-width="1.5"/><path d="M176 96 L152 96 L158 86 Z" fill="#C99528" stroke="#1E2761" stroke-width="1.5"/></g><circle cx="176" cy="96" r="5" fill="#1E2761"/></g><g data-part="generator"><line x1="202" y1="96" x2="222" y2="96" stroke="#1E2761" stroke-width="4" stroke-linecap="round"/><rect x="222" y="74" width="54" height="44" rx="6" fill="#C99528" stroke="#1E2761" stroke-width="3"/><path class="sm-blink" d="M240 82 L234 98 L244 98 L238 112" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></g><g data-part="nationalGrid"><path d="M292 196 L286 130 L298 130 Z" fill="none" stroke="#7a8199" stroke-width="2.5" stroke-linejoin="round"/><line x1="280" y1="140" x2="312" y2="140" stroke="#7a8199" stroke-width="2.5"/><line x1="283" y1="154" x2="309" y2="154" stroke="#7a8199" stroke-width="2.5"/><line x1="288" y1="130" x2="296" y2="130" stroke="#7a8199" stroke-width="2.5"/><path class="sm-flow" d="M276 96 Q292 96 292 130" fill="none" stroke="#C99528" stroke-width="3.5" stroke-linecap="round" stroke-dasharray="6 5"/><path d="M280 140 Q296 150 320 150" fill="none" stroke="#7a8199" stroke-width="2"/></g><g data-part="dam"><path d="M18 20 L54 20 L46 92 L26 92 Z" fill="#B8C0D6" stroke="#1E2761" stroke-width="3" stroke-linejoin="round"/><rect x="18" y="20" width="6" height="72" fill="#DCEAF6"/><path d="M0 26 L18 22 L18 60 L0 60 Z" fill="#8CC0EA" stroke="#1E2761" stroke-width="1.5"/><path class="sm-fall" d="M40 88 Q60 108 96 118" fill="none" stroke="#8CC0EA" stroke-width="5" stroke-linecap="round"/><circle class="sm-fall" cx="120" cy="122" r="4" fill="#8CC0EA"/></g>
+</g>
+<g data-part="fossilFuel" class="dg-label"><circle cx="44.8" cy="151.8" r="3.4"/><text x="51.8" y="143.8" font-size="12" text-anchor="start">Fossil fuel</text></g>
+<g data-part="boiler" class="dg-label"><circle cx="57.6" cy="75.9" r="3.4"/><text x="64.6" y="67.9" font-size="12" text-anchor="start">Boiler / steam</text></g>
+<g data-part="turbine" class="dg-label"><circle cx="124.8" cy="140.3" r="3.4"/><text x="124.8" y="132.3" font-size="12" text-anchor="middle">Turbine</text></g>
+<g data-part="generator" class="dg-label"><circle cx="188.8" cy="140.3" r="3.4"/><text x="188.8" y="132.3" font-size="12" text-anchor="middle">Generator</text></g>
+<g data-part="dam" class="dg-label"><circle cx="252.8" cy="115.0" r="3.4"/><text x="245.8" y="107.0" font-size="12" text-anchor="end">Dam (hydro)</text></g>
+<g data-part="nationalGrid" class="dg-label"><circle cx="288.0" cy="46.0" r="3.4"/><text x="281.0" y="38.0" font-size="12" text-anchor="end">National Grid</text></g>
+</svg>

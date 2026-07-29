@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 270" width="100%" height="100%" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Gas exchange systems">
+<style>[class*="sm-"]{transform-box:fill-box;transform-origin:center;}
+[data-part]{transition:opacity .55s ease;}
+.sm-spin{ animation:sm-spin 3s linear infinite; }
+.sm-spin-slow{ animation:sm-spin 9s linear infinite; }
+.sm-spin-rev{ animation:sm-spin 3s linear infinite reverse; }
+.sm-flow{ animation:sm-flow 1s linear infinite; }
+.sm-flow-slow{ animation:sm-flow 2.2s linear infinite; }
+.sm-flow-rev{ animation:sm-flow-rev 1.4s linear infinite; }
+.sm-pulse{ animation:sm-pulse 1.6s ease-in-out infinite; }
+.sm-throb{ animation:sm-throb 1s ease-in-out infinite; }
+.sm-drift{ animation:sm-drift 2.6s ease-in-out infinite; }
+.sm-osc{ animation:sm-osc 1.8s ease-in-out infinite; }
+.sm-osc-x{ animation:sm-osc-x 1.8s ease-in-out infinite; }
+.sm-rise{ animation:sm-rise 2.6s ease-in infinite; }
+.sm-fall{ animation:sm-fall 2.6s ease-in infinite; }
+.sm-blink{ animation:sm-blink 1.4s ease-in-out infinite; }
+.sm-glow{ animation:sm-glow 2s ease-in-out infinite; }
+.sm-shake{ animation:sm-shake .3s ease-in-out infinite; }
+.sm-sweep{ animation:sm-sweep 2.8s ease-in-out infinite; }
+@keyframes sm-spin{ to{ transform:rotate(360deg); } }
+@keyframes sm-flow{ to{ stroke-dashoffset:-24; } }
+@keyframes sm-flow-rev{ to{ stroke-dashoffset:24; } }
+@keyframes sm-pulse{ 0%,100%{ transform:scale(1); } 50%{ transform:scale(1.13); } }
+@keyframes sm-throb{ 0%,100%{ transform:scale(1); } 50%{ transform:scale(1.06); } }
+@keyframes sm-drift{ 0%{ transform:translate(0,0); } 25%{ transform:translate(2px,-2.5px); } 50%{ transform:translate(-2.5px,1.5px); } 75%{ transform:translate(1.5px,2px); } 100%{ transform:translate(0,0); } }
+@keyframes sm-osc{ 0%,100%{ transform:translateY(0); } 50%{ transform:translateY(-5px); } }
+@keyframes sm-osc-x{ 0%,100%{ transform:translateX(0); } 50%{ transform:translateX(5px); } }
+@keyframes sm-rise{ 0%{ transform:translateY(2px); opacity:0; } 25%{ opacity:.85; } 100%{ transform:translateY(-16px); opacity:0; } }
+@keyframes sm-fall{ 0%{ transform:translateY(-14px); opacity:0; } 25%{ opacity:.85; } 100%{ transform:translateY(4px); opacity:0; } }
+@keyframes sm-blink{ 0%,100%{ opacity:1; } 50%{ opacity:.3; } }
+@keyframes sm-glow{ 0%,100%{ opacity:.55; } 50%{ opacity:1; } }
+@keyframes sm-shake{ 0%,100%{ transform:translate(0,0); } 25%{ transform:translate(.9px,-.9px); } 75%{ transform:translate(-.9px,.9px); } }
+@keyframes sm-sweep{ 0%{ transform:translateX(-6px); opacity:.35; } 50%{ opacity:1; } 100%{ transform:translateX(6px); opacity:.35; } }
+@media (prefers-reduced-motion:reduce){[class*="sm-"]{animation:none !important;}}
+.dg-label text{font-family:'Century Gothic','Avenir Next',system-ui,sans-serif;font-weight:600;paint-order:stroke;stroke:#ffffff;stroke-width:3px;stroke-linejoin:round;fill:#1E2761;}
+.dg-label circle{fill:#1E2761;stroke:#ffffff;stroke-width:1.5;}</style>
+<g class="diagram-art">
+<rect x="0" y="0" width="280" height="270" fill="#F4F6FC"/><path d="M96 118 C50 128 34 172 42 210 C46 236 82 240 100 224 C116 210 112 150 108 120 Z" fill="#F1D2D8" stroke="#B4341E" stroke-width="3" stroke-linejoin="round"/><path d="M132 118 C178 128 194 172 186 210 C182 236 146 240 128 224 C112 210 116 150 120 120 Z" fill="#F1D2D8" stroke="#B4341E" stroke-width="3" stroke-linejoin="round" transform="translate(2,0)"/><g data-part="trachea"><rect x="103" y="20" width="22" height="80" rx="11" fill="#F7F2E6" stroke="#1E2761" stroke-width="3"/><line x1="103" y1="40" x2="125" y2="40" stroke="#1E2761" stroke-width="1.6"/><line x1="103" y1="56" x2="125" y2="56" stroke="#1E2761" stroke-width="1.6"/><line x1="103" y1="72" x2="125" y2="72" stroke="#1E2761" stroke-width="1.6"/><line x1="103" y1="88" x2="125" y2="88" stroke="#1E2761" stroke-width="1.6"/><path class="sm-fall" d="M114 30 l-5 8 h10 z" fill="#1E2761"/></g><g data-part="bronchi"><path d="M114 100 L88 130" stroke="#C9A24B" stroke-width="13" stroke-linecap="round" fill="none"/><path d="M114 100 L140 130" stroke="#C9A24B" stroke-width="13" stroke-linecap="round" fill="none"/><path d="M88 130 L76 148 M88 130 L98 150" stroke="#C9A24B" stroke-width="7" stroke-linecap="round" fill="none"/><path d="M140 130 L152 148 M140 130 L130 150" stroke="#C9A24B" stroke-width="7" stroke-linecap="round" fill="none"/></g><line x1="150" y1="152" x2="204" y2="120" stroke="#7a8199" stroke-width="1.5" stroke-dasharray="4 4"/><line x1="150" y1="172" x2="204" y2="184" stroke="#7a8199" stroke-width="1.5" stroke-dasharray="4 4"/><circle cx="234" cy="150" r="42" fill="#fff" stroke="#7a8199" stroke-width="2"/><g data-part="alveoli"><g class="sm-throb" fill="#fff" stroke="#B4341E" stroke-width="2"><circle cx="222" cy="138" r="12"/><circle cx="246" cy="134" r="12"/><circle cx="252" cy="158" r="12"/><circle cx="228" cy="164" r="12"/><circle cx="238" cy="150" r="9"/></g><path d="M212 150 q-8 0 -8 8" fill="none" stroke="#C9A24B" stroke-width="4" stroke-linecap="round"/><path class="sm-flow" d="M234 118 l0 -10" stroke="#B4341E" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="3 3"/></g><g data-part="diaphragm"><path class="sm-osc" d="M40 232 Q140 268 240 232" fill="none" stroke="#2C5F2D" stroke-width="8" stroke-linecap="round"/><path d="M40 232 Q140 268 240 232 L240 250 Q140 286 40 250 Z" fill="#CDE5C6" stroke="none" fill-opacity="0.5"/></g>
+</g>
+<g data-part="trachea" class="dg-label"><circle cx="140.0" cy="59.4" r="3.4"/><text x="140.0" y="51.4" font-size="10.5" text-anchor="middle">Trachea</text></g>
+<g data-part="bronchi" class="dg-label"><circle cx="117.6" cy="116.1" r="3.4"/><text x="117.6" y="108.1" font-size="10.5" text-anchor="middle">Bronchus</text></g>
+<g data-part="alveoli" class="dg-label"><circle cx="198.8" cy="167.4" r="3.4"/><text x="198.8" y="159.4" font-size="10.5" text-anchor="middle">Alveoli</text></g>
+<g data-part="diaphragm" class="dg-label"><circle cx="140.0" cy="237.6" r="3.4"/><text x="140.0" y="229.6" font-size="10.5" text-anchor="middle">Diaphragm</text></g>
+</svg>

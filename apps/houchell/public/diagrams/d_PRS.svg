@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 280" width="100%" height="100%" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Pressure">
+<style>[class*="sm-"]{transform-box:fill-box;transform-origin:center;}
+[data-part]{transition:opacity .55s ease;}
+.sm-spin{ animation:sm-spin 3s linear infinite; }
+.sm-spin-slow{ animation:sm-spin 9s linear infinite; }
+.sm-spin-rev{ animation:sm-spin 3s linear infinite reverse; }
+.sm-flow{ animation:sm-flow 1s linear infinite; }
+.sm-flow-slow{ animation:sm-flow 2.2s linear infinite; }
+.sm-flow-rev{ animation:sm-flow-rev 1.4s linear infinite; }
+.sm-pulse{ animation:sm-pulse 1.6s ease-in-out infinite; }
+.sm-throb{ animation:sm-throb 1s ease-in-out infinite; }
+.sm-drift{ animation:sm-drift 2.6s ease-in-out infinite; }
+.sm-osc{ animation:sm-osc 1.8s ease-in-out infinite; }
+.sm-osc-x{ animation:sm-osc-x 1.8s ease-in-out infinite; }
+.sm-rise{ animation:sm-rise 2.6s ease-in infinite; }
+.sm-fall{ animation:sm-fall 2.6s ease-in infinite; }
+.sm-blink{ animation:sm-blink 1.4s ease-in-out infinite; }
+.sm-glow{ animation:sm-glow 2s ease-in-out infinite; }
+.sm-shake{ animation:sm-shake .3s ease-in-out infinite; }
+.sm-sweep{ animation:sm-sweep 2.8s ease-in-out infinite; }
+@keyframes sm-spin{ to{ transform:rotate(360deg); } }
+@keyframes sm-flow{ to{ stroke-dashoffset:-24; } }
+@keyframes sm-flow-rev{ to{ stroke-dashoffset:24; } }
+@keyframes sm-pulse{ 0%,100%{ transform:scale(1); } 50%{ transform:scale(1.13); } }
+@keyframes sm-throb{ 0%,100%{ transform:scale(1); } 50%{ transform:scale(1.06); } }
+@keyframes sm-drift{ 0%{ transform:translate(0,0); } 25%{ transform:translate(2px,-2.5px); } 50%{ transform:translate(-2.5px,1.5px); } 75%{ transform:translate(1.5px,2px); } 100%{ transform:translate(0,0); } }
+@keyframes sm-osc{ 0%,100%{ transform:translateY(0); } 50%{ transform:translateY(-5px); } }
+@keyframes sm-osc-x{ 0%,100%{ transform:translateX(0); } 50%{ transform:translateX(5px); } }
+@keyframes sm-rise{ 0%{ transform:translateY(2px); opacity:0; } 25%{ opacity:.85; } 100%{ transform:translateY(-16px); opacity:0; } }
+@keyframes sm-fall{ 0%{ transform:translateY(-14px); opacity:0; } 25%{ opacity:.85; } 100%{ transform:translateY(4px); opacity:0; } }
+@keyframes sm-blink{ 0%,100%{ opacity:1; } 50%{ opacity:.3; } }
+@keyframes sm-glow{ 0%,100%{ opacity:.55; } 50%{ opacity:1; } }
+@keyframes sm-shake{ 0%,100%{ transform:translate(0,0); } 25%{ transform:translate(.9px,-.9px); } 75%{ transform:translate(-.9px,.9px); } }
+@keyframes sm-sweep{ 0%{ transform:translateX(-6px); opacity:.35; } 50%{ opacity:1; } 100%{ transform:translateX(6px); opacity:.35; } }
+@media (prefers-reduced-motion:reduce){[class*="sm-"]{animation:none !important;}}
+.dg-label text{font-family:'Century Gothic','Avenir Next',system-ui,sans-serif;font-weight:600;paint-order:stroke;stroke:#ffffff;stroke-width:3px;stroke-linejoin:round;fill:#1E2761;}
+.dg-label circle{fill:#1E2761;stroke:#ffffff;stroke-width:1.5;}</style>
+<g class="diagram-art">
+<rect x="0" y="0" width="320" height="280" fill="#FFFFFF"/>
+<rect x="0" y="0" width="320" height="96" fill="#EAF3FB"/>
+<rect x="0" y="96" width="320" height="184" fill="#DCEAF6"/>
+<line x1="0" y1="96" x2="320" y2="96" stroke="#2b6cb0" stroke-width="2"/>
+<g data-part="atmosphere">
+  <g stroke="#7a8199" stroke-width="1.8" stroke-linecap="round">
+    <path d="M40 22 V40 M40 40 l-3 -5 M40 40 l3 -5"/>
+    <path d="M120 18 V34 M120 34 l-3 -5 M120 34 l3 -5"/>
+    <path d="M280 22 V40 M280 40 l-3 -5 M280 40 l3 -5"/>
+  </g>
+  <g fill="#FFFFFF" stroke="#7a8199" stroke-width="1.4" class="sm-drift">
+    <ellipse cx="70" cy="58" rx="20" ry="10"/>
+    <ellipse cx="235" cy="52" rx="24" ry="11"/>
+  </g>
+</g>
+<g data-part="waterBody">
+  <g fill="#2b6cb0" class="sm-drift">
+    <circle cx="40" cy="150" r="4"/>
+    <circle cx="90" cy="180" r="4"/>
+    <circle cx="150" cy="205" r="4"/>
+    <circle cx="60" cy="230" r="4"/>
+    <circle cx="200" cy="165" r="4"/>
+    <circle cx="250" cy="215" r="4"/>
+    <circle cx="120" cy="250" r="4"/>
+    <circle cx="285" cy="185" r="4"/>
+  </g>
+</g>
+<g data-part="floatingBoat">
+  <path d="M118 96 h84 l-14 30 h-56 Z" fill="#1E2761" stroke="#1E2761" stroke-width="2" stroke-linejoin="round"/>
+  <rect x="150" y="70" width="6" height="26" fill="#7a8199"/>
+  <path d="M156 72 h26 l-6 8 h-20 Z" fill="#C99528" stroke="#C99528" stroke-linejoin="round"/>
+</g>
+<g data-part="weightArrow">
+  <path d="M160 128 V172" fill="none" stroke="#B4341E" stroke-width="4" stroke-linecap="round"/>
+  <path d="M160 172 l-6 -10 M160 172 l6 -10" fill="none" stroke="#B4341E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<g data-part="upthrustArrow">
+  <path d="M188 172 V128" fill="none" stroke="#2C5F2D" stroke-width="4" stroke-linecap="round"/>
+  <path d="M188 128 l-6 10 M188 128 l6 10" fill="none" stroke="#2C5F2D" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<g data-part="depthArrows">
+  <path d="M300 130 H278" fill="none" stroke="#B4341E" stroke-width="2.6" stroke-linecap="round"/>
+  <path d="M278 130 l7 -4 M278 130 l7 4" fill="none" stroke="#B4341E" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M300 175 H262" fill="none" stroke="#B4341E" stroke-width="3" stroke-linecap="round"/>
+  <path d="M262 175 l8 -5 M262 175 l8 5" fill="none" stroke="#B4341E" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M300 222 H244" fill="none" stroke="#B4341E" stroke-width="3.4" stroke-linecap="round"/>
+  <path d="M244 222 l9 -5 M244 222 l9 5" fill="none" stroke="#B4341E" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M300 262 H222" fill="none" stroke="#B4341E" stroke-width="3.8" stroke-linecap="round"/>
+  <path d="M222 262 l10 -6 M222 262 l10 6" fill="none" stroke="#B4341E" stroke-width="3.8" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+</g>
+<g data-part="atmosphere" class="dg-label"><circle cx="240.0" cy="39.2" r="3.4"/><text x="240.0" y="31.2" font-size="12" text-anchor="middle">Atmosphere</text></g>
+<g data-part="waterBody" class="dg-label"><circle cx="76.8" cy="173.6" r="3.4"/><text x="76.8" y="165.6" font-size="12" text-anchor="middle">Fluid (water)</text></g>
+<g data-part="floatingBoat" class="dg-label"><circle cx="108.8" cy="81.2" r="3.4"/><text x="108.8" y="73.2" font-size="12" text-anchor="middle">Floating object</text></g>
+<g data-part="weightArrow" class="dg-label"><circle cx="134.4" cy="120.4" r="3.4"/><text x="134.4" y="112.4" font-size="12" text-anchor="middle">Weight</text></g>
+<g data-part="upthrustArrow" class="dg-label"><circle cx="185.6" cy="120.4" r="3.4"/><text x="185.6" y="112.4" font-size="12" text-anchor="middle">Upthrust</text></g>
+<g data-part="depthArrows" class="dg-label"><circle cx="233.6" cy="226.8" r="3.4"/><text x="233.6" y="218.8" font-size="12" text-anchor="middle">Pressure with depth</text></g>
+</svg>

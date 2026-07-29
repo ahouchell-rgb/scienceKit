@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 250" width="100%" height="100%" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Forces">
+<style>[class*="sm-"]{transform-box:fill-box;transform-origin:center;}
+[data-part]{transition:opacity .55s ease;}
+.sm-spin{ animation:sm-spin 3s linear infinite; }
+.sm-spin-slow{ animation:sm-spin 9s linear infinite; }
+.sm-spin-rev{ animation:sm-spin 3s linear infinite reverse; }
+.sm-flow{ animation:sm-flow 1s linear infinite; }
+.sm-flow-slow{ animation:sm-flow 2.2s linear infinite; }
+.sm-flow-rev{ animation:sm-flow-rev 1.4s linear infinite; }
+.sm-pulse{ animation:sm-pulse 1.6s ease-in-out infinite; }
+.sm-throb{ animation:sm-throb 1s ease-in-out infinite; }
+.sm-drift{ animation:sm-drift 2.6s ease-in-out infinite; }
+.sm-osc{ animation:sm-osc 1.8s ease-in-out infinite; }
+.sm-osc-x{ animation:sm-osc-x 1.8s ease-in-out infinite; }
+.sm-rise{ animation:sm-rise 2.6s ease-in infinite; }
+.sm-fall{ animation:sm-fall 2.6s ease-in infinite; }
+.sm-blink{ animation:sm-blink 1.4s ease-in-out infinite; }
+.sm-glow{ animation:sm-glow 2s ease-in-out infinite; }
+.sm-shake{ animation:sm-shake .3s ease-in-out infinite; }
+.sm-sweep{ animation:sm-sweep 2.8s ease-in-out infinite; }
+@keyframes sm-spin{ to{ transform:rotate(360deg); } }
+@keyframes sm-flow{ to{ stroke-dashoffset:-24; } }
+@keyframes sm-flow-rev{ to{ stroke-dashoffset:24; } }
+@keyframes sm-pulse{ 0%,100%{ transform:scale(1); } 50%{ transform:scale(1.13); } }
+@keyframes sm-throb{ 0%,100%{ transform:scale(1); } 50%{ transform:scale(1.06); } }
+@keyframes sm-drift{ 0%{ transform:translate(0,0); } 25%{ transform:translate(2px,-2.5px); } 50%{ transform:translate(-2.5px,1.5px); } 75%{ transform:translate(1.5px,2px); } 100%{ transform:translate(0,0); } }
+@keyframes sm-osc{ 0%,100%{ transform:translateY(0); } 50%{ transform:translateY(-5px); } }
+@keyframes sm-osc-x{ 0%,100%{ transform:translateX(0); } 50%{ transform:translateX(5px); } }
+@keyframes sm-rise{ 0%{ transform:translateY(2px); opacity:0; } 25%{ opacity:.85; } 100%{ transform:translateY(-16px); opacity:0; } }
+@keyframes sm-fall{ 0%{ transform:translateY(-14px); opacity:0; } 25%{ opacity:.85; } 100%{ transform:translateY(4px); opacity:0; } }
+@keyframes sm-blink{ 0%,100%{ opacity:1; } 50%{ opacity:.3; } }
+@keyframes sm-glow{ 0%,100%{ opacity:.55; } 50%{ opacity:1; } }
+@keyframes sm-shake{ 0%,100%{ transform:translate(0,0); } 25%{ transform:translate(.9px,-.9px); } 75%{ transform:translate(-.9px,.9px); } }
+@keyframes sm-sweep{ 0%{ transform:translateX(-6px); opacity:.35; } 50%{ opacity:1; } 100%{ transform:translateX(6px); opacity:.35; } }
+@media (prefers-reduced-motion:reduce){[class*="sm-"]{animation:none !important;}}
+.dg-label text{font-family:'Century Gothic','Avenir Next',system-ui,sans-serif;font-weight:600;paint-order:stroke;stroke:#ffffff;stroke-width:3px;stroke-linejoin:round;fill:#1E2761;}
+.dg-label circle{fill:#1E2761;stroke:#ffffff;stroke-width:1.5;}</style>
+<g class="diagram-art">
+<rect x='0' y='0' width='320' height='250' fill='#F4F6FC'/><rect x='40' y='16' width='72' height='12' rx='3' fill='#AEB6D6' stroke='#1E2761' stroke-width='2.5'/><line x1='48' y1='28' x2='42' y2='36' stroke='#1E2761' stroke-width='2'/><line x1='64' y1='28' x2='58' y2='36' stroke='#1E2761' stroke-width='2'/><line x1='80' y1='28' x2='74' y2='36' stroke='#1E2761' stroke-width='2'/><line x1='96' y1='28' x2='90' y2='36' stroke='#1E2761' stroke-width='2'/><line x1='30' y1='120' x2='60' y2='120' stroke='#7a8199' stroke-width='1.5' stroke-dasharray='4 3'/><g data-part='springExtension'><path d='M76 28 L76 44 Q64 50 88 56 Q64 62 88 68 Q64 74 88 80 Q64 86 88 92 Q64 98 88 104 Q64 110 76 116 L76 150' fill='none' stroke='#2C5F2D' stroke-width='3' stroke-linecap='round'/><line x1='108' y1='120' x2='108' y2='150' stroke='#C99528' stroke-width='2.5'/><line x1='104' y1='120' x2='112' y2='120' stroke='#C99528' stroke-width='2.5'/><line x1='104' y1='150' x2='112' y2='150' stroke='#C99528' stroke-width='2.5'/></g><rect x='58' y='150' width='36' height='30' rx='5' fill='#CDE5C6' stroke='#2C5F2D' stroke-width='3'/><g data-part='weightArrow'><line class='sm-pulse' x1='76' y1='184' x2='76' y2='214' stroke='#B4341E' stroke-width='3.5' stroke-linecap='round'/><polygon points='76,226 68,208 84,208' fill='#B4341E'/></g><g data-part='forceArrow'><line class='sm-osc' x1='112' y1='150' x2='112' y2='118' stroke='#1E2761' stroke-width='3.5' stroke-linecap='round'/><polygon points='112,150 104,132 120,132' fill='#1E2761'/></g><rect x='236' y='214' width='60' height='10' rx='3' fill='#AEB6D6' stroke='#1E2761' stroke-width='2'/><g data-part='leverArm'><rect x='176' y='150' width='140' height='14' rx='5' fill='#CDE5C6' stroke='#2C5F2D' stroke-width='3' transform='rotate(-9 246 157)'/></g><g data-part='pivot'><polygon points='246,158 232,214 260,214' fill='#F4C542' stroke='#1E2761' stroke-width='2.5'/></g><g data-part='resultant'><line class='sm-osc' x1='300' y1='176' x2='300' y2='128' stroke='#B4341E' stroke-width='3.5' stroke-linecap='round'/><polygon points='300,120 291,140 309,140' fill='#B4341E'/></g>
+</g>
+<g data-part="forceArrow" class="dg-label"><circle cx="211.2" cy="110.0" r="3.4"/><text x="211.2" y="102.0" font-size="12" text-anchor="middle">Applied force</text></g>
+<g data-part="springExtension" class="dg-label"><circle cx="105.6" cy="65.0" r="3.4"/><text x="105.6" y="57.0" font-size="12" text-anchor="middle">Extension</text></g>
+<g data-part="weightArrow" class="dg-label"><circle cx="86.4" cy="180.0" r="3.4"/><text x="86.4" y="172.0" font-size="12" text-anchor="middle">Weight</text></g>
+<g data-part="pivot" class="dg-label"><circle cx="256.0" cy="190.0" r="3.4"/><text x="249.0" y="182.0" font-size="12" text-anchor="end">Pivot</text></g>
+<g data-part="leverArm" class="dg-label"><circle cx="208.0" cy="152.5" r="3.4"/><text x="208.0" y="144.5" font-size="12" text-anchor="middle">Lever arm</text></g>
+<g data-part="resultant" class="dg-label"><circle cx="198.4" cy="210.0" r="3.4"/><text x="198.4" y="202.0" font-size="12" text-anchor="middle">Resultant force</text></g>
+</svg>

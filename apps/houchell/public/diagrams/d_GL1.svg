@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 220" width="100%" height="100%" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Circuit basics &amp; symbols">
+<style>[class*="sm-"]{transform-box:fill-box;transform-origin:center;}
+[data-part]{transition:opacity .55s ease;}
+.sm-spin{ animation:sm-spin 3s linear infinite; }
+.sm-spin-slow{ animation:sm-spin 9s linear infinite; }
+.sm-spin-rev{ animation:sm-spin 3s linear infinite reverse; }
+.sm-flow{ animation:sm-flow 1s linear infinite; }
+.sm-flow-slow{ animation:sm-flow 2.2s linear infinite; }
+.sm-flow-rev{ animation:sm-flow-rev 1.4s linear infinite; }
+.sm-pulse{ animation:sm-pulse 1.6s ease-in-out infinite; }
+.sm-throb{ animation:sm-throb 1s ease-in-out infinite; }
+.sm-drift{ animation:sm-drift 2.6s ease-in-out infinite; }
+.sm-osc{ animation:sm-osc 1.8s ease-in-out infinite; }
+.sm-osc-x{ animation:sm-osc-x 1.8s ease-in-out infinite; }
+.sm-rise{ animation:sm-rise 2.6s ease-in infinite; }
+.sm-fall{ animation:sm-fall 2.6s ease-in infinite; }
+.sm-blink{ animation:sm-blink 1.4s ease-in-out infinite; }
+.sm-glow{ animation:sm-glow 2s ease-in-out infinite; }
+.sm-shake{ animation:sm-shake .3s ease-in-out infinite; }
+.sm-sweep{ animation:sm-sweep 2.8s ease-in-out infinite; }
+@keyframes sm-spin{ to{ transform:rotate(360deg); } }
+@keyframes sm-flow{ to{ stroke-dashoffset:-24; } }
+@keyframes sm-flow-rev{ to{ stroke-dashoffset:24; } }
+@keyframes sm-pulse{ 0%,100%{ transform:scale(1); } 50%{ transform:scale(1.13); } }
+@keyframes sm-throb{ 0%,100%{ transform:scale(1); } 50%{ transform:scale(1.06); } }
+@keyframes sm-drift{ 0%{ transform:translate(0,0); } 25%{ transform:translate(2px,-2.5px); } 50%{ transform:translate(-2.5px,1.5px); } 75%{ transform:translate(1.5px,2px); } 100%{ transform:translate(0,0); } }
+@keyframes sm-osc{ 0%,100%{ transform:translateY(0); } 50%{ transform:translateY(-5px); } }
+@keyframes sm-osc-x{ 0%,100%{ transform:translateX(0); } 50%{ transform:translateX(5px); } }
+@keyframes sm-rise{ 0%{ transform:translateY(2px); opacity:0; } 25%{ opacity:.85; } 100%{ transform:translateY(-16px); opacity:0; } }
+@keyframes sm-fall{ 0%{ transform:translateY(-14px); opacity:0; } 25%{ opacity:.85; } 100%{ transform:translateY(4px); opacity:0; } }
+@keyframes sm-blink{ 0%,100%{ opacity:1; } 50%{ opacity:.3; } }
+@keyframes sm-glow{ 0%,100%{ opacity:.55; } 50%{ opacity:1; } }
+@keyframes sm-shake{ 0%,100%{ transform:translate(0,0); } 25%{ transform:translate(.9px,-.9px); } 75%{ transform:translate(-.9px,.9px); } }
+@keyframes sm-sweep{ 0%{ transform:translateX(-6px); opacity:.35; } 50%{ opacity:1; } 100%{ transform:translateX(6px); opacity:.35; } }
+@media (prefers-reduced-motion:reduce){[class*="sm-"]{animation:none !important;}}
+.dg-label text{font-family:'Century Gothic','Avenir Next',system-ui,sans-serif;font-weight:600;paint-order:stroke;stroke:#ffffff;stroke-width:3px;stroke-linejoin:round;fill:#1E2761;}
+.dg-label circle{fill:#1E2761;stroke:#ffffff;stroke-width:1.5;}</style>
+<g class="diagram-art">
+
+<rect x="2" y="2" width="316" height="216" rx="12" fill="#F4F6FC" stroke="#1E2761" stroke-width="2"/>
+<!-- current-flow arrows drift around the loop (shared hint, outside groups) -->
+<g fill="#C99528">
+  <path d="M150 30 l10 5 -10 5 z" class="sm-drift"/>
+  <path d="M292 110 l-5 10 -5 -10 z" class="sm-drift"/>
+  <path d="M170 194 l-10 -5 10 -5 z" class="sm-drift"/>
+  <path d="M28 118 l5 -10 5 10 z" class="sm-drift"/>
+</g>
+
+<!-- loop : the complete wire path -->
+<g data-part="loop">
+  <path d="M40 40 H280 V180 H40 Z" fill="none" stroke="#1E2761" stroke-width="3" stroke-linejoin="round"/>
+</g>
+
+<!-- cell : left side, drives the loop -->
+<g data-part="cell">
+  <line x1="40" y1="96" x2="40" y2="112" stroke="#F4F6FC" stroke-width="6"/>
+  <line x1="40" y1="90" x2="40" y2="102" stroke="#1E2761" stroke-width="3.5" stroke-linecap="round"/>
+  <line x1="30" y1="98" x2="50" y2="98" stroke="#1E2761" stroke-width="3.5" stroke-linecap="round"/>
+  <line x1="30" y1="112" x2="50" y2="112" stroke="#1E2761" stroke-width="6" stroke-linecap="round"/>
+  <text x="55" y="96" font-family="Georgia,serif" font-size="11" fill="#B4341E">+</text>
+  <text x="55" y="120" font-family="Georgia,serif" font-size="13" fill="#1E2761">-</text>
+</g>
+
+<!-- switch : top-left, gap open/closed -->
+<g data-part="switch">
+  <line x1="82" y1="40" x2="98" y2="40" stroke="#F4F6FC" stroke-width="6"/>
+  <circle cx="98" cy="40" r="3" fill="#1E2761"/>
+  <circle cx="126" cy="40" r="3" fill="#1E2761"/>
+  <line x1="126" y1="40" x2="142" y2="40" stroke="#F4F6FC" stroke-width="6"/>
+  <line x1="98" y1="40" x2="123" y2="29" stroke="#1E2761" stroke-width="3.5" stroke-linecap="round"/>
+</g>
+
+<!-- ammeter : top-right -->
+<g data-part="ammeter">
+  <line x1="205" y1="40" x2="235" y2="40" stroke="#F4F6FC" stroke-width="7"/>
+  <circle cx="220" cy="40" r="15" fill="#fff" stroke="#1E2761" stroke-width="3"/>
+  <text x="220" y="45" text-anchor="middle" font-family="Georgia,serif" font-size="14" font-weight="bold" fill="#1E2761">A</text>
+</g>
+
+<!-- lamp : right side, glowing -->
+<g data-part="lamp">
+  <line x1="280" y1="95" x2="280" y2="125" stroke="#F4F6FC" stroke-width="7"/>
+  <circle cx="280" cy="110" r="15" fill="#FBEFC8" stroke="#1E2761" stroke-width="3" class="sm-glow"/>
+  <line x1="269.4" y1="99.4" x2="290.6" y2="120.6" stroke="#C99528" stroke-width="2.5"/>
+  <line x1="290.6" y1="99.4" x2="269.4" y2="120.6" stroke="#C99528" stroke-width="2.5"/>
+  <g stroke="#C99528" stroke-width="2" stroke-linecap="round" class="sm-glow">
+    <line x1="280" y1="86" x2="280" y2="80"/>
+    <line x1="299" y1="94" x2="304" y2="90"/>
+    <line x1="299" y1="126" x2="304" y2="130"/>
+  </g>
+</g>
+
+<!-- resistor : bottom -->
+<g data-part="resistor">
+  <line x1="128" y1="180" x2="192" y2="180" stroke="#F4F6FC" stroke-width="7"/>
+  <rect x="130" y="170" width="60" height="20" rx="3" fill="#DCEAF6" stroke="#1E2761" stroke-width="3"/>
+</g>
+
+</g>
+<g data-part="cell" class="dg-label"><circle cx="124.8" cy="30.8" r="3.4"/><text x="124.8" y="22.8" font-size="12" text-anchor="middle">Cell</text></g>
+<g data-part="switch" class="dg-label"><circle cx="230.4" cy="30.8" r="3.4"/><text x="230.4" y="22.8" font-size="12" text-anchor="middle">Switch</text></g>
+<g data-part="ammeter" class="dg-label"><circle cx="294.4" cy="110.0" r="3.4"/><text x="287.4" y="102.0" font-size="12" text-anchor="end">Ammeter (A)</text></g>
+<g data-part="resistor" class="dg-label"><circle cx="41.6" cy="110.0" r="3.4"/><text x="48.6" y="102.0" font-size="12" text-anchor="start">Resistor</text></g>
+<g data-part="lamp" class="dg-label"><circle cx="160.0" cy="176.0" r="3.4"/><text x="160.0" y="168.0" font-size="12" text-anchor="middle">Lamp</text></g>
+<g data-part="loop" class="dg-label"><circle cx="89.6" cy="176.0" r="3.4"/><text x="89.6" y="168.0" font-size="12" text-anchor="middle">Closed loop</text></g>
+</svg>

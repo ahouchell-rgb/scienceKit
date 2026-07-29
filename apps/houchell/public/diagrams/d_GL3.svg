@@ -1,0 +1,120 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 300" width="100%" height="100%" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Components &amp; I–V graphs">
+<style>[class*="sm-"]{transform-box:fill-box;transform-origin:center;}
+[data-part]{transition:opacity .55s ease;}
+.sm-spin{ animation:sm-spin 3s linear infinite; }
+.sm-spin-slow{ animation:sm-spin 9s linear infinite; }
+.sm-spin-rev{ animation:sm-spin 3s linear infinite reverse; }
+.sm-flow{ animation:sm-flow 1s linear infinite; }
+.sm-flow-slow{ animation:sm-flow 2.2s linear infinite; }
+.sm-flow-rev{ animation:sm-flow-rev 1.4s linear infinite; }
+.sm-pulse{ animation:sm-pulse 1.6s ease-in-out infinite; }
+.sm-throb{ animation:sm-throb 1s ease-in-out infinite; }
+.sm-drift{ animation:sm-drift 2.6s ease-in-out infinite; }
+.sm-osc{ animation:sm-osc 1.8s ease-in-out infinite; }
+.sm-osc-x{ animation:sm-osc-x 1.8s ease-in-out infinite; }
+.sm-rise{ animation:sm-rise 2.6s ease-in infinite; }
+.sm-fall{ animation:sm-fall 2.6s ease-in infinite; }
+.sm-blink{ animation:sm-blink 1.4s ease-in-out infinite; }
+.sm-glow{ animation:sm-glow 2s ease-in-out infinite; }
+.sm-shake{ animation:sm-shake .3s ease-in-out infinite; }
+.sm-sweep{ animation:sm-sweep 2.8s ease-in-out infinite; }
+@keyframes sm-spin{ to{ transform:rotate(360deg); } }
+@keyframes sm-flow{ to{ stroke-dashoffset:-24; } }
+@keyframes sm-flow-rev{ to{ stroke-dashoffset:24; } }
+@keyframes sm-pulse{ 0%,100%{ transform:scale(1); } 50%{ transform:scale(1.13); } }
+@keyframes sm-throb{ 0%,100%{ transform:scale(1); } 50%{ transform:scale(1.06); } }
+@keyframes sm-drift{ 0%{ transform:translate(0,0); } 25%{ transform:translate(2px,-2.5px); } 50%{ transform:translate(-2.5px,1.5px); } 75%{ transform:translate(1.5px,2px); } 100%{ transform:translate(0,0); } }
+@keyframes sm-osc{ 0%,100%{ transform:translateY(0); } 50%{ transform:translateY(-5px); } }
+@keyframes sm-osc-x{ 0%,100%{ transform:translateX(0); } 50%{ transform:translateX(5px); } }
+@keyframes sm-rise{ 0%{ transform:translateY(2px); opacity:0; } 25%{ opacity:.85; } 100%{ transform:translateY(-16px); opacity:0; } }
+@keyframes sm-fall{ 0%{ transform:translateY(-14px); opacity:0; } 25%{ opacity:.85; } 100%{ transform:translateY(4px); opacity:0; } }
+@keyframes sm-blink{ 0%,100%{ opacity:1; } 50%{ opacity:.3; } }
+@keyframes sm-glow{ 0%,100%{ opacity:.55; } 50%{ opacity:1; } }
+@keyframes sm-shake{ 0%,100%{ transform:translate(0,0); } 25%{ transform:translate(.9px,-.9px); } 75%{ transform:translate(-.9px,.9px); } }
+@keyframes sm-sweep{ 0%{ transform:translateX(-6px); opacity:.35; } 50%{ opacity:1; } 100%{ transform:translateX(6px); opacity:.35; } }
+@media (prefers-reduced-motion:reduce){[class*="sm-"]{animation:none !important;}}
+.dg-label text{font-family:'Century Gothic','Avenir Next',system-ui,sans-serif;font-weight:600;paint-order:stroke;stroke:#ffffff;stroke-width:3px;stroke-linejoin:round;fill:#1E2761;}
+.dg-label circle{fill:#1E2761;stroke:#ffffff;stroke-width:1.5;}</style>
+<g class="diagram-art">
+
+<rect x="2" y="2" width="316" height="296" rx="12" fill="#F4F6FC" stroke="#1E2761" stroke-width="2"/>
+<!-- shared axes for the I-V graph on the right -->
+<g stroke="#1E2761" stroke-width="2.5" fill="none" stroke-linecap="round">
+  <line x1="180" y1="150" x2="308" y2="150"/>
+  <line x1="244" y1="90" x2="244" y2="210"/>
+</g>
+<text x="303" y="145" font-family="Georgia,serif" font-size="10" fill="#1E2761">V</text>
+<text x="250" y="98" font-family="Georgia,serif" font-size="10" fill="#1E2761">I</text>
+
+<!-- ohmicResistor : symbol top-left + straight line through origin -->
+<g data-part="ohmicResistor">
+  <rect x="30" y="34" width="46" height="16" rx="3" fill="#DCEAF6" stroke="#1E2761" stroke-width="3"/>
+  <line x1="14" y1="42" x2="30" y2="42" stroke="#1E2761" stroke-width="2.5"/>
+  <line x1="76" y1="42" x2="92" y2="42" stroke="#1E2761" stroke-width="2.5"/>
+  <line x1="196" y1="192" x2="296" y2="108" stroke="#1E2761" stroke-width="3" stroke-linecap="round"/>
+</g>
+
+<!-- filamentLamp : lamp symbol + S-curve -->
+<g data-part="filamentLamp">
+  <circle cx="53" cy="86" r="14" fill="#FBEFC8" stroke="#1E2761" stroke-width="3"/>
+  <line x1="43" y1="76" x2="63" y2="96" stroke="#C99528" stroke-width="2.5"/>
+  <line x1="63" y1="76" x2="43" y2="96" stroke="#C99528" stroke-width="2.5"/>
+  <line x1="14" y1="86" x2="39" y2="86" stroke="#1E2761" stroke-width="2.5"/>
+  <line x1="67" y1="86" x2="92" y2="86" stroke="#1E2761" stroke-width="2.5"/>
+  <path d="M198 196 C222 176 232 172 244 150 C256 128 266 124 290 104" fill="none" stroke="#C99528" stroke-width="3" stroke-linecap="round"/>
+</g>
+
+<!-- diode : symbol + one-sided curve -->
+<g data-part="diode">
+  <line x1="14" y1="138" x2="42" y2="138" stroke="#1E2761" stroke-width="2.5"/>
+  <path d="M42 128 L62 138 L42 148 Z" fill="#DCEAF6" stroke="#1E2761" stroke-width="3" stroke-linejoin="round"/>
+  <line x1="62" y1="126" x2="62" y2="150" stroke="#1E2761" stroke-width="3.5" stroke-linecap="round"/>
+  <line x1="62" y1="138" x2="92" y2="138" stroke="#1E2761" stroke-width="2.5"/>
+  <path d="M196 150 L262 150 C280 150 286 132 292 108" fill="none" stroke="#B4341E" stroke-width="3" stroke-linecap="round"/>
+</g>
+
+<!-- thermistor : symbol + curve, with heat cue -->
+<g data-part="thermistor">
+  <rect x="30" y="182" width="46" height="16" rx="3" fill="#F1D2D8" stroke="#1E2761" stroke-width="3"/>
+  <line x1="28" y1="202" x2="74" y2="176" stroke="#1E2761" stroke-width="3" stroke-linecap="round"/>
+  <line x1="14" y1="190" x2="30" y2="190" stroke="#1E2761" stroke-width="2.5"/>
+  <line x1="76" y1="190" x2="92" y2="190" stroke="#1E2761" stroke-width="2.5"/>
+  <g stroke="#B4341E" stroke-width="2" stroke-linecap="round" class="sm-rise">
+    <path d="M40 172 q4 -5 0 -10"/>
+    <path d="M52 172 q4 -5 0 -10"/>
+    <path d="M64 172 q4 -5 0 -10"/>
+  </g>
+</g>
+
+<!-- ldr : symbol + curve, with light arrows -->
+<g data-part="ldr">
+  <circle cx="53" cy="248" r="16" fill="none" stroke="#1E2761" stroke-width="3"/>
+  <rect x="42" y="242" width="22" height="12" rx="2" fill="#DCEAF6" stroke="#1E2761" stroke-width="2.5"/>
+  <line x1="14" y1="248" x2="37" y2="248" stroke="#1E2761" stroke-width="2.5"/>
+  <line x1="69" y1="248" x2="92" y2="248" stroke="#1E2761" stroke-width="2.5"/>
+  <g stroke="#C99528" stroke-width="2" stroke-linecap="round" class="sm-glow">
+    <line x1="70" y1="228" x2="60" y2="238"/><path d="M60 238 l6 -1 -1 -5 z" fill="#C99528" stroke="none"/>
+    <line x1="82" y1="238" x2="70" y2="245"/><path d="M70 245 l6 0 -2 -5 z" fill="#C99528" stroke="none"/>
+  </g>
+</g>
+
+<!-- testCircuit : small A & V meter pair driving the plot (top-right corner) -->
+<g data-part="testCircuit">
+  <rect x="196" y="30" width="112" height="46" rx="8" fill="#fff" stroke="#7a8199" stroke-width="2"/>
+  <circle cx="220" cy="53" r="13" fill="#fff" stroke="#1E2761" stroke-width="2.5"/>
+  <text x="220" y="58" text-anchor="middle" font-family="Georgia,serif" font-size="12" font-weight="bold" fill="#1E2761">A</text>
+  <circle cx="284" cy="53" r="13" fill="#fff" stroke="#1E2761" stroke-width="2.5"/>
+  <text x="284" y="58" text-anchor="middle" font-family="Georgia,serif" font-size="12" font-weight="bold" fill="#1E2761">V</text>
+  <rect x="244" y="47" width="16" height="12" rx="2" fill="#DCEAF6" stroke="#1E2761" stroke-width="2"/>
+  <line x1="233" y1="53" x2="244" y2="53" stroke="#1E2761" stroke-width="2"/>
+  <line x1="260" y1="53" x2="271" y2="53" stroke="#1E2761" stroke-width="2"/>
+</g>
+
+</g>
+<g data-part="ohmicResistor" class="dg-label"><circle cx="83.2" cy="63.0" r="3.4"/><text x="83.2" y="55.0" font-size="12" text-anchor="middle">Resistor</text></g>
+<g data-part="filamentLamp" class="dg-label"><circle cx="236.8" cy="63.0" r="3.4"/><text x="236.8" y="55.0" font-size="12" text-anchor="middle">Filament lamp</text></g>
+<g data-part="diode" class="dg-label"><circle cx="83.2" cy="147.0" r="3.4"/><text x="83.2" y="139.0" font-size="12" text-anchor="middle">Diode</text></g>
+<g data-part="thermistor" class="dg-label"><circle cx="236.8" cy="147.0" r="3.4"/><text x="236.8" y="139.0" font-size="12" text-anchor="middle">Thermistor</text></g>
+<g data-part="ldr" class="dg-label"><circle cx="73.6" cy="231.0" r="3.4"/><text x="73.6" y="223.0" font-size="12" text-anchor="middle">LDR</text></g>
+<g data-part="testCircuit" class="dg-label"><circle cx="243.2" cy="231.0" r="3.4"/><text x="243.2" y="223.0" font-size="12" text-anchor="middle">Test circuit (A &amp; V)</text></g>
+</svg>

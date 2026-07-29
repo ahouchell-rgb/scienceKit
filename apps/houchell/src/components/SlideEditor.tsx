@@ -13,6 +13,7 @@ import { ShortcutHelp } from "./slideEditor/ShortcutHelp";
 import { PropsBar } from "./slideEditor/PropsBar";
 import { CropModal } from "./slideEditor/CropModal";
 import { ChartDataModal } from "./slideEditor/ChartDataModal";
+import { DiagramPickerModal } from "./slideEditor/DiagramPickerModal";
 import { TableEditor } from "./slideEditor/TableEditor";
 import { TextEditor } from "./slideEditor/TextEditor";
 import { DeckQuestionsModal } from "@/components/DeckQuestionsModal";
@@ -38,6 +39,7 @@ export function SlideEditor({ deck, onChange, onUploadImage, onThemeChange, onMa
   const [insertOpen, setInsertOpen] = useState(false);   // "+ Insert" dropdown
   const [qOpen, setQOpen] = useState(false);             // deck → retrieval questions modal
   const [bookletOpen, setBookletOpen] = useState(false); // deck → public revision booklet modal
+  const [diagramOpen, setDiagramOpen] = useState(false); // curriculum diagram picker
   // After a one-click AI lesson, jump straight into drafting retrieval questions
   // from the generated deck (lesson + practice in one flow). Fires once.
   const autoQDone = useRef(false);
@@ -151,6 +153,29 @@ export function SlideEditor({ deck, onChange, onUploadImage, onThemeChange, onMa
   const addVisualiser = () => addEl({ type: "visualiser", x: 260, y: 110, width: 440, height: 300 });
   const addRetrieval = () => addEl({ type: "retrieval", x: 50, y: 90, width: 860, height: 410, url: RET_APP_ORIGIN });
   const addEquation = () => addEl({ type: "equation", x: 280, y: 210, width: 400, height: 120, latex: "x = \\frac{-b \\pm \\sqrt{b^2 - 4ac}}{2a}", fontSize: 44, color: themeState?.text || C.text });
+  // Insert a library diagram sized to its viewBox ratio, in build-up mode (each
+  // labelled part reveals on click in Present). The parts' teaching notes go into
+  // the slide's speaker notes if the slide has none yet.
+  const addDiagram = (entry, svg) => {
+    const vb = String(entry.vb || "0 0 320 240").trim().split(/\s+/).map(Number);
+    const ratio = (vb[3] || 240) / (vb[2] || 320);
+    const height = Math.min(380, Math.round(460 * ratio));
+    const width = Math.round(height / ratio);
+    const notes = `Diagram — ${entry.title}. Build-up order:\n` +
+      entry.parts.map((p) => `• ${p.label}${p.note ? ` — ${p.note}` : ""}`).join("\n");
+    snapshot(false);
+    const id = uid();
+    mapSlide((s) => ({
+      ...s,
+      notes: s.notes ? s.notes : notes,
+      elements: [...s.elements, {
+        id, type: "diagram", x: Math.round((VW - width) / 2), y: 96, width, height,
+        diagramId: entry.id, title: entry.title, svg,
+        partIds: entry.parts.map((p) => p.id), build: true,
+      }],
+    }));
+    setSel(id); setEditing(null); setDiagramOpen(false);
+  };
   const addChart = () => addEl({ type: "chart", x: 240, y: 120, width: 480, height: 320, chartType: "bar", title: "Results", labels: ["A", "B", "C", "D"], series: [{ name: "Series 1", color: CHART_COLORS[0], values: [4, 7, 3, 6] }], font: (themeState ? fontByLabel(themeState.bodyFont) : FONTS[0]).css, color: themeState?.text || "#1a1714" });
   const addTable = () => {
     const rows = 3, cols = 3;
@@ -732,6 +757,7 @@ export function SlideEditor({ deck, onChange, onUploadImage, onThemeChange, onMa
     ],
     [
       { icon: "▣", label: "Image", run: () => fileRef.current?.click() },
+      { icon: "⬡", label: "Diagram", run: () => setDiagramOpen(true) },
       { icon: "▶", label: "Video", run: addVideo },
       { icon: "◉", label: "Visualiser", run: addVisualiser },
       { icon: "❮❯", label: "HTML file", run: () => htmlRef.current?.click() },
@@ -1174,6 +1200,7 @@ export function SlideEditor({ deck, onChange, onUploadImage, onThemeChange, onMa
       const el = slide.elements.find((e) => e.id === charting);
       return el ? <ChartDataModal el={el} onApply={(patch) => { patchH(charting, patch); setCharting(null); }} onCancel={() => setCharting(null)} /> : null;
     })()}
+    {diagramOpen && <DiagramPickerModal onInsert={addDiagram} onCancel={() => setDiagramOpen(false)} />}
     {helpOpen && <ShortcutHelp onClose={() => setHelpOpen(false)} />}
     {qOpen && <DeckQuestionsModal slides={slides} lessonTitle={deck?.title || ""} onClose={() => setQOpen(false)} />}
     {bookletOpen && <DeckBookletModal slides={slides} lessonTitle={deck?.title || ""} onClose={() => setBookletOpen(false)} />}

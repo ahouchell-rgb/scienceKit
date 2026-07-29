@@ -1,0 +1,121 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 260" width="100%" height="100%" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Mains electricity &amp; the National Grid">
+<style>[class*="sm-"]{transform-box:fill-box;transform-origin:center;}
+[data-part]{transition:opacity .55s ease;}
+.sm-spin{ animation:sm-spin 3s linear infinite; }
+.sm-spin-slow{ animation:sm-spin 9s linear infinite; }
+.sm-spin-rev{ animation:sm-spin 3s linear infinite reverse; }
+.sm-flow{ animation:sm-flow 1s linear infinite; }
+.sm-flow-slow{ animation:sm-flow 2.2s linear infinite; }
+.sm-flow-rev{ animation:sm-flow-rev 1.4s linear infinite; }
+.sm-pulse{ animation:sm-pulse 1.6s ease-in-out infinite; }
+.sm-throb{ animation:sm-throb 1s ease-in-out infinite; }
+.sm-drift{ animation:sm-drift 2.6s ease-in-out infinite; }
+.sm-osc{ animation:sm-osc 1.8s ease-in-out infinite; }
+.sm-osc-x{ animation:sm-osc-x 1.8s ease-in-out infinite; }
+.sm-rise{ animation:sm-rise 2.6s ease-in infinite; }
+.sm-fall{ animation:sm-fall 2.6s ease-in infinite; }
+.sm-blink{ animation:sm-blink 1.4s ease-in-out infinite; }
+.sm-glow{ animation:sm-glow 2s ease-in-out infinite; }
+.sm-shake{ animation:sm-shake .3s ease-in-out infinite; }
+.sm-sweep{ animation:sm-sweep 2.8s ease-in-out infinite; }
+@keyframes sm-spin{ to{ transform:rotate(360deg); } }
+@keyframes sm-flow{ to{ stroke-dashoffset:-24; } }
+@keyframes sm-flow-rev{ to{ stroke-dashoffset:24; } }
+@keyframes sm-pulse{ 0%,100%{ transform:scale(1); } 50%{ transform:scale(1.13); } }
+@keyframes sm-throb{ 0%,100%{ transform:scale(1); } 50%{ transform:scale(1.06); } }
+@keyframes sm-drift{ 0%{ transform:translate(0,0); } 25%{ transform:translate(2px,-2.5px); } 50%{ transform:translate(-2.5px,1.5px); } 75%{ transform:translate(1.5px,2px); } 100%{ transform:translate(0,0); } }
+@keyframes sm-osc{ 0%,100%{ transform:translateY(0); } 50%{ transform:translateY(-5px); } }
+@keyframes sm-osc-x{ 0%,100%{ transform:translateX(0); } 50%{ transform:translateX(5px); } }
+@keyframes sm-rise{ 0%{ transform:translateY(2px); opacity:0; } 25%{ opacity:.85; } 100%{ transform:translateY(-16px); opacity:0; } }
+@keyframes sm-fall{ 0%{ transform:translateY(-14px); opacity:0; } 25%{ opacity:.85; } 100%{ transform:translateY(4px); opacity:0; } }
+@keyframes sm-blink{ 0%,100%{ opacity:1; } 50%{ opacity:.3; } }
+@keyframes sm-glow{ 0%,100%{ opacity:.55; } 50%{ opacity:1; } }
+@keyframes sm-shake{ 0%,100%{ transform:translate(0,0); } 25%{ transform:translate(.9px,-.9px); } 75%{ transform:translate(-.9px,.9px); } }
+@keyframes sm-sweep{ 0%{ transform:translateX(-6px); opacity:.35; } 50%{ opacity:1; } 100%{ transform:translateX(6px); opacity:.35; } }
+@media (prefers-reduced-motion:reduce){[class*="sm-"]{animation:none !important;}}
+.dg-label text{font-family:'Century Gothic','Avenir Next',system-ui,sans-serif;font-weight:600;paint-order:stroke;stroke:#ffffff;stroke-width:3px;stroke-linejoin:round;fill:#1E2761;}
+.dg-label circle{fill:#1E2761;stroke:#ffffff;stroke-width:1.5;}</style>
+<g class="diagram-art">
+
+<rect x="2" y="2" width="316" height="256" rx="12" fill="#F4F6FC" stroke="#1E2761" stroke-width="2"/>
+<!-- transmission line (shared scaffold) -->
+<line x1="86" y1="46" x2="234" y2="46" stroke="#1E2761" stroke-width="2.5"/>
+<path d="M112 46 v14 M208 46 v14" stroke="#7a8199" stroke-width="1.5"/>
+<g fill="#C99528" class="sm-drift"><path d="M150 40 l10 6 -10 6 z"/></g>
+
+<!-- powerStation : far left, generates a.c. -->
+<g data-part="powerStation">
+  <rect x="16" y="46" width="46" height="40" rx="3" fill="#DCEAF6" stroke="#1E2761" stroke-width="3"/>
+  <path d="M28 46 l6 -14 6 14 z" fill="#7a8199"/>
+  <path d="M28 34 q4 -8 0 -14 M38 34 q4 -8 0 -14" fill="none" stroke="#7a8199" stroke-width="2" stroke-linecap="round" class="sm-rise"/>
+  <path d="M44 66 q4 -5 8 0 t8 0" fill="none" stroke="#B4341E" stroke-width="2.5"/>
+</g>
+
+<!-- stepUpTransformer : boosts voltage after station -->
+<g data-part="stepUpTransformer">
+  <circle cx="80" cy="66" r="13" fill="#fff" stroke="#1E2761" stroke-width="2.5"/>
+  <circle cx="93" cy="66" r="13" fill="#fff" stroke="#B4341E" stroke-width="2.5"/>
+  <line x1="66" y1="66" x2="62" y2="66" stroke="#1E2761" stroke-width="2.5"/>
+  <line x1="106" y1="66" x2="112" y2="66" stroke="#1E2761" stroke-width="2.5"/>
+  <line x1="86" y1="52" x2="86" y2="46" stroke="#1E2761" stroke-width="2.5"/>
+  <g stroke="#B4341E" stroke-width="2" stroke-linecap="round" class="sm-rise">
+    <line x1="86" y1="30" x2="86" y2="20"/><path d="M86 20 l-3 6 6 0 z" fill="#B4341E" stroke="none"/>
+  </g>
+</g>
+
+<!-- pylon suggestion (scaffold) -->
+<path d="M160 46 l-8 20 h16 z M160 46 v-8" fill="none" stroke="#7a8199" stroke-width="1.5"/>
+
+<!-- stepDownTransformer : drops voltage for homes -->
+<g data-part="stepDownTransformer">
+  <circle cx="227" cy="66" r="13" fill="#fff" stroke="#B4341E" stroke-width="2.5"/>
+  <circle cx="240" cy="66" r="13" fill="#fff" stroke="#1E2761" stroke-width="2.5"/>
+  <line x1="227" y1="52" x2="227" y2="46" stroke="#1E2761" stroke-width="2.5"/>
+  <line x1="253" y1="66" x2="258" y2="66" stroke="#1E2761" stroke-width="2.5"/>
+  <g stroke="#2C5F2D" stroke-width="2" stroke-linecap="round" class="sm-fall">
+    <line x1="240" y1="20" x2="240" y2="30"/><path d="M240 30 l-3 -6 6 0 z" fill="#2C5F2D" stroke="none"/>
+  </g>
+  <path d="M266 60 l14 -10 v20 z M280 46 h20 v28 h-20" fill="#DCEAF6" stroke="#1E2761" stroke-width="2.5" stroke-linejoin="round"/>
+</g>
+
+<!-- plug body (shared scaffold) -->
+<rect x="60" y="120" width="200" height="118" rx="12" fill="#fff" stroke="#1E2761" stroke-width="3"/>
+<circle cx="160" cy="140" r="7" fill="none" stroke="#7a8199" stroke-width="2"/>
+<text x="160" y="234" text-anchor="middle" font-family="Georgia,serif" font-size="9" fill="#7a8199">three-pin plug</text>
+
+<!-- earthWire : green/yellow to the top (longest) earth pin -->
+<g data-part="earthWire">
+  <line x1="160" y1="147" x2="160" y2="120" stroke="#2C5F2D" stroke-width="4" stroke-linecap="round"/>
+  <rect x="155" y="106" width="10" height="16" rx="2" fill="#7a8199" stroke="#1E2761" stroke-width="2"/>
+</g>
+
+<!-- liveWire : brown, right side, 230 V, through the fuse -->
+<g data-part="liveWire">
+  <line x1="228" y1="160" x2="228" y2="196" stroke="#7a8199" stroke-width="4" stroke-linecap="round"/>
+  <line x1="228" y1="200" x2="228" y2="230" stroke="#B4341E" stroke-width="4" stroke-linecap="round"/>
+  <rect x="223" y="230" width="10" height="14" rx="2" fill="#7a8199" stroke="#1E2761" stroke-width="2"/>
+  <text x="243" y="216" font-family="Georgia,serif" font-size="9" fill="#B4341E">230 V</text>
+</g>
+
+<!-- fuse : in the live wire, melts on fault -->
+<g data-part="fuse">
+  <rect x="216" y="160" width="24" height="14" rx="3" fill="#FBEFC8" stroke="#1E2761" stroke-width="2.5"/>
+  <line x1="220" y1="167" x2="236" y2="167" stroke="#B4341E" stroke-width="2" class="sm-glow"/>
+</g>
+
+<!-- neutralWire : blue, left, ~0 V, return path -->
+<g data-part="neutralWire">
+  <line x1="96" y1="160" x2="96" y2="230" stroke="#3766A8" stroke-width="4" stroke-linecap="round"/>
+  <rect x="91" y="230" width="10" height="14" rx="2" fill="#7a8199" stroke="#1E2761" stroke-width="2"/>
+  <text x="70" y="200" font-family="Georgia,serif" font-size="9" fill="#3766A8">0 V</text>
+</g>
+
+</g>
+<g data-part="powerStation" class="dg-label"><circle cx="48.0" cy="54.6" r="3.4"/><text x="55.0" y="46.6" font-size="12" text-anchor="start">Power station</text></g>
+<g data-part="stepUpTransformer" class="dg-label"><circle cx="108.8" cy="57.2" r="3.4"/><text x="108.8" y="49.2" font-size="12" text-anchor="middle">Step-up transformer</text></g>
+<g data-part="stepDownTransformer" class="dg-label"><circle cx="252.8" cy="57.2" r="3.4"/><text x="245.8" y="49.2" font-size="12" text-anchor="end">Step-down transformer</text></g>
+<g data-part="liveWire" class="dg-label"><circle cx="64.0" cy="135.2" r="3.4"/><text x="71.0" y="127.2" font-size="12" text-anchor="start">Live wire</text></g>
+<g data-part="neutralWire" class="dg-label"><circle cx="112.0" cy="145.6" r="3.4"/><text x="112.0" y="137.6" font-size="12" text-anchor="middle">Neutral wire</text></g>
+<g data-part="earthWire" class="dg-label"><circle cx="176.0" cy="156.0" r="3.4"/><text x="176.0" y="148.0" font-size="12" text-anchor="middle">Earth wire</text></g>
+<g data-part="fuse" class="dg-label"><circle cx="224.0" cy="156.0" r="3.4"/><text x="224.0" y="148.0" font-size="12" text-anchor="middle">Fuse</text></g>
+</svg>

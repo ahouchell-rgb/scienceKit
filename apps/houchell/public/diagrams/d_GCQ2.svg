@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 230" width="100%" height="100%" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Moles, % mass &amp; concentration">
+<style>[class*="sm-"]{transform-box:fill-box;transform-origin:center;}
+[data-part]{transition:opacity .55s ease;}
+.sm-spin{ animation:sm-spin 3s linear infinite; }
+.sm-spin-slow{ animation:sm-spin 9s linear infinite; }
+.sm-spin-rev{ animation:sm-spin 3s linear infinite reverse; }
+.sm-flow{ animation:sm-flow 1s linear infinite; }
+.sm-flow-slow{ animation:sm-flow 2.2s linear infinite; }
+.sm-flow-rev{ animation:sm-flow-rev 1.4s linear infinite; }
+.sm-pulse{ animation:sm-pulse 1.6s ease-in-out infinite; }
+.sm-throb{ animation:sm-throb 1s ease-in-out infinite; }
+.sm-drift{ animation:sm-drift 2.6s ease-in-out infinite; }
+.sm-osc{ animation:sm-osc 1.8s ease-in-out infinite; }
+.sm-osc-x{ animation:sm-osc-x 1.8s ease-in-out infinite; }
+.sm-rise{ animation:sm-rise 2.6s ease-in infinite; }
+.sm-fall{ animation:sm-fall 2.6s ease-in infinite; }
+.sm-blink{ animation:sm-blink 1.4s ease-in-out infinite; }
+.sm-glow{ animation:sm-glow 2s ease-in-out infinite; }
+.sm-shake{ animation:sm-shake .3s ease-in-out infinite; }
+.sm-sweep{ animation:sm-sweep 2.8s ease-in-out infinite; }
+@keyframes sm-spin{ to{ transform:rotate(360deg); } }
+@keyframes sm-flow{ to{ stroke-dashoffset:-24; } }
+@keyframes sm-flow-rev{ to{ stroke-dashoffset:24; } }
+@keyframes sm-pulse{ 0%,100%{ transform:scale(1); } 50%{ transform:scale(1.13); } }
+@keyframes sm-throb{ 0%,100%{ transform:scale(1); } 50%{ transform:scale(1.06); } }
+@keyframes sm-drift{ 0%{ transform:translate(0,0); } 25%{ transform:translate(2px,-2.5px); } 50%{ transform:translate(-2.5px,1.5px); } 75%{ transform:translate(1.5px,2px); } 100%{ transform:translate(0,0); } }
+@keyframes sm-osc{ 0%,100%{ transform:translateY(0); } 50%{ transform:translateY(-5px); } }
+@keyframes sm-osc-x{ 0%,100%{ transform:translateX(0); } 50%{ transform:translateX(5px); } }
+@keyframes sm-rise{ 0%{ transform:translateY(2px); opacity:0; } 25%{ opacity:.85; } 100%{ transform:translateY(-16px); opacity:0; } }
+@keyframes sm-fall{ 0%{ transform:translateY(-14px); opacity:0; } 25%{ opacity:.85; } 100%{ transform:translateY(4px); opacity:0; } }
+@keyframes sm-blink{ 0%,100%{ opacity:1; } 50%{ opacity:.3; } }
+@keyframes sm-glow{ 0%,100%{ opacity:.55; } 50%{ opacity:1; } }
+@keyframes sm-shake{ 0%,100%{ transform:translate(0,0); } 25%{ transform:translate(.9px,-.9px); } 75%{ transform:translate(-.9px,.9px); } }
+@keyframes sm-sweep{ 0%{ transform:translateX(-6px); opacity:.35; } 50%{ opacity:1; } 100%{ transform:translateX(6px); opacity:.35; } }
+@media (prefers-reduced-motion:reduce){[class*="sm-"]{animation:none !important;}}
+.dg-label text{font-family:'Century Gothic','Avenir Next',system-ui,sans-serif;font-weight:600;paint-order:stroke;stroke:#ffffff;stroke-width:3px;stroke-linejoin:round;fill:#1E2761;}
+.dg-label circle{fill:#1E2761;stroke:#ffffff;stroke-width:1.5;}</style>
+<g class="diagram-art">
+<rect x="0" y="0" width="320" height="230" fill="#ffffff"/>
+<!-- BALANCE: digital balance weighing solute on the left -->
+<g data-part="balance">
+  <rect x="16" y="150" width="96" height="40" rx="6" fill="#F4F6FC" stroke="#1E2761" stroke-width="2.6"/>
+  <rect x="30" y="132" width="68" height="18" rx="3" fill="#DCEAF6" stroke="#1E2761" stroke-width="2"/>
+  <rect x="66" y="168" width="36" height="14" rx="3" fill="#1E2761"/>
+  <text x="84" y="179" font-family="monospace" font-size="10" fill="#CDE5C6" text-anchor="middle">8.0g</text>
+</g>
+<!-- SOLUTE: pile of solid crystals on the balance pan -->
+<g data-part="solute">
+  <polygon points="52,132 58,120 64,132" fill="#C99528" stroke="#1E2761" stroke-width="1.6"/>
+  <polygon points="60,132 66,116 72,132" fill="#C99528" stroke="#1E2761" stroke-width="1.6"/>
+  <polygon points="68,132 74,122 80,132" fill="#C99528" stroke="#1E2761" stroke-width="1.6"/>
+</g>
+<!-- pouring arrow (scaffolding) -->
+<path d="M112 130 Q150 120 176 128" fill="none" stroke="#7a8199" stroke-width="2.4" stroke-linecap="round" stroke-dasharray="5 5"/>
+<polyline points="169,121 178,128 168,135" fill="none" stroke="#7a8199" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<!-- SOLVENT (water) label: droplet + arrow from top -->
+<g data-part="solvent">
+  <path d="M222 20 q-12 18 0 26 a13 13 0 0 0 0 -26 z" fill="#DCEAF6" stroke="#1E2761" stroke-width="2.4" transform="rotate(0 222 33)"/>
+  <line x1="222" y1="48" x2="222" y2="74" stroke="#1E2761" stroke-width="2.6" stroke-linecap="round"/>
+  <polyline points="216,66 222,76 228,66" fill="none" stroke="#1E2761" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<!-- measuring cylinder body (scaffolding container, not a labelled part) -->
+<path d="M180 80 h80 v128 a10 10 0 0 1 -10 10 h-60 a10 10 0 0 1 -10 -10 z" fill="#ffffff" stroke="#1E2761" stroke-width="3" stroke-linejoin="round"/>
+<!-- SOLUTION: dissolved liquid filling the cylinder, dissolved particles spread -->
+<g data-part="solution">
+  <path d="M182 120 h76 v88 a9 9 0 0 1 -9 9 h-58 a9 9 0 0 1 -9 -9 z" fill="#F5E6C8" opacity="0.75"/>
+  <g class="sm-drift">
+    <circle cx="200" cy="150" r="2.6" fill="#C99528"/>
+    <circle cx="228" cy="168" r="2.6" fill="#C99528"/>
+    <circle cx="212" cy="188" r="2.6" fill="#C99528"/>
+    <circle cx="242" cy="150" r="2.6" fill="#C99528"/>
+    <circle cx="222" cy="200" r="2.6" fill="#C99528"/>
+  </g>
+</g>
+<!-- MENISCUS: curved liquid surface, read bottom at eye level -->
+<g data-part="meniscus">
+  <path d="M182 120 q38 12 76 0" fill="none" stroke="#1E2761" stroke-width="2.6" stroke-linecap="round"/>
+  <!-- eye-level dashed sightline to bottom of curve -->
+  <line x1="150" y1="126" x2="220" y2="126" stroke="#B4341E" stroke-width="1.8" stroke-dasharray="4 4"/>
+  <circle cx="220" cy="126" r="2.6" fill="#B4341E"/>
+</g>
+<!-- VOLUME SCALE: tick marks + units on the cylinder -->
+<g data-part="scaleMarks">
+  <line x1="260" y1="120" x2="272" y2="120" stroke="#1E2761" stroke-width="2"/>
+  <line x1="260" y1="150" x2="270" y2="150" stroke="#1E2761" stroke-width="1.6"/>
+  <line x1="260" y1="180" x2="272" y2="180" stroke="#1E2761" stroke-width="2"/>
+  <line x1="260" y1="210" x2="270" y2="210" stroke="#1E2761" stroke-width="1.6"/>
+  <text x="292" y="124" font-family="sans-serif" font-size="9" fill="#1E2761" text-anchor="middle">100</text>
+  <text x="290" y="184" font-family="sans-serif" font-size="9" fill="#1E2761" text-anchor="middle">50</text>
+</g>
+</g>
+<g data-part="balance" class="dg-label"><circle cx="67.2" cy="156.4" r="3.4"/><text x="74.2" y="148.4" font-size="12" text-anchor="start">Balance (mass)</text></g>
+<g data-part="solute" class="dg-label"><circle cx="99.2" cy="128.8" r="3.4"/><text x="99.2" y="120.8" font-size="12" text-anchor="middle">Solute</text></g>
+<g data-part="solution" class="dg-label"><circle cx="176.0" cy="156.4" r="3.4"/><text x="176.0" y="148.4" font-size="12" text-anchor="middle">Solution</text></g>
+<g data-part="solvent" class="dg-label"><circle cx="176.0" cy="115.0" r="3.4"/><text x="176.0" y="107.0" font-size="12" text-anchor="middle">Solvent (water)</text></g>
+<g data-part="meniscus" class="dg-label"><circle cx="265.6" cy="92.0" r="3.4"/><text x="258.6" y="84.0" font-size="12" text-anchor="end">Meniscus</text></g>
+<g data-part="scaleMarks" class="dg-label"><circle cx="294.4" cy="133.4" r="3.4"/><text x="287.4" y="125.4" font-size="12" text-anchor="end">Volume scale</text></g>
+</svg>

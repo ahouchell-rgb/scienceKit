@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 240" width="100%" height="100%" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Cells">
+<style>[class*="sm-"]{transform-box:fill-box;transform-origin:center;}
+[data-part]{transition:opacity .55s ease;}
+.sm-spin{ animation:sm-spin 3s linear infinite; }
+.sm-spin-slow{ animation:sm-spin 9s linear infinite; }
+.sm-spin-rev{ animation:sm-spin 3s linear infinite reverse; }
+.sm-flow{ animation:sm-flow 1s linear infinite; }
+.sm-flow-slow{ animation:sm-flow 2.2s linear infinite; }
+.sm-flow-rev{ animation:sm-flow-rev 1.4s linear infinite; }
+.sm-pulse{ animation:sm-pulse 1.6s ease-in-out infinite; }
+.sm-throb{ animation:sm-throb 1s ease-in-out infinite; }
+.sm-drift{ animation:sm-drift 2.6s ease-in-out infinite; }
+.sm-osc{ animation:sm-osc 1.8s ease-in-out infinite; }
+.sm-osc-x{ animation:sm-osc-x 1.8s ease-in-out infinite; }
+.sm-rise{ animation:sm-rise 2.6s ease-in infinite; }
+.sm-fall{ animation:sm-fall 2.6s ease-in infinite; }
+.sm-blink{ animation:sm-blink 1.4s ease-in-out infinite; }
+.sm-glow{ animation:sm-glow 2s ease-in-out infinite; }
+.sm-shake{ animation:sm-shake .3s ease-in-out infinite; }
+.sm-sweep{ animation:sm-sweep 2.8s ease-in-out infinite; }
+@keyframes sm-spin{ to{ transform:rotate(360deg); } }
+@keyframes sm-flow{ to{ stroke-dashoffset:-24; } }
+@keyframes sm-flow-rev{ to{ stroke-dashoffset:24; } }
+@keyframes sm-pulse{ 0%,100%{ transform:scale(1); } 50%{ transform:scale(1.13); } }
+@keyframes sm-throb{ 0%,100%{ transform:scale(1); } 50%{ transform:scale(1.06); } }
+@keyframes sm-drift{ 0%{ transform:translate(0,0); } 25%{ transform:translate(2px,-2.5px); } 50%{ transform:translate(-2.5px,1.5px); } 75%{ transform:translate(1.5px,2px); } 100%{ transform:translate(0,0); } }
+@keyframes sm-osc{ 0%,100%{ transform:translateY(0); } 50%{ transform:translateY(-5px); } }
+@keyframes sm-osc-x{ 0%,100%{ transform:translateX(0); } 50%{ transform:translateX(5px); } }
+@keyframes sm-rise{ 0%{ transform:translateY(2px); opacity:0; } 25%{ opacity:.85; } 100%{ transform:translateY(-16px); opacity:0; } }
+@keyframes sm-fall{ 0%{ transform:translateY(-14px); opacity:0; } 25%{ opacity:.85; } 100%{ transform:translateY(4px); opacity:0; } }
+@keyframes sm-blink{ 0%,100%{ opacity:1; } 50%{ opacity:.3; } }
+@keyframes sm-glow{ 0%,100%{ opacity:.55; } 50%{ opacity:1; } }
+@keyframes sm-shake{ 0%,100%{ transform:translate(0,0); } 25%{ transform:translate(.9px,-.9px); } 75%{ transform:translate(-.9px,.9px); } }
+@keyframes sm-sweep{ 0%{ transform:translateX(-6px); opacity:.35; } 50%{ opacity:1; } 100%{ transform:translateX(6px); opacity:.35; } }
+@media (prefers-reduced-motion:reduce){[class*="sm-"]{animation:none !important;}}
+.dg-label text{font-family:'Century Gothic','Avenir Next',system-ui,sans-serif;font-weight:600;paint-order:stroke;stroke:#ffffff;stroke-width:3px;stroke-linejoin:round;fill:#1E2761;}
+.dg-label circle{fill:#1E2761;stroke:#ffffff;stroke-width:1.5;}</style>
+<g class="diagram-art">
+<g data-part="membrane"><ellipse cx="160" cy="120" rx="146" ry="102" fill="none" stroke="#1E2761" stroke-width="3.5"/></g><g data-part="cytoplasm"><ellipse cx="160" cy="120" rx="141" ry="97" fill="#DCEAF6" stroke="none"/><g fill="#B9CFe6" opacity="0.7"><circle cx="70" cy="170" r="3"/><circle cx="90" cy="190" r="2.5"/><circle cx="55" cy="150" r="2.5"/><circle cx="250" cy="70" r="3"/><circle cx="120" cy="60" r="2.5"/><circle cx="210" cy="200" r="3"/></g></g><g data-part="nucleus"><circle cx="160" cy="118" r="38" fill="#AEB6D6" stroke="#1E2761" stroke-width="2.5"/><circle cx="170" cy="126" r="10" fill="#1E2761"/><path d="M140 108 q10 -6 20 2 M150 132 q12 6 24 -2" fill="none" stroke="#1E2761" stroke-width="1.5" opacity="0.6"/></g><g data-part="mitochondria"><g class="sm-throb"><g transform="rotate(20 250 66)"><ellipse cx="250" cy="66" rx="26" ry="13" fill="#CDE5C6" stroke="#2C5F2D" stroke-width="2.5"/><path d="M228 66 q7 -8 14 0 q7 8 14 0 q7 -8 14 0" fill="none" stroke="#2C5F2D" stroke-width="1.8"/></g><g transform="rotate(-18 78 176)"><ellipse cx="78" cy="176" rx="24" ry="12" fill="#CDE5C6" stroke="#2C5F2D" stroke-width="2.5"/><path d="M58 176 q7 -7 13 0 q7 7 13 0 q7 -7 13 0" fill="none" stroke="#2C5F2D" stroke-width="1.8"/></g></g></g>
+</g>
+<g data-part="nucleus" class="dg-label"><circle cx="160.0" cy="120.0" r="3.4"/><text x="160.0" y="112.0" font-size="12" text-anchor="middle">Nucleus</text></g>
+<g data-part="membrane" class="dg-label"><circle cx="160.0" cy="21.6" r="3.4"/><text x="160.0" y="41.6" font-size="12" text-anchor="middle">Cell membrane</text></g>
+<g data-part="cytoplasm" class="dg-label"><circle cx="73.6" cy="153.6" r="3.4"/><text x="73.6" y="145.6" font-size="12" text-anchor="middle">Cytoplasm</text></g>
+<g data-part="mitochondria" class="dg-label"><circle cx="230.4" cy="160.8" r="3.4"/><text x="230.4" y="152.8" font-size="12" text-anchor="middle">Mitochondria</text></g>
+</svg>

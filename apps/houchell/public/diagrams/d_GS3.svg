@@ -1,0 +1,109 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 250" width="100%" height="100%" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Red-shift &amp; the Big Bang">
+<style>[class*="sm-"]{transform-box:fill-box;transform-origin:center;}
+[data-part]{transition:opacity .55s ease;}
+.sm-spin{ animation:sm-spin 3s linear infinite; }
+.sm-spin-slow{ animation:sm-spin 9s linear infinite; }
+.sm-spin-rev{ animation:sm-spin 3s linear infinite reverse; }
+.sm-flow{ animation:sm-flow 1s linear infinite; }
+.sm-flow-slow{ animation:sm-flow 2.2s linear infinite; }
+.sm-flow-rev{ animation:sm-flow-rev 1.4s linear infinite; }
+.sm-pulse{ animation:sm-pulse 1.6s ease-in-out infinite; }
+.sm-throb{ animation:sm-throb 1s ease-in-out infinite; }
+.sm-drift{ animation:sm-drift 2.6s ease-in-out infinite; }
+.sm-osc{ animation:sm-osc 1.8s ease-in-out infinite; }
+.sm-osc-x{ animation:sm-osc-x 1.8s ease-in-out infinite; }
+.sm-rise{ animation:sm-rise 2.6s ease-in infinite; }
+.sm-fall{ animation:sm-fall 2.6s ease-in infinite; }
+.sm-blink{ animation:sm-blink 1.4s ease-in-out infinite; }
+.sm-glow{ animation:sm-glow 2s ease-in-out infinite; }
+.sm-shake{ animation:sm-shake .3s ease-in-out infinite; }
+.sm-sweep{ animation:sm-sweep 2.8s ease-in-out infinite; }
+@keyframes sm-spin{ to{ transform:rotate(360deg); } }
+@keyframes sm-flow{ to{ stroke-dashoffset:-24; } }
+@keyframes sm-flow-rev{ to{ stroke-dashoffset:24; } }
+@keyframes sm-pulse{ 0%,100%{ transform:scale(1); } 50%{ transform:scale(1.13); } }
+@keyframes sm-throb{ 0%,100%{ transform:scale(1); } 50%{ transform:scale(1.06); } }
+@keyframes sm-drift{ 0%{ transform:translate(0,0); } 25%{ transform:translate(2px,-2.5px); } 50%{ transform:translate(-2.5px,1.5px); } 75%{ transform:translate(1.5px,2px); } 100%{ transform:translate(0,0); } }
+@keyframes sm-osc{ 0%,100%{ transform:translateY(0); } 50%{ transform:translateY(-5px); } }
+@keyframes sm-osc-x{ 0%,100%{ transform:translateX(0); } 50%{ transform:translateX(5px); } }
+@keyframes sm-rise{ 0%{ transform:translateY(2px); opacity:0; } 25%{ opacity:.85; } 100%{ transform:translateY(-16px); opacity:0; } }
+@keyframes sm-fall{ 0%{ transform:translateY(-14px); opacity:0; } 25%{ opacity:.85; } 100%{ transform:translateY(4px); opacity:0; } }
+@keyframes sm-blink{ 0%,100%{ opacity:1; } 50%{ opacity:.3; } }
+@keyframes sm-glow{ 0%,100%{ opacity:.55; } 50%{ opacity:1; } }
+@keyframes sm-shake{ 0%,100%{ transform:translate(0,0); } 25%{ transform:translate(.9px,-.9px); } 75%{ transform:translate(-.9px,.9px); } }
+@keyframes sm-sweep{ 0%{ transform:translateX(-6px); opacity:.35; } 50%{ opacity:1; } 100%{ transform:translateX(6px); opacity:.35; } }
+@media (prefers-reduced-motion:reduce){[class*="sm-"]{animation:none !important;}}
+.dg-label text{font-family:'Century Gothic','Avenir Next',system-ui,sans-serif;font-weight:600;paint-order:stroke;stroke:#ffffff;stroke-width:3px;stroke-linejoin:round;fill:#1E2761;}
+.dg-label circle{fill:#1E2761;stroke:#ffffff;stroke-width:1.5;}</style>
+<g class="diagram-art">
+<rect x="0" y="0" width="320" height="250" fill="#F4F6FC"/>
+<defs>
+  <marker id="gs3arr" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+    <path d="M0 0 L8 4 L0 8 Z" fill="#1E2761"/>
+  </marker>
+  <marker id="gs3red" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+    <path d="M0 0 L8 4 L0 8 Z" fill="#B4341E"/>
+  </marker>
+  <radialGradient id="gs3bb" cx="50%" cy="50%" r="50%">
+    <stop offset="0%" stop-color="#C99528"/>
+    <stop offset="70%" stop-color="#B4341E"/>
+    <stop offset="100%" stop-color="#B4341E" stop-opacity="0.3"/>
+  </radialGradient>
+</defs>
+<circle cx="40" cy="70" r="9" fill="#DCEAF6" stroke="#1E2761" stroke-width="2"/>
+<path d="M32 68 q4 -3 8 -1 q4 2 8 0" fill="none" stroke="#2C5F2D" stroke-width="2" stroke-linecap="round"/>
+<text x="40" y="94" font-family="sans-serif" font-size="8" fill="#1E2761" text-anchor="middle">us</text>
+<g data-part="bigBang">
+  <circle cx="40" cy="185" r="16" fill="url(#gs3bb)" class="sm-pulse"/>
+  <circle cx="40" cy="185" r="9" fill="#C99528"/>
+  <g stroke="#B4341E" stroke-width="2" stroke-linecap="round">
+    <line x1="40" y1="163" x2="40" y2="169"/>
+    <line x1="40" y1="201" x2="40" y2="207"/>
+    <line x1="18" y1="185" x2="24" y2="185"/>
+    <line x1="62" y1="185" x2="56" y2="185"/>
+    <line x1="26" y1="171" x2="30" y2="175"/>
+    <line x1="54" y1="199" x2="50" y2="195"/>
+    <line x1="54" y1="171" x2="50" y2="175"/>
+    <line x1="26" y1="199" x2="30" y2="195"/>
+  </g>
+</g>
+<g data-part="expansion">
+  <g stroke="#7a8199" stroke-width="2" fill="none" marker-end="url(#gs3arr)" class="sm-drift">
+    <line x1="66" y1="180" x2="120" y2="150"/>
+    <line x1="66" y1="188" x2="130" y2="200"/>
+    <line x1="60" y1="200" x2="100" y2="225"/>
+  </g>
+</g>
+<g data-part="nearGalaxy">
+  <g transform="translate(150,110)">
+    <ellipse rx="16" ry="8" fill="none" stroke="#1E2761" stroke-width="2.5" transform="rotate(-20)"/>
+    <path d="M-14 4 a16 8 0 0 1 28 -8" fill="none" stroke="#C99528" stroke-width="2.5" transform="rotate(-20)"/>
+    <circle r="4" fill="#C99528"/>
+  </g>
+  <line x1="168" y1="112" x2="196" y2="112" stroke="#7a8199" stroke-width="2.5" marker-end="url(#gs3arr)"/>
+</g>
+<g data-part="farGalaxy">
+  <g transform="translate(268,70)">
+    <ellipse rx="13" ry="6.5" fill="none" stroke="#1E2761" stroke-width="2.5" transform="rotate(-20)"/>
+    <path d="M-11 3 a13 6.5 0 0 1 22 -6" fill="none" stroke="#B4341E" stroke-width="2.5" transform="rotate(-20)"/>
+    <circle r="3.2" fill="#B4341E"/>
+  </g>
+  <line x1="284" y1="72" x2="315" y2="52" stroke="#B4341E" stroke-width="3" marker-end="url(#gs3red)"/>
+</g>
+<g data-part="shortWave">
+  <path d="M120 165 q6 -14 12 0 q6 14 12 0 q6 -14 12 0 q6 14 12 0 q6 -14 12 0 q6 14 12 0" fill="none" stroke="#1E2761" stroke-width="2.5" stroke-linecap="round"/>
+  <text x="122" y="152" font-family="sans-serif" font-size="8" fill="#1E2761">source</text>
+</g>
+<g data-part="redWave">
+  <path d="M120 220 q13 -16 26 0 q13 16 26 0 q13 -16 26 0 q13 16 26 0" fill="none" stroke="#B4341E" stroke-width="2.5" stroke-linecap="round" class="sm-flow" stroke-dasharray="0"/>
+  <text x="120" y="207" font-family="sans-serif" font-size="8" fill="#B4341E">stretched (red)</text>
+  <line x1="200" y1="220" x2="230" y2="220" stroke="#B4341E" stroke-width="2.5" marker-end="url(#gs3red)"/>
+</g>
+</g>
+<g data-part="bigBang" class="dg-label"><circle cx="38.4" cy="150.0" r="3.4"/><text x="45.4" y="142.0" font-size="12" text-anchor="start">Big Bang</text></g>
+<g data-part="farGalaxy" class="dg-label"><circle cx="204.8" cy="70.0" r="3.4"/><text x="204.8" y="62.0" font-size="12" text-anchor="middle">Distant galaxy</text></g>
+<g data-part="nearGalaxy" class="dg-label"><circle cx="108.8" cy="95.0" r="3.4"/><text x="108.8" y="87.0" font-size="12" text-anchor="middle">Nearer galaxy</text></g>
+<g data-part="expansion" class="dg-label"><circle cx="150.4" cy="45.0" r="3.4"/><text x="150.4" y="37.0" font-size="12" text-anchor="middle">Moving apart</text></g>
+<g data-part="shortWave" class="dg-label"><circle cx="86.4" cy="200.0" r="3.4"/><text x="86.4" y="192.0" font-size="12" text-anchor="middle">Source light</text></g>
+<g data-part="redWave" class="dg-label"><circle cx="188.8" cy="212.5" r="3.4"/><text x="188.8" y="204.5" font-size="12" text-anchor="middle">Red-shifted light</text></g>
+</svg>

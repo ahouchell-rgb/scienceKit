@@ -1,0 +1,109 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 296" width="100%" height="100%" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Reactivity &amp; extracting metals">
+<style>[class*="sm-"]{transform-box:fill-box;transform-origin:center;}
+[data-part]{transition:opacity .55s ease;}
+.sm-spin{ animation:sm-spin 3s linear infinite; }
+.sm-spin-slow{ animation:sm-spin 9s linear infinite; }
+.sm-spin-rev{ animation:sm-spin 3s linear infinite reverse; }
+.sm-flow{ animation:sm-flow 1s linear infinite; }
+.sm-flow-slow{ animation:sm-flow 2.2s linear infinite; }
+.sm-flow-rev{ animation:sm-flow-rev 1.4s linear infinite; }
+.sm-pulse{ animation:sm-pulse 1.6s ease-in-out infinite; }
+.sm-throb{ animation:sm-throb 1s ease-in-out infinite; }
+.sm-drift{ animation:sm-drift 2.6s ease-in-out infinite; }
+.sm-osc{ animation:sm-osc 1.8s ease-in-out infinite; }
+.sm-osc-x{ animation:sm-osc-x 1.8s ease-in-out infinite; }
+.sm-rise{ animation:sm-rise 2.6s ease-in infinite; }
+.sm-fall{ animation:sm-fall 2.6s ease-in infinite; }
+.sm-blink{ animation:sm-blink 1.4s ease-in-out infinite; }
+.sm-glow{ animation:sm-glow 2s ease-in-out infinite; }
+.sm-shake{ animation:sm-shake .3s ease-in-out infinite; }
+.sm-sweep{ animation:sm-sweep 2.8s ease-in-out infinite; }
+@keyframes sm-spin{ to{ transform:rotate(360deg); } }
+@keyframes sm-flow{ to{ stroke-dashoffset:-24; } }
+@keyframes sm-flow-rev{ to{ stroke-dashoffset:24; } }
+@keyframes sm-pulse{ 0%,100%{ transform:scale(1); } 50%{ transform:scale(1.13); } }
+@keyframes sm-throb{ 0%,100%{ transform:scale(1); } 50%{ transform:scale(1.06); } }
+@keyframes sm-drift{ 0%{ transform:translate(0,0); } 25%{ transform:translate(2px,-2.5px); } 50%{ transform:translate(-2.5px,1.5px); } 75%{ transform:translate(1.5px,2px); } 100%{ transform:translate(0,0); } }
+@keyframes sm-osc{ 0%,100%{ transform:translateY(0); } 50%{ transform:translateY(-5px); } }
+@keyframes sm-osc-x{ 0%,100%{ transform:translateX(0); } 50%{ transform:translateX(5px); } }
+@keyframes sm-rise{ 0%{ transform:translateY(2px); opacity:0; } 25%{ opacity:.85; } 100%{ transform:translateY(-16px); opacity:0; } }
+@keyframes sm-fall{ 0%{ transform:translateY(-14px); opacity:0; } 25%{ opacity:.85; } 100%{ transform:translateY(4px); opacity:0; } }
+@keyframes sm-blink{ 0%,100%{ opacity:1; } 50%{ opacity:.3; } }
+@keyframes sm-glow{ 0%,100%{ opacity:.55; } 50%{ opacity:1; } }
+@keyframes sm-shake{ 0%,100%{ transform:translate(0,0); } 25%{ transform:translate(.9px,-.9px); } 75%{ transform:translate(-.9px,.9px); } }
+@keyframes sm-sweep{ 0%{ transform:translateX(-6px); opacity:.35; } 50%{ opacity:1; } 100%{ transform:translateX(6px); opacity:.35; } }
+@media (prefers-reduced-motion:reduce){[class*="sm-"]{animation:none !important;}}
+.dg-label text{font-family:'Century Gothic','Avenir Next',system-ui,sans-serif;font-weight:600;paint-order:stroke;stroke:#ffffff;stroke-width:3px;stroke-linejoin:round;fill:#1E2761;}
+.dg-label circle{fill:#1E2761;stroke:#ffffff;stroke-width:1.5;}</style>
+<g class="diagram-art">
+<rect x="0" y="0" width="320" height="296" fill="#ffffff"/>
+<defs>
+  <marker id="c1arr" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#1E2761"/></marker>
+  <marker id="c1arrR" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#B4341E"/></marker>
+</defs>
+<g data-part="reactivitySeries">
+  <rect x="14" y="24" width="118" height="248" rx="8" fill="#F4F6FC" stroke="#1E2761" stroke-width="1.5"/>
+  <g stroke="#7a8199" stroke-width="1">
+    <line x1="20" y1="60" x2="126" y2="60"/><line x1="20" y1="90" x2="126" y2="90"/>
+    <line x1="20" y1="120" x2="126" y2="120"/><line x1="20" y1="180" x2="126" y2="180"/>
+    <line x1="20" y1="210" x2="126" y2="210"/><line x1="20" y1="240" x2="126" y2="240"/>
+  </g>
+  <path d="M73,34 L73,262" stroke="#1E2761" stroke-width="2.5" fill="none" stroke-linecap="round" marker-end="url(#c1arr)" opacity="0.35"/>
+</g>
+<g data-part="reactiveMetals">
+  <rect x="20" y="34" width="106" height="86" rx="4" fill="#F1D2D8" opacity="0.85"/>
+  <g font-family="sans-serif" font-size="11" font-weight="bold" fill="#B4341E">
+    <text x="30" y="52">K</text><text x="30" y="82">Na</text><text x="30" y="112">Ca</text>
+  </g>
+  <g font-family="sans-serif" font-size="11" fill="#B4341E">
+    <text x="66" y="52">Mg</text>
+  </g>
+  <circle cx="110" cy="46" r="5" fill="#B4341E" class="sm-throb"/>
+</g>
+<g data-part="unreactiveMetals">
+  <rect x="20" y="182" width="106" height="86" rx="4" fill="#CDE5C6" opacity="0.7"/>
+  <g font-family="sans-serif" font-size="11" font-weight="bold" fill="#2C5F2D">
+    <text x="30" y="200">Cu</text><text x="30" y="230">Ag</text><text x="30" y="260">Au</text>
+  </g>
+</g>
+<g data-part="carbonLine">
+  <line x1="16" y1="150" x2="130" y2="150" stroke="#C99528" stroke-width="3" stroke-dasharray="7 4"/>
+  <circle cx="102" cy="150" r="11" fill="#C99528" stroke="#8a6a1a" stroke-width="1.5"/>
+  <text x="102" y="154" font-family="sans-serif" font-size="11" font-weight="bold" fill="#ffffff" text-anchor="middle">C</text>
+</g>
+<g data-part="electrolysis">
+  <rect x="150" y="32" width="158" height="108" rx="8" fill="#DCEAF6" stroke="#1E2761" stroke-width="1.5"/>
+  <rect x="170" y="78" width="118" height="46" rx="4" fill="#ffffff" stroke="#1E2761" stroke-width="1.5"/>
+  <line x1="196" y1="66" x2="196" y2="112" stroke="#1E2761" stroke-width="3"/>
+  <line x1="262" y1="66" x2="262" y2="112" stroke="#B4341E" stroke-width="3"/>
+  <line x1="196" y1="52" x2="196" y2="66" stroke="#1E2761" stroke-width="2"/>
+  <line x1="262" y1="52" x2="262" y2="66" stroke="#1E2761" stroke-width="2"/>
+  <line x1="196" y1="52" x2="222" y2="52" stroke="#1E2761" stroke-width="2"/>
+  <line x1="236" y1="52" x2="262" y2="52" stroke="#1E2761" stroke-width="2"/>
+  <line x1="224" y1="46" x2="224" y2="58" stroke="#1E2761" stroke-width="2.5"/>
+  <line x1="234" y1="49" x2="234" y2="55" stroke="#1E2761" stroke-width="1.5"/>
+  <g class="sm-drift">
+    <circle cx="220" cy="100" r="3.5" fill="#B4341E"/><circle cx="240" cy="106" r="3.5" fill="#1E2761"/>
+  </g>
+</g>
+<g data-part="reduction">
+  <rect x="150" y="164" width="158" height="108" rx="8" fill="#F1D2D8" stroke="#1E2761" stroke-width="1.5"/>
+  <path d="M176,200 L262,200 L252,250 L186,250 Z" fill="#1E2761" opacity="0.15" stroke="#1E2761" stroke-width="1.5"/>
+  <circle cx="205" cy="222" r="7" fill="#7a8199"/><circle cx="224" cy="216" r="6" fill="#1E2761"/><circle cx="238" cy="224" r="7" fill="#7a8199"/>
+  <g class="sm-rise">
+    <path d="M195,252 q4,-10 8,0" stroke="#B4341E" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+    <path d="M214,252 q4,-12 8,0" stroke="#B4341E" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+    <path d="M233,252 q4,-10 8,0" stroke="#B4341E" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  </g>
+  <path d="M266,210 L286,192" stroke="#7a8199" stroke-width="2" fill="none" stroke-linecap="round" marker-end="url(#c1arr)"/>
+  <text x="292" y="190" font-family="sans-serif" font-size="8" fill="#7a8199" text-anchor="middle">CO&#8322;</text>
+  <path d="M244,248 L270,260" stroke="#C99528" stroke-width="3.5" fill="none" stroke-linecap="round" class="sm-fall"/>
+</g>
+</g>
+<g data-part="reactivitySeries" class="dg-label"><circle cx="134.4" cy="38.5" r="3.4"/><text x="134.4" y="30.5" font-size="12" text-anchor="middle">Reactivity series</text></g>
+<g data-part="reactiveMetals" class="dg-label"><circle cx="41.6" cy="38.5" r="3.4"/><text x="48.6" y="30.5" font-size="12" text-anchor="start">Very reactive metals</text></g>
+<g data-part="unreactiveMetals" class="dg-label"><circle cx="41.6" cy="233.8" r="3.4"/><text x="48.6" y="225.8" font-size="12" text-anchor="start">Unreactive metals</text></g>
+<g data-part="carbonLine" class="dg-label"><circle cx="236.8" cy="118.4" r="3.4"/><text x="236.8" y="110.4" font-size="12" text-anchor="middle">Carbon's position</text></g>
+<g data-part="reduction" class="dg-label"><circle cx="272.0" cy="62.2" r="3.4"/><text x="265.0" y="54.2" font-size="12" text-anchor="end">Reduction (with carbon)</text></g>
+<g data-part="electrolysis" class="dg-label"><circle cx="236.8" cy="222.0" r="3.4"/><text x="236.8" y="214.0" font-size="12" text-anchor="middle">Electrolysis</text></g>
+</svg>

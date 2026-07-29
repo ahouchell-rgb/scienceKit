@@ -191,6 +191,29 @@ export function PropsBar({ selEl, slide, patchEl, setSlideBg, onCrop, onResetCro
     );
   }
 
+  if (selEl.type === "diagram") {
+    const parts = selEl.partIds?.length || 0;
+    return (
+      <div style={wrap}>
+        {tag("diagram")}
+        <span style={{ color: C.text }}>{selEl.title || selEl.diagramId || "Diagram"}</span>
+        {parts > 0 && (
+          <button onClick={() => P({ build: !selEl.build })} style={pill(!!selEl.build)}
+            title="Build up: each labelled part reveals on click in Present. Off shows the finished diagram.">
+            build up ({parts} parts)
+          </button>
+        )}
+        <label style={{ display: "flex", alignItems: "center", gap: 6 }}>round {num(selEl.radius ?? 10, (v) => P({ radius: Math.max(0, v) }))}</label>
+        <label style={{ display: "flex", alignItems: "center", gap: 6 }}>
+          border {color(selEl.stroke || "#1a1714", (v) => P({ stroke: v }))}
+          {selEl.stroke && <button onClick={() => P({ stroke: null })} style={{ fontSize: 11, color: C.muted, border: `1px solid ${C.border}`, background: "#fff", borderRadius: 4, padding: "2px 6px", cursor: "pointer" }}>none</button>}
+        </label>
+        <button onClick={() => P({ shadow: !selEl.shadow })} style={pill(selEl.shadow)}>shadow</button>
+        {opacityCtl}
+      </div>
+    );
+  }
+
   if (selEl.type === "chart") {
     return (
       <div style={wrap}>

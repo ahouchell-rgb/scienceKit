@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 226" width="100%" height="100%" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Chemical reactions">
+<style>[class*="sm-"]{transform-box:fill-box;transform-origin:center;}
+[data-part]{transition:opacity .55s ease;}
+.sm-spin{ animation:sm-spin 3s linear infinite; }
+.sm-spin-slow{ animation:sm-spin 9s linear infinite; }
+.sm-spin-rev{ animation:sm-spin 3s linear infinite reverse; }
+.sm-flow{ animation:sm-flow 1s linear infinite; }
+.sm-flow-slow{ animation:sm-flow 2.2s linear infinite; }
+.sm-flow-rev{ animation:sm-flow-rev 1.4s linear infinite; }
+.sm-pulse{ animation:sm-pulse 1.6s ease-in-out infinite; }
+.sm-throb{ animation:sm-throb 1s ease-in-out infinite; }
+.sm-drift{ animation:sm-drift 2.6s ease-in-out infinite; }
+.sm-osc{ animation:sm-osc 1.8s ease-in-out infinite; }
+.sm-osc-x{ animation:sm-osc-x 1.8s ease-in-out infinite; }
+.sm-rise{ animation:sm-rise 2.6s ease-in infinite; }
+.sm-fall{ animation:sm-fall 2.6s ease-in infinite; }
+.sm-blink{ animation:sm-blink 1.4s ease-in-out infinite; }
+.sm-glow{ animation:sm-glow 2s ease-in-out infinite; }
+.sm-shake{ animation:sm-shake .3s ease-in-out infinite; }
+.sm-sweep{ animation:sm-sweep 2.8s ease-in-out infinite; }
+@keyframes sm-spin{ to{ transform:rotate(360deg); } }
+@keyframes sm-flow{ to{ stroke-dashoffset:-24; } }
+@keyframes sm-flow-rev{ to{ stroke-dashoffset:24; } }
+@keyframes sm-pulse{ 0%,100%{ transform:scale(1); } 50%{ transform:scale(1.13); } }
+@keyframes sm-throb{ 0%,100%{ transform:scale(1); } 50%{ transform:scale(1.06); } }
+@keyframes sm-drift{ 0%{ transform:translate(0,0); } 25%{ transform:translate(2px,-2.5px); } 50%{ transform:translate(-2.5px,1.5px); } 75%{ transform:translate(1.5px,2px); } 100%{ transform:translate(0,0); } }
+@keyframes sm-osc{ 0%,100%{ transform:translateY(0); } 50%{ transform:translateY(-5px); } }
+@keyframes sm-osc-x{ 0%,100%{ transform:translateX(0); } 50%{ transform:translateX(5px); } }
+@keyframes sm-rise{ 0%{ transform:translateY(2px); opacity:0; } 25%{ opacity:.85; } 100%{ transform:translateY(-16px); opacity:0; } }
+@keyframes sm-fall{ 0%{ transform:translateY(-14px); opacity:0; } 25%{ opacity:.85; } 100%{ transform:translateY(4px); opacity:0; } }
+@keyframes sm-blink{ 0%,100%{ opacity:1; } 50%{ opacity:.3; } }
+@keyframes sm-glow{ 0%,100%{ opacity:.55; } 50%{ opacity:1; } }
+@keyframes sm-shake{ 0%,100%{ transform:translate(0,0); } 25%{ transform:translate(.9px,-.9px); } 75%{ transform:translate(-.9px,.9px); } }
+@keyframes sm-sweep{ 0%{ transform:translateX(-6px); opacity:.35; } 50%{ opacity:1; } 100%{ transform:translateX(6px); opacity:.35; } }
+@media (prefers-reduced-motion:reduce){[class*="sm-"]{animation:none !important;}}
+.dg-label text{font-family:'Century Gothic','Avenir Next',system-ui,sans-serif;font-weight:600;paint-order:stroke;stroke:#ffffff;stroke-width:3px;stroke-linejoin:round;fill:#1E2761;}
+.dg-label circle{fill:#1E2761;stroke:#ffffff;stroke-width:1.5;}</style>
+<g class="diagram-art">
+<rect x="0" y="0" width="320" height="226" fill="#F4F6FC"/><g data-part="reactants"><rect x="14" y="18" width="86" height="52" rx="8" fill="#DCEAF6" stroke="#1E2761" stroke-width="2.5"/><circle cx="40" cy="44" r="11" fill="#2C5F2D" stroke="#1E2761" stroke-width="2"/><circle cx="66" cy="38" r="9" fill="#C99528" stroke="#1E2761" stroke-width="2"/><circle cx="76" cy="54" r="9" fill="#C99528" stroke="#1E2761" stroke-width="2"/></g><g data-part="arrow"><path d="M110 44 L152 44" fill="none" stroke="#1E2761" stroke-width="3.5" stroke-linecap="round" marker-end="url(#chrA)"/></g><g data-part="products"><rect x="162" y="18" width="86" height="52" rx="8" fill="#CDE5C6" stroke="#1E2761" stroke-width="2.5"/><circle cx="186" cy="40" r="11" fill="#2C5F2D" stroke="#1E2761" stroke-width="2"/><circle cx="206" cy="52" r="9" fill="#C99528" stroke="#1E2761" stroke-width="2"/><circle cx="228" cy="34" r="9" fill="#C99528" stroke="#1E2761" stroke-width="2"/></g><g data-part="conservationMass"><line x1="284" y1="20" x2="284" y2="66" stroke="#1E2761" stroke-width="3" stroke-linecap="round"/><line x1="266" y1="30" x2="302" y2="30" stroke="#1E2761" stroke-width="3" stroke-linecap="round"/><path d="M266 30 L260 44 L272 44 Z" fill="#F4F6FC" stroke="#1E2761" stroke-width="2"/><path d="M302 30 L296 44 L308 44 Z" fill="#F4F6FC" stroke="#1E2761" stroke-width="2"/><polygon points="284,66 278,74 290,74" fill="#1E2761"/></g><g data-part="combustion"><rect x="12" y="96" width="70" height="70" rx="8" fill="#fff" stroke="#7a8199" stroke-width="2"/><rect x="40" y="150" width="14" height="10" fill="#1E2761"/><g class="sm-throb"><path d="M47 148 Q34 132 47 108 Q60 132 47 148 Z" fill="#B4341E"/><path d="M47 146 Q40 132 47 118 Q54 132 47 146 Z" fill="#C99528"/></g></g><g data-part="thermalDecomp"><rect x="94" y="96" width="70" height="70" rx="8" fill="#fff" stroke="#7a8199" stroke-width="2"/><circle cx="129" cy="118" r="12" fill="#7a8199" stroke="#1E2761" stroke-width="2"/><path d="M120 136 L110 148" stroke="#1E2761" stroke-width="2" marker-end="url(#chrS)"/><path d="M138 136 L148 148" stroke="#1E2761" stroke-width="2" marker-end="url(#chrS)"/><circle cx="106" cy="152" r="8" fill="#CDE5C6" stroke="#1E2761" stroke-width="2"/><circle cx="152" cy="152" r="8" fill="#DCEAF6" stroke="#1E2761" stroke-width="2"/><g class="sm-throb"><path d="M129 160 Q124 152 129 144 Q134 152 129 160 Z" fill="#B4341E" opacity="0.6"/></g></g><g data-part="oxidation"><rect x="176" y="96" width="70" height="70" rx="8" fill="#fff" stroke="#7a8199" stroke-width="2"/><path d="M198 110 L214 110 L211 152 L201 152 Z" fill="#9aa0ab" stroke="#1E2761" stroke-width="2"/><path d="M198 110 L214 110 L212 126 L200 126 Z" fill="#B4341E" opacity="0.55"/><g fill="#B4341E" class="sm-drift" opacity="0.7"><circle cx="226" cy="120" r="3"/><circle cx="232" cy="132" r="3"/><circle cx="228" cy="144" r="3"/></g><text x="228" y="114" font-size="8" fill="#1E2761" font-family="sans-serif">O</text></g><g data-part="signsOfReaction"><rect x="258" y="96" width="52" height="70" rx="8" fill="#F1D2D8" stroke="#B4341E" stroke-width="2"/><path d="M276 110 L276 150 Q276 158 284 158 Q292 158 292 150 L292 110 Z" fill="#CDE5C6" stroke="#1E2761" stroke-width="2"/><line x1="273" y1="110" x2="295" y2="110" stroke="#1E2761" stroke-width="2"/><g class="sm-rise" fill="#fff" stroke="#1E2761" stroke-width="1"><circle cx="282" cy="142" r="3"/><circle cx="287" cy="132" r="2.5"/><circle cx="281" cy="124" r="3"/><circle cx="286" cy="116" r="2"/></g></g><defs><marker id="chrA" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0 0 L9 4.5 L0 9 Z" fill="#1E2761"/></marker><marker id="chrS" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto"><path d="M0 0 L7 3.5 L0 7 Z" fill="#1E2761"/></marker></defs>
+</g>
+<g data-part="reactants" class="dg-label"><circle cx="57.6" cy="56.5" r="3.4"/><text x="64.6" y="48.5" font-size="12" text-anchor="start">Reactants</text></g>
+<g data-part="arrow" class="dg-label"><circle cx="134.4" cy="56.5" r="3.4"/><text x="134.4" y="48.5" font-size="12" text-anchor="middle">Reaction arrow</text></g>
+<g data-part="products" class="dg-label"><circle cx="211.2" cy="56.5" r="3.4"/><text x="211.2" y="48.5" font-size="12" text-anchor="middle">Products</text></g>
+<g data-part="combustion" class="dg-label"><circle cx="284.8" cy="56.5" r="3.4"/><text x="277.8" y="48.5" font-size="12" text-anchor="end">Combustion</text></g>
+<g data-part="thermalDecomp" class="dg-label"><circle cx="41.6" cy="142.4" r="3.4"/><text x="48.6" y="134.4" font-size="12" text-anchor="start">Thermal decomposition</text></g>
+<g data-part="oxidation" class="dg-label"><circle cx="137.6" cy="142.4" r="3.4"/><text x="137.6" y="134.4" font-size="12" text-anchor="middle">Oxidation (rust)</text></g>
+<g data-part="signsOfReaction" class="dg-label"><circle cx="230.4" cy="142.4" r="3.4"/><text x="230.4" y="134.4" font-size="12" text-anchor="middle">Signs of reaction</text></g>
+<g data-part="conservationMass" class="dg-label"><circle cx="284.8" cy="142.4" r="3.4"/><text x="277.8" y="134.4" font-size="12" text-anchor="end">Mass conserved</text></g>
+</svg>

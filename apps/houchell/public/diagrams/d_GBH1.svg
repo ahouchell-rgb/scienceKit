@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 250" width="100%" height="100%" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Homeostasis &amp; the nervous system">
+<style>[class*="sm-"]{transform-box:fill-box;transform-origin:center;}
+[data-part]{transition:opacity .55s ease;}
+.sm-spin{ animation:sm-spin 3s linear infinite; }
+.sm-spin-slow{ animation:sm-spin 9s linear infinite; }
+.sm-spin-rev{ animation:sm-spin 3s linear infinite reverse; }
+.sm-flow{ animation:sm-flow 1s linear infinite; }
+.sm-flow-slow{ animation:sm-flow 2.2s linear infinite; }
+.sm-flow-rev{ animation:sm-flow-rev 1.4s linear infinite; }
+.sm-pulse{ animation:sm-pulse 1.6s ease-in-out infinite; }
+.sm-throb{ animation:sm-throb 1s ease-in-out infinite; }
+.sm-drift{ animation:sm-drift 2.6s ease-in-out infinite; }
+.sm-osc{ animation:sm-osc 1.8s ease-in-out infinite; }
+.sm-osc-x{ animation:sm-osc-x 1.8s ease-in-out infinite; }
+.sm-rise{ animation:sm-rise 2.6s ease-in infinite; }
+.sm-fall{ animation:sm-fall 2.6s ease-in infinite; }
+.sm-blink{ animation:sm-blink 1.4s ease-in-out infinite; }
+.sm-glow{ animation:sm-glow 2s ease-in-out infinite; }
+.sm-shake{ animation:sm-shake .3s ease-in-out infinite; }
+.sm-sweep{ animation:sm-sweep 2.8s ease-in-out infinite; }
+@keyframes sm-spin{ to{ transform:rotate(360deg); } }
+@keyframes sm-flow{ to{ stroke-dashoffset:-24; } }
+@keyframes sm-flow-rev{ to{ stroke-dashoffset:24; } }
+@keyframes sm-pulse{ 0%,100%{ transform:scale(1); } 50%{ transform:scale(1.13); } }
+@keyframes sm-throb{ 0%,100%{ transform:scale(1); } 50%{ transform:scale(1.06); } }
+@keyframes sm-drift{ 0%{ transform:translate(0,0); } 25%{ transform:translate(2px,-2.5px); } 50%{ transform:translate(-2.5px,1.5px); } 75%{ transform:translate(1.5px,2px); } 100%{ transform:translate(0,0); } }
+@keyframes sm-osc{ 0%,100%{ transform:translateY(0); } 50%{ transform:translateY(-5px); } }
+@keyframes sm-osc-x{ 0%,100%{ transform:translateX(0); } 50%{ transform:translateX(5px); } }
+@keyframes sm-rise{ 0%{ transform:translateY(2px); opacity:0; } 25%{ opacity:.85; } 100%{ transform:translateY(-16px); opacity:0; } }
+@keyframes sm-fall{ 0%{ transform:translateY(-14px); opacity:0; } 25%{ opacity:.85; } 100%{ transform:translateY(4px); opacity:0; } }
+@keyframes sm-blink{ 0%,100%{ opacity:1; } 50%{ opacity:.3; } }
+@keyframes sm-glow{ 0%,100%{ opacity:.55; } 50%{ opacity:1; } }
+@keyframes sm-shake{ 0%,100%{ transform:translate(0,0); } 25%{ transform:translate(.9px,-.9px); } 75%{ transform:translate(-.9px,.9px); } }
+@keyframes sm-sweep{ 0%{ transform:translateX(-6px); opacity:.35; } 50%{ opacity:1; } 100%{ transform:translateX(6px); opacity:.35; } }
+@media (prefers-reduced-motion:reduce){[class*="sm-"]{animation:none !important;}}
+.dg-label text{font-family:'Century Gothic','Avenir Next',system-ui,sans-serif;font-weight:600;paint-order:stroke;stroke:#ffffff;stroke-width:3px;stroke-linejoin:round;fill:#1E2761;}
+.dg-label circle{fill:#1E2761;stroke:#ffffff;stroke-width:1.5;}</style>
+<g class="diagram-art">
+<rect x="0" y="0" width="320" height="250" fill="#F4F6FC"/><g data-part="coordinationCentre"><ellipse cx="160" cy="52" rx="40" ry="30" fill="#DCEAF6" stroke="#1E2761" stroke-width="3"/><path d="M160 30 C150 42 150 62 160 74 C170 62 170 42 160 30 Z" fill="#C7DAF0" stroke="#1E2761" stroke-width="2"/><circle cx="160" cy="52" r="6" fill="#1E2761"/></g><g data-part="receptor"><circle cx="44" cy="196" r="20" fill="#F1D2D8" stroke="#B4341E" stroke-width="3" class="sm-throb"/><g stroke="#B4341E" stroke-width="2.5" stroke-linecap="round"><line x1="44" y1="176" x2="44" y2="166"/><line x1="30" y1="182" x2="23" y2="175"/><line x1="58" y1="182" x2="65" y2="175"/></g><circle cx="44" cy="196" r="7" fill="#B4341E"/></g><g data-part="sensoryNeurone"><path class="sm-flow" d="M62 190 C110 168 120 110 140 74" fill="none" stroke="#2C5F2D" stroke-width="4" stroke-dasharray="8 8" stroke-linecap="round"/><circle cx="100" cy="150" r="9" fill="#CDE5C6" stroke="#2C5F2D" stroke-width="2.5"/><path d="M100 150 l-8 -4 M100 150 l-8 6 M100 150 l-10 0" stroke="#2C5F2D" stroke-width="1.6"/><polygon points="140,74 132,80 142,84" fill="#2C5F2D"/></g><g data-part="synapse"><line x1="150" y1="120" x2="196" y2="120" stroke="#7a8199" stroke-width="1.4" stroke-dasharray="2 3"/><path d="M148 118 l-14 -8" stroke="#2C5F2D" stroke-width="3" stroke-linecap="round"/><path d="M198 118 l14 -8" stroke="#C99528" stroke-width="3" stroke-linecap="round"/><circle cx="168" cy="121" r="3" fill="#C99528" class="sm-osc-x"/><circle cx="176" cy="124" r="3" fill="#C99528" class="sm-osc-x"/><circle cx="184" cy="120" r="3" fill="#C99528" class="sm-osc-x"/></g><g data-part="motorNeurone"><path class="sm-flow" d="M180 74 C200 110 210 168 258 190" fill="none" stroke="#C99528" stroke-width="4" stroke-dasharray="8 8" stroke-linecap="round"/><circle cx="220" cy="150" r="9" fill="#F7ECD3" stroke="#C99528" stroke-width="2.5"/><path d="M220 150 l8 -4 M220 150 l8 6 M220 150 l10 0" stroke="#C99528" stroke-width="1.6"/><polygon points="258,190 248,186 250,196" fill="#C99528"/></g><g data-part="effector"><ellipse cx="284" cy="200" rx="26" ry="16" fill="#F1D2D8" stroke="#B4341E" stroke-width="3" class="sm-pulse"/><path d="M262 200 h44 M266 194 h36 M266 206 h36" stroke="#B4341E" stroke-width="2" stroke-linecap="round"/></g>
+</g>
+<g data-part="receptor" class="dg-label"><circle cx="38.4" cy="175.0" r="3.4"/><text x="45.4" y="167.0" font-size="12" text-anchor="start">Receptor</text></g>
+<g data-part="sensoryNeurone" class="dg-label"><circle cx="108.8" cy="195.0" r="3.4"/><text x="108.8" y="187.0" font-size="12" text-anchor="middle">Sensory neurone</text></g>
+<g data-part="coordinationCentre" class="dg-label"><circle cx="150.4" cy="75.0" r="3.4"/><text x="150.4" y="67.0" font-size="12" text-anchor="middle">Coordination centre</text></g>
+<g data-part="synapse" class="dg-label"><circle cx="160.0" cy="132.5" r="3.4"/><text x="160.0" y="124.5" font-size="12" text-anchor="middle">Synapse</text></g>
+<g data-part="motorNeurone" class="dg-label"><circle cx="230.4" cy="145.0" r="3.4"/><text x="230.4" y="137.0" font-size="12" text-anchor="middle">Motor neurone</text></g>
+<g data-part="effector" class="dg-label"><circle cx="272.0" cy="197.5" r="3.4"/><text x="265.0" y="189.5" font-size="12" text-anchor="end">Effector (muscle)</text></g>
+</svg>

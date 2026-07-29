@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 300" width="100%" height="100%" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Photosynthesis">
+<style>[class*="sm-"]{transform-box:fill-box;transform-origin:center;}
+[data-part]{transition:opacity .55s ease;}
+.sm-spin{ animation:sm-spin 3s linear infinite; }
+.sm-spin-slow{ animation:sm-spin 9s linear infinite; }
+.sm-spin-rev{ animation:sm-spin 3s linear infinite reverse; }
+.sm-flow{ animation:sm-flow 1s linear infinite; }
+.sm-flow-slow{ animation:sm-flow 2.2s linear infinite; }
+.sm-flow-rev{ animation:sm-flow-rev 1.4s linear infinite; }
+.sm-pulse{ animation:sm-pulse 1.6s ease-in-out infinite; }
+.sm-throb{ animation:sm-throb 1s ease-in-out infinite; }
+.sm-drift{ animation:sm-drift 2.6s ease-in-out infinite; }
+.sm-osc{ animation:sm-osc 1.8s ease-in-out infinite; }
+.sm-osc-x{ animation:sm-osc-x 1.8s ease-in-out infinite; }
+.sm-rise{ animation:sm-rise 2.6s ease-in infinite; }
+.sm-fall{ animation:sm-fall 2.6s ease-in infinite; }
+.sm-blink{ animation:sm-blink 1.4s ease-in-out infinite; }
+.sm-glow{ animation:sm-glow 2s ease-in-out infinite; }
+.sm-shake{ animation:sm-shake .3s ease-in-out infinite; }
+.sm-sweep{ animation:sm-sweep 2.8s ease-in-out infinite; }
+@keyframes sm-spin{ to{ transform:rotate(360deg); } }
+@keyframes sm-flow{ to{ stroke-dashoffset:-24; } }
+@keyframes sm-flow-rev{ to{ stroke-dashoffset:24; } }
+@keyframes sm-pulse{ 0%,100%{ transform:scale(1); } 50%{ transform:scale(1.13); } }
+@keyframes sm-throb{ 0%,100%{ transform:scale(1); } 50%{ transform:scale(1.06); } }
+@keyframes sm-drift{ 0%{ transform:translate(0,0); } 25%{ transform:translate(2px,-2.5px); } 50%{ transform:translate(-2.5px,1.5px); } 75%{ transform:translate(1.5px,2px); } 100%{ transform:translate(0,0); } }
+@keyframes sm-osc{ 0%,100%{ transform:translateY(0); } 50%{ transform:translateY(-5px); } }
+@keyframes sm-osc-x{ 0%,100%{ transform:translateX(0); } 50%{ transform:translateX(5px); } }
+@keyframes sm-rise{ 0%{ transform:translateY(2px); opacity:0; } 25%{ opacity:.85; } 100%{ transform:translateY(-16px); opacity:0; } }
+@keyframes sm-fall{ 0%{ transform:translateY(-14px); opacity:0; } 25%{ opacity:.85; } 100%{ transform:translateY(4px); opacity:0; } }
+@keyframes sm-blink{ 0%,100%{ opacity:1; } 50%{ opacity:.3; } }
+@keyframes sm-glow{ 0%,100%{ opacity:.55; } 50%{ opacity:1; } }
+@keyframes sm-shake{ 0%,100%{ transform:translate(0,0); } 25%{ transform:translate(.9px,-.9px); } 75%{ transform:translate(-.9px,.9px); } }
+@keyframes sm-sweep{ 0%{ transform:translateX(-6px); opacity:.35; } 50%{ opacity:1; } 100%{ transform:translateX(6px); opacity:.35; } }
+@media (prefers-reduced-motion:reduce){[class*="sm-"]{animation:none !important;}}
+.dg-label text{font-family:'Century Gothic','Avenir Next',system-ui,sans-serif;font-weight:600;paint-order:stroke;stroke:#ffffff;stroke-width:3px;stroke-linejoin:round;fill:#1E2761;}
+.dg-label circle{fill:#1E2761;stroke:#ffffff;stroke-width:1.5;}</style>
+<g class="diagram-art">
+<rect x="0" y="0" width="320" height="300" fill="#F4F6FC"/><path d="M20 262 h280" stroke="#7a8199" stroke-width="2" stroke-linecap="round" stroke-dasharray="1 6"/><path d="M205 178 C205 215 200 245 195 262" fill="none" stroke="#2C5F2D" stroke-width="6" stroke-linecap="round"/><path d="M195 262 c-6 12 -20 16 -30 26 M195 262 c2 14 -2 20 -4 30 M195 262 c8 12 22 14 30 24" fill="none" stroke="#8a6a3a" stroke-width="3" stroke-linecap="round"/><g data-part="sunlight"><g class="sm-glow"><circle cx="50" cy="46" r="24" fill="#C99528" stroke="#B4341E" stroke-width="3"/><g stroke="#C99528" stroke-width="3.5" stroke-linecap="round"><line x1="50" y1="8" x2="50" y2="18"/><line x1="50" y1="74" x2="50" y2="84"/><line x1="12" y1="46" x2="22" y2="46"/><line x1="88" y1="46" x2="78" y2="46"/><line x1="23" y1="19" x2="30" y2="26"/><line x1="77" y1="19" x2="70" y2="26"/><line x1="23" y1="73" x2="30" y2="66"/><line x1="77" y1="73" x2="70" y2="66"/></g></g><polyline class="sm-flow" points="70,64 110,110 150,150" fill="none" stroke="#C99528" stroke-width="3" stroke-linecap="round" stroke-dasharray="7 7"/><polygon points="150,150 141,144 145,156" fill="#C99528"/></g><g data-part="leaf"><path d="M150 150 C120 120 150 96 200 100 C214 130 200 168 158 172 C150 166 148 158 150 150 Z" fill="#CDE5C6" stroke="#2C5F2D" stroke-width="3"/><path d="M158 168 C168 148 182 128 200 104" fill="none" stroke="#2C5F2D" stroke-width="2.5"/><path d="M170 150 l14 -6 M178 138 l14 -6 M164 160 l14 -6" stroke="#2C5F2D" stroke-width="1.6"/></g><g data-part="chlorophyll"><circle cx="176" cy="138" r="12" fill="#2C5F2D" class="sm-throb"/><circle cx="176" cy="138" r="5" fill="#CDE5C6"/></g><g data-part="carbonDioxide"><polyline class="sm-flow" points="30,150 92,150 130,150" fill="none" stroke="#7a8199" stroke-width="3" stroke-dasharray="7 7" stroke-linecap="round"/><polygon points="130,150 121,145 121,155" fill="#7a8199"/><circle cx="34" cy="145" r="4" fill="#7a8199"/><circle cx="44" cy="145" r="4" fill="#B4341E"/><circle cx="24" cy="145" r="4" fill="#B4341E"/></g><g data-part="water"><polyline class="sm-flow" points="196,258 200,210 200,178" fill="none" stroke="#1E76C8" stroke-width="3" stroke-dasharray="7 7" stroke-linecap="round"/><polygon points="200,178 195,187 205,187" fill="#1E76C8"/><path d="M176 246 c0 8 6 10 6 4 c0 -3 -3 -4 -3 -8 c-1 3 -3 5 -3 4 Z" fill="#1E76C8" class="sm-drift"/></g><g data-part="oxygen"><polyline class="sm-flow" points="205,110 250,80 288,60" fill="none" stroke="#2C5F2D" stroke-width="3" stroke-dasharray="7 7" stroke-linecap="round"/><polygon points="288,60 278,60 282,70" fill="#2C5F2D"/><circle cx="272" cy="52" r="5" fill="#2C5F2D" class="sm-rise"/><circle cx="286" cy="44" r="4" fill="#2C5F2D" class="sm-rise"/></g><g data-part="starch"><ellipse cx="150" cy="250" rx="30" ry="16" fill="#F1D2D8" stroke="#B4341E" stroke-width="2"/><circle cx="140" cy="248" r="5" fill="#C99528" stroke="#1E2761" stroke-width="1.4"/><circle cx="152" cy="253" r="5" fill="#C99528" stroke="#1E2761" stroke-width="1.4"/><circle cx="162" cy="246" r="5" fill="#C99528" stroke="#1E2761" stroke-width="1.4"/><circle cx="147" cy="243" r="4" fill="#C99528" stroke="#1E2761" stroke-width="1.4"/></g>
+</g>
+<g data-part="sunlight" class="dg-label"><circle cx="51.2" cy="48.0" r="3.4"/><text x="58.2" y="40.0" font-size="12" text-anchor="start">Light energy</text></g>
+<g data-part="chlorophyll" class="dg-label"><circle cx="265.6" cy="126.0" r="3.4"/><text x="258.6" y="118.0" font-size="12" text-anchor="end">Chlorophyll</text></g>
+<g data-part="leaf" class="dg-label"><circle cx="198.4" cy="150.0" r="3.4"/><text x="198.4" y="142.0" font-size="12" text-anchor="middle">Leaf</text></g>
+<g data-part="carbonDioxide" class="dg-label"><circle cx="22.4" cy="225.0" r="3.4"/><text x="29.4" y="217.0" font-size="12" text-anchor="start">Carbon dioxide in</text></g>
+<g data-part="water" class="dg-label"><circle cx="112.0" cy="282.0" r="3.4"/><text x="112.0" y="274.0" font-size="12" text-anchor="middle">Water from roots</text></g>
+<g data-part="oxygen" class="dg-label"><circle cx="262.4" cy="225.0" r="3.4"/><text x="255.4" y="217.0" font-size="12" text-anchor="end">Oxygen out</text></g>
+<g data-part="starch" class="dg-label"><circle cx="160.0" cy="276.0" r="3.4"/><text x="160.0" y="268.0" font-size="12" text-anchor="middle">Starch store</text></g>
+</svg>

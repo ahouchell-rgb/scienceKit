@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 232" width="100%" height="100%" preserveAspectRatio="xMidYMid meet" role="img" aria-label="The periodic table">
+<style>[class*="sm-"]{transform-box:fill-box;transform-origin:center;}
+[data-part]{transition:opacity .55s ease;}
+.sm-spin{ animation:sm-spin 3s linear infinite; }
+.sm-spin-slow{ animation:sm-spin 9s linear infinite; }
+.sm-spin-rev{ animation:sm-spin 3s linear infinite reverse; }
+.sm-flow{ animation:sm-flow 1s linear infinite; }
+.sm-flow-slow{ animation:sm-flow 2.2s linear infinite; }
+.sm-flow-rev{ animation:sm-flow-rev 1.4s linear infinite; }
+.sm-pulse{ animation:sm-pulse 1.6s ease-in-out infinite; }
+.sm-throb{ animation:sm-throb 1s ease-in-out infinite; }
+.sm-drift{ animation:sm-drift 2.6s ease-in-out infinite; }
+.sm-osc{ animation:sm-osc 1.8s ease-in-out infinite; }
+.sm-osc-x{ animation:sm-osc-x 1.8s ease-in-out infinite; }
+.sm-rise{ animation:sm-rise 2.6s ease-in infinite; }
+.sm-fall{ animation:sm-fall 2.6s ease-in infinite; }
+.sm-blink{ animation:sm-blink 1.4s ease-in-out infinite; }
+.sm-glow{ animation:sm-glow 2s ease-in-out infinite; }
+.sm-shake{ animation:sm-shake .3s ease-in-out infinite; }
+.sm-sweep{ animation:sm-sweep 2.8s ease-in-out infinite; }
+@keyframes sm-spin{ to{ transform:rotate(360deg); } }
+@keyframes sm-flow{ to{ stroke-dashoffset:-24; } }
+@keyframes sm-flow-rev{ to{ stroke-dashoffset:24; } }
+@keyframes sm-pulse{ 0%,100%{ transform:scale(1); } 50%{ transform:scale(1.13); } }
+@keyframes sm-throb{ 0%,100%{ transform:scale(1); } 50%{ transform:scale(1.06); } }
+@keyframes sm-drift{ 0%{ transform:translate(0,0); } 25%{ transform:translate(2px,-2.5px); } 50%{ transform:translate(-2.5px,1.5px); } 75%{ transform:translate(1.5px,2px); } 100%{ transform:translate(0,0); } }
+@keyframes sm-osc{ 0%,100%{ transform:translateY(0); } 50%{ transform:translateY(-5px); } }
+@keyframes sm-osc-x{ 0%,100%{ transform:translateX(0); } 50%{ transform:translateX(5px); } }
+@keyframes sm-rise{ 0%{ transform:translateY(2px); opacity:0; } 25%{ opacity:.85; } 100%{ transform:translateY(-16px); opacity:0; } }
+@keyframes sm-fall{ 0%{ transform:translateY(-14px); opacity:0; } 25%{ opacity:.85; } 100%{ transform:translateY(4px); opacity:0; } }
+@keyframes sm-blink{ 0%,100%{ opacity:1; } 50%{ opacity:.3; } }
+@keyframes sm-glow{ 0%,100%{ opacity:.55; } 50%{ opacity:1; } }
+@keyframes sm-shake{ 0%,100%{ transform:translate(0,0); } 25%{ transform:translate(.9px,-.9px); } 75%{ transform:translate(-.9px,.9px); } }
+@keyframes sm-sweep{ 0%{ transform:translateX(-6px); opacity:.35; } 50%{ opacity:1; } 100%{ transform:translateX(6px); opacity:.35; } }
+@media (prefers-reduced-motion:reduce){[class*="sm-"]{animation:none !important;}}
+.dg-label text{font-family:'Century Gothic','Avenir Next',system-ui,sans-serif;font-weight:600;paint-order:stroke;stroke:#ffffff;stroke-width:3px;stroke-linejoin:round;fill:#1E2761;}
+.dg-label circle{fill:#1E2761;stroke:#ffffff;stroke-width:1.5;}</style>
+<g class="diagram-art">
+<rect x="0" y="0" width="320" height="232" fill="#ffffff"/>
+<defs>
+  <marker id="a3arrow" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#1E2761"/></marker>
+  <marker id="a3arrowR" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#B4341E"/></marker>
+  <marker id="a3arrowG" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#2C5F2D"/></marker>
+</defs>
+<rect x="60" y="52" width="208" height="132" rx="3" fill="#F4F6FC" stroke="#7a8199" stroke-width="1"/>
+<g data-part="metals">
+  <rect x="60" y="52" width="156" height="132" rx="3" fill="#CDE5C6"/>
+  <g stroke="#2C5F2D" stroke-width="1" fill="#CDE5C6">
+    <rect x="65" y="57" width="18" height="18" rx="2"/><rect x="91" y="57" width="18" height="18" rx="2"/><rect x="117" y="57" width="18" height="18" rx="2"/><rect x="143" y="57" width="18" height="18" rx="2"/><rect x="169" y="57" width="18" height="18" rx="2"/>
+    <rect x="65" y="81" width="18" height="18" rx="2"/><rect x="91" y="81" width="18" height="18" rx="2"/><rect x="117" y="81" width="18" height="18" rx="2"/><rect x="143" y="81" width="18" height="18" rx="2"/><rect x="169" y="81" width="18" height="18" rx="2"/><rect x="195" y="81" width="18" height="18" rx="2"/>
+    <rect x="65" y="105" width="18" height="18" rx="2"/><rect x="91" y="105" width="18" height="18" rx="2"/><rect x="117" y="105" width="18" height="18" rx="2"/><rect x="143" y="105" width="18" height="18" rx="2"/><rect x="169" y="105" width="18" height="18" rx="2"/><rect x="195" y="105" width="18" height="18" rx="2"/>
+    <rect x="65" y="129" width="18" height="18" rx="2"/><rect x="91" y="129" width="18" height="18" rx="2"/><rect x="117" y="129" width="18" height="18" rx="2"/><rect x="143" y="129" width="18" height="18" rx="2"/><rect x="169" y="129" width="18" height="18" rx="2"/><rect x="195" y="129" width="18" height="18" rx="2"/>
+  </g>
+</g>
+<g data-part="nonMetals">
+  <rect x="216" y="52" width="52" height="132" rx="3" fill="#DCEAF6"/>
+  <g stroke="#1E2761" stroke-width="1" fill="#DCEAF6">
+    <rect x="221" y="57" width="18" height="18" rx="2"/>
+    <rect x="221" y="81" width="18" height="18" rx="2"/>
+    <rect x="221" y="105" width="18" height="18" rx="2"/>
+    <rect x="221" y="129" width="18" height="18" rx="2"/>
+  </g>
+</g>
+<g data-part="group1">
+  <rect x="63" y="55" width="22" height="126" rx="3" fill="none" stroke="#C99528" stroke-width="2.5"/>
+  <circle cx="74" cy="66" r="3.5" fill="#B4341E" class="sm-throb"/>
+</g>
+<g data-part="group0">
+  <rect x="219" y="55" width="22" height="126" rx="3" fill="none" stroke="#1E2761" stroke-width="2.5"/>
+  <circle cx="230" cy="66" r="3.5" fill="#1E2761"/>
+</g>
+<g data-part="atomicOrder">
+  <path d="M60,42 L260,42" stroke="#1E2761" stroke-width="3" fill="none" stroke-linecap="round" marker-end="url(#a3arrow)"/>
+  <text x="64" y="37" font-family="sans-serif" font-size="8.5" fill="#1E2761">+1 proton each step</text>
+</g>
+<g data-part="period">
+  <path d="M64,207 L208,207" stroke="#B4341E" stroke-width="2.5" fill="none" stroke-linecap="round" marker-end="url(#a3arrowR)"/>
+</g>
+<g data-part="group">
+  <path d="M287,58 L287,176" stroke="#2C5F2D" stroke-width="2.5" fill="none" stroke-linecap="round" marker-end="url(#a3arrowG)"/>
+</g>
+</g>
+<g data-part="atomicOrder" class="dg-label"><circle cx="153.6" cy="30.2" r="3.4"/><text x="153.6" y="22.2" font-size="12" text-anchor="middle">Increasing atomic number</text></g>
+<g data-part="group" class="dg-label"><circle cx="64.0" cy="85.8" r="3.4"/><text x="71.0" y="77.8" font-size="12" text-anchor="start">Group (column)</text></g>
+<g data-part="period" class="dg-label"><circle cx="134.4" cy="155.4" r="3.4"/><text x="134.4" y="147.4" font-size="12" text-anchor="middle">Period (row)</text></g>
+<g data-part="metals" class="dg-label"><circle cx="67.2" cy="123.0" r="3.4"/><text x="74.2" y="115.0" font-size="12" text-anchor="start">Metals</text></g>
+<g data-part="nonMetals" class="dg-label"><circle cx="246.4" cy="146.2" r="3.4"/><text x="246.4" y="138.2" font-size="12" text-anchor="middle">Non-metals</text></g>
+<g data-part="group1" class="dg-label"><circle cx="38.4" cy="181.0" r="3.4"/><text x="45.4" y="173.0" font-size="12" text-anchor="start">Group 1 (alkali metals)</text></g>
+<g data-part="group0" class="dg-label"><circle cx="272.0" cy="116.0" r="3.4"/><text x="265.0" y="108.0" font-size="12" text-anchor="end">Group 0 (noble gases)</text></g>
+</svg>

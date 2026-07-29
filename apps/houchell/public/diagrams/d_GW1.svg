@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 260" width="100%" height="100%" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Wave properties">
+<style>[class*="sm-"]{transform-box:fill-box;transform-origin:center;}
+[data-part]{transition:opacity .55s ease;}
+.sm-spin{ animation:sm-spin 3s linear infinite; }
+.sm-spin-slow{ animation:sm-spin 9s linear infinite; }
+.sm-spin-rev{ animation:sm-spin 3s linear infinite reverse; }
+.sm-flow{ animation:sm-flow 1s linear infinite; }
+.sm-flow-slow{ animation:sm-flow 2.2s linear infinite; }
+.sm-flow-rev{ animation:sm-flow-rev 1.4s linear infinite; }
+.sm-pulse{ animation:sm-pulse 1.6s ease-in-out infinite; }
+.sm-throb{ animation:sm-throb 1s ease-in-out infinite; }
+.sm-drift{ animation:sm-drift 2.6s ease-in-out infinite; }
+.sm-osc{ animation:sm-osc 1.8s ease-in-out infinite; }
+.sm-osc-x{ animation:sm-osc-x 1.8s ease-in-out infinite; }
+.sm-rise{ animation:sm-rise 2.6s ease-in infinite; }
+.sm-fall{ animation:sm-fall 2.6s ease-in infinite; }
+.sm-blink{ animation:sm-blink 1.4s ease-in-out infinite; }
+.sm-glow{ animation:sm-glow 2s ease-in-out infinite; }
+.sm-shake{ animation:sm-shake .3s ease-in-out infinite; }
+.sm-sweep{ animation:sm-sweep 2.8s ease-in-out infinite; }
+@keyframes sm-spin{ to{ transform:rotate(360deg); } }
+@keyframes sm-flow{ to{ stroke-dashoffset:-24; } }
+@keyframes sm-flow-rev{ to{ stroke-dashoffset:24; } }
+@keyframes sm-pulse{ 0%,100%{ transform:scale(1); } 50%{ transform:scale(1.13); } }
+@keyframes sm-throb{ 0%,100%{ transform:scale(1); } 50%{ transform:scale(1.06); } }
+@keyframes sm-drift{ 0%{ transform:translate(0,0); } 25%{ transform:translate(2px,-2.5px); } 50%{ transform:translate(-2.5px,1.5px); } 75%{ transform:translate(1.5px,2px); } 100%{ transform:translate(0,0); } }
+@keyframes sm-osc{ 0%,100%{ transform:translateY(0); } 50%{ transform:translateY(-5px); } }
+@keyframes sm-osc-x{ 0%,100%{ transform:translateX(0); } 50%{ transform:translateX(5px); } }
+@keyframes sm-rise{ 0%{ transform:translateY(2px); opacity:0; } 25%{ opacity:.85; } 100%{ transform:translateY(-16px); opacity:0; } }
+@keyframes sm-fall{ 0%{ transform:translateY(-14px); opacity:0; } 25%{ opacity:.85; } 100%{ transform:translateY(4px); opacity:0; } }
+@keyframes sm-blink{ 0%,100%{ opacity:1; } 50%{ opacity:.3; } }
+@keyframes sm-glow{ 0%,100%{ opacity:.55; } 50%{ opacity:1; } }
+@keyframes sm-shake{ 0%,100%{ transform:translate(0,0); } 25%{ transform:translate(.9px,-.9px); } 75%{ transform:translate(-.9px,.9px); } }
+@keyframes sm-sweep{ 0%{ transform:translateX(-6px); opacity:.35; } 50%{ opacity:1; } 100%{ transform:translateX(6px); opacity:.35; } }
+@media (prefers-reduced-motion:reduce){[class*="sm-"]{animation:none !important;}}
+.dg-label text{font-family:'Century Gothic','Avenir Next',system-ui,sans-serif;font-weight:600;paint-order:stroke;stroke:#ffffff;stroke-width:3px;stroke-linejoin:round;fill:#1E2761;}
+.dg-label circle{fill:#1E2761;stroke:#ffffff;stroke-width:1.5;}</style>
+<g class="diagram-art">
+<rect x="4" y="4" width="312" height="252" rx="14" fill="#F4F6FC" stroke="#1E2761" stroke-width="2.5"/>
+<line x1="26" y1="72" x2="294" y2="72" stroke="#7a8199" stroke-width="1.8" stroke-dasharray="5 5" stroke-linecap="round"/>
+<line x1="26" y1="120" x2="282" y2="120" stroke="#7a8199" stroke-width="2" stroke-linecap="round"/>
+<polygon points="292,120 281,115 281,125" fill="#7a8199"/>
+<text x="150" y="135" font-family="Arial,sans-serif" font-size="9" fill="#7a8199" text-anchor="middle">direction wave travels</text>
+<g data-part="transverseWave">
+  <path class="sm-osc" d="M26 72 Q48 30 70 72 T114 72 T158 72 T202 72 T246 72 T290 72" fill="none" stroke="#1E2761" stroke-width="3.5" stroke-linecap="round"/>
+  <circle cx="70" cy="72" r="3.2" fill="#1E2761"/>
+  <circle cx="158" cy="72" r="3.2" fill="#1E2761"/>
+  <line x1="246" y1="72" x2="246" y2="34" stroke="#1E2761" stroke-width="1.5"/>
+  <polygon points="246,32 242,41 250,41" fill="#1E2761"/>
+  <line x1="246" y1="72" x2="246" y2="88" stroke="#1E2761" stroke-width="1.5"/>
+  <polygon points="246,90 242,81 250,81" fill="#1E2761"/>
+</g>
+<g data-part="amplitude">
+  <line x1="48" y1="72" x2="48" y2="51" stroke="#B4341E" stroke-width="2.6" stroke-linecap="round"/>
+  <polygon points="48,50 45,58 51,58" fill="#B4341E"/>
+</g>
+<g data-part="wavelength">
+  <line x1="70" y1="99" x2="158" y2="99" stroke="#2C5F2D" stroke-width="2.6" stroke-linecap="round"/>
+  <line x1="70" y1="72" x2="70" y2="105" stroke="#2C5F2D" stroke-width="1.4" stroke-dasharray="3 3"/>
+  <line x1="158" y1="72" x2="158" y2="105" stroke="#2C5F2D" stroke-width="1.4" stroke-dasharray="3 3"/>
+  <polygon points="70,99 77,96 77,102" fill="#2C5F2D"/>
+  <polygon points="158,99 151,96 151,102" fill="#2C5F2D"/>
+</g>
+<rect x="26" y="176" width="268" height="62" rx="9" fill="#FFFFFF" stroke="#1E2761" stroke-width="2"/>
+<g data-part="longitudinalWave">
+  <g fill="#7a8199" class="sm-osc-x">
+    <circle cx="42" cy="207" r="3.4"/><circle cx="49" cy="207" r="3.4"/><circle cx="56" cy="207" r="3.4"/><circle cx="63" cy="207" r="3.4"/>
+    <circle cx="79" cy="207" r="3.4"/><circle cx="96" cy="207" r="3.4"/><circle cx="113" cy="207" r="3.4"/>
+    <circle cx="130" cy="207" r="3.4"/><circle cx="137" cy="207" r="3.4"/><circle cx="144" cy="207" r="3.4"/><circle cx="151" cy="207" r="3.4"/>
+    <circle cx="167" cy="207" r="3.4"/><circle cx="184" cy="207" r="3.4"/><circle cx="201" cy="207" r="3.4"/>
+    <circle cx="218" cy="207" r="3.4"/><circle cx="225" cy="207" r="3.4"/><circle cx="232" cy="207" r="3.4"/><circle cx="239" cy="207" r="3.4"/>
+    <circle cx="256" cy="207" r="3.4"/><circle cx="273" cy="207" r="3.4"/>
+  </g>
+</g>
+<g data-part="compression">
+  <polygon points="42,170 52,164 62,170" fill="none" stroke="#B4341E" stroke-width="2.2" stroke-linejoin="round"/>
+  <polygon points="130,170 140,164 150,170" fill="none" stroke="#B4341E" stroke-width="2.2" stroke-linejoin="round"/>
+  <polygon points="218,170 228,164 238,170" fill="none" stroke="#B4341E" stroke-width="2.2" stroke-linejoin="round"/>
+</g>
+<g data-part="rarefaction">
+  <polygon points="86,246 96,252 106,246" fill="none" stroke="#2C5F2D" stroke-width="2.2" stroke-linejoin="round"/>
+  <polygon points="174,246 184,252 194,246" fill="none" stroke="#2C5F2D" stroke-width="2.2" stroke-linejoin="round"/>
+</g>
+</g>
+<g data-part="transverseWave" class="dg-label"><circle cx="224.0" cy="33.8" r="3.4"/><text x="224.0" y="25.8" font-size="12" text-anchor="middle">Transverse wave</text></g>
+<g data-part="amplitude" class="dg-label"><circle cx="57.6" cy="54.6" r="3.4"/><text x="64.6" y="46.6" font-size="12" text-anchor="start">Amplitude</text></g>
+<g data-part="wavelength" class="dg-label"><circle cx="121.6" cy="80.6" r="3.4"/><text x="121.6" y="72.6" font-size="12" text-anchor="middle">Wavelength</text></g>
+<g data-part="longitudinalWave" class="dg-label"><circle cx="256.0" cy="176.8" r="3.4"/><text x="249.0" y="168.8" font-size="12" text-anchor="end">Longitudinal wave</text></g>
+<g data-part="compression" class="dg-label"><circle cx="48.0" cy="150.8" r="3.4"/><text x="55.0" y="142.8" font-size="12" text-anchor="start">Compression</text></g>
+<g data-part="rarefaction" class="dg-label"><circle cx="173.1" cy="150.8" r="3.4"/><text x="173.1" y="142.8" font-size="12" text-anchor="middle">Rarefaction</text></g>
+</svg>

@@ -197,6 +197,7 @@ function SlidesContent() {
   const [genUnit, setGenUnit] = useState("");
   const [genLesson, setGenLesson] = useState("");
   const [genFocus, setGenFocus] = useState("");
+  const [genType, setGenType] = useState("terminology"); // house-engine lesson type
   const [genBusy, setGenBusy] = useState(false);
   const [autoQDeckId, setAutoQDeckId] = useState(null); // deck just AI-generated → auto-open questions
   const [shareOpen, setShareOpen] = useState(false); // public-share popover
@@ -319,7 +320,7 @@ function SlidesContent() {
       const res = await fetch("/api/lesson-generator", {
         method: "POST",
         headers: { "content-type": "application/json", authorization: `Bearer ${sk.auth.getToken()}` },
-        body: JSON.stringify({ unitId: genUnit, lessonId: genLesson || null, focus: genFocus.trim() || null }),
+        body: JSON.stringify({ unitId: genUnit, lessonId: genLesson || null, focus: genFocus.trim() || null, lessonType: genType }),
       });
       const d = await res.json();
       if (!res.ok) throw new Error(d.error || "Generation failed");
@@ -779,7 +780,7 @@ function SlidesContent() {
         <div onClick={() => !genBusy && setGenOpen(false)} style={{ position: "fixed", inset: 0, zIndex: 200, background: "rgba(0,0,0,.45)", display: "flex", alignItems: "center", justifyContent: "center", padding: 24 }}>
           <div onClick={(e) => e.stopPropagation()} style={{ background: C.surface, border: `1px solid ${C.border}`, borderRadius: 12, width: "min(480px,100%)", padding: 24 }}>
             <div style={{ fontFamily: C.serif, fontSize: 26, color: C.text, marginBottom: 4 }}>Generate a lesson</div>
-            <div style={{ fontSize: 13, color: C.muted, marginBottom: 18, lineHeight: 1.5 }}>Pick a unit and AI drafts a full, ready-to-teach deck you can edit. Takes ~20–40 seconds.</div>
+            <div style={{ fontSize: 13, color: C.muted, marginBottom: 18, lineHeight: 1.5 }}>Pick a unit and AI drafts a full, ready-to-teach deck in the house lesson engine — teaching beats, then independent practice and the exit check. Takes ~1–2 minutes.</div>
             <label style={{ fontFamily: C.mono, fontSize: 10, letterSpacing: "0.1em", textTransform: "uppercase", color: C.dim }}>Unit</label>
             <select value={genUnit} onChange={(e) => { setGenUnit(e.target.value); setGenLesson(""); }} style={{ width: "100%", margin: "6px 0 14px", padding: "9px 12px", border: `1px solid ${C.border}`, borderRadius: 6, fontFamily: C.mono, fontSize: 13, background: C.bg, color: C.text }}>
               <option value="">Choose a unit…</option>
@@ -794,6 +795,14 @@ function SlidesContent() {
                 </select>
               </>
             )}
+            <label style={{ fontFamily: C.mono, fontSize: 10, letterSpacing: "0.1em", textTransform: "uppercase", color: C.dim }}>Lesson type</label>
+            <select value={genType} onChange={(e) => setGenType(e.target.value)} style={{ width: "100%", margin: "6px 0 14px", padding: "9px 12px", border: `1px solid ${C.border}`, borderRadius: 6, fontFamily: C.mono, fontSize: 13, background: C.bg, color: C.text }}>
+              <option value="terminology">Concept / terminology (default)</option>
+              <option value="maths">Maths / calculation — worked-example pairs</option>
+              <option value="practical">Practical — predict, observe, explain</option>
+              <option value="misconception">Misconception-busting — diagnose &amp; confront</option>
+              <option value="extended-writing">Extended writing — the 6-marker, built sentence by sentence</option>
+            </select>
             <label style={{ fontFamily: C.mono, fontSize: 10, letterSpacing: "0.1em", textTransform: "uppercase", color: C.dim }}>Focus (optional)</label>
             <input value={genFocus} onChange={(e) => setGenFocus(e.target.value)} placeholder="e.g. exam technique on required practical" style={{ width: "100%", margin: "6px 0 20px", padding: "9px 12px", border: `1px solid ${C.border}`, borderRadius: 6, fontFamily: C.mono, fontSize: 13, background: C.bg, color: C.text, outline: "none" }} />
             <div style={{ display: "flex", justifyContent: "flex-end", gap: 10 }}>

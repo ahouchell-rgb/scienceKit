@@ -20,3 +20,14 @@ export function sanitizeHtml(html: string | null | undefined): string {
   if (typeof window === "undefined") return "";
   return DOMPurify.sanitize(String(html));
 }
+
+// Sanitize a library diagram's SVG before inline-injection. Diagrams normally come
+// from our own /diagrams/ files, but the markup is stored in the (shareable) deck
+// JSON, so treat it like any other colleague-authored content. SVG profile only —
+// no HTML/foreignObject — plus <style>, which the living diagrams need for their
+// animation keyframes (DOMPurify already strips scripts/event handlers/JS URLs).
+export function sanitizeSvg(svg: string | null | undefined): string {
+  if (!svg) return "";
+  if (typeof window === "undefined") return "";
+  return DOMPurify.sanitize(String(svg), { USE_PROFILES: { svg: true, svgFilters: true }, ADD_TAGS: ["style"] });
+}

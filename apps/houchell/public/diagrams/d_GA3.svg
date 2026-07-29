@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 250" width="100%" height="100%" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Radioactive decay &amp; radiation">
+<style>[class*="sm-"]{transform-box:fill-box;transform-origin:center;}
+[data-part]{transition:opacity .55s ease;}
+.sm-spin{ animation:sm-spin 3s linear infinite; }
+.sm-spin-slow{ animation:sm-spin 9s linear infinite; }
+.sm-spin-rev{ animation:sm-spin 3s linear infinite reverse; }
+.sm-flow{ animation:sm-flow 1s linear infinite; }
+.sm-flow-slow{ animation:sm-flow 2.2s linear infinite; }
+.sm-flow-rev{ animation:sm-flow-rev 1.4s linear infinite; }
+.sm-pulse{ animation:sm-pulse 1.6s ease-in-out infinite; }
+.sm-throb{ animation:sm-throb 1s ease-in-out infinite; }
+.sm-drift{ animation:sm-drift 2.6s ease-in-out infinite; }
+.sm-osc{ animation:sm-osc 1.8s ease-in-out infinite; }
+.sm-osc-x{ animation:sm-osc-x 1.8s ease-in-out infinite; }
+.sm-rise{ animation:sm-rise 2.6s ease-in infinite; }
+.sm-fall{ animation:sm-fall 2.6s ease-in infinite; }
+.sm-blink{ animation:sm-blink 1.4s ease-in-out infinite; }
+.sm-glow{ animation:sm-glow 2s ease-in-out infinite; }
+.sm-shake{ animation:sm-shake .3s ease-in-out infinite; }
+.sm-sweep{ animation:sm-sweep 2.8s ease-in-out infinite; }
+@keyframes sm-spin{ to{ transform:rotate(360deg); } }
+@keyframes sm-flow{ to{ stroke-dashoffset:-24; } }
+@keyframes sm-flow-rev{ to{ stroke-dashoffset:24; } }
+@keyframes sm-pulse{ 0%,100%{ transform:scale(1); } 50%{ transform:scale(1.13); } }
+@keyframes sm-throb{ 0%,100%{ transform:scale(1); } 50%{ transform:scale(1.06); } }
+@keyframes sm-drift{ 0%{ transform:translate(0,0); } 25%{ transform:translate(2px,-2.5px); } 50%{ transform:translate(-2.5px,1.5px); } 75%{ transform:translate(1.5px,2px); } 100%{ transform:translate(0,0); } }
+@keyframes sm-osc{ 0%,100%{ transform:translateY(0); } 50%{ transform:translateY(-5px); } }
+@keyframes sm-osc-x{ 0%,100%{ transform:translateX(0); } 50%{ transform:translateX(5px); } }
+@keyframes sm-rise{ 0%{ transform:translateY(2px); opacity:0; } 25%{ opacity:.85; } 100%{ transform:translateY(-16px); opacity:0; } }
+@keyframes sm-fall{ 0%{ transform:translateY(-14px); opacity:0; } 25%{ opacity:.85; } 100%{ transform:translateY(4px); opacity:0; } }
+@keyframes sm-blink{ 0%,100%{ opacity:1; } 50%{ opacity:.3; } }
+@keyframes sm-glow{ 0%,100%{ opacity:.55; } 50%{ opacity:1; } }
+@keyframes sm-shake{ 0%,100%{ transform:translate(0,0); } 25%{ transform:translate(.9px,-.9px); } 75%{ transform:translate(-.9px,.9px); } }
+@keyframes sm-sweep{ 0%{ transform:translateX(-6px); opacity:.35; } 50%{ opacity:1; } 100%{ transform:translateX(6px); opacity:.35; } }
+@media (prefers-reduced-motion:reduce){[class*="sm-"]{animation:none !important;}}
+.dg-label text{font-family:'Century Gothic','Avenir Next',system-ui,sans-serif;font-weight:600;paint-order:stroke;stroke:#ffffff;stroke-width:3px;stroke-linejoin:round;fill:#1E2761;}
+.dg-label circle{fill:#1E2761;stroke:#ffffff;stroke-width:1.5;}</style>
+<g class="diagram-art">
+
+<rect x="0" y="0" width="320" height="250" fill="#ffffff"/>
+<rect x="10" y="95" width="46" height="60" rx="6" fill="#F1D2D8" stroke="#B4341E" stroke-width="2.5"/>
+<circle cx="33" cy="125" r="11" fill="#B4341E"/>
+<circle cx="30" cy="122" r="2.2" fill="#fff"/><circle cx="37" cy="127" r="2.2" fill="#fff"/><circle cx="33" cy="130" r="2.2" fill="#fff"/>
+<text x="33" y="150" font-family="Arial" font-size="8" fill="#B4341E" text-anchor="middle" font-weight="bold">source</text>
+<g data-part="paper">
+  <rect x="96" y="60" width="7" height="90" rx="2" fill="#F4F6FC" stroke="#7a8199" stroke-width="2"/>
+</g>
+<g data-part="aluminium">
+  <rect x="168" y="55" width="12" height="100" rx="2" fill="#DCEAF6" stroke="#1E2761" stroke-width="2.5"/>
+  <line x1="171" y1="60" x2="171" y2="150" stroke="#7a8199" stroke-width="1"/>
+  <line x1="177" y1="60" x2="177" y2="150" stroke="#7a8199" stroke-width="1"/>
+</g>
+<g data-part="leadConcrete">
+  <rect x="244" y="48" width="26" height="112" rx="2" fill="#c7ccd6" stroke="#1E2761" stroke-width="3"/>
+  <line x1="252" y1="52" x2="252" y2="156" stroke="#7a8199" stroke-width="1.2"/>
+  <line x1="262" y1="52" x2="262" y2="156" stroke="#7a8199" stroke-width="1.2"/>
+</g>
+<g data-part="alpha">
+  <path class="sm-flow" d="M56 82 H94" stroke="#B4341E" stroke-width="3" fill="none" stroke-dasharray="6 5" stroke-linecap="round" marker-end="url(#ga3arrowR)"/>
+  <g transform="translate(76,82)">
+    <circle cx="-5" cy="-4" r="4.5" fill="#B4341E"/><circle cx="5" cy="-4" r="4.5" fill="#B4341E"/>
+    <circle cx="-5" cy="5" r="4.5" fill="#8f9099"/><circle cx="5" cy="5" r="4.5" fill="#8f9099"/>
+  </g>
+</g>
+<g data-part="beta">
+  <path class="sm-flow" d="M56 108 H166" stroke="#2C5F2D" stroke-width="2.6" fill="none" stroke-dasharray="4 4" stroke-linecap="round" marker-end="url(#ga3arrowG)"/>
+  <circle cx="120" cy="108" r="5" fill="#2C5F2D"/>
+  <text x="120" y="111.5" font-family="Arial" font-size="7" fill="#fff" text-anchor="middle" font-weight="bold">e</text>
+</g>
+<g data-part="gamma">
+  <path class="sm-flow" d="M56 132 q8 -7 16 0 t16 0 t16 0 t16 0 t16 0 t16 0 t16 0 t16 0 t16 0 t16 0 t16 0" stroke="#C99528" stroke-width="2.6" fill="none" stroke-dasharray="5 4" stroke-linecap="round"/>
+  <path d="M240 132 l10 -4 v8 z" fill="#C99528"/>
+</g>
+<g data-part="neutron">
+  <path class="sm-flow" d="M56 174 H236" stroke="#7a8199" stroke-width="2.6" fill="none" stroke-dasharray="3 5" stroke-linecap="round" marker-end="url(#ga3arrowN)"/>
+  <circle cx="150" cy="174" r="6" fill="#8f9099" stroke="#5b616e" stroke-width="1.5"/>
+  <text x="150" y="177" font-family="Arial" font-size="7" fill="#fff" text-anchor="middle" font-weight="bold">n</text>
+</g>
+<g data-part="gmTube">
+  <rect x="286" y="150" width="26" height="16" rx="3" fill="#F4F6FC" stroke="#1E2761" stroke-width="2.5"/>
+  <line x1="286" y1="158" x2="278" y2="158" stroke="#1E2761" stroke-width="2.5"/>
+  <rect x="290" y="118" width="18" height="30" rx="4" fill="#DCEAF6" stroke="#1E2761" stroke-width="2.5"/>
+  <circle class="sm-blink" cx="299" cy="133" r="3.5" fill="#C99528"/>
+  <text x="299" y="180" font-family="Arial" font-size="7" fill="#1E2761" text-anchor="middle" font-weight="bold">Bq</text>
+</g>
+<defs>
+  <marker id="ga3arrowR" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 z" fill="#B4341E"/></marker>
+  <marker id="ga3arrowG" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 z" fill="#2C5F2D"/></marker>
+  <marker id="ga3arrowN" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 z" fill="#7a8199"/></marker>
+</defs>
+
+</g>
+<g data-part="alpha" class="dg-label"><circle cx="76.8" cy="117.5" r="3.4"/><text x="76.8" y="109.5" font-size="12" text-anchor="middle">Alpha particle</text></g>
+<g data-part="beta" class="dg-label"><circle cx="128.0" cy="122.5" r="3.4"/><text x="128.0" y="114.5" font-size="12" text-anchor="middle">Beta particle</text></g>
+<g data-part="gamma" class="dg-label"><circle cx="192.0" cy="135.0" r="3.4"/><text x="192.0" y="127.0" font-size="12" text-anchor="middle">Gamma ray</text></g>
+<g data-part="neutron" class="dg-label"><circle cx="236.8" cy="145.0" r="3.4"/><text x="236.8" y="137.0" font-size="12" text-anchor="middle">Neutron</text></g>
+<g data-part="paper" class="dg-label"><circle cx="99.2" cy="85.0" r="3.4"/><text x="99.2" y="77.0" font-size="12" text-anchor="middle">Paper</text></g>
+<g data-part="aluminium" class="dg-label"><circle cx="156.8" cy="85.0" r="3.4"/><text x="156.8" y="77.0" font-size="12" text-anchor="middle">Aluminium</text></g>
+<g data-part="leadConcrete" class="dg-label"><circle cx="259.2" cy="77.5" r="3.4"/><text x="252.2" y="69.5" font-size="12" text-anchor="end">Lead / concrete</text></g>
+<g data-part="gmTube" class="dg-label"><circle cx="233.6" cy="210.0" r="3.4"/><text x="233.6" y="202.0" font-size="12" text-anchor="middle">Geiger-Muller tube</text></g>
+</svg>

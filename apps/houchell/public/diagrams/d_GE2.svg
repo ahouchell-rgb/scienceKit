@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 280" width="100%" height="100%" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Kinetic &amp; potential energy">
+<style>[class*="sm-"]{transform-box:fill-box;transform-origin:center;}
+[data-part]{transition:opacity .55s ease;}
+.sm-spin{ animation:sm-spin 3s linear infinite; }
+.sm-spin-slow{ animation:sm-spin 9s linear infinite; }
+.sm-spin-rev{ animation:sm-spin 3s linear infinite reverse; }
+.sm-flow{ animation:sm-flow 1s linear infinite; }
+.sm-flow-slow{ animation:sm-flow 2.2s linear infinite; }
+.sm-flow-rev{ animation:sm-flow-rev 1.4s linear infinite; }
+.sm-pulse{ animation:sm-pulse 1.6s ease-in-out infinite; }
+.sm-throb{ animation:sm-throb 1s ease-in-out infinite; }
+.sm-drift{ animation:sm-drift 2.6s ease-in-out infinite; }
+.sm-osc{ animation:sm-osc 1.8s ease-in-out infinite; }
+.sm-osc-x{ animation:sm-osc-x 1.8s ease-in-out infinite; }
+.sm-rise{ animation:sm-rise 2.6s ease-in infinite; }
+.sm-fall{ animation:sm-fall 2.6s ease-in infinite; }
+.sm-blink{ animation:sm-blink 1.4s ease-in-out infinite; }
+.sm-glow{ animation:sm-glow 2s ease-in-out infinite; }
+.sm-shake{ animation:sm-shake .3s ease-in-out infinite; }
+.sm-sweep{ animation:sm-sweep 2.8s ease-in-out infinite; }
+@keyframes sm-spin{ to{ transform:rotate(360deg); } }
+@keyframes sm-flow{ to{ stroke-dashoffset:-24; } }
+@keyframes sm-flow-rev{ to{ stroke-dashoffset:24; } }
+@keyframes sm-pulse{ 0%,100%{ transform:scale(1); } 50%{ transform:scale(1.13); } }
+@keyframes sm-throb{ 0%,100%{ transform:scale(1); } 50%{ transform:scale(1.06); } }
+@keyframes sm-drift{ 0%{ transform:translate(0,0); } 25%{ transform:translate(2px,-2.5px); } 50%{ transform:translate(-2.5px,1.5px); } 75%{ transform:translate(1.5px,2px); } 100%{ transform:translate(0,0); } }
+@keyframes sm-osc{ 0%,100%{ transform:translateY(0); } 50%{ transform:translateY(-5px); } }
+@keyframes sm-osc-x{ 0%,100%{ transform:translateX(0); } 50%{ transform:translateX(5px); } }
+@keyframes sm-rise{ 0%{ transform:translateY(2px); opacity:0; } 25%{ opacity:.85; } 100%{ transform:translateY(-16px); opacity:0; } }
+@keyframes sm-fall{ 0%{ transform:translateY(-14px); opacity:0; } 25%{ opacity:.85; } 100%{ transform:translateY(4px); opacity:0; } }
+@keyframes sm-blink{ 0%,100%{ opacity:1; } 50%{ opacity:.3; } }
+@keyframes sm-glow{ 0%,100%{ opacity:.55; } 50%{ opacity:1; } }
+@keyframes sm-shake{ 0%,100%{ transform:translate(0,0); } 25%{ transform:translate(.9px,-.9px); } 75%{ transform:translate(-.9px,.9px); } }
+@keyframes sm-sweep{ 0%{ transform:translateX(-6px); opacity:.35; } 50%{ opacity:1; } 100%{ transform:translateX(6px); opacity:.35; } }
+@media (prefers-reduced-motion:reduce){[class*="sm-"]{animation:none !important;}}
+.dg-label text{font-family:'Century Gothic','Avenir Next',system-ui,sans-serif;font-weight:600;paint-order:stroke;stroke:#ffffff;stroke-width:3px;stroke-linejoin:round;fill:#1E2761;}
+.dg-label circle{fill:#1E2761;stroke:#ffffff;stroke-width:1.5;}</style>
+<g class="diagram-art">
+<rect x="0" y="0" width="320" height="280" fill="#F4F6FC"/>
+<line x1="24" y1="44" x2="24" y2="252" stroke="#7a8199" stroke-width="2" stroke-linecap="round"/>
+<rect x="24" y="252" width="150" height="10" fill="#CDE5C6" stroke="#2C5F2D" stroke-width="2"/>
+<line x1="24" y1="70" x2="130" y2="70" stroke="#7a8199" stroke-width="1.5" stroke-dasharray="5 5"/>
+<line x1="24" y1="252" x2="130" y2="252" stroke="#7a8199" stroke-width="1.5" stroke-dasharray="5 5"/>
+<g data-part="height">
+  <line x1="46" y1="72" x2="46" y2="250" stroke="#1E2761" stroke-width="2.5" stroke-linecap="round"/>
+  <polyline points="40,84 46,72 52,84" fill="none" stroke="#1E2761" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <polyline points="40,238 46,250 52,238" fill="none" stroke="#1E2761" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="56" y="164" font-family="sans-serif" font-size="12" fill="#1E2761" font-style="italic">h</text>
+</g>
+<g data-part="gpeStore">
+  <rect x="86" y="52" width="40" height="38" rx="5" fill="#CDE5C6" stroke="#2C5F2D" stroke-width="2.5"/>
+  <rect x="90" y="56" width="32" height="30" rx="3" fill="#2C5F2D" opacity="0.85"/>
+</g>
+<g data-part="fallPath">
+  <line class="sm-flow" x1="106" y1="92" x2="106" y2="196" stroke="#B4341E" stroke-width="3" stroke-linecap="round" stroke-dasharray="7 7"/>
+  <polygon points="106,204 99,192 113,192" fill="#B4341E"/>
+</g>
+<g data-part="workArrow">
+  <line x1="134" y1="120" x2="134" y2="168" stroke="#1E2761" stroke-width="3" stroke-linecap="round"/>
+  <polygon points="134,176 127,164 141,164" fill="#1E2761"/>
+  <text x="140" y="150" font-family="sans-serif" font-size="11" fill="#1E2761">W</text>
+</g>
+<g data-part="keStore">
+  <rect x="86" y="208" width="40" height="38" rx="5" fill="#F1D2D8" stroke="#B4341E" stroke-width="2.5"/>
+  <rect x="90" y="212" width="32" height="30" rx="3" fill="#B4341E" opacity="0.85"/>
+  <line class="sm-osc-x" x1="130" y1="227" x2="150" y2="227" stroke="#B4341E" stroke-width="2.5" stroke-linecap="round"/>
+  <polygon class="sm-osc-x" points="150,227 140,222 140,232" fill="#B4341E"/>
+</g>
+<g data-part="spring">
+  <line x1="238" y1="40" x2="302" y2="40" stroke="#1E2761" stroke-width="4" stroke-linecap="round"/>
+  <polyline class="sm-osc" points="270,48 258,56 282,66 258,76 282,86 258,96 282,106 258,116 282,126 270,134 270,146" fill="none" stroke="#1E2761" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="252" y="146" width="36" height="30" rx="6" fill="#AEB6D6" stroke="#1E2761" stroke-width="2.5"/>
+</g>
+<g data-part="elasticForce">
+  <path d="M296 60 v70" fill="none" stroke="#C99528" stroke-width="2" stroke-dasharray="4 4"/>
+  <line class="sm-pulse" x1="296" y1="196" x2="296" y2="150" stroke="#2C5F2D" stroke-width="3" stroke-linecap="round"/>
+  <polygon class="sm-pulse" points="296,142 289,154 303,154" fill="#2C5F2D"/>
+</g>
+</g>
+<g data-part="gpeStore" class="dg-label"><circle cx="96.0" cy="58.8" r="3.4"/><text x="96.0" y="50.8" font-size="12" text-anchor="middle">GPE store</text></g>
+<g data-part="height" class="dg-label"><circle cx="96.0" cy="134.4" r="3.4"/><text x="96.0" y="126.4" font-size="12" text-anchor="middle">Height (h)</text></g>
+<g data-part="fallPath" class="dg-label"><circle cx="166.4" cy="173.6" r="3.4"/><text x="166.4" y="165.6" font-size="12" text-anchor="middle">Object falls</text></g>
+<g data-part="keStore" class="dg-label"><circle cx="96.0" cy="210.0" r="3.4"/><text x="96.0" y="202.0" font-size="12" text-anchor="middle">Kinetic store</text></g>
+<g data-part="workArrow" class="dg-label"><circle cx="96.0" cy="257.6" r="3.4"/><text x="96.0" y="249.6" font-size="12" text-anchor="middle">Work done</text></g>
+<g data-part="spring" class="dg-label"><circle cx="268.8" cy="95.2" r="3.4"/><text x="261.8" y="87.2" font-size="12" text-anchor="end">Spring extension</text></g>
+<g data-part="elasticForce" class="dg-label"><circle cx="268.8" cy="190.4" r="3.4"/><text x="261.8" y="182.4" font-size="12" text-anchor="end">Elastic PE</text></g>
+</svg>

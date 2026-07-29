@@ -21,7 +21,8 @@ export type ElementType =
   | "retrieval"
   | "html"
   | "equation"
-  | "chart";
+  | "chart"
+  | "diagram";
 
 export type ChartType = "bar" | "line" | "pie";
 export type TextAlign = "left" | "center" | "right";
@@ -95,6 +96,15 @@ export interface SlideElement {
   showLegend?: boolean;
   labels?: string[];
   series?: ChartSeries[];
+
+  /* diagram — a curriculum diagram from the library (public/diagrams).
+   * svg is the self-contained markup (hydrated from diagramId; stripped before
+   * AI round-trips like html); partIds lists the data-part group ids in teach
+   * order; build:true makes each part a click-to-reveal step in Present. */
+  diagramId?: string;
+  svg?: string;
+  partIds?: string[];
+  build?: boolean;
 
   /* escape hatch for fields not modelled above */
   [key: string]: unknown;

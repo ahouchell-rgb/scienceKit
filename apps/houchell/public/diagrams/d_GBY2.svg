@@ -1,0 +1,116 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 240" width="100%" height="100%" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Cycles &amp; biodiversity">
+<style>[class*="sm-"]{transform-box:fill-box;transform-origin:center;}
+[data-part]{transition:opacity .55s ease;}
+.sm-spin{ animation:sm-spin 3s linear infinite; }
+.sm-spin-slow{ animation:sm-spin 9s linear infinite; }
+.sm-spin-rev{ animation:sm-spin 3s linear infinite reverse; }
+.sm-flow{ animation:sm-flow 1s linear infinite; }
+.sm-flow-slow{ animation:sm-flow 2.2s linear infinite; }
+.sm-flow-rev{ animation:sm-flow-rev 1.4s linear infinite; }
+.sm-pulse{ animation:sm-pulse 1.6s ease-in-out infinite; }
+.sm-throb{ animation:sm-throb 1s ease-in-out infinite; }
+.sm-drift{ animation:sm-drift 2.6s ease-in-out infinite; }
+.sm-osc{ animation:sm-osc 1.8s ease-in-out infinite; }
+.sm-osc-x{ animation:sm-osc-x 1.8s ease-in-out infinite; }
+.sm-rise{ animation:sm-rise 2.6s ease-in infinite; }
+.sm-fall{ animation:sm-fall 2.6s ease-in infinite; }
+.sm-blink{ animation:sm-blink 1.4s ease-in-out infinite; }
+.sm-glow{ animation:sm-glow 2s ease-in-out infinite; }
+.sm-shake{ animation:sm-shake .3s ease-in-out infinite; }
+.sm-sweep{ animation:sm-sweep 2.8s ease-in-out infinite; }
+@keyframes sm-spin{ to{ transform:rotate(360deg); } }
+@keyframes sm-flow{ to{ stroke-dashoffset:-24; } }
+@keyframes sm-flow-rev{ to{ stroke-dashoffset:24; } }
+@keyframes sm-pulse{ 0%,100%{ transform:scale(1); } 50%{ transform:scale(1.13); } }
+@keyframes sm-throb{ 0%,100%{ transform:scale(1); } 50%{ transform:scale(1.06); } }
+@keyframes sm-drift{ 0%{ transform:translate(0,0); } 25%{ transform:translate(2px,-2.5px); } 50%{ transform:translate(-2.5px,1.5px); } 75%{ transform:translate(1.5px,2px); } 100%{ transform:translate(0,0); } }
+@keyframes sm-osc{ 0%,100%{ transform:translateY(0); } 50%{ transform:translateY(-5px); } }
+@keyframes sm-osc-x{ 0%,100%{ transform:translateX(0); } 50%{ transform:translateX(5px); } }
+@keyframes sm-rise{ 0%{ transform:translateY(2px); opacity:0; } 25%{ opacity:.85; } 100%{ transform:translateY(-16px); opacity:0; } }
+@keyframes sm-fall{ 0%{ transform:translateY(-14px); opacity:0; } 25%{ opacity:.85; } 100%{ transform:translateY(4px); opacity:0; } }
+@keyframes sm-blink{ 0%,100%{ opacity:1; } 50%{ opacity:.3; } }
+@keyframes sm-glow{ 0%,100%{ opacity:.55; } 50%{ opacity:1; } }
+@keyframes sm-shake{ 0%,100%{ transform:translate(0,0); } 25%{ transform:translate(.9px,-.9px); } 75%{ transform:translate(-.9px,.9px); } }
+@keyframes sm-sweep{ 0%{ transform:translateX(-6px); opacity:.35; } 50%{ opacity:1; } 100%{ transform:translateX(6px); opacity:.35; } }
+@media (prefers-reduced-motion:reduce){[class*="sm-"]{animation:none !important;}}
+.dg-label text{font-family:'Century Gothic','Avenir Next',system-ui,sans-serif;font-weight:600;paint-order:stroke;stroke:#ffffff;stroke-width:3px;stroke-linejoin:round;fill:#1E2761;}
+.dg-label circle{fill:#1E2761;stroke:#ffffff;stroke-width:1.5;}</style>
+<g class="diagram-art">
+<rect x="0" y="0" width="320" height="240" fill="#DCEAF6"/>
+<rect x="0" y="176" width="320" height="64" fill="#CDE5C6"/>
+<rect x="0" y="200" width="320" height="40" fill="#C9A46A"/>
+<line x1="0" y1="176" x2="320" y2="176" stroke="#2C5F2D" stroke-width="2"/>
+<g fill="#C99528" class="sm-glow">
+  <circle cx="288" cy="34" r="18"/>
+  <g stroke="#C99528" stroke-width="3" stroke-linecap="round">
+    <line x1="288" y1="6" x2="288" y2="0"/><line x1="312" y1="20" x2="318" y2="16"/><line x1="262" y1="20" x2="256" y2="16"/>
+  </g>
+</g>
+<g data-part="carbonDioxide">
+  <g class="sm-drift">
+    <circle cx="150" cy="40" r="11" fill="#7a8199"/>
+    <circle cx="138" cy="40" r="7" fill="#B4341E"/>
+    <circle cx="162" cy="40" r="7" fill="#B4341E"/>
+    <text x="139" y="66" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#1E2761">CO&#8322;</text>
+  </g>
+</g>
+<g data-part="rainCloud">
+  <g fill="#7a8199">
+    <ellipse cx="62" cy="46" rx="30" ry="18"/>
+    <ellipse cx="42" cy="54" rx="18" ry="13"/>
+    <ellipse cx="84" cy="54" rx="18" ry="12"/>
+  </g>
+  <g stroke="#1E2761" stroke-width="2.5" stroke-linecap="round" class="sm-fall">
+    <line x1="44" y1="70" x2="40" y2="84"/>
+    <line x1="62" y1="70" x2="58" y2="84"/>
+    <line x1="80" y1="70" x2="76" y2="84"/>
+  </g>
+  <path class="sm-rise" d="M62 130 q6 -20 -2 -34" fill="none" stroke="#8FB4E0" stroke-width="2" stroke-dasharray="4 5"/>
+</g>
+<g data-part="plant">
+  <rect x="58" y="150" width="6" height="30" rx="3" fill="#2C5F2D"/>
+  <path d="M61 158 q-22 -6 -30 -22 q22 -2 30 14" fill="#2C5F2D"/>
+  <path d="M61 150 q22 -8 30 -24 q-22 -2 -30 16" fill="#3E7F3F"/>
+  <path class="sm-flow" d="M120 44 q-30 40 -55 96" fill="none" stroke="#2C5F2D" stroke-width="2" stroke-dasharray="6 5"/>
+  <path d="M65 138 l-2 12 l9 -6 z" fill="#2C5F2D"/>
+</g>
+<g data-part="animal">
+  <ellipse cx="158" cy="158" rx="26" ry="15" fill="#8a5a34"/>
+  <circle cx="184" cy="146" r="10" fill="#8a5a34"/>
+  <path d="M188 138 l3 -10 M182 138 l-2 -10" stroke="#5c3a20" stroke-width="2" stroke-linecap="round"/>
+  <g stroke="#5c3a20" stroke-width="4" stroke-linecap="round">
+    <line x1="146" y1="170" x2="146" y2="182"/><line x1="170" y1="170" x2="170" y2="182"/>
+  </g>
+  <path class="sm-rise" d="M190 140 q10 -34 -22 -96" fill="none" stroke="#7a8199" stroke-width="2" stroke-dasharray="5 5"/>
+  <path d="M167 46 l-4 -11 l9 4 z" fill="#7a8199"/>
+</g>
+<g data-part="factory">
+  <rect x="248" y="132" width="52" height="44" fill="#1E2761"/>
+  <rect x="258" y="112" width="12" height="26" fill="#3a4170"/>
+  <rect x="256" y="146" width="10" height="10" fill="#DCEAF6"/>
+  <rect x="272" y="146" width="10" height="10" fill="#DCEAF6"/>
+  <g fill="#7a8199" opacity="0.8" class="sm-rise">
+    <circle cx="264" cy="100" r="8"/>
+    <circle cx="272" cy="86" r="10"/>
+    <circle cx="262" cy="72" r="11"/>
+  </g>
+  <path d="M262 60 q-30 -14 -100 -18" fill="none" stroke="#B4341E" stroke-width="2" stroke-dasharray="5 5" class="sm-flow"/>
+</g>
+<g data-part="decomposer">
+  <g>
+    <rect x="278" y="212" width="5" height="14" rx="2" fill="#F4F6FC"/>
+    <path d="M272 214 a9 6 0 0 1 18 0 z" fill="#B4341E"/>
+    <rect x="292" y="216" width="4" height="10" rx="2" fill="#F4F6FC"/>
+    <path d="M287 218 a7 5 0 0 1 14 0 z" fill="#C99528"/>
+  </g>
+  <path class="sm-rise" d="M270 214 q-30 -10 -60 -6" fill="none" stroke="#2C5F2D" stroke-width="2" stroke-dasharray="5 5"/>
+  <path d="M210 208 l-11 -1 l6 8 z" fill="#2C5F2D"/>
+</g>
+</g>
+<g data-part="carbonDioxide" class="dg-label"><circle cx="150.4" cy="43.2" r="3.4"/><text x="150.4" y="35.2" font-size="12" text-anchor="middle">Carbon dioxide</text></g>
+<g data-part="rainCloud" class="dg-label"><circle cx="272.0" cy="40.8" r="3.4"/><text x="265.0" y="32.8" font-size="12" text-anchor="end">Rain cloud</text></g>
+<g data-part="plant" class="dg-label"><circle cx="76.8" cy="134.4" r="3.4"/><text x="76.8" y="126.4" font-size="12" text-anchor="middle">Plant (photosynthesis)</text></g>
+<g data-part="animal" class="dg-label"><circle cx="169.6" cy="151.2" r="3.4"/><text x="169.6" y="143.2" font-size="12" text-anchor="middle">Animal</text></g>
+<g data-part="factory" class="dg-label"><circle cx="268.8" cy="139.2" r="3.4"/><text x="261.8" y="131.2" font-size="12" text-anchor="end">Combustion</text></g>
+<g data-part="decomposer" class="dg-label"><circle cx="41.6" cy="211.2" r="3.4"/><text x="48.6" y="203.2" font-size="12" text-anchor="start">Decomposer</text></g>
+</svg>

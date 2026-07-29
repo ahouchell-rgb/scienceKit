@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 324 240" width="100%" height="100%" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Atoms, elements, compounds &amp; mixtures">
+<style>[class*="sm-"]{transform-box:fill-box;transform-origin:center;}
+[data-part]{transition:opacity .55s ease;}
+.sm-spin{ animation:sm-spin 3s linear infinite; }
+.sm-spin-slow{ animation:sm-spin 9s linear infinite; }
+.sm-spin-rev{ animation:sm-spin 3s linear infinite reverse; }
+.sm-flow{ animation:sm-flow 1s linear infinite; }
+.sm-flow-slow{ animation:sm-flow 2.2s linear infinite; }
+.sm-flow-rev{ animation:sm-flow-rev 1.4s linear infinite; }
+.sm-pulse{ animation:sm-pulse 1.6s ease-in-out infinite; }
+.sm-throb{ animation:sm-throb 1s ease-in-out infinite; }
+.sm-drift{ animation:sm-drift 2.6s ease-in-out infinite; }
+.sm-osc{ animation:sm-osc 1.8s ease-in-out infinite; }
+.sm-osc-x{ animation:sm-osc-x 1.8s ease-in-out infinite; }
+.sm-rise{ animation:sm-rise 2.6s ease-in infinite; }
+.sm-fall{ animation:sm-fall 2.6s ease-in infinite; }
+.sm-blink{ animation:sm-blink 1.4s ease-in-out infinite; }
+.sm-glow{ animation:sm-glow 2s ease-in-out infinite; }
+.sm-shake{ animation:sm-shake .3s ease-in-out infinite; }
+.sm-sweep{ animation:sm-sweep 2.8s ease-in-out infinite; }
+@keyframes sm-spin{ to{ transform:rotate(360deg); } }
+@keyframes sm-flow{ to{ stroke-dashoffset:-24; } }
+@keyframes sm-flow-rev{ to{ stroke-dashoffset:24; } }
+@keyframes sm-pulse{ 0%,100%{ transform:scale(1); } 50%{ transform:scale(1.13); } }
+@keyframes sm-throb{ 0%,100%{ transform:scale(1); } 50%{ transform:scale(1.06); } }
+@keyframes sm-drift{ 0%{ transform:translate(0,0); } 25%{ transform:translate(2px,-2.5px); } 50%{ transform:translate(-2.5px,1.5px); } 75%{ transform:translate(1.5px,2px); } 100%{ transform:translate(0,0); } }
+@keyframes sm-osc{ 0%,100%{ transform:translateY(0); } 50%{ transform:translateY(-5px); } }
+@keyframes sm-osc-x{ 0%,100%{ transform:translateX(0); } 50%{ transform:translateX(5px); } }
+@keyframes sm-rise{ 0%{ transform:translateY(2px); opacity:0; } 25%{ opacity:.85; } 100%{ transform:translateY(-16px); opacity:0; } }
+@keyframes sm-fall{ 0%{ transform:translateY(-14px); opacity:0; } 25%{ opacity:.85; } 100%{ transform:translateY(4px); opacity:0; } }
+@keyframes sm-blink{ 0%,100%{ opacity:1; } 50%{ opacity:.3; } }
+@keyframes sm-glow{ 0%,100%{ opacity:.55; } 50%{ opacity:1; } }
+@keyframes sm-shake{ 0%,100%{ transform:translate(0,0); } 25%{ transform:translate(.9px,-.9px); } 75%{ transform:translate(-.9px,.9px); } }
+@keyframes sm-sweep{ 0%{ transform:translateX(-6px); opacity:.35; } 50%{ opacity:1; } 100%{ transform:translateX(6px); opacity:.35; } }
+@media (prefers-reduced-motion:reduce){[class*="sm-"]{animation:none !important;}}
+.dg-label text{font-family:'Century Gothic','Avenir Next',system-ui,sans-serif;font-weight:600;paint-order:stroke;stroke:#ffffff;stroke-width:3px;stroke-linejoin:round;fill:#1E2761;}
+.dg-label circle{fill:#1E2761;stroke:#ffffff;stroke-width:1.5;}</style>
+<g class="diagram-art">
+<rect x="2" y="2" width="320" height="236" rx="12" fill="#F4F6FC" stroke="#1E2761" stroke-width="2.5"/>
+<line x1="110" y1="16" x2="110" y2="120" stroke="#D3D9EA" stroke-width="1.5"/>
+<line x1="216" y1="16" x2="216" y2="120" stroke="#D3D9EA" stroke-width="1.5"/>
+<line x1="110" y1="132" x2="110" y2="224" stroke="#D3D9EA" stroke-width="1.5"/>
+<line x1="216" y1="132" x2="216" y2="224" stroke="#D3D9EA" stroke-width="1.5"/>
+<line x1="16" y1="120" x2="308" y2="120" stroke="#AEB6D6" stroke-width="1.5"/>
+<g data-part="element">
+  <rect x="18" y="26" width="80" height="78" rx="8" fill="#FFFFFF" stroke="#7a8199" stroke-width="1.5"/>
+  <g stroke="#2C5F2D" stroke-width="2">
+    <circle cx="40" cy="48" r="9" fill="#CDE5C6"/><circle cx="68" cy="44" r="9" fill="#CDE5C6"/>
+    <circle cx="80" cy="70" r="9" fill="#CDE5C6"/><circle cx="52" cy="76" r="9" fill="#CDE5C6"/>
+    <circle cx="34" cy="90" r="9" fill="#CDE5C6"/><circle cx="76" cy="94" r="9" fill="#CDE5C6"/>
+  </g>
+</g>
+<g data-part="compound">
+  <rect x="124" y="26" width="80" height="78" rx="8" fill="#FFFFFF" stroke="#7a8199" stroke-width="1.5"/>
+  <g stroke="#1E2761" stroke-width="2.5"><line x1="150" y1="50" x2="172" y2="50"/><line x1="150" y1="84" x2="172" y2="84"/></g>
+  <g stroke="#1E2761" stroke-width="2">
+    <circle cx="144" cy="50" r="11" fill="#CDE5C6"/><circle cx="178" cy="50" r="7" fill="#B4341E"/>
+    <circle cx="144" cy="84" r="11" fill="#CDE5C6"/><circle cx="178" cy="84" r="7" fill="#B4341E"/>
+  </g>
+</g>
+<g data-part="mixture">
+  <rect x="230" y="26" width="80" height="78" rx="8" fill="#FFFFFF" stroke="#7a8199" stroke-width="1.5"/>
+  <g stroke="#1E2761" stroke-width="2">
+    <circle cx="250" cy="46" r="9" fill="#CDE5C6"/><circle cx="288" cy="52" r="7" fill="#B4341E"/>
+    <circle cx="266" cy="70" r="9" fill="#AEB6D6"/><circle cx="296" cy="82" r="8" fill="#CDE5C6"/>
+    <circle cx="244" cy="84" r="6" fill="#B4341E"/><circle cx="272" cy="92" r="7" fill="#AEB6D6"/>
+  </g>
+</g>
+<g data-part="filtration">
+  <path d="M30 138 L86 138 L64 172 L64 200 L52 200 L52 172 Z" fill="#EAF0FA" stroke="#1E2761" stroke-width="2.5" stroke-linejoin="round"/>
+  <line x1="41" y1="150" x2="75" y2="150" stroke="#7a8199" stroke-width="1.5"/>
+  <g fill="#8A6A52"><circle cx="50" cy="146" r="2.4"/><circle cx="62" cy="148" r="2.4"/><circle cx="56" cy="142" r="2.4"/></g>
+  <g class="sm-fall" stroke="#DCEAF6" stroke-width="3" stroke-linecap="round"><line x1="58" y1="202" x2="58" y2="212"/></g>
+  <path d="M40 214 h36 v6 a4 4 0 0 1 -4 4 h-28 a4 4 0 0 1 -4 -4 Z" fill="#DCEAF6" stroke="#1E2761" stroke-width="2"/>
+</g>
+<g data-part="crystallisation">
+  <path d="M130 172 q30 22 60 0" fill="#DCEAF6" stroke="#1E2761" stroke-width="2.5"/>
+  <path d="M126 168 L194 168" stroke="#1E2761" stroke-width="2.5" stroke-linecap="round"/>
+  <g fill="#C99528" stroke="#1E2761" stroke-width="1.2">
+    <path d="M142 178 l4 -6 l4 6 l-4 6 Z"/><path d="M156 182 l4 -6 l4 6 l-4 6 Z"/><path d="M170 178 l4 -6 l4 6 l-4 6 Z"/>
+  </g>
+  <g class="sm-rise" stroke="#B4341E" stroke-width="1.8" fill="none" stroke-linecap="round">
+    <path d="M150 164 q-4 -6 0 -12"/><path d="M170 164 q4 -6 0 -12"/>
+  </g>
+  <g stroke="#B4341E" stroke-width="2.5" stroke-linecap="round"><line x1="146" y1="200" x2="150" y2="206"/><line x1="160" y1="202" x2="160" y2="208"/><line x1="174" y1="200" x2="170" y2="206"/></g>
+</g>
+<g data-part="chromatography">
+  <rect x="252" y="140" width="44" height="76" rx="3" fill="#FFFFFF" stroke="#1E2761" stroke-width="2.5"/>
+  <line x1="252" y1="198" x2="296" y2="198" stroke="#7a8199" stroke-width="1.5" stroke-dasharray="3 3"/>
+  <circle cx="266" cy="160" r="4" fill="#2C5F2D"/>
+  <circle cx="266" cy="176" r="4" fill="#B4341E"/>
+  <circle cx="282" cy="168" r="4" fill="#C99528"/>
+  <circle cx="282" cy="188" r="4" fill="#1E2761"/>
+  <g class="sm-rise" stroke="#DCEAF6" stroke-width="0"><rect x="253" y="200" width="42" height="14" fill="#DCEAF6" opacity="0.5"/></g>
+  <line x1="274" y1="198" x2="274" y2="216" stroke="#1E2761" stroke-width="1.5"/>
+</g>
+</g>
+<g data-part="element" class="dg-label"><circle cx="55.1" cy="52.8" r="3.4"/><text x="62.1" y="44.8" font-size="12" text-anchor="start">Element</text></g>
+<g data-part="compound" class="dg-label"><circle cx="158.8" cy="52.8" r="3.4"/><text x="158.8" y="44.8" font-size="12" text-anchor="middle">Compound</text></g>
+<g data-part="mixture" class="dg-label"><circle cx="265.7" cy="52.8" r="3.4"/><text x="258.7" y="44.8" font-size="12" text-anchor="end">Mixture</text></g>
+<g data-part="filtration" class="dg-label"><circle cx="64.8" cy="182.4" r="3.4"/><text x="71.8" y="174.4" font-size="12" text-anchor="start">Filtration</text></g>
+<g data-part="crystallisation" class="dg-label"><circle cx="158.8" cy="192.0" r="3.4"/><text x="158.8" y="184.0" font-size="12" text-anchor="middle">Crystallisation</text></g>
+<g data-part="chromatography" class="dg-label"><circle cx="265.7" cy="180.0" r="3.4"/><text x="258.7" y="172.0" font-size="12" text-anchor="end">Chromatography</text></g>
+</svg>

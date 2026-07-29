@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 240" width="100%" height="100%" preserveAspectRatio="xMidYMid meet" role="img" aria-label="The wave equation">
+<style>[class*="sm-"]{transform-box:fill-box;transform-origin:center;}
+[data-part]{transition:opacity .55s ease;}
+.sm-spin{ animation:sm-spin 3s linear infinite; }
+.sm-spin-slow{ animation:sm-spin 9s linear infinite; }
+.sm-spin-rev{ animation:sm-spin 3s linear infinite reverse; }
+.sm-flow{ animation:sm-flow 1s linear infinite; }
+.sm-flow-slow{ animation:sm-flow 2.2s linear infinite; }
+.sm-flow-rev{ animation:sm-flow-rev 1.4s linear infinite; }
+.sm-pulse{ animation:sm-pulse 1.6s ease-in-out infinite; }
+.sm-throb{ animation:sm-throb 1s ease-in-out infinite; }
+.sm-drift{ animation:sm-drift 2.6s ease-in-out infinite; }
+.sm-osc{ animation:sm-osc 1.8s ease-in-out infinite; }
+.sm-osc-x{ animation:sm-osc-x 1.8s ease-in-out infinite; }
+.sm-rise{ animation:sm-rise 2.6s ease-in infinite; }
+.sm-fall{ animation:sm-fall 2.6s ease-in infinite; }
+.sm-blink{ animation:sm-blink 1.4s ease-in-out infinite; }
+.sm-glow{ animation:sm-glow 2s ease-in-out infinite; }
+.sm-shake{ animation:sm-shake .3s ease-in-out infinite; }
+.sm-sweep{ animation:sm-sweep 2.8s ease-in-out infinite; }
+@keyframes sm-spin{ to{ transform:rotate(360deg); } }
+@keyframes sm-flow{ to{ stroke-dashoffset:-24; } }
+@keyframes sm-flow-rev{ to{ stroke-dashoffset:24; } }
+@keyframes sm-pulse{ 0%,100%{ transform:scale(1); } 50%{ transform:scale(1.13); } }
+@keyframes sm-throb{ 0%,100%{ transform:scale(1); } 50%{ transform:scale(1.06); } }
+@keyframes sm-drift{ 0%{ transform:translate(0,0); } 25%{ transform:translate(2px,-2.5px); } 50%{ transform:translate(-2.5px,1.5px); } 75%{ transform:translate(1.5px,2px); } 100%{ transform:translate(0,0); } }
+@keyframes sm-osc{ 0%,100%{ transform:translateY(0); } 50%{ transform:translateY(-5px); } }
+@keyframes sm-osc-x{ 0%,100%{ transform:translateX(0); } 50%{ transform:translateX(5px); } }
+@keyframes sm-rise{ 0%{ transform:translateY(2px); opacity:0; } 25%{ opacity:.85; } 100%{ transform:translateY(-16px); opacity:0; } }
+@keyframes sm-fall{ 0%{ transform:translateY(-14px); opacity:0; } 25%{ opacity:.85; } 100%{ transform:translateY(4px); opacity:0; } }
+@keyframes sm-blink{ 0%,100%{ opacity:1; } 50%{ opacity:.3; } }
+@keyframes sm-glow{ 0%,100%{ opacity:.55; } 50%{ opacity:1; } }
+@keyframes sm-shake{ 0%,100%{ transform:translate(0,0); } 25%{ transform:translate(.9px,-.9px); } 75%{ transform:translate(-.9px,.9px); } }
+@keyframes sm-sweep{ 0%{ transform:translateX(-6px); opacity:.35; } 50%{ opacity:1; } 100%{ transform:translateX(6px); opacity:.35; } }
+@media (prefers-reduced-motion:reduce){[class*="sm-"]{animation:none !important;}}
+.dg-label text{font-family:'Century Gothic','Avenir Next',system-ui,sans-serif;font-weight:600;paint-order:stroke;stroke:#ffffff;stroke-width:3px;stroke-linejoin:round;fill:#1E2761;}
+.dg-label circle{fill:#1E2761;stroke:#ffffff;stroke-width:1.5;}</style>
+<g class="diagram-art">
+<rect x="6" y="6" width="308" height="228" rx="12" fill="#F4F6FC" stroke="#1E2761" stroke-width="2.5"/>
+<path class="sm-osc" d="M28 92 Q56 34 84 92 Q112 150 140 92 Q168 34 196 92 Q224 150 252 92 Q280 34 300 92" fill="none" stroke="#1E2761" stroke-width="3.5" stroke-linecap="round"/>
+<g data-part="restPosition">
+  <line x1="24" y1="92" x2="304" y2="92" stroke="#7a8199" stroke-width="2" stroke-dasharray="6 5" stroke-linecap="round"/>
+</g>
+<g data-part="crest">
+  <circle cx="56" cy="55" r="4.6" fill="#2C5F2D"/>
+  <circle cx="168" cy="55" r="4.6" fill="#2C5F2D"/>
+</g>
+<g data-part="trough">
+  <circle cx="112" cy="129" r="4.6" fill="#B4341E"/>
+  <circle cx="224" cy="129" r="4.6" fill="#B4341E"/>
+</g>
+<g data-part="wavelength">
+  <line x1="56" y1="40" x2="168" y2="40" stroke="#2C5F2D" stroke-width="2.6" stroke-linecap="round"/>
+  <line x1="56" y1="55" x2="56" y2="36" stroke="#2C5F2D" stroke-width="1.4" stroke-dasharray="3 3"/>
+  <line x1="168" y1="55" x2="168" y2="36" stroke="#2C5F2D" stroke-width="1.4" stroke-dasharray="3 3"/>
+  <polygon points="56,40 63,37 63,43" fill="#2C5F2D"/>
+  <polygon points="168,40 161,37 161,43" fill="#2C5F2D"/>
+</g>
+<g data-part="amplitude">
+  <line x1="280" y1="92" x2="280" y2="55" stroke="#B4341E" stroke-width="2.6" stroke-linecap="round"/>
+  <polygon points="280,53 277,61 283,61" fill="#B4341E"/>
+  <line x1="272" y1="55" x2="288" y2="55" stroke="#B4341E" stroke-width="1.4" stroke-dasharray="3 3"/>
+</g>
+<g data-part="rippleTank">
+  <rect x="28" y="168" width="272" height="56" rx="8" fill="#DCEAF6" stroke="#1E2761" stroke-width="2.5"/>
+  <path class="sm-osc-x" d="M44 196 Q58 186 72 196 Q86 206 100 196 Q114 186 128 196 Q142 206 156 196 Q170 186 184 196 Q198 206 212 196 Q226 186 240 196 Q254 206 268 196 Q282 186 288 196" fill="none" stroke="#1E2761" stroke-width="2.4" stroke-linecap="round"/>
+  <path class="sm-osc-x" d="M44 210 Q58 200 72 210 Q86 220 100 210 Q114 200 128 210 Q142 220 156 210 Q170 200 184 210 Q198 220 212 210 Q226 200 240 210 Q254 220 268 210 Q282 200 288 210" fill="none" stroke="#7a8199" stroke-width="1.8" stroke-linecap="round"/>
+  <line x1="34" y1="180" x2="294" y2="180" stroke="#1E2761" stroke-width="1.6"/>
+  <polygon points="296,180 288,177 288,183" fill="#1E2761"/>
+</g>
+</g>
+<g data-part="crest" class="dg-label"><circle cx="54.4" cy="52.8" r="3.4"/><text x="61.4" y="44.8" font-size="12" text-anchor="start">Crest</text></g>
+<g data-part="trough" class="dg-label"><circle cx="112.0" cy="139.2" r="3.4"/><text x="112.0" y="131.2" font-size="12" text-anchor="middle">Trough</text></g>
+<g data-part="wavelength" class="dg-label"><circle cx="112.0" cy="43.2" r="3.4"/><text x="112.0" y="35.2" font-size="12" text-anchor="middle">Wavelength</text></g>
+<g data-part="amplitude" class="dg-label"><circle cx="224.0" cy="74.4" r="3.4"/><text x="224.0" y="66.4" font-size="12" text-anchor="middle">Amplitude</text></g>
+<g data-part="restPosition" class="dg-label"><circle cx="272.0" cy="96.0" r="3.4"/><text x="265.0" y="88.0" font-size="12" text-anchor="end">Rest Position</text></g>
+<g data-part="rippleTank" class="dg-label"><circle cx="160.0" cy="204.0" r="3.4"/><text x="160.0" y="196.0" font-size="12" text-anchor="middle">Ripple Tank</text></g>
+</svg>

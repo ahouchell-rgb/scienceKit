@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 240" width="100%" height="100%" preserveAspectRatio="xMidYMid meet" role="img" aria-label="The periodic table">
+<style>[class*="sm-"]{transform-box:fill-box;transform-origin:center;}
+[data-part]{transition:opacity .55s ease;}
+.sm-spin{ animation:sm-spin 3s linear infinite; }
+.sm-spin-slow{ animation:sm-spin 9s linear infinite; }
+.sm-spin-rev{ animation:sm-spin 3s linear infinite reverse; }
+.sm-flow{ animation:sm-flow 1s linear infinite; }
+.sm-flow-slow{ animation:sm-flow 2.2s linear infinite; }
+.sm-flow-rev{ animation:sm-flow-rev 1.4s linear infinite; }
+.sm-pulse{ animation:sm-pulse 1.6s ease-in-out infinite; }
+.sm-throb{ animation:sm-throb 1s ease-in-out infinite; }
+.sm-drift{ animation:sm-drift 2.6s ease-in-out infinite; }
+.sm-osc{ animation:sm-osc 1.8s ease-in-out infinite; }
+.sm-osc-x{ animation:sm-osc-x 1.8s ease-in-out infinite; }
+.sm-rise{ animation:sm-rise 2.6s ease-in infinite; }
+.sm-fall{ animation:sm-fall 2.6s ease-in infinite; }
+.sm-blink{ animation:sm-blink 1.4s ease-in-out infinite; }
+.sm-glow{ animation:sm-glow 2s ease-in-out infinite; }
+.sm-shake{ animation:sm-shake .3s ease-in-out infinite; }
+.sm-sweep{ animation:sm-sweep 2.8s ease-in-out infinite; }
+@keyframes sm-spin{ to{ transform:rotate(360deg); } }
+@keyframes sm-flow{ to{ stroke-dashoffset:-24; } }
+@keyframes sm-flow-rev{ to{ stroke-dashoffset:24; } }
+@keyframes sm-pulse{ 0%,100%{ transform:scale(1); } 50%{ transform:scale(1.13); } }
+@keyframes sm-throb{ 0%,100%{ transform:scale(1); } 50%{ transform:scale(1.06); } }
+@keyframes sm-drift{ 0%{ transform:translate(0,0); } 25%{ transform:translate(2px,-2.5px); } 50%{ transform:translate(-2.5px,1.5px); } 75%{ transform:translate(1.5px,2px); } 100%{ transform:translate(0,0); } }
+@keyframes sm-osc{ 0%,100%{ transform:translateY(0); } 50%{ transform:translateY(-5px); } }
+@keyframes sm-osc-x{ 0%,100%{ transform:translateX(0); } 50%{ transform:translateX(5px); } }
+@keyframes sm-rise{ 0%{ transform:translateY(2px); opacity:0; } 25%{ opacity:.85; } 100%{ transform:translateY(-16px); opacity:0; } }
+@keyframes sm-fall{ 0%{ transform:translateY(-14px); opacity:0; } 25%{ opacity:.85; } 100%{ transform:translateY(4px); opacity:0; } }
+@keyframes sm-blink{ 0%,100%{ opacity:1; } 50%{ opacity:.3; } }
+@keyframes sm-glow{ 0%,100%{ opacity:.55; } 50%{ opacity:1; } }
+@keyframes sm-shake{ 0%,100%{ transform:translate(0,0); } 25%{ transform:translate(.9px,-.9px); } 75%{ transform:translate(-.9px,.9px); } }
+@keyframes sm-sweep{ 0%{ transform:translateX(-6px); opacity:.35; } 50%{ opacity:1; } 100%{ transform:translateX(6px); opacity:.35; } }
+@media (prefers-reduced-motion:reduce){[class*="sm-"]{animation:none !important;}}
+.dg-label text{font-family:'Century Gothic','Avenir Next',system-ui,sans-serif;font-weight:600;paint-order:stroke;stroke:#ffffff;stroke-width:3px;stroke-linejoin:round;fill:#1E2761;}
+.dg-label circle{fill:#1E2761;stroke:#ffffff;stroke-width:1.5;}</style>
+<g class="diagram-art">
+<rect x="0" y="0" width="320" height="240" fill="#F4F6FC"/><g stroke="#1E2761" stroke-width="1.5" stroke-linejoin="round"><g data-part="metals"><rect x="33" y="42" width="15" height="15" rx="2" fill="#CDE5C6"/><rect x="33" y="72" width="15" height="15" rx="2" fill="#CDE5C6"/><rect x="48" y="72" width="15" height="15" rx="2" fill="#CDE5C6"/><rect x="33" y="102" width="15" height="15" rx="2" fill="#CDE5C6"/><rect x="48" y="102" width="15" height="15" rx="2" fill="#CDE5C6"/><rect x="63" y="102" width="15" height="15" rx="2" fill="#CDE5C6"/><rect x="78" y="102" width="15" height="15" rx="2" fill="#CDE5C6"/><rect x="93" y="102" width="15" height="15" rx="2" fill="#CDE5C6"/><rect x="108" y="102" width="15" height="15" rx="2" fill="#CDE5C6"/><rect x="123" y="102" width="15" height="15" rx="2" fill="#CDE5C6"/><rect x="138" y="102" width="15" height="15" rx="2" fill="#CDE5C6"/><rect x="153" y="102" width="15" height="15" rx="2" fill="#CDE5C6"/><rect x="168" y="102" width="15" height="15" rx="2" fill="#CDE5C6"/><rect x="183" y="102" width="15" height="15" rx="2" fill="#CDE5C6"/><rect x="198" y="102" width="15" height="15" rx="2" fill="#CDE5C6"/><rect x="48" y="132" width="15" height="15" rx="2" fill="#CDE5C6"/><rect x="63" y="132" width="15" height="15" rx="2" fill="#CDE5C6"/><rect x="78" y="132" width="15" height="15" rx="2" fill="#CDE5C6"/><rect x="93" y="132" width="15" height="15" rx="2" fill="#CDE5C6"/><rect x="108" y="132" width="15" height="15" rx="2" fill="#CDE5C6"/><rect x="123" y="132" width="15" height="15" rx="2" fill="#CDE5C6"/><rect x="138" y="132" width="15" height="15" rx="2" fill="#CDE5C6"/><rect x="153" y="132" width="15" height="15" rx="2" fill="#CDE5C6"/><rect x="168" y="132" width="15" height="15" rx="2" fill="#CDE5C6"/><rect x="183" y="132" width="15" height="15" rx="2" fill="#CDE5C6"/><rect x="33" y="132" width="15" height="15" rx="2" fill="#CDE5C6"/><rect x="198" y="132" width="15" height="15" rx="2" fill="#CDE5C6"/></g><g data-part="group1"><rect x="18" y="42" width="15" height="15" rx="2" fill="#2C5F2D" fill-opacity="0.85"/><rect x="18" y="72" width="15" height="15" rx="2" fill="#2C5F2D" fill-opacity="0.68"/><rect x="18" y="102" width="15" height="15" rx="2" fill="#2C5F2D" fill-opacity="0.5"/><rect x="18" y="132" width="15" height="15" rx="2" fill="#2C5F2D" fill-opacity="0.32"/></g><g data-part="nonMetals"><rect x="213" y="72" width="15" height="15" rx="2" fill="#F1D2D8"/><rect x="228" y="72" width="15" height="15" rx="2" fill="#F1D2D8"/><rect x="243" y="72" width="15" height="15" rx="2" fill="#F1D2D8"/><rect x="213" y="102" width="15" height="15" rx="2" fill="#F1D2D8"/><rect x="228" y="102" width="15" height="15" rx="2" fill="#F1D2D8"/><rect x="243" y="102" width="15" height="15" rx="2" fill="#F1D2D8"/><rect x="228" y="132" width="15" height="15" rx="2" fill="#F1D2D8"/><rect x="243" y="132" width="15" height="15" rx="2" fill="#F1D2D8"/></g><g data-part="group7"><rect x="258" y="72" width="15" height="15" rx="2" fill="#B4341E" fill-opacity="0.32"/><rect x="258" y="102" width="15" height="15" rx="2" fill="#B4341E" fill-opacity="0.55"/><rect x="258" y="132" width="15" height="15" rx="2" fill="#B4341E" fill-opacity="0.78"/></g><g data-part="group0"><rect x="273" y="42" width="15" height="15" rx="2" fill="#AEB6D6"/><rect x="273" y="72" width="15" height="15" rx="2" fill="#AEB6D6"/><rect x="273" y="102" width="15" height="15" rx="2" fill="#AEB6D6"/><rect x="273" y="132" width="15" height="15" rx="2" fill="#AEB6D6"/></g><rect x="18" y="42" width="15" height="15" rx="2" fill="#2C5F2D" fill-opacity="0.85"/></g><g data-part="divide"><path d="M213 72 L213 87 L228 87 L228 117 L228 132 L228 147" fill="none" stroke="#1E2761" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></g><g data-part="period"><rect x="16" y="131" width="274" height="17" rx="3" fill="none" stroke="#C99528" stroke-width="3.5"/></g><path d="M8 46 L8 148" fill="none" stroke="#2C5F2D" stroke-width="2.5" stroke-linecap="round"/><path class="sm-fall" d="M8 148 l-4 -8 h8 z" fill="#2C5F2D"/><path d="M312 46 L312 148" fill="none" stroke="#B4341E" stroke-width="2.5" stroke-linecap="round"/><path class="sm-rise" d="M312 46 l-4 8 h8 z" fill="#B4341E"/>
+</g>
+<g data-part="group1" class="dg-label"><circle cx="35.2" cy="50.4" r="3.4"/><text x="42.2" y="42.4" font-size="12" text-anchor="start">Group 1 (alkali metals)</text></g>
+<g data-part="metals" class="dg-label"><circle cx="105.6" cy="151.2" r="3.4"/><text x="105.6" y="143.2" font-size="12" text-anchor="middle">Metals</text></g>
+<g data-part="divide" class="dg-label"><circle cx="192.0" cy="112.8" r="3.4"/><text x="192.0" y="104.8" font-size="12" text-anchor="middle">Metal / non-metal divide</text></g>
+<g data-part="nonMetals" class="dg-label"><circle cx="227.2" cy="151.2" r="3.4"/><text x="227.2" y="143.2" font-size="12" text-anchor="middle">Non-metals</text></g>
+<g data-part="group0" class="dg-label"><circle cx="275.2" cy="50.4" r="3.4"/><text x="268.2" y="42.4" font-size="12" text-anchor="end">Group 0 (noble gases)</text></g>
+<g data-part="period" class="dg-label"><circle cx="150.4" cy="187.2" r="3.4"/><text x="150.4" y="179.2" font-size="12" text-anchor="middle">Period (row)</text></g>
+<g data-part="group7" class="dg-label"><circle cx="252.8" cy="199.2" r="3.4"/><text x="245.8" y="191.2" font-size="12" text-anchor="end">Group 7 (halogens)</text></g>
+</svg>

@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 250" width="100%" height="100%" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Pure and impure substances">
+<style>[class*="sm-"]{transform-box:fill-box;transform-origin:center;}
+[data-part]{transition:opacity .55s ease;}
+.sm-spin{ animation:sm-spin 3s linear infinite; }
+.sm-spin-slow{ animation:sm-spin 9s linear infinite; }
+.sm-spin-rev{ animation:sm-spin 3s linear infinite reverse; }
+.sm-flow{ animation:sm-flow 1s linear infinite; }
+.sm-flow-slow{ animation:sm-flow 2.2s linear infinite; }
+.sm-flow-rev{ animation:sm-flow-rev 1.4s linear infinite; }
+.sm-pulse{ animation:sm-pulse 1.6s ease-in-out infinite; }
+.sm-throb{ animation:sm-throb 1s ease-in-out infinite; }
+.sm-drift{ animation:sm-drift 2.6s ease-in-out infinite; }
+.sm-osc{ animation:sm-osc 1.8s ease-in-out infinite; }
+.sm-osc-x{ animation:sm-osc-x 1.8s ease-in-out infinite; }
+.sm-rise{ animation:sm-rise 2.6s ease-in infinite; }
+.sm-fall{ animation:sm-fall 2.6s ease-in infinite; }
+.sm-blink{ animation:sm-blink 1.4s ease-in-out infinite; }
+.sm-glow{ animation:sm-glow 2s ease-in-out infinite; }
+.sm-shake{ animation:sm-shake .3s ease-in-out infinite; }
+.sm-sweep{ animation:sm-sweep 2.8s ease-in-out infinite; }
+@keyframes sm-spin{ to{ transform:rotate(360deg); } }
+@keyframes sm-flow{ to{ stroke-dashoffset:-24; } }
+@keyframes sm-flow-rev{ to{ stroke-dashoffset:24; } }
+@keyframes sm-pulse{ 0%,100%{ transform:scale(1); } 50%{ transform:scale(1.13); } }
+@keyframes sm-throb{ 0%,100%{ transform:scale(1); } 50%{ transform:scale(1.06); } }
+@keyframes sm-drift{ 0%{ transform:translate(0,0); } 25%{ transform:translate(2px,-2.5px); } 50%{ transform:translate(-2.5px,1.5px); } 75%{ transform:translate(1.5px,2px); } 100%{ transform:translate(0,0); } }
+@keyframes sm-osc{ 0%,100%{ transform:translateY(0); } 50%{ transform:translateY(-5px); } }
+@keyframes sm-osc-x{ 0%,100%{ transform:translateX(0); } 50%{ transform:translateX(5px); } }
+@keyframes sm-rise{ 0%{ transform:translateY(2px); opacity:0; } 25%{ opacity:.85; } 100%{ transform:translateY(-16px); opacity:0; } }
+@keyframes sm-fall{ 0%{ transform:translateY(-14px); opacity:0; } 25%{ opacity:.85; } 100%{ transform:translateY(4px); opacity:0; } }
+@keyframes sm-blink{ 0%,100%{ opacity:1; } 50%{ opacity:.3; } }
+@keyframes sm-glow{ 0%,100%{ opacity:.55; } 50%{ opacity:1; } }
+@keyframes sm-shake{ 0%,100%{ transform:translate(0,0); } 25%{ transform:translate(.9px,-.9px); } 75%{ transform:translate(-.9px,.9px); } }
+@keyframes sm-sweep{ 0%{ transform:translateX(-6px); opacity:.35; } 50%{ opacity:1; } 100%{ transform:translateX(6px); opacity:.35; } }
+@media (prefers-reduced-motion:reduce){[class*="sm-"]{animation:none !important;}}
+.dg-label text{font-family:'Century Gothic','Avenir Next',system-ui,sans-serif;font-weight:600;paint-order:stroke;stroke:#ffffff;stroke-width:3px;stroke-linejoin:round;fill:#1E2761;}
+.dg-label circle{fill:#1E2761;stroke:#ffffff;stroke-width:1.5;}</style>
+<g class="diagram-art">
+<rect x="0" y="0" width="320" height="250" fill="#FFFFFF"/>
+<line x1="0" y1="236" x2="320" y2="236" stroke="#7a8199" stroke-width="1.5"/>
+<line x1="26" y1="60" x2="26" y2="236" stroke="#7a8199" stroke-width="3"/>
+<line x1="26" y1="120" x2="70" y2="120" stroke="#7a8199" stroke-width="3"/>
+<g data-part="funnel">
+  <path d="M58 78 h56 l-22 30 v22 h-12 v-22 Z" fill="#DCEAF6" stroke="#1E2761" stroke-width="2.6" stroke-linejoin="round"/>
+  <path d="M64 82 h44 l-22 26 Z" fill="#F4F6FC" stroke="#7a8199" stroke-width="1.6" stroke-linejoin="round"/>
+</g>
+<g fill="#8a6d3b" class="sm-drift">
+  <circle cx="80" cy="90" r="3"/><circle cx="92" cy="88" r="3"/><circle cx="86" cy="96" r="3"/>
+</g>
+<g data-part="residue">
+  <path d="M68 86 h40 l-19 22 h-2 Z" fill="#8a6d3b" stroke="#5c4826" stroke-width="1.4" stroke-linejoin="round"/>
+  <circle cx="80" cy="92" r="2.4" fill="#5c4826"/>
+  <circle cx="94" cy="92" r="2.4" fill="#5c4826"/>
+  <circle cx="86" cy="99" r="2.4" fill="#5c4826"/>
+</g>
+<g data-part="filtrate">
+  <path d="M86 132 V150" fill="none" stroke="#9cc4e4" stroke-width="3" stroke-linecap="round" stroke-dasharray="4 4" class="sm-flow"/>
+  <circle cx="86" cy="158" r="4" fill="#9cc4e4" class="sm-fall"/>
+  <path d="M62 182 h48 v40 a6 6 0 0 1 -6 6 h-36 a6 6 0 0 1 -6 -6 Z" fill="none" stroke="#1E2761" stroke-width="2.6"/>
+  <path d="M64 196 h44 v26 a6 6 0 0 1 -6 6 h-32 a6 6 0 0 1 -6 -6 Z" fill="#DCEAF6"/>
+</g>
+<g data-part="solute">
+  <g class="sm-drift">
+    <rect x="150" y="46" width="7" height="7" rx="1.5" fill="#C99528" transform="rotate(12 153 49)"/>
+    <rect x="164" y="52" width="7" height="7" rx="1.5" fill="#C99528" transform="rotate(-18 167 55)"/>
+    <rect x="158" y="62" width="7" height="7" rx="1.5" fill="#C99528" transform="rotate(24 161 65)"/>
+  </g>
+  <path d="M162 74 V96" fill="none" stroke="#C99528" stroke-width="2.4" stroke-linecap="round" stroke-dasharray="5 4" class="sm-flow"/>
+  <path d="M162 96 l-5 -8 M162 96 l5 -8" fill="none" stroke="#C99528" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<g data-part="solvent">
+  <path d="M138 100 h56 v54 a8 8 0 0 1 -8 8 h-40 a8 8 0 0 1 -8 -8 Z" fill="none" stroke="#1E2761" stroke-width="2.6"/>
+  <path d="M141 116 h50 v38 a8 8 0 0 1 -8 8 h-34 a8 8 0 0 1 -8 -8 Z" fill="#DCEAF6"/>
+  <g fill="#C99528" class="sm-drift">
+    <circle cx="152" cy="132" r="2.6"/><circle cx="170" cy="140" r="2.6"/>
+    <circle cx="182" cy="128" r="2.6"/><circle cx="160" cy="150" r="2.6"/>
+    <circle cx="176" cy="152" r="2.6"/>
+  </g>
+</g>
+<path d="M262 218 c-6 -8 6 -12 0 -22 c10 6 14 16 6 22 Z" fill="#B4341E" class="sm-throb"/>
+<path d="M259 218 c-4 -5 4 -8 0 -14 c6 4 8 10 4 14 Z" fill="#C99528" class="sm-throb"/>
+<g data-part="evapDish">
+  <path d="M234 176 q28 26 56 0" fill="#DCEAF6" stroke="#1E2761" stroke-width="2.6" stroke-linejoin="round"/>
+  <path d="M230 176 h64" fill="none" stroke="#1E2761" stroke-width="2.6" stroke-linecap="round"/>
+  <line x1="240" y1="188" x2="230" y2="218" stroke="#7a8199" stroke-width="2.4"/>
+  <line x1="284" y1="188" x2="294" y2="218" stroke="#7a8199" stroke-width="2.4"/>
+</g>
+<g data-part="crystals">
+  <path d="M246 168 l4 6 l-4 6 l-4 -6 Z" fill="#C99528" stroke="#8a6a1c" stroke-width="1.2" stroke-linejoin="round"/>
+  <path d="M262 170 l4 6 l-4 6 l-4 -6 Z" fill="#C99528" stroke="#8a6a1c" stroke-width="1.2" stroke-linejoin="round"/>
+  <path d="M278 168 l4 6 l-4 6 l-4 -6 Z" fill="#C99528" stroke="#8a6a1c" stroke-width="1.2" stroke-linejoin="round"/>
+  <g stroke="#9cc4e4" stroke-width="2" stroke-linecap="round" fill="none" class="sm-rise">
+    <path d="M250 150 q4 -8 0 -16"/>
+    <path d="M270 148 q4 -8 0 -16"/>
+  </g>
+</g>
+</g>
+<g data-part="funnel" class="dg-label"><circle cx="70.4" cy="50.0" r="3.4"/><text x="70.4" y="42.0" font-size="12" text-anchor="middle">Filter funnel</text></g>
+<g data-part="residue" class="dg-label"><circle cx="67.2" cy="85.0" r="3.4"/><text x="74.2" y="77.0" font-size="12" text-anchor="start">Residue</text></g>
+<g data-part="filtrate" class="dg-label"><circle cx="64.0" cy="120.0" r="3.4"/><text x="71.0" y="112.0" font-size="12" text-anchor="start">Filtrate</text></g>
+<g data-part="solute" class="dg-label"><circle cx="137.6" cy="105.0" r="3.4"/><text x="137.6" y="97.0" font-size="12" text-anchor="middle">Solute</text></g>
+<g data-part="solvent" class="dg-label"><circle cx="160.0" cy="72.5" r="3.4"/><text x="160.0" y="64.5" font-size="12" text-anchor="middle">Solvent</text></g>
+<g data-part="crystals" class="dg-label"><circle cx="224.0" cy="190.0" r="3.4"/><text x="224.0" y="182.0" font-size="12" text-anchor="middle">Crystals</text></g>
+<g data-part="evapDish" class="dg-label"><circle cx="268.8" cy="195.0" r="3.4"/><text x="261.8" y="187.0" font-size="12" text-anchor="end">Evaporating dish</text></g>
+</svg>
