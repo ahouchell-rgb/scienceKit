@@ -20,6 +20,7 @@ import { CaseView, ChangeList, FindingCard, PupilCase } from "@/components/intel
 import { Palette, type PaletteHit } from "@/components/intel/Palette";
 import { EvidenceView } from "@/components/intel/EvidenceView";
 import { ProgressionView } from "@/components/intel/ProgressionView";
+import { InclusionView } from "@/components/intel/InclusionView";
 import { briefingFor } from "@/lib/intel/analytics";
 import { LEVELS, LEVEL_DEFS, PURPOSES, type Level, type Viewer } from "@/lib/intel/scope";
 import { world } from "@/lib/intel/synth";
@@ -35,7 +36,8 @@ type View =
   | { kind: "audit" }
   | { kind: "ontology" }
   | { kind: "evidence" }
-  | { kind: "progression"; ks2?: number };
+  | { kind: "progression"; ks2?: number }
+  | { kind: "inclusion" };
 
 /** A default identity per level, chosen to land somewhere with something to
  *  find. In production this comes from the JWT; here it is switchable so the
@@ -123,6 +125,7 @@ export default function IntelPage() {
       if (e.key === "o" || e.key === "O") { e.preventDefault(); go({ kind: "ontology" }); return; }
       if (e.key === "e" || e.key === "E") { e.preventDefault(); go({ kind: "evidence" }); return; }
       if (e.key === "p" || e.key === "P") { e.preventDefault(); go({ kind: "progression" }); return; }
+      if (e.key === "i" || e.key === "I") { e.preventDefault(); go({ kind: "inclusion" }); return; }
 
       if (view.kind !== "board") return;
       const max = briefing.findings.length - 1;
@@ -225,6 +228,7 @@ export default function IntelPage() {
           <RailLink label="The ontology" hint="o" onClick={() => go({ kind: "ontology" })} />
           <RailLink label="Evidence base" hint="e" onClick={() => go({ kind: "evidence" })} />
           <RailLink label="KS2 → GCSE" hint="p" onClick={() => go({ kind: "progression" })} />
+          <RailLink label="Inclusion" hint="i" onClick={() => go({ kind: "inclusion" })} />
           <RailLink label="Search" hint="⌘K" onClick={() => setPaletteOpen(true)} />
         </div>
 
@@ -280,6 +284,7 @@ export default function IntelPage() {
           {view.kind === "ontology" && <OntologyView />}
           {view.kind === "evidence" && <EvidenceView />}
           {view.kind === "progression" && <ProgressionView initialKs2={view.ks2 ?? 101} />}
+          {view.kind === "inclusion" && <InclusionView />}
         </div>
       </div>
 
@@ -520,5 +525,6 @@ function titleOf(view: View, findings: { id: string; headline: string }[], w: Re
   if (view.kind === "ontology") return "Ontology";
   if (view.kind === "evidence") return "Evidence base";
   if (view.kind === "progression") return "KS2 → GCSE";
+  if (view.kind === "inclusion") return "Inclusion";
   return "Briefing";
 }

@@ -137,6 +137,11 @@ export const CALIBRATION = {
    *  structural claim — that half the apparent absence effect is confounding —
    *  is what the console depends on, and that is what is calibrated. */
   attendanceAbilityLoading: 0.12,
+  /** Standardised points EAL pupils gain relative to the same KS2 starting
+   *  point, reflecting the published within-band advantage. Roughly offsets
+   *  the reading-age deduction they carry, which is the point: the screen
+   *  measures their language, not their prospects. */
+  ealCatchUp: 3.4,
 } as const;
 
 /** The share of the reading barrier a pupil actually pays in a subject. */
@@ -495,6 +500,17 @@ function buildWorld(seed = 20260728): World {
             // two overlap; most of a suspended pupil's shortfall is already
             // counted in their attendance and their prior attainment.
             score -= pupil.suspensions * CALIBRATION.suspensionEffect * 0.5;
+
+            // ── EAL catch-up ──
+            // EAL pupils carry a reading-age deduction above (language
+            // acquisition is real and the screen measures it) but nationally
+            // they OUTPERFORM their English-first-language peers at every KS2
+            // starting point — 28.4% vs 11.5% at KS2 90–95.5. Their prior
+            // attainment understates them. Without this term the synthetic
+            // world would encode the exact bias the console is supposed to
+            // catch, and the literacy finding would quietly become a machine
+            // for flagging bilingual children.
+            if (pupil.eal) score += CALIBRATION.ealCatchUp;
 
             // The slot's own drag.
             score += slotDrag(slot, sd.id);

@@ -258,6 +258,58 @@ the qualification. Maths and English Language are the only near-universal entrie
 only fair baseline. The console greys out any subject whose entry share falls below 50% and
 labels it "selected" rather than letting it be compared.
 
+### SEN, EAL and ethnicity — within KS2 starting point
+
+**The legal frame first, because it constrains the build.** DPA 2018 Schedule 1 para 8(3)
+permits processing ethnicity to review equality of opportunity and *explicitly forbids* it for
+"measures or decisions with respect to a particular data subject". So fairness evaluation and
+inference are **physically separate pipelines**: `equality.ts` holds national aggregates only,
+and `analytics.ts` does not import it. Nothing on that screen can reach a finding about a
+named child.
+
+**% achieving grade 4+ in English & maths, at the same KS2 starting point**
+
+| KS2 band | Any SEN | All pupils | EAL | English first | Asian | Black | Mixed | White |
+|---|---|---|---|---|---|---|---|---|
+| 90–95.5 | 10.5 | 14.5 | **28.4** | 11.5 | 26.0 | 21.1 | 14.4 | 11.9 |
+| 96–99.5 | 24.5 | 33.5 | **50.4** | 30.2 | 49.5 | 42.1 | 32.6 | 30.2 |
+| 100–102 | 35.8 | 51.5 | **66.2** | 48.8 | 67.1 | 61.1 | 49.5 | 48.4 |
+| 105–107 | 59.3 | 77.8 | **85.6** | 76.5 | 87.4 | 83.0 | 76.9 | 75.9 |
+| 110–113 | 80.1 | 93.9 | **96.4** | 93.5 | 97.0 | 95.6 | 93.8 | 93.3 |
+
+#### SEN is a conversion gap, not just a starting-point gap
+
+At KS2 105–107, 77.8% of all pupils reach grade 4 but only **59.3%** of pupils with identified
+SEN — an 18-point gap at *identical prior attainment*. The usual framing, that SEND pupils
+arrive further behind, is true and is already removed from this comparison. Something else is
+happening between Year 7 and Year 11.
+
+*(The DfE API returns "Any SEN" crossed with KS2 band but not "No SEN", so the comparator is
+the whole cohort — which includes the SEN pupils. The real gap is slightly wider.)*
+
+This is the analysis SENDCos have never been given, and Inclusion became its own graded Ofsted
+evaluation area in November 2025.
+
+#### EAL is not a risk factor — at equal prior attainment it is an advantage
+
+EAL pupils outperform their English-first-language peers at **every** starting point, by the
+widest margin at the bottom: **28.4% against 11.5%** at KS2 90–95.5. Their KS2 score
+understates them because it was taken during language acquisition, and they close the gap by 16.
+
+**This corrected a bias in our own model.** The literacy finding originally offered
+*"EAL — decoding is fine, subject vocabulary is not"* as an explanation for low scores. That
+reads as reasonable and is wrong. A reading-age flag means something different for a bilingual
+pupil, and a rule treating the two identically becomes a machine for mis-flagging them while
+looking evidence-based. The hypothesis now returns **ruled out** with the national data
+attached, `diagnose()` downgrades the reading explanation to *undetermined* for EAL pupils,
+and the synthetic cohort carries an EAL catch-up term so it no longer encodes the bias.
+
+#### White pupils are the lowest-converting major ethnic group at every starting point
+
+At KS2 100–102: Asian 67.1%, Black 61.1%, Mixed 49.5%, **White 48.4%**, against a cohort
+figure of 51.5%. The ordering is identical in all eleven bands. This inverts what most schools
+assume — which is the argument for testing the naive expectation rather than trusting it.
+
 ---
 
 ## 3. How it interlinks

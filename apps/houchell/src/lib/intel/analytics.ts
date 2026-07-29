@@ -222,11 +222,23 @@ export function literacyGateFindings(scopePupils: Pupil[], schoolId: string | nu
           ruleOut: "Compare an oral or diagrammatic assessment of the same objectives.",
         },
         {
-          rank: 3, name: "EAL — decoding is fine, subject vocabulary is not",
-          discriminator: "Do EAL pupils dominate the affected group?",
-          found: `${scopePupils.filter((p) => p.eal && profile(p.id).shortfall[subj.key] >= 1.5).length} of the ${weak.length} affected pupils are EAL.`,
-          verdict: "undetermined",
-          ruleOut: "Split the tier-2/tier-3 vocabulary check from the reading screen.",
+          // CORRECTED after checking the national data. The obvious version of
+          // this hypothesis — "these are EAL pupils, that explains the low
+          // scores" — is wrong, and wrong in a way that would have looked
+          // perfectly reasonable. Nationally, EAL pupils OUTPERFORM their
+          // English-first-language peers at every KS2 starting point (28.4% vs
+          // 11.5% at KS2 90–95.5). A low reading age means something different
+          // for them, and treating it as the same risk marker systematically
+          // mis-flags the group.
+          rank: 3, name: "EAL — a low reading age here does not mean what it means for a monolingual pupil",
+          discriminator: "How much of the affected group is EAL, and does the national pattern support treating them as at risk?",
+          found: (() => {
+            const ealN = scopePupils.filter((p) => p.eal && profile(p.id).shortfall[subj.key] >= 1.5).length;
+            const pct = Math.round((ealN / Math.max(1, weak.length)) * 100);
+            return `${ealN} of the ${weak.length} affected pupils are EAL (${pct}%). Nationally, EAL pupils who start at the same KS2 point go on to outperform their English-first-language peers — so their reading screen is measuring language acquisition, not a learning barrier, and this group should not be counted into the risk figure on reading age alone.`;
+          })(),
+          verdict: "unsupported",
+          ruleOut: "Split the tier-2/tier-3 vocabulary check from the decoding screen. If comprehension is intact and only subject vocabulary is missing, the response is vocabulary teaching, not intervention.",
         },
         {
           rank: 4, name: "The reading screen is stale or wrong",
@@ -524,9 +536,14 @@ export function diagnose(change: TrajectoryChange): Hypothesis[] {
       name: "Reading demand of this subject's assessment",
       discriminator: "Does their reading age clear what this paper demands?",
       found: change.readingShortfall > 0
-        ? `Reading age ${pupil.readingAge}y against a paper demanding ${subj.textDemandAge}y — a ${change.readingShortfall}y shortfall.`
-        : `Reading age ${pupil.readingAge}y clears the paper's ${subj.textDemandAge}y demand.`,
-      verdict: change.readingShortfall >= 1.5 ? "supported" : "unsupported",
+        ? `Reading age ${pupil.readingAge}y against a paper demanding ${demandAge(subj, pupil.year)}y — a ${change.readingShortfall}y shortfall.`
+          + (pupil.eal
+            ? " This pupil is EAL, so read that shortfall with care: nationally, EAL pupils starting at the same KS2 point go on to outperform their English-first-language peers. The screen is picking up language acquisition, not necessarily a barrier to learning."
+            : "")
+        : `Reading age ${pupil.readingAge}y clears the paper's ${demandAge(subj, pupil.year)}y demand.`,
+      // EAL downgrades this from a supported explanation to an open question,
+      // because the national evidence points the other way for that group.
+      verdict: change.readingShortfall >= 1.5 ? (pupil.eal ? "undetermined" : "supported") : "unsupported",
       ruleOut: "Read the questions to them once and see whether the score moves.",
     },
     {
