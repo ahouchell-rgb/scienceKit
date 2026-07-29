@@ -4,6 +4,12 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { useAuth, sk } from "@/lib/sk";
 import { C, DISC } from "@/lib/theme";
+import {
+  CHANNEL_NAVIGATION,
+  isNavigationActive,
+  isStaffRoute,
+  workspaceNavigation,
+} from "@/lib/navigation";
 import { Settings } from "./Settings";
 import { AccessibilityMenu } from "./AccessibilityMenu";
 
@@ -29,21 +35,9 @@ export function Sidebar({ onOpenVisualiser, onOpenSearch }) {
     })();
   }, []);
 
-  const isActive = (path) => pathname === path;
   const currentUnitId = pathname?.startsWith("/unit/") ? pathname.split("/")[2] : null;
-
-  // Top-level sections. Everything that isn't a standalone section belongs to
-  // the Teacher app (home, curriculum, slides, school…), so the detailed
-  // teacher nav + curriculum tree only render when you're inside it.
-  const SECTIONS = [
-    { href: "/learn", label: "Learn", hint: "Springboard", hard: true },
-    { href: "/revise", label: "Revise", hint: "Revision" },
-    { href: "/retrieve", label: "Retrieve", hint: "Practice" },
-    { href: "/", label: "Teacher", hint: "Science Kit", teacher: true },
-    { href: "/tools", label: "Tools", hint: "Interactive" },
-  ];
-  const STANDALONE = ["/learn", "/revise", "/retrieve", "/tools"];
-  const inTeacher = !STANDALONE.some(p => pathname === p || pathname?.startsWith(p + "/"));
+  const inStaffWorkspace = isStaffRoute(pathname);
+  const workspaceTabs = workspaceNavigation(profile);
 
   return (
     <>
@@ -66,8 +60,8 @@ export function Sidebar({ onOpenVisualiser, onOpenSearch }) {
         </div>
 
         <div style={{ padding: "10px 0", borderBottom: `1px solid ${C.border}` }}>
-          {SECTIONS.map(s => {
-            const active = s.teacher ? inTeacher : (pathname === s.href || pathname?.startsWith(s.href + "/"));
+          {CHANNEL_NAVIGATION.map(s => {
+            const active = s.href === "/" ? inStaffWorkspace : isNavigationActive(s, pathname);
             const inner = (
               <div style={{ padding: "10px 16px", display: "flex", alignItems: "baseline", gap: 8, background: active ? C.bg : "transparent", borderLeft: active ? `2px solid ${C.grn}` : "2px solid transparent", cursor: "pointer" }}>
                 <span style={{ fontFamily: C.serif, fontSize: 16, color: active ? C.text : C.muted, lineHeight: 1 }}>{s.label}</span>
@@ -81,28 +75,9 @@ export function Sidebar({ onOpenVisualiser, onOpenSearch }) {
           })}
         </div>
 
-        {inTeacher && <div style={{ padding: "10px 0", borderBottom: `1px solid ${C.border}` }}>
-          {[
-            { href: "/", label: "This week" },
-            { href: "/curriculum", label: "Curriculum" },
-            // Content review pipeline is for authors / department leads.
-            ...(profile?.role === "admin" || profile?.is_lead ? [{ href: "/content", label: "Content" }] : []),
-            { href: "/slides", label: "Slides" },
-            { href: "/parents", label: "Parents" },
-            { href: "/home-course", label: "Home course" },
-            { href: "/assessments", label: "Assess" },
-            // Teacher's own private, owner-scoped insight view of their classes.
-            { href: "/teacher", label: "My mastery" },
-            // School: dashboard for hod/slt, self-serve onboarding for everyone else.
-            { href: "/school", label: "School" },
-            // Trust dashboard is only for MAT leaders.
-            ...(profile?.trust_role === "trust_lead" ? [{ href: "/trust", label: "Trust" }] : []),
-            { href: "/manage", label: "Manage" },
-            { href: "/setup", label: "Setup" },
-            { href: "/billing", label: "Billing" },
-            { href: "/account", label: "Account" },
-          ].map(item => {
-            const active = isActive(item.href) || (item.href === "/curriculum" && pathname?.startsWith("/unit/"));
+        {inStaffWorkspace && <div style={{ padding: "10px 0", borderBottom: `1px solid ${C.border}` }}>
+          {workspaceTabs.map(item => {
+            const active = isNavigationActive(item, pathname);
             return (
               <Link key={item.href} href={item.href} aria-current={active ? "page" : undefined} style={{ display: "block", textDecoration: "none" }}>
                 <div style={{ padding: "9px 16px", display: "flex", alignItems: "center", background: active ? C.bg : "transparent", borderLeft: active ? `2px solid ${C.accent}` : "2px solid transparent", fontFamily: C.mono, fontSize: 12, fontWeight: active ? 600 : 500, color: active ? C.text : C.muted, letterSpacing: "0.02em", cursor: "pointer" }}>
@@ -113,7 +88,7 @@ export function Sidebar({ onOpenVisualiser, onOpenSearch }) {
           })}
         </div>}
 
-        {inTeacher ? <div style={{ flex: 1, padding: "10px 0" }}>
+        {inStaffWorkspace ? <div style={{ flex: 1, padding: "10px 0" }}>
           {groups.map(g => {
             const isOpen = openGroups.has(g.id);
             const groupUnits = units[g.id] || [];

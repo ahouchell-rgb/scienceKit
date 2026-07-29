@@ -4,6 +4,7 @@ import { TopNav } from "@/components/TopNav";
 import { AuthGate } from "@/components/AuthGate";
 import { VisualiserOverlay } from "@/components/VisualiserOverlay";
 import { SearchOverlay } from "@/components/SearchOverlay";
+import { WorkspaceBar } from "@/components/WorkspaceBar";
 import { useApplyAccessibilityPrefs } from "@/components/AccessibilityMenu";
 import { C } from "@/lib/theme";
 
@@ -43,6 +44,7 @@ export function AppShell({ children }) {
     <AuthGate>
       <div style={{ minHeight: "100dvh" }}>
         <TopNav onOpenVisualiser={() => setShowVis(true)} onOpenSearch={() => setShowSearch(true)} />
+        <WorkspaceBar />
         <main id="main" tabIndex={-1} style={{ width: "min(1180px, calc(100% - 36px))", margin: "0 auto", padding: "32px 0 64px", minWidth: 0, outline: "none" }}>
           {children}
         </main>
