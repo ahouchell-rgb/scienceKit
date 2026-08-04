@@ -66,7 +66,8 @@ repository migration bodies.
 - Authenticated clients have no insert/update/delete policy on canonical
   identity tables. Reconciliation writes must use a narrow server-side
   workflow.
-- Scope helpers live in `private`, return booleans only, fix `search_path`,
+- Scope helpers live in the dedicated, non-exposed `intelligence_private` schema,
+  return booleans only, fix `search_path`,
   use `auth.uid()`, revoke `PUBLIC`, and grant only the authenticated role.
 - Anonymous access is explicitly revoked and every exposed table has RLS.
 

@@ -798,6 +798,23 @@ function ManageContent() {
         Edit anything. Changes save immediately. Archive a class to remove it from the homepage without losing its history.
       </p>
 
+      <Card style={{ padding: 16, marginBottom: 24, display: "flex", gap: 14, alignItems: "center" }}>
+        <div style={{ flex: 1 }}>
+          <div style={{ fontFamily: C.mono, fontSize: 10, color: C.grn, letterSpacing: "0.08em", textTransform: "uppercase" }}>
+            Intelligence data spine
+          </div>
+          <div style={{ color: C.muted, fontSize: 12, marginTop: 5 }}>
+            Reconcile pupil identities before joining retrieval, MIS, attendance, literacy and assessment evidence.
+          </div>
+        </div>
+        <a href="/manage/identity" style={{ color: C.grn, fontFamily: C.mono, fontSize: 11, textDecoration: "none" }}>
+          Open identity review →
+        </a>
+        <a href="/manage/intelligence-data" style={{ color: C.blu, fontFamily: C.mono, fontSize: 11, textDecoration: "none" }}>
+          Import attendance / literacy →
+        </a>
+      </Card>
+
       <ClassesSection profile={profile} classes={classes} slotsByClass={slotsByClass}
         allUnits={allUnits} retClasses={retClasses} academicYear={academicYear} onChange={load} />
 

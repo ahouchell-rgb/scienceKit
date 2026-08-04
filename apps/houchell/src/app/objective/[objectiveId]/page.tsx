@@ -10,6 +10,8 @@ import {
 import { sk, useAuth } from "@/lib/sk";
 import { C } from "@/lib/theme";
 
+const UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
+
 interface ObjectiveView {
   key: string;
   objective_id?: string | null;
@@ -174,8 +176,13 @@ function Objective360Content() {
       title,
     });
     if (classId) query.set("class", classId);
+    if (score != null) query.set("mastery", String(score));
+    if (data?.objective?.marked != null) query.set("marked", String(data.objective.marked));
+    if (data?.objective?.students != null) query.set("students", String(data.objective.students));
+    if (sources.length) query.set("sources", sources.join(","));
+    query.set("context", data?.context.label || "");
     return query.toString();
-  }, [classId, requested, title]);
+  }, [classId, data?.context.label, data?.objective?.marked, data?.objective?.students, requested, score, sources, title]);
 
   if (error) {
     return (
@@ -402,6 +409,22 @@ function Objective360Content() {
             >
               Open curriculum
             </a>
+            {UUID.test(requested) && (
+              <a
+                href={`/curriculum/graph?objective=${encodeURIComponent(requested)}`}
+                style={{
+                  padding: "9px 13px",
+                  color: C.grn,
+                  border: `1px solid ${C.grn}66`,
+                  borderRadius: 999,
+                  fontFamily: C.mono,
+                  fontSize: 10,
+                  textDecoration: "none",
+                }}
+              >
+                Trace prerequisites
+              </a>
+            )}
           </div>
         </div>
       </section>

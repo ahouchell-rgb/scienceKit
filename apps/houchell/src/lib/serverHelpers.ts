@@ -169,12 +169,17 @@ export async function requireUserId(token: string): Promise<string | null> {
 }
 
 /** Service-role request (server-only; bypasses RLS). */
-export async function skAdmin(method: string, path: string, body?: any): Promise<any> {
+export async function skAdmin(
+  method: string,
+  path: string,
+  body?: any,
+  prefer = "return=representation",
+): Promise<any> {
   const key = process.env.SUPABASE_SERVICE_ROLE_KEY;
   if (!key) throw new Error("SUPABASE_SERVICE_ROLE_KEY missing");
   const r = await fetch(`${SK_URL}/rest/v1/${path}`, {
     method,
-    headers: { apikey: key, Authorization: `Bearer ${key}`, "content-type": "application/json", Prefer: "return=representation", ...(body ? {} : {}) },
+    headers: { apikey: key, Authorization: `Bearer ${key}`, "content-type": "application/json", Prefer: prefer, ...(body ? {} : {}) },
     body: body ? JSON.stringify(body) : undefined,
   });
   if (!r.ok) throw new Error(`${path}: ${r.status} ${(await r.text().catch(() => "")).slice(0, 200)}`);

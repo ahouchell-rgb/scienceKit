@@ -71,6 +71,12 @@ function CurriculumContent() {
       <p style={{ fontSize: 14, color: C.muted, marginBottom: 36, maxWidth: "52ch", lineHeight: 1.55 }}>
         Browse, copy, edit. Sequenced by year and term — your curriculum, in one place.
       </p>
+      <a
+        href="/curriculum/graph"
+        style={{ display: "inline-flex", marginTop: -22, marginBottom: 30, padding: "8px 13px", border: `1px solid ${C.grn}66`, borderRadius: 999, color: C.grn, background: C.grnS, fontFamily: C.mono, fontSize: 10, textDecoration: "none", letterSpacing: "0.05em" }}
+      >
+        Open curriculum knowledge graph →
+      </a>
 
       <div style={{ display: "flex", alignItems: "flex-end", justifyContent: "space-between", gap: 24, marginBottom: 36, flexWrap: "wrap", borderBottom: `1px solid ${C.rule}` }}>
         <div style={{ display: "flex", gap: 0, marginBottom: -1, flexWrap: "wrap" }}>

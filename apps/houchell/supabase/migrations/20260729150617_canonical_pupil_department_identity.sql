@@ -10,7 +10,9 @@
 -- docs/STAGE2_IDENTITY_CONTRACT.md before applying this migration.
 -- =====================================================================
 
-create schema if not exists private;
+create schema if not exists intelligence_private;
+revoke all on schema intelligence_private from public;
+grant usage on schema intelligence_private to authenticated;
 
 -- ---------------------------------------------------------------------
 -- Canonical organisation model below school.
@@ -140,6 +142,14 @@ create index pupil_source_identities_pupil_idx
 create index pupil_source_identities_review_idx
   on public.pupil_source_identities (school_id, link_status, created_at desc)
   where link_status = 'proposed';
+create index pupil_source_identities_school_source_idx
+  on public.pupil_source_identities (
+    school_id,
+    source_system,
+    link_status,
+    source_tenant_key,
+    source_record_id
+  );
 
 -- Canonical, temporal class membership. This is separate from retrieval's
 -- class_members until reconciliation proves a safe one-to-one mapping.
@@ -175,6 +185,7 @@ create table public.pupil_identity_review_queue (
   source_tenant_key     text not null default '',
   source_record_id      text not null,
   source_display_name   text,
+  source_snapshot       jsonb not null default '{}'::jsonb,
   candidate_pupil_ids   uuid[] not null default '{}',
   reason_codes          text[] not null default '{}',
   status                text not null default 'open'
@@ -253,7 +264,7 @@ $$;
 -- use a fixed search_path, fully qualified names and auth.uid(), and reveal
 -- only booleans. Base-table writes remain service-role only.
 -- ---------------------------------------------------------------------
-create or replace function private.can_read_school_scope(p_school_id uuid)
+create or replace function intelligence_private.can_read_school_scope(p_school_id uuid)
 returns boolean
 language sql
 stable
@@ -276,7 +287,7 @@ as $$
   );
 $$;
 
-create or replace function private.can_manage_school_scope(p_school_id uuid)
+create or replace function intelligence_private.can_manage_school_scope(p_school_id uuid)
 returns boolean
 language sql
 stable
@@ -299,7 +310,7 @@ as $$
   );
 $$;
 
-create or replace function private.can_read_canonical_pupil(p_pupil_id uuid)
+create or replace function intelligence_private.can_read_canonical_pupil(p_pupil_id uuid)
 returns boolean
 language sql
 stable
@@ -311,7 +322,7 @@ as $$
     from public.pupils pupil
     where pupil.id = p_pupil_id
       and (
-        private.can_manage_school_scope(pupil.school_id)
+        intelligence_private.can_manage_school_scope(pupil.school_id)
         or exists (
           select 1
           from public.pupil_class_memberships membership
@@ -325,12 +336,12 @@ as $$
   );
 $$;
 
-revoke all on function private.can_read_school_scope(uuid) from public;
-revoke all on function private.can_manage_school_scope(uuid) from public;
-revoke all on function private.can_read_canonical_pupil(uuid) from public;
-grant execute on function private.can_read_school_scope(uuid) to authenticated;
-grant execute on function private.can_manage_school_scope(uuid) to authenticated;
-grant execute on function private.can_read_canonical_pupil(uuid) to authenticated;
+revoke all on function intelligence_private.can_read_school_scope(uuid) from public;
+revoke all on function intelligence_private.can_manage_school_scope(uuid) from public;
+revoke all on function intelligence_private.can_read_canonical_pupil(uuid) from public;
+grant execute on function intelligence_private.can_read_school_scope(uuid) to authenticated;
+grant execute on function intelligence_private.can_manage_school_scope(uuid) to authenticated;
+grant execute on function intelligence_private.can_read_canonical_pupil(uuid) to authenticated;
 
 -- ---------------------------------------------------------------------
 -- RLS. Authenticated clients can read only their purpose-limited scope.
@@ -347,7 +358,7 @@ alter table public.pupil_identity_review_queue enable row level security;
 
 create policy departments_scope_read on public.departments
   for select to authenticated
-  using (private.can_read_school_scope(school_id));
+  using (intelligence_private.can_read_school_scope(school_id));
 
 create policy department_staff_scope_read on public.department_staff_memberships
   for select to authenticated
@@ -356,7 +367,7 @@ create policy department_staff_scope_read on public.department_staff_memberships
       select 1
       from public.departments department
       where department.id = department_id
-        and private.can_read_school_scope(department.school_id)
+        and intelligence_private.can_read_school_scope(department.school_id)
     )
   );
 
@@ -367,25 +378,25 @@ create policy department_class_scope_read on public.department_class_memberships
       select 1
       from public.departments department
       where department.id = department_id
-        and private.can_read_school_scope(department.school_id)
+        and intelligence_private.can_read_school_scope(department.school_id)
     )
   );
 
 create policy pupils_purpose_read on public.pupils
   for select to authenticated
-  using (private.can_read_canonical_pupil(id));
+  using (intelligence_private.can_read_canonical_pupil(id));
 
 create policy pupil_source_identities_purpose_read on public.pupil_source_identities
   for select to authenticated
-  using (private.can_read_canonical_pupil(pupil_id));
+  using (intelligence_private.can_read_canonical_pupil(pupil_id));
 
 create policy pupil_class_memberships_purpose_read on public.pupil_class_memberships
   for select to authenticated
-  using (private.can_read_canonical_pupil(pupil_id));
+  using (intelligence_private.can_read_canonical_pupil(pupil_id));
 
 create policy pupil_identity_review_leadership_read on public.pupil_identity_review_queue
   for select to authenticated
-  using (private.can_manage_school_scope(school_id));
+  using (intelligence_private.can_manage_school_scope(school_id));
 
 revoke all on table
   public.departments,
@@ -406,6 +417,16 @@ grant select on table
   public.pupil_class_memberships,
   public.pupil_identity_review_queue
 to authenticated;
+
+grant select, insert, update on table
+  public.departments,
+  public.department_staff_memberships,
+  public.department_class_memberships,
+  public.pupils,
+  public.pupil_source_identities,
+  public.pupil_class_memberships,
+  public.pupil_identity_review_queue
+to service_role;
 
 comment on table public.pupils is
   'Canonical school-scoped pupil identity. Source-specific identifiers stay in pupil_source_identities.';

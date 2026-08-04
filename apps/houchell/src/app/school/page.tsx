@@ -5,6 +5,7 @@ import { C, DISC } from "@/lib/theme";
 import { Btn, Inp } from "@/lib/primitives";
 import { AppShell } from "@/components/AppShell";
 import { ObjectiveMasteryPanel, type BlendedObjectiveRow } from "@/components/ObjectiveMasteryPanel";
+import { WorkspaceWorkSummary } from "@/components/WorkspaceWorkSummary";
 import {
   overallTrend, objectiveDeltas, mostImproved, stillStuck, impactNarrative,
   type Snapshot, type CohortOutcome,
@@ -520,6 +521,7 @@ function SchoolContent() {
       <p style={{ fontSize: 14, color: C.muted, marginBottom: 24, maxWidth: "54ch", lineHeight: 1.55 }}>
         Aggregated across every class — to target support, not to rank teachers. {filtered.length} classes shown.
       </p>
+      <WorkspaceWorkSummary label="School findings, actions and outcomes" />
 
       {data.meta?.source === "snapshot" && data.meta.staleDays != null && (
         <p style={{ fontFamily: C.mono, fontSize: 11, color: data.meta.staleDays > 9 ? C.red : C.faint, marginTop: -16, marginBottom: 24 }}>

@@ -51,7 +51,7 @@ const TEACHER_NAV: NavigationItem[] = [
 ];
 
 const DEPARTMENT_NAV: NavigationItem[] = [
-  { href: "/school", label: "Department", exact: true },
+  { href: "/department", label: "Department", exact: true },
   { href: "/teacher", label: "Classes" },
   { href: "/curriculum", label: "Curriculum", aliases: ["/unit"] },
   { href: "/assessments", label: "Assess" },
@@ -109,7 +109,8 @@ export function workspaceNavigation(profile?: NavigationProfile | null): Navigat
 
 export const workspaceHome = (level: WorkspaceLevel): string =>
   level === "trust" ? "/trust" :
-  level === "school" || level === "department" ? "/school" :
+  level === "school" ? "/school" :
+  level === "department" ? "/department" :
   "/";
 
 export function isNavigationActive(item: NavigationItem, pathname: string | null | undefined): boolean {
@@ -143,10 +144,14 @@ export function scopeName(profile?: NavigationProfile | null): string {
 
 export function routeContext(pathname: string | null | undefined): string {
   const path = pathname || "/";
+  if (path.startsWith("/class/")) return "Class 360";
+  if (path.startsWith("/objective/")) return "Objective 360";
+  if (path.startsWith("/response/")) return "Response loop";
   if (path.startsWith("/unit/")) return path.includes("/lesson/") ? "Lesson" : "Unit";
   if (path.startsWith("/slides/")) return "Deck";
   if (path === "/slides") return "Resource library";
   if (path.startsWith("/school/intervention")) return "Interventions";
+  if (path.startsWith("/department")) return "Department";
   if (path.startsWith("/school")) return "School";
   if (path.startsWith("/trust")) return "Trust";
   if (path.startsWith("/curriculum")) return "Curriculum";

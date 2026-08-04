@@ -1,5 +1,17 @@
 # School Intelligence Mastermind
 
+> Implementation update (30 July 2026): stages 7–14 are now implemented locally.
+> See [STAGES_7_12_IMPLEMENTATION.md](./STAGES_7_12_IMPLEMENTATION.md) for the
+> evidence spine, identity workflow, generation lineage, evaluation layer,
+> cross-domain imports and the database activation gate. See
+> [STAGE_13_CURRICULUM_KNOWLEDGE_GRAPH.md](./STAGE_13_CURRICULUM_KNOWLEDGE_GRAPH.md)
+> for the governed prerequisite, misconception and vocabulary graph that now
+> feeds reviewed curriculum context into lesson generation.
+> See
+> [STAGE_14_GOVERNED_SHADOW_FORECASTING.md](./STAGE_14_GOVERNED_SHADOW_FORECASTING.md)
+> for the model registry, immutable feature snapshots, expiring next-attempt
+> forecasts and temporal calibration gate.
+
 > A unified design for the “Palantir of education”: one governed brain that
 > observes learning, estimates what pupils know, detects meaningful change,
 > forecasts bounded outcomes, recommends an action, generates the teaching
@@ -1107,6 +1119,12 @@ If development starts from this document, take these in order:
 8. Record accept/edit/deliver/recheck.
 9. Complete the first misconception closed loop in one class.
 10. Only then ingest attendance + literacy and begin shadow forecasting.
+11. Seed the curriculum knowledge graph as proposals, have curriculum leads
+    approve the first prerequisite/misconception/vocabulary neighbourhoods, and
+    compare graph-grounded lesson outputs against the existing evaluation set.
+12. Run the Stage 14 next-attempt baseline in shadow mode, accumulate future
+    labels, and refuse release until it repeatedly beats the named baseline while
+    remaining acceptably calibrated.
 
 This sequence combines what is already built, protects the valuable foundation, and
 creates the flywheel the vision actually depends on.

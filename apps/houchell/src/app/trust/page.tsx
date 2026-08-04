@@ -4,6 +4,7 @@ import { sk, useAuth } from "@/lib/sk";
 import { C } from "@/lib/theme";
 import { AppShell } from "@/components/AppShell";
 import { ObjectiveMasteryPanel, type BlendedObjectiveRow } from "@/components/ObjectiveMasteryPanel";
+import { WorkspaceWorkSummary } from "@/components/WorkspaceWorkSummary";
 
 // MAT / Trust dashboard (strategy Build 4). Every school in the trust, benchmarked
 // on the same mastery graph: average mastery, weakest objectives, and how each
@@ -86,6 +87,7 @@ function TrustContent() {
       <p style={{ fontSize: 14, color: C.muted, marginBottom: 24, maxWidth: "54ch", lineHeight: 1.55 }}>
         {schools.length} schools on the same mastery graph. {trustAvg != null && <>Trust average mastery <strong style={{ color: heat(trustAvg) }}>{trustAvg}%</strong>.</>} For consistency and support — not ranking.
       </p>
+      <WorkspaceWorkSummary label="Trust findings, actions and outcomes" />
 
       {data.meta?.source === "snapshot" && data.meta.staleDays != null && (
         <p style={{ fontFamily: C.mono, fontSize: 11, color: data.meta.staleDays > 9 ? C.red : C.faint, marginTop: -16, marginBottom: 24 }}>

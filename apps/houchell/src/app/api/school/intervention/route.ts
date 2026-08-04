@@ -12,8 +12,8 @@
 //   class_intervention_list(p_class_id uuid, p_threshold int) RETURNS TABLE(
 //     student_id uuid, student_name text, topic_id uuid, topic_name text,
 //     pct_correct numeric, marked int)
-//   — same x-sciencekit-key gating as class_weak_topics; lives in the retrieval
-//   repo. Until it ships this route returns enabled:true with no rows + a note.
+//   — database-gated to SLT in the class's school. This interactive path sends
+//   the caller's JWT only; the shared cross-app secret is never used.
 
 import { mapPool } from "@/lib/trustBenchmark";
 import { groupInterventionByObjective } from "@/lib/dashboards";
@@ -29,21 +29,21 @@ async function rest(path: string, bearer: string) {
   if (!r.ok) throw new Error(`${path}: ${r.status}`);
   return r.json();
 }
-async function rpc(fn: string, body: any, bearer: string, secret?: string) {
+async function rpc(fn: string, body: any, bearer: string) {
   const r = await fetch(`${SK_URL}/rest/v1/rpc/${fn}`, {
     method: "POST",
-    headers: { "content-type": "application/json", apikey: SK_ANON, Authorization: `Bearer ${bearer}`, ...(secret ? { "x-sciencekit-key": secret } : {}) },
+    headers: { "content-type": "application/json", apikey: SK_ANON, Authorization: `Bearer ${bearer}` },
     body: JSON.stringify(body),
   });
   return r.ok ? r.json() : [];
 }
 /** Retrieval RPC with a hard timeout — a slow/down retrieval app yields [] for
  *  that class rather than hanging the whole request. */
-async function rpcT(fn: string, body: any, bearer: string, secret?: string) {
+async function rpcT(fn: string, body: any, bearer: string) {
   try {
     return await withTimeout((signal) => fetch(`${SK_URL}/rest/v1/rpc/${fn}`, {
       method: "POST", signal,
-      headers: { "content-type": "application/json", apikey: SK_ANON, Authorization: `Bearer ${bearer}`, ...(secret ? { "x-sciencekit-key": secret } : {}) },
+      headers: { "content-type": "application/json", apikey: SK_ANON, Authorization: `Bearer ${bearer}` },
       body: JSON.stringify(body),
     }).then((r) => (r.ok ? r.json() : [])), RETRIEVAL_TIMEOUT_MS);
   } catch { return []; }
@@ -53,7 +53,6 @@ export async function GET(req: Request) {
   const auth = req.headers.get("authorization") || "";
   if (!auth.startsWith("Bearer ")) return j({ error: "Missing bearer token" }, 401);
   const token = auth.slice(7);
-  const secret = process.env.SK_API_KEY || undefined;
   const params = new URL(req.url).searchParams;
   const threshold = Math.max(10, Math.min(90, Number(params.get("threshold")) || 50));
   // Optional drill-down: an SLT clicks a weak objective in the dashboard and
@@ -81,7 +80,7 @@ export async function GET(req: Request) {
   const perClass = await mapPool(classes, 6, async (c: any) => {
     const retId = (c.retrieval_class_ids || [])[0];
     if (!retId) return [];
-    const rows = await rpcT("class_intervention_list", { p_class_id: retId, p_threshold: threshold }, token, secret);
+    const rows = await rpcT("class_intervention_list", { p_class_id: retId, p_threshold: threshold }, token);
     return (Array.isArray(rows) ? rows : []).map((r: any) => ({
       class_name: c.name, teacher_name: c.teacher_name, year_group: c.year_group,
       student_name: r.student_name, topic_name: r.topic_name,

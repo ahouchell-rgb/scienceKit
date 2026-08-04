@@ -6,12 +6,11 @@
 // class's weakest objectives aggregated from retrieval. The dashboard does the
 // cohort roll-up + filtering client-side from this compact payload.
 //
-// Aggregation reuses class_weak_topics (the same RPC the feedforward cron uses),
-// called server-side with the x-sciencekit-key secret so it doesn't depend on
-// client-side RPC gating. No personal pupil rows cross the wire — only
-// per-objective aggregates.
+// Aggregation reuses class_weak_topics (the same RPC the feedforward cron uses)
+// under the caller's own JWT. No shared secret is sent on this interactive path
+// and no personal pupil rows cross the wire — only per-objective aggregates.
 //
-// Env: SK_API_KEY (retrieval RPC). SUPABASE_SERVICE_ROLE_KEY not required.
+// Env: none. SUPABASE_SERVICE_ROLE_KEY is not required.
 
 export const runtime = "nodejs";
 export const maxDuration = 60;
@@ -29,21 +28,21 @@ async function rest(path: string, bearer: string) {
   if (!r.ok) throw new Error(`${path}: ${r.status}`);
   return r.json();
 }
-async function rpc(fn: string, body: any, bearer: string, secret?: string) {
+async function rpc(fn: string, body: any, bearer: string) {
   const r = await fetch(`${SK_URL}/rest/v1/rpc/${fn}`, {
     method: "POST",
-    headers: { "content-type": "application/json", apikey: SK_ANON, Authorization: `Bearer ${bearer}`, ...(secret ? { "x-sciencekit-key": secret } : {}) },
+    headers: { "content-type": "application/json", apikey: SK_ANON, Authorization: `Bearer ${bearer}` },
     body: JSON.stringify(body),
   });
   return r.ok ? r.json() : [];
 }
 /** Retrieval RPC with a hard timeout — a slow/down retrieval app yields [] for
  *  that class rather than hanging the whole dashboard request. */
-async function rpcT(fn: string, body: any, bearer: string, secret?: string) {
+async function rpcT(fn: string, body: any, bearer: string) {
   try {
     return await withTimeout((signal) => fetch(`${SK_URL}/rest/v1/rpc/${fn}`, {
       method: "POST", signal,
-      headers: { "content-type": "application/json", apikey: SK_ANON, Authorization: `Bearer ${bearer}`, ...(secret ? { "x-sciencekit-key": secret } : {}) },
+      headers: { "content-type": "application/json", apikey: SK_ANON, Authorization: `Bearer ${bearer}` },
       body: JSON.stringify(body),
     }).then((r) => (r.ok ? r.json() : [])), RETRIEVAL_TIMEOUT_MS);
   } catch { return []; }
@@ -53,8 +52,6 @@ export async function GET(req: Request) {
   const auth = req.headers.get("authorization") || "";
   if (!auth.startsWith("Bearer ")) return j({ error: "Missing bearer token" }, 401);
   const token = auth.slice(7);
-  const secret = process.env.SK_API_KEY || undefined;
-
   // Resolve the caller and their staff role.
   let uid: string;
   try {
@@ -136,7 +133,7 @@ export async function GET(req: Request) {
     if (retId) {
       // Timeout + fallback: a slow/down retrieval app degrades this class to no
       // weak topics so the page still loads, rather than hanging the request.
-      const rows = await rpcT("class_weak_topics", { p_class_id: retId, p_limit: 8, p_min_marked: 5 }, token, secret);
+      const rows = await rpcT("class_weak_topics", { p_class_id: retId, p_limit: 8, p_min_marked: 5 }, token);
       weak = (Array.isArray(rows) ? rows : []).map((w: any) => ({
         topic_id: w.topic_id, topic_name: w.topic_name, objective_id: xwalk.get(w.topic_id) || null,
         pct_correct: Math.round(Number(w.pct_correct)), marked: w.marked ?? null, students: w.students ?? null,

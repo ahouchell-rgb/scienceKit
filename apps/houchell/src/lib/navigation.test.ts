@@ -4,6 +4,7 @@ import {
   isNavigationActive,
   isStaffRoute,
   routeContext,
+  workspaceHome,
   workspaceLevelFor,
   workspaceNavigation,
 } from "./navigation.js";
@@ -35,6 +36,12 @@ describe("workspace navigation", () => {
     const hrefs = workspaceNavigation({ is_lead: true }).map((item) => item.href);
     expect(hrefs.filter((href) => href === "/content")).toHaveLength(1);
   });
+
+  it("lands a department lead in the dedicated department workspace", () => {
+    expect(workspaceHome("department")).toBe("/department");
+    expect(workspaceNavigation({ school_role: "hod" })[0].href).toBe("/department");
+    expect(routeContext("/department")).toBe("Department");
+  });
 });
 
 describe("route ownership", () => {
@@ -50,6 +57,9 @@ describe("route ownership", () => {
     expect(isNavigationActive(curriculum, "/unit/u1/lesson/l1")).toBe(true);
     expect(routeContext("/unit/u1/lesson/l1")).toBe("Lesson");
     expect(routeContext("/school/intervention")).toBe("Interventions");
+    expect(routeContext("/class/c1")).toBe("Class 360");
+    expect(routeContext("/objective/o1")).toBe("Objective 360");
+    expect(routeContext("/response/a1")).toBe("Response loop");
   });
 });
 
