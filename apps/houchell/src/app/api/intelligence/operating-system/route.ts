@@ -1,10 +1,21 @@
 import { artifactFingerprint } from "@/lib/artifactLineage";
 import {
   buildTodayQueue,
-  evaluateResponsePolicy,
   operatingContract,
   summariseBrainHealth,
 } from "@/lib/intelligence/operatingSystem";
+import {
+  evaluateSchoolResponsePolicy,
+  RESPONSE_POLICY_KEY,
+  RESPONSE_POLICY_VERSION,
+} from "@/lib/intelligence/policyService";
+import {
+  CONTINUOUS_TEACHER_OS_STAGES,
+  TEACHER_OS_ENTITY_TYPES,
+  TEACHER_OS_FLYWHEEL,
+  TEACHER_OS_GUARDRAILS,
+  TEACHER_OS_ONTOLOGY_VERSION,
+} from "@/lib/intelligence/teacherOS";
 import {
   authenticateIntelligence,
   canControlIntelligenceWork,
@@ -19,9 +30,6 @@ import { skAdmin } from "@/lib/serverHelpers";
 
 export const runtime = "nodejs";
 export const maxDuration = 120;
-
-const POLICY_KEY = "reviewed_learning_gap_response";
-const POLICY_VERSION = 1;
 
 const rows = <T = any>(value: unknown): T[] => Array.isArray(value) ? value : [];
 
@@ -83,6 +91,12 @@ export async function GET(request: Request) {
       policyEvaluations,
       monitoringEvents,
       evaluations,
+      continuousSummaries,
+      orchestrationRuns,
+      dataQualityIssues,
+      modelGovernanceChecks,
+      modelReleaseReviews,
+      lessonQualityChecks,
     ] = await Promise.all([
       restAsUser(
         `intelligence_operating_system_summary?school_id=eq.${schoolId}&select=*&limit=1`,
@@ -120,6 +134,30 @@ export async function GET(request: Request) {
         `intelligence_evaluation_summary?school_id=eq.${schoolId}&select=*&limit=1`,
         auth.token,
       ),
+      restAsUser(
+        `intelligence_continuous_os_summary?school_id=eq.${schoolId}&select=*&limit=1`,
+        auth.token,
+      ),
+      restAsUser(
+        `intelligence_orchestration_runs?school_id=eq.${schoolId}&select=*&order=started_at.desc&limit=12`,
+        auth.token,
+      ),
+      restAsUser(
+        `intelligence_data_quality_issues?school_id=eq.${schoolId}&status=eq.open&select=*&order=severity.desc,created_at.desc&limit=50`,
+        auth.token,
+      ),
+      restAsUser(
+        `intelligence_model_governance_checks?school_id=eq.${schoolId}&select=*&order=created_at.desc&limit=12`,
+        auth.token,
+      ),
+      restAsUser(
+        `intelligence_model_release_reviews?school_id=eq.${schoolId}&select=*&order=reviewed_at.desc&limit=12`,
+        auth.token,
+      ),
+      restAsUser(
+        `intelligence_lesson_quality_evaluations?school_id=eq.${schoolId}&select=*&order=evaluated_at.desc&limit=30`,
+        auth.token,
+      ),
     ]);
 
     const contract = operatingContract(auth.profile);
@@ -151,12 +189,25 @@ export async function GET(request: Request) {
       policyEvaluations: rows(policyEvaluations),
       monitoringEvents: rows(monitoringEvents),
       evaluation: rows(evaluations)[0] || null,
+      continuous: {
+        ontologyVersion: TEACHER_OS_ONTOLOGY_VERSION,
+        entityTypes: TEACHER_OS_ENTITY_TYPES,
+        summary: rows(continuousSummaries)[0] || null,
+        stages: CONTINUOUS_TEACHER_OS_STAGES,
+        flywheel: TEACHER_OS_FLYWHEEL,
+        orchestrationRuns: rows(orchestrationRuns),
+        dataQualityIssues: rows(dataQualityIssues),
+        modelGovernanceChecks: rows(modelGovernanceChecks),
+        modelReleaseReviews: rows(modelReleaseReviews),
+        lessonQualityChecks: rows(lessonQualityChecks),
+      },
       guardrails: {
         automatedDecisions: false,
         pupilRiskScore: false,
         automaticPolicyPromotion: false,
         causalClaims: false,
         humanAcceptanceRequired: true,
+        ...TEACHER_OS_GUARDRAILS,
       },
       generatedAt: new Date().toISOString(),
     });
@@ -169,9 +220,15 @@ export async function GET(request: Request) {
         "intelligence_lesson_specs",
         "intelligence_policy_evaluations",
         "intelligence_monitoring_events",
+        "intelligence_continuous_os_summary",
+        "intelligence_orchestration_runs",
+        "intelligence_data_quality_issues",
+        "intelligence_model_governance_checks",
+        "intelligence_model_release_reviews",
+        "intelligence_lesson_quality_evaluations",
       ])
     ) {
-      return jsonNoStore({ enabled: false, reason: "stage_15_20_migration_pending" });
+      return jsonNoStore({ enabled: false, reason: "stage_21_26_migration_pending" });
     }
     return jsonNoStore({ error: "Couldn't load the teacher operating system" }, 500);
   }
@@ -205,6 +262,11 @@ export async function POST(request: Request) {
         p_school_id: schoolId,
         p_checked_by: auth.userId,
       });
+      await skAdmin(
+        "PATCH",
+        `intelligence_source_health?school_id=eq.${schoolId}&checked_by=eq.${auth.userId}`,
+        { checked_by_kind: "human" },
+      ).catch(() => null);
       return jsonNoStore({ brain: result });
     } catch (error) {
       if (isMissingDatabaseObject(error, ["refresh_intelligence_brain_health"])) {
@@ -249,8 +311,8 @@ export async function POST(request: Request) {
       const idempotencyKey = artifactFingerprint({
         findingId,
         evidenceAsOf: finding.evidence_as_of,
-        policyKey: POLICY_KEY,
-        policyVersion: POLICY_VERSION,
+        policyKey: RESPONSE_POLICY_KEY,
+        policyVersion: RESPONSE_POLICY_VERSION,
         recommendationType,
       });
       const existing = rows<any>(await skAdmin(
@@ -268,8 +330,8 @@ export async function POST(request: Request) {
         rationale: String(body.rationale || `${finding.summary || finding.headline} The recommendation is advisory and must be accepted, edited or rejected by a named member of staff.`).trim().slice(0, 3000),
         priority,
         purpose: String(body.purpose || defaultPurpose).slice(0, 100),
-        policy_key: POLICY_KEY,
-        policy_version: POLICY_VERSION,
+        policy_key: RESPONSE_POLICY_KEY,
+        policy_version: RESPONSE_POLICY_VERSION,
         evidence_snapshot: {
           reviewedFinding: finding.evidence_snapshot,
           evidenceAsOf: finding.evidence_as_of,
@@ -335,76 +397,56 @@ export async function POST(request: Request) {
       return jsonNoStore({ error: "School intelligence management scope required" }, 403);
     }
     try {
-      const [recommendations, deliveries, rechecks, outcomes, feedback] = await Promise.all([
-        restAsUser(`intelligence_recommendations?school_id=eq.${schoolId}&policy_key=eq.${POLICY_KEY}&policy_version=eq.${POLICY_VERSION}&select=*&limit=5000`, auth.token),
-        restAsUser("intelligence_deliveries?select=id,action_id,delivered_at&limit=5000", auth.token),
-        restAsUser("intelligence_rechecks?select=id,action_id,status,due_at,completed_at&limit=5000", auth.token),
-        restAsUser("intelligence_outcomes?select=id,action_id,delta,evaluated_at&limit=5000", auth.token),
-        restAsUser("intelligence_feedback?select=id,action_id,feedback_type,rating,created_at&limit=5000", auth.token),
-      ]);
-      const recommendationRows = rows<any>(recommendations);
-      const actionIds = new Set(
-        recommendationRows.map((row) => row.action_id).filter(Boolean),
-      );
-      const evaluation = evaluateResponsePolicy({
-        recommendations: recommendationRows,
-        deliveries: rows<any>(deliveries).filter((row) => actionIds.has(row.action_id)),
-        rechecks: rows<any>(rechecks).filter((row) => actionIds.has(row.action_id)),
-        outcomes: rows<any>(outcomes).filter((row) => actionIds.has(row.action_id)),
-        feedback: rows<any>(feedback).filter((row) => actionIds.has(row.action_id)),
+      const result = await evaluateSchoolResponsePolicy({
+        schoolId,
+        actor: { kind: "human", userId: auth.userId },
+        force: true,
       });
-      const now = new Date();
-      const firstRecommendationAt = recommendationRows
-        .map((row) => Date.parse(row.created_at))
-        .filter(Number.isFinite)
-        .sort((a, b) => a - b)[0];
-      const windowStart = Number.isFinite(firstRecommendationAt)
-        ? new Date(firstRecommendationAt)
-        : new Date(now.getTime() - 90 * 86_400_000);
-      const inserted = rows<any>(await skAdmin("POST", "intelligence_policy_evaluations", {
-        school_id: schoolId,
-        policy_key: POLICY_KEY,
-        policy_version: POLICY_VERSION,
-        window_started_at: windowStart.toISOString(),
-        window_ended_at: now.toISOString(),
-        evaluation_status: evaluation.evaluationStatus,
-        recommendation_count: evaluation.recommendationCount,
-        accepted_count: evaluation.acceptedCount,
-        delivered_count: evaluation.deliveredCount,
-        rechecked_count: evaluation.recheckedCount,
-        outcome_count: evaluation.outcomeCount,
-        teacher_override_count: evaluation.teacherOverrideCount,
-        acceptance_rate: evaluation.acceptanceRate,
-        delivery_rate: evaluation.deliveryRate,
-        recheck_rate: evaluation.recheckRate,
-        mean_teacher_rating: evaluation.meanTeacherRating,
-        mean_descriptive_delta: evaluation.meanDescriptiveDelta,
-        metrics: { thresholds: { minimumOutcomes: 20, minimumRecheckRate: 0.6 } },
-        limitations: evaluation.limitations,
-        evaluator_version: 1,
-        evaluated_by: auth.userId,
-      }));
-      await skAdmin("POST", "intelligence_monitoring_events", {
-        school_id: schoolId,
-        subsystem: "learning_policy",
-        event_type: "policy.evaluated",
-        severity: evaluation.evaluationStatus === "retire_review" ? "warning" : "info",
-        run_key: `policy:${artifactFingerprint({ schoolId, at: now.toISOString(), evaluation })}`,
-        detail: {
-          policyKey: POLICY_KEY,
-          policyVersion: POLICY_VERSION,
-          evaluationStatus: evaluation.evaluationStatus,
-          outcomeCount: evaluation.outcomeCount,
-          automaticPromotion: false,
-        },
-        observed_at: now.toISOString(),
-      });
-      return jsonNoStore({ evaluation: inserted[0] }, 201);
+      return jsonNoStore(result, 201);
     } catch (error) {
       if (isMissingDatabaseObject(error, ["intelligence_policy_evaluations"])) {
         return jsonNoStore({ error: "Apply the Stage 15-20 migration before evaluating policy" }, 503);
       }
       return jsonNoStore({ error: "Couldn't evaluate the response policy" }, 500);
+    }
+  }
+
+  if (operation === "review_model") {
+    if (!(await canManageSchool(auth, schoolId))) {
+      return jsonNoStore({ error: "School intelligence management scope required" }, 403);
+    }
+    const governanceCheckId = String(body.governanceCheckId || "");
+    const decision = String(body.decision || "");
+    const rationale = String(body.rationale || "").trim().slice(0, 4000);
+    if (!UUID_RE.test(governanceCheckId)) {
+      return jsonNoStore({ error: "A valid governance check is required" }, 400);
+    }
+    if (!["approve_shadow", "hold", "retire"].includes(decision)) {
+      return jsonNoStore({ error: "Choose approve shadow, hold or retire" }, 400);
+    }
+    if (rationale.length < 12) {
+      return jsonNoStore({ error: "Add a governance rationale of at least 12 characters" }, 400);
+    }
+    try {
+      const check = rows<any>(await restAsUser(
+        `intelligence_model_governance_checks?id=eq.${governanceCheckId}&school_id=eq.${schoolId}&select=*&limit=1`,
+        auth.token,
+      ))[0];
+      if (!check) return jsonNoStore({ error: "Governance check not found in your scope" }, 404);
+      const review = rows<any>(await skAdmin("POST", "intelligence_model_release_reviews", {
+        school_id: schoolId,
+        model_version_id: check.model_version_id,
+        governance_check_id: check.id,
+        decision,
+        rationale,
+        reviewed_by: auth.userId,
+      }))[0];
+      return jsonNoStore({ review }, 201);
+    } catch (error) {
+      if (isMissingDatabaseObject(error, ["intelligence_model_release_reviews"])) {
+        return jsonNoStore({ error: "Apply the Stage 21-26 migration before reviewing models" }, 503);
+      }
+      return jsonNoStore({ error: "Couldn't record the model governance review" }, 500);
     }
   }
 

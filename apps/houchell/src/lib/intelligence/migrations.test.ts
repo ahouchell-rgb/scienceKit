@@ -91,4 +91,30 @@ describe("intelligence migration contracts", () => {
       /grant select on table[\s\S]*public\.intelligence_monitoring_events[\s\S]*to authenticated;/,
     );
   });
+
+  it("keeps the Stage 21-26 continuous brain idempotent, scoped and human-governed", () => {
+    const continuous = migration(
+      "20260804181415_stages_21_26_continuous_teacher_os.sql",
+    );
+
+    expect(continuous).toMatch(
+      /create or replace function public\.promote_mis_to_intelligence[\s\S]*security invoker/,
+    );
+    expect(continuous).toMatch(
+      /revoke all on function public\.promote_mis_to_intelligence[\s\S]*from public, anon, authenticated;/,
+    );
+    expect(continuous).toContain("human_confirmation_required");
+    expect(continuous).toMatch(
+      /create or replace function public\.audit_continuous_teacher_os_security[\s\S]*to service_role;/,
+    );
+    expect(continuous).toContain("unique (school_id, workflow_key, run_key)");
+    expect(continuous).toContain("candidate_for_review");
+    expect(continuous).toContain("automatic_model_promotion");
+    expect(continuous).toMatch(
+      /create view public\.intelligence_continuous_os_summary[\s\S]*security_invoker = true/,
+    );
+    expect(continuous).toContain(
+      "create trigger intelligence_lesson_quality_immutable",
+    );
+  });
 });

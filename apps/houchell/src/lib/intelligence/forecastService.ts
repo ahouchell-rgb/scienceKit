@@ -12,6 +12,18 @@ import {
 } from "@/lib/intelligence/server";
 import { skAdmin } from "@/lib/serverHelpers";
 
+export interface ForecastActor {
+  kind: "staff" | "system";
+  userId: string | null;
+  token?: string | null;
+}
+
+const forecastActor = (value: IntelligenceAuth | ForecastActor): ForecastActor => ({
+  kind: "profile" in value ? "staff" : value.kind,
+  userId: value.userId,
+  token: value.token,
+});
+
 export function objectiveAggregate(
   forecasts: any[],
   objectives: Array<{ id: string; title: string; code?: string | null }>,
@@ -55,10 +67,11 @@ export function latestCompletedRun<T extends { status?: string }>(
 }
 
 export async function runShadowForecast(
-  auth: IntelligenceAuth,
+  caller: IntelligenceAuth | ForecastActor,
   schoolId: string,
   maxItems: number,
 ) {
+  const actor = forecastActor(caller);
   const model = (
     await skAdmin(
       "GET",
@@ -107,7 +120,8 @@ export async function runShadowForecast(
         sourceView: "pupil_learning_state",
         identityRequirement: "canonical_reconciled_pupil",
       },
-      requested_by: auth.userId,
+      requested_by: actor.userId,
+      requested_by_kind: actor.kind === "system" ? "system" : "human",
       started_at: asOf.toISOString(),
     })
   )?.[0];
@@ -116,16 +130,16 @@ export async function runShadowForecast(
     run_id: run.id,
     model_version_id: model.id,
     event_type: "run.started",
-    actor_kind: "staff",
-    actor_id: auth.userId,
+    actor_kind: actor.kind,
+    actor_id: actor.userId,
     detail: { runKey, maxItems },
   });
 
   try {
-    const states = await restAsUser<any[]>(
-      `pupil_learning_state?school_id=eq.${schoolId}&select=school_id,pupil_id,objective_id,objective_key,mastery_estimate,uncertainty_points,evidence_count,last_evidence_at,source_mix&order=pupil_id.asc&limit=5000`,
-      auth.token,
-    );
+    const statePath = `pupil_learning_state?school_id=eq.${schoolId}&select=school_id,pupil_id,objective_id,objective_key,mastery_estimate,uncertainty_points,evidence_count,last_evidence_at,source_mix&order=pupil_id.asc&limit=5000`;
+    const states = actor.token
+      ? await restAsUser<any[]>(statePath, actor.token)
+      : await skAdmin("GET", statePath);
     const allEligible = buildShadowForecasts(states || [], {
       asOf,
       minimumEvidence: 3,
@@ -246,9 +260,10 @@ function eventKey(row: any) {
 }
 
 export async function scoreForecastOutcomes(
-  auth: IntelligenceAuth,
+  caller: IntelligenceAuth | ForecastActor,
   schoolId: string,
 ) {
+  const actor = forecastActor(caller);
   const [forecasts, existingOutcomes] = await Promise.all([
     skAdmin(
       "GET",
@@ -415,8 +430,8 @@ export async function scoreForecastOutcomes(
     run_id: null,
     model_version_id: null,
     event_type: "outcomes.scored",
-    actor_kind: "staff",
-    actor_id: auth.userId,
+    actor_kind: actor.kind,
+    actor_id: actor.userId,
     detail: { outcomeCount: outcomeRows.length, evaluationCount, eventsTruncated },
   });
   return {

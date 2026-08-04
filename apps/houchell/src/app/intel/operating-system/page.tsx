@@ -21,20 +21,36 @@ const STAGES = [
   ["18", "Lesson studio"],
   ["19", "Role OS"],
   ["20", "Production"],
+  ["21", "Security"],
+  ["22", "Data plane"],
+  ["23", "Continuous brain"],
+  ["24", "Model lab"],
+  ["25", "Lesson loop"],
+  ["26", "Unified OS"],
 ] as const;
 
 const STATUS_COLOUR: Record<string, string> = {
   healthy: C.grn,
   candidate: C.grn,
+  candidate_for_review: C.grn,
+  approve_shadow: C.grn,
   completed: C.grn,
+  passes_contract: C.grn,
   degraded: C.amb,
+  completed_with_issues: C.amb,
+  review: C.amb,
+  watch: C.amb,
   stale: C.amb,
   hold: C.amb,
   unknown: C.dim,
   insufficient_data: C.dim,
   blocked: C.red,
+  blocking: C.red,
   critical: C.red,
+  failed: C.red,
+  poor: C.red,
   retire_review: C.red,
+  retire: C.red,
 };
 
 const formatStatus = (value: unknown) => String(value || "unknown").replaceAll("_", " ");
@@ -64,7 +80,7 @@ function Metric({ label, value, note }: { label: string; value: unknown; note?: 
 
 function StageRail() {
   return (
-    <div className="os-stage-rail" aria-label="Stages 15 to 20">
+    <div className="os-stage-rail" aria-label="Stages 15 to 26">
       {STAGES.map(([number, label]) => (
         <div key={number} style={stageStyle}>
           <span style={{ color: C.grn, fontFamily: C.mono, fontSize: 9 }}>STAGE {number}</span>
@@ -165,6 +181,7 @@ function OperatingSystemContent() {
   const [busy, setBusy] = useState("");
   const [error, setError] = useState("");
   const [decisionNotes, setDecisionNotes] = useState<Record<string, string>>({});
+  const [modelRationale, setModelRationale] = useState("");
 
   const load = useCallback(async (schoolId?: string) => {
     setError("");
@@ -194,6 +211,7 @@ function OperatingSystemContent() {
         body: JSON.stringify({ operation, schoolId: selectedSchoolId, ...payload }),
       });
       setDecisionNotes({});
+      setModelRationale("");
       await load(selectedSchoolId);
     } catch (reason: unknown) {
       setError(reason instanceof Error ? reason.message : "The operating-system action failed");
@@ -205,11 +223,17 @@ function OperatingSystemContent() {
   const summary = data?.summary || {};
   const policy = data?.policyEvaluations?.[0];
   const evaluation = data?.evaluation;
+  const continuous = data?.continuous;
+  const continuousSummary = continuous?.summary || {};
+  const latestCycle = continuous?.orchestrationRuns?.[0];
+  const latestModelCheck = continuous?.modelGovernanceChecks?.[0];
+  const latestModelReview = continuous?.modelReleaseReviews?.[0];
+  const latestLessonCheck = continuous?.lessonQualityChecks?.[0];
 
   return (
     <div>
       <IntelligencePageHeader
-        eyebrow="Teacher operating system · Stages 15–20"
+        eyebrow="Teacher operating system · Stages 15–26"
         title={data?.role?.headline || "One brain. Every role. Better decisions."}
         intro={data?.role
           ? `${data.role.label} mode · ${data.role.job}. The system joins evidence, curriculum, governed recommendations, lesson creation and delayed rechecks into one daily loop.`
@@ -227,7 +251,7 @@ function OperatingSystemContent() {
         !error && <IntelligenceNotice>Loading your role-scoped operating system…</IntelligenceNotice>
       ) : !data.enabled ? (
         <IntelligenceNotice>
-          Stages 15–20 are built in code. Apply the additive Stage 15–20 database migration to activate this command centre; no live database change has been made automatically.
+          Stages 15–26 are built in code. Apply the additive Stage 21–26 database migration to activate the continuous brain and its governed learning loops.
         </IntelligenceNotice>
       ) : data.reason === "no_school_scope" ? (
         <IntelligenceNotice>
@@ -428,6 +452,136 @@ function OperatingSystemContent() {
               </div>
             )}
           </section>
+
+          <section style={{ marginTop: 16 }}>
+            <div style={sectionLabel}>Stages 21–26 · Continuous teacher OS</div>
+            <h2 style={largeTitle}>The platform now learns from use without learning past its evidence</h2>
+            <p style={{ ...copyStyle, maxWidth: 900, marginBottom: 14 }}>
+              MIS data is reconciled into one canonical identity plane, the brain runs on a durable schedule, forecast and lesson quality are evaluated in governed laboratories, and every role reads the same system contract at the right altitude.
+            </p>
+            <div style={{ ...metaStyle, margin: "-5px 0 12px" }}>
+              Shared ontology v{continuous?.ontologyVersion || "—"} · {(continuous?.entityTypes || []).join(" · ")}
+            </div>
+            <div className="os-continuous-grid">
+              <article style={cardStyle}>
+                <div style={sectionHeadStyle}>
+                  <div>
+                    <div style={sectionLabel}>Stages 21–23 · Secure continuous brain</div>
+                    <h3 style={cardTitle}>Ingest, reconcile and run</h3>
+                  </div>
+                  <StatusPill value={latestCycle?.status || continuousSummary.latest_cycle_status} />
+                </div>
+                <div style={metricGridStyle}>
+                  <Metric label="open data issues" value={continuousSummary.open_data_issues || continuous?.dataQualityIssues?.length || 0} />
+                  <Metric label="blocking issues" value={continuousSummary.blocking_data_issues || 0} />
+                  <Metric label="cycle stage" value={latestCycle?.current_stage || "—"} />
+                </div>
+                <p style={{ ...copyStyle, marginTop: 12 }}>
+                  Exact links promote automatically. Possible duplicate pupils and unmatched classes become explicit review work, never silent joins.
+                </p>
+                {(continuous?.dataQualityIssues || []).slice(0, 3).map((issue: any) => (
+                  <div key={issue.id} style={{ ...sourceRowStyle, marginTop: 7 }}>
+                    <span style={{ color: C.text, fontSize: 10 }}>{formatStatus(issue.issue_code)}</span>
+                    <StatusPill value={issue.severity} />
+                  </div>
+                ))}
+              </article>
+
+              <article style={cardStyle}>
+                <div style={sectionHeadStyle}>
+                  <div>
+                    <div style={sectionLabel}>Stage 24 · Governed model laboratory</div>
+                    <h3 style={cardTitle}>Accuracy must earn review</h3>
+                  </div>
+                  <StatusPill value={latestModelCheck?.governance_status || continuousSummary.latest_model_status} />
+                </div>
+                <div style={metricGridStyle}>
+                  <Metric label="labelled sample" value={latestModelCheck?.sample_size || 0} />
+                  <Metric label="Brier score" value={latestModelCheck?.brier_score == null ? "—" : Number(latestModelCheck.brier_score).toFixed(3)} />
+                  <Metric label="calibration error" value={latestModelCheck?.expected_calibration_error == null ? "—" : Number(latestModelCheck.expected_calibration_error).toFixed(3)} />
+                  <Metric label="drift" value={formatStatus(latestModelCheck?.drift_status)} />
+                </div>
+                <p style={{ ...copyStyle, marginTop: 12 }}>
+                  “Candidate for review” is evidence for a named governance decision. It cannot promote a model or expose a pupil-level prediction for automatic action.
+                </p>
+                {latestModelReview && (
+                  <div style={{ ...sourceRowStyle, marginTop: 10 }}>
+                    <div>
+                      <strong style={{ color: C.text, fontSize: 10 }}>Latest human decision</strong>
+                      <div style={metaStyle}>{latestModelReview.rationale}</div>
+                    </div>
+                    <StatusPill value={latestModelReview.decision} />
+                  </div>
+                )}
+                {data.permissions?.canManageSchool && latestModelCheck && (
+                  <div style={{ display: "grid", gap: 8, marginTop: 12 }}>
+                    <textarea
+                      aria-label="Model governance rationale"
+                      value={modelRationale}
+                      onChange={(event) => setModelRationale(event.target.value)}
+                      placeholder="Named review rationale (minimum 12 characters)"
+                      style={{ ...inputStyle, minHeight: 64, resize: "vertical" }}
+                    />
+                    <div style={{ display: "flex", gap: 7, flexWrap: "wrap" }}>
+                      <button
+                        style={secondaryButton}
+                        disabled={Boolean(busy) || modelRationale.trim().length < 12}
+                        onClick={() => void operate("review_model", {
+                          governanceCheckId: latestModelCheck.id,
+                          decision: "approve_shadow",
+                          rationale: modelRationale,
+                        })}
+                      >Approve continued shadow</button>
+                      <button
+                        style={secondaryButton}
+                        disabled={Boolean(busy) || modelRationale.trim().length < 12}
+                        onClick={() => void operate("review_model", {
+                          governanceCheckId: latestModelCheck.id,
+                          decision: "hold",
+                          rationale: modelRationale,
+                        })}
+                      >Hold</button>
+                      <button
+                        style={{ ...secondaryButton, color: C.red }}
+                        disabled={Boolean(busy) || modelRationale.trim().length < 12}
+                        onClick={() => void operate("review_model", {
+                          governanceCheckId: latestModelCheck.id,
+                          decision: "retire",
+                          rationale: modelRationale,
+                        })}
+                      >Retire review</button>
+                    </div>
+                  </div>
+                )}
+              </article>
+
+              <article style={cardStyle}>
+                <div style={sectionHeadStyle}>
+                  <div>
+                    <div style={sectionLabel}>Stages 25–26 · Lesson learning loop</div>
+                    <h3 style={cardTitle}>Generation learns from real teaching</h3>
+                  </div>
+                  <StatusPill value={latestLessonCheck?.quality_status} />
+                </div>
+                <div style={metricGridStyle}>
+                  <Metric label="quality checks" value={continuousSummary.lesson_quality_checks || continuous?.lessonQualityChecks?.length || 0} />
+                  <Metric label="contract score" value={latestLessonCheck?.contract_score == null ? "—" : percent(latestLessonCheck.contract_score)} />
+                  <Metric label="teacher rating" value={latestLessonCheck?.teacher_rating ? `${latestLessonCheck.teacher_rating}/5` : "—"} />
+                  <Metric label="descriptive Δ" value={latestLessonCheck?.mean_descriptive_delta == null ? "—" : `${latestLessonCheck.mean_descriptive_delta} pp`} />
+                </div>
+                <p style={{ ...copyStyle, marginTop: 12 }}>
+                  The system connects specification compliance, teacher edits, delivery, delayed rechecks and descriptive outcomes while keeping those signals distinct.
+                </p>
+              </article>
+            </div>
+            <div style={{ ...sourceRowStyle, marginTop: 12, flexWrap: "wrap", justifyContent: "flex-start" }}>
+              {(continuous?.flywheel || []).map((step, index) => (
+                <span key={step} style={metaStyle}>
+                  {index > 0 ? "→ " : ""}{formatStatus(step)}
+                </span>
+              ))}
+            </div>
+          </section>
         </>
       )}
 
@@ -435,9 +589,11 @@ function OperatingSystemContent() {
         .os-stage-rail { display: grid; grid-template-columns: repeat(6, 1fr); gap: 8px; margin: 0 0 18px; }
         .os-two-column { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; margin-top: 16px; }
         .os-queue-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 12px; }
+        .os-continuous-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
         @media (max-width: 820px) {
           .os-stage-rail { grid-template-columns: repeat(3, 1fr); }
           .os-two-column { grid-template-columns: 1fr; }
+          .os-continuous-grid { grid-template-columns: 1fr; }
         }
         @media (max-width: 520px) {
           .os-stage-rail { grid-template-columns: repeat(2, 1fr); }

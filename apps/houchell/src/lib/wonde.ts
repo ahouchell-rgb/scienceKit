@@ -8,8 +8,9 @@
 //   WONDE_SCHOOL_ID  — the Wonde school id to pull (pilot: one school).
 //
 // Without those env vars wondeConfigured() is false and the routes no-op
-// cleanly (mirrors src/lib/email.ts). All DB writes here use the Supabase
-// service role and target STAGING tables only — never live owner-scoped data.
+// cleanly (mirrors src/lib/email.ts). The external payload is first written to
+// school-scoped staging, then a governed database promotion links canonical
+// identities; possible duplicates remain in a human review queue.
 
 import { SK_URL } from "@/lib/serverHelpers";
 
@@ -129,11 +130,37 @@ async function admin(method: string, path: string, body?: any) {
     method, headers: { apikey: key, Authorization: `Bearer ${key}`, "content-type": "application/json", Prefer: "return=representation" },
     body: body ? JSON.stringify(body) : undefined,
   });
-  if (!r.ok) throw new Error(`${path}: ${r.status}`);
+  if (!r.ok) throw new Error(`${path}: ${r.status} ${(await r.text().catch(() => "")).slice(0, 200)}`);
   return r.status === 204 ? null : r.json();
 }
 
-export interface SyncResult { ok: boolean; counts: { students: number; contacts: number; classes?: number }; error?: string; }
+export interface SyncResult {
+  ok: boolean;
+  counts: { students: number; contacts: number; classes?: number };
+  promotion?: { status: string; result?: any; reason?: string };
+  error?: string;
+}
+
+/** Promote staging after a successful mirror. Missing Stage 21-26 schema is a
+ * deployment-order condition, so the mirror remains successful and reports
+ * promotion as pending instead of losing fresh MIS data. */
+export async function promoteMisStaging(schoolId: string, runKey?: string) {
+  try {
+    const result = await admin("POST", "rpc/promote_mis_to_intelligence", {
+      p_school_id: schoolId,
+      p_run_key: runKey || `mis-promotion:${schoolId}:${new Date().toISOString()}`,
+    });
+    if (result?.status === "failed") {
+      throw new Error(`MIS promotion failed: ${result.error || "unknown database error"}`);
+    }
+    return { status: "completed", result };
+  } catch (error: any) {
+    if (/\b404\b|PGRST202|42883/i.test(String(error?.message || ""))) {
+      return { status: "pending_migration", reason: "Apply the Stage 21-26 migration" };
+    }
+    throw error;
+  }
+}
 
 /** Full sync for one school: pull from Wonde → upsert staging → log the run +
  *  update the connection. Safe to call from a cron or a manual trigger. */
@@ -147,10 +174,11 @@ export async function runMisSync(schoolId: string, misSchoolId: string, kind: "f
     const nc = await upsert("mis_contacts", "school_id,mis_id,student_mis_id", tagged(contacts));
     const ncl = await upsert("mis_classes", "school_id,mis_id", tagged(classes));
     await upsert("mis_class_students", "school_id,class_mis_id,student_mis_id", tagged(memberships));
+    const promotion = await promoteMisStaging(schoolId, `mis-promotion:${schoolId}:${startedAt}`);
 
-    await admin("POST", "mis_sync_runs", { school_id: schoolId, kind, status: "ok", counts: { students: ns, contacts: nc, classes: ncl }, started_at: startedAt, finished_at: new Date().toISOString() });
+    await admin("POST", "mis_sync_runs", { school_id: schoolId, kind, status: "ok", counts: { students: ns, contacts: nc, classes: ncl, promotion }, started_at: startedAt, finished_at: new Date().toISOString() });
     await admin("PATCH", `mis_connections?school_id=eq.${schoolId}`, { status: "active", last_full_sync_at: new Date().toISOString(), last_error: null });
-    return { ok: true, counts: { students: ns, contacts: nc, classes: ncl } };
+    return { ok: true, counts: { students: ns, contacts: nc, classes: ncl }, promotion };
   } catch (e: any) {
     const msg = e?.message || "sync failed";
     try {

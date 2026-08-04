@@ -293,7 +293,10 @@ export default function IntelPage() {
         </div>
 
         <div style={{ marginTop: 16, fontSize: 10.5, color: C.faint, lineHeight: 1.6, fontFamily: C.mono }}>
-          SYNTHETIC COHORT · no real pupil data<br />ontology v{ONTOLOGY_VERSION}
+          RESEARCH LAB · synthetic cohort · no real pupil data<br />ontology v{ONTOLOGY_VERSION}<br />
+          <a href="/intel/operating-system" style={{ color: C.grn, textDecoration: "none" }}>
+            Open live teacher OS →
+          </a>
         </div>
       </aside>
 

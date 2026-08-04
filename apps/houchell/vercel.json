@@ -13,6 +13,10 @@
       "schedule": "0 3 * * *"
     },
     {
+      "path": "/api/cron/intelligence-cycle",
+      "schedule": "20 3 * * *"
+    },
+    {
       "path": "/api/cron/trust-snapshots",
       "schedule": "0 4 * * 0"
     },

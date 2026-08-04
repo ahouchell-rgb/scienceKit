@@ -118,12 +118,33 @@ export interface OperatingSystemResponse extends IntelligenceApiState {
   policyEvaluations?: any[];
   monitoringEvents?: any[];
   evaluation?: EvaluationSummary | null;
+  continuous?: {
+    ontologyVersion: string;
+    entityTypes: string[];
+    summary: Record<string, unknown> | null;
+    stages: Array<{
+      number: number;
+      key: string;
+      label: string;
+      outcome: string;
+    }>;
+    flywheel: string[];
+    orchestrationRuns: any[];
+    dataQualityIssues: any[];
+    modelGovernanceChecks: any[];
+    modelReleaseReviews: any[];
+    lessonQualityChecks: any[];
+  };
   guardrails?: {
     automatedDecisions: false;
     pupilRiskScore: false;
     automaticPolicyPromotion: false;
     causalClaims: false;
     humanAcceptanceRequired: true;
+    automaticConsequentialDecisions?: false;
+    automaticModelPromotion?: false;
+    fixedPupilRiskLabels?: false;
+    causalClaimsFromBeforeAfterData?: false;
   };
   generatedAt?: string;
 }

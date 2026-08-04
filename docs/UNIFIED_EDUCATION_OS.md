@@ -1114,3 +1114,33 @@ products. They are participating in one learning organisation at different altit
 
 That is how the current collection of strong tools becomes an all-encompassing Education
 OS without becoming an incoherent “everything app”.
+
+---
+
+## 15. Stages 21–26: the continuous teacher OS
+
+The first production implementation of the continuously learning layer uses one bounded
+flywheel:
+
+```text
+ingest → reconcile → observe → forecast in shadow → recommend → human decide
+       → generate → deliver → recheck → evaluate → govern
+```
+
+| Stage | Production capability | Hard boundary |
+|---|---|---|
+| 21 | Explicit RLS/Data API grants and system-vs-human attribution | No anonymous intelligence access |
+| 22 | Wonde staging promotion into canonical pupils, classes and memberships | Possible duplicates and unmatched classes enter review; they are not guessed |
+| 23 | Daily, idempotent, step-observable intelligence cycle | A failed subsystem is recorded and cannot fail silently |
+| 24 | Temporal calibration, Brier skill and drift governance | Models remain shadow-only; only a named human can record a release review |
+| 25 | Lesson-contract, feedback, delivery, recheck and outcome evaluation | Contract compliance is not presented as scientific accuracy or causal impact |
+| 26 | One ontology-versioned read contract for trust, school, department and teacher views | Role altitude changes visibility, not the underlying truth |
+
+The live command centre is `/intel/operating-system`. The existing `/intel` synthetic
+cohort remains the research lab; it is explicitly labelled and shares the same ontology
+version rather than masquerading as live data.
+
+The scheduler runs after the nightly MIS mirror. Every school cycle has a stable daily
+key, durable step results, counts and an error summary. Retries reuse completed work.
+Model and lesson evaluations are append-only evidence. Neither table is a mechanism for
+automatic promotion or automatic intervention.
