@@ -99,7 +99,7 @@ select
     ) / (count(*) + 2),
     1
   ) as mastery_estimate,
-  round(least(50.0, 100.0 / sqrt(count(*) + 1)), 1) as uncertainty_points,
+  round(least(50.0, 100.0 / sqrt(count(*) + 1))::numeric, 1) as uncertainty_points,
   count(*)::integer as evidence_count,
   max(event.occurred_at) as last_evidence_at,
   jsonb_agg(distinct event.source_system) as source_mix,
@@ -131,7 +131,7 @@ select
     ) / (count(*) + 2),
     1
   ) as mastery_estimate,
-  round(least(50.0, 100.0 / sqrt(count(*) + 1)), 1) as uncertainty_points,
+  round(least(50.0, 100.0 / sqrt(count(*) + 1))::numeric, 1) as uncertainty_points,
   count(*)::integer as evidence_count,
   count(distinct event.pupil_id)::integer as pupil_count,
   max(event.occurred_at) as last_evidence_at,
