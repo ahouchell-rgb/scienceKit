@@ -140,6 +140,63 @@ export async function canManageSchool(
   return Boolean(schools[0]);
 }
 
+export async function canControlIntelligenceWork(
+  auth: IntelligenceAuth,
+  work: {
+    owner_id?: string | null;
+    created_by?: string | null;
+    raised_by?: string | null;
+    finding?: {
+      school_id?: string | null;
+      trust_id?: string | null;
+      class_id?: string | null;
+      raised_by?: string | null;
+    } | null;
+    school_id?: string | null;
+    trust_id?: string | null;
+    class_id?: string | null;
+  },
+): Promise<boolean> {
+  const finding = work.finding || work;
+  if (
+    work.owner_id === auth.userId ||
+    work.created_by === auth.userId ||
+    work.raised_by === auth.userId ||
+    finding.raised_by === auth.userId
+  ) {
+    return true;
+  }
+  if (
+    finding.school_id &&
+    auth.profile.school_id === finding.school_id &&
+    (auth.profile.school_role === "hod" || auth.profile.school_role === "slt")
+  ) {
+    return true;
+  }
+  if (
+    finding.trust_id &&
+    auth.profile.trust_role === "trust_lead" &&
+    auth.profile.trust_id === finding.trust_id
+  ) {
+    return true;
+  }
+  if (
+    finding.school_id &&
+    auth.profile.trust_role === "trust_lead" &&
+    auth.profile.trust_id
+  ) {
+    return canManageSchool(auth, finding.school_id);
+  }
+  if (finding.class_id) {
+    const classes = await restAsUser<Array<{ id: string }>>(
+      `classes?id=eq.${finding.class_id}&teacher_id=eq.${auth.userId}&select=id&limit=1`,
+      auth.token,
+    ).catch(() => []);
+    if (classes[0]) return true;
+  }
+  return false;
+}
+
 export function canManageGlobalCurriculum(auth: IntelligenceAuth): boolean {
   return auth.profile.role === "admin";
 }

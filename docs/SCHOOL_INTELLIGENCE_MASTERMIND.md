@@ -1125,6 +1125,10 @@ If development starts from this document, take these in order:
 12. Run the Stage 14 next-attempt baseline in shadow mode, accumulate future
     labels, and refuse release until it repeatedly beats the named baseline while
     remaining acceptably calibrated.
+13. Activate the Stage 15–20 teacher operating system: source health, the
+    role-scoped golden loop, human-decided recommendations, structured lesson
+    contracts, policy evaluation and append-only production monitoring. See
+    `STAGES_15_20_TEACHER_OPERATING_SYSTEM.md`.
 
 This sequence combines what is already built, protects the valuable foundation, and
 creates the flywheel the vision actually depends on.

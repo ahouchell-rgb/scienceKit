@@ -38,13 +38,19 @@ export const CHANNEL_NAVIGATION: NavigationItem[] = [
   { href: "/tools", label: "Library", hint: "Interactive" },
 ];
 
+const INTELLIGENCE_NAV: NavigationItem = {
+  href: "/intel/operating-system",
+  label: "Intelligence",
+  aliases: ["/intel"],
+};
+
 const TEACHER_NAV: NavigationItem[] = [
   { href: "/", label: "Today", exact: true },
   { href: "/teacher", label: "Classes" },
   { href: "/curriculum", label: "Curriculum", aliases: ["/unit"] },
   { href: "/slides", label: "Create" },
   { href: "/assessments", label: "Assess" },
-  { href: "/intel", label: "Intelligence" },
+  INTELLIGENCE_NAV,
   { href: "/inbox", label: "Inbox" },
   { href: "/parents", label: "Families", aliases: ["/home-course"] },
   { href: "/manage", label: "Operations", aliases: ["/setup", "/school/integrations"] },
@@ -55,7 +61,7 @@ const DEPARTMENT_NAV: NavigationItem[] = [
   { href: "/teacher", label: "Classes" },
   { href: "/curriculum", label: "Curriculum", aliases: ["/unit"] },
   { href: "/assessments", label: "Assess" },
-  { href: "/intel", label: "Intelligence" },
+  INTELLIGENCE_NAV,
   { href: "/slides", label: "Resources" },
   { href: "/inbox", label: "Inbox" },
   { href: "/manage", label: "Operations", aliases: ["/setup", "/school/integrations"] },
@@ -65,7 +71,7 @@ const SCHOOL_NAV: NavigationItem[] = [
   { href: "/school", label: "School", exact: true },
   { href: "/curriculum", label: "Curriculum", aliases: ["/unit"] },
   { href: "/assessments", label: "Assess" },
-  { href: "/intel", label: "Intelligence" },
+  INTELLIGENCE_NAV,
   { href: "/school/intervention", label: "Interventions" },
   { href: "/parents", label: "Families", aliases: ["/home-course"] },
   { href: "/inbox", label: "Inbox" },
@@ -75,7 +81,7 @@ const SCHOOL_NAV: NavigationItem[] = [
 const TRUST_NAV: NavigationItem[] = [
   { href: "/trust", label: "Trust", exact: true },
   { href: "/curriculum", label: "Curriculum", aliases: ["/unit"] },
-  { href: "/intel", label: "Intelligence" },
+  INTELLIGENCE_NAV,
   { href: "/slides", label: "Resources" },
   { href: "/inbox", label: "Inbox" },
   { href: "/trust-centre", label: "Governance" },

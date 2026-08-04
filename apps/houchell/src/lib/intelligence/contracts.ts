@@ -77,3 +77,53 @@ export interface EvaluationSummary {
 export interface IntelligenceEvaluationResponse extends IntelligenceApiState {
   summaries?: EvaluationSummary[];
 }
+
+export interface OperatingSystemQueueItem {
+  id: string;
+  kind: "recommendation" | "action" | "recheck" | "finding";
+  lane: "now" | "next" | "watch";
+  title: string;
+  why: string;
+  priority: "low" | "normal" | "high" | "urgent";
+  dueAt: string | null;
+  actionId: string | null;
+  recommendationId: string | null;
+  href: string | null;
+  humanDecisionRequired: boolean;
+  score: number;
+}
+
+export interface OperatingSystemResponse extends IntelligenceApiState {
+  selectedSchoolId?: string;
+  schools?: SchoolOption[];
+  role?: {
+    level: "trust" | "school" | "department" | "teacher";
+    label: string;
+    job: string;
+    headline: string;
+    queueLimit: number;
+  };
+  permissions?: { canManageSchool: boolean };
+  summary?: Record<string, unknown> | null;
+  brain?: {
+    status: "healthy" | "degraded" | "stale" | "blocked" | "unknown";
+    checkedAt: string | null;
+    healthy: number;
+    attention: number;
+    sources: any[];
+  };
+  queue?: OperatingSystemQueueItem[];
+  recommendations?: any[];
+  lessonSpecs?: any[];
+  policyEvaluations?: any[];
+  monitoringEvents?: any[];
+  evaluation?: EvaluationSummary | null;
+  guardrails?: {
+    automatedDecisions: false;
+    pupilRiskScore: false;
+    automaticPolicyPromotion: false;
+    causalClaims: false;
+    humanAcceptanceRequired: true;
+  };
+  generatedAt?: string;
+}

@@ -63,4 +63,32 @@ describe("intelligence migration contracts", () => {
       /grant select, insert on table[\s\S]*public\.intelligence_deliveries,[\s\S]*public\.intelligence_outcomes[\s\S]*to service_role;/,
     );
   });
+
+  it("keeps the Stage 15-20 operating system governed and explicitly granted", () => {
+    const operatingSystem = migration(
+      "20260804164900_stages_15_20_teacher_operating_system.sql",
+    );
+
+    expect(operatingSystem).toContain(
+      "create view public.intelligence_operating_system_summary",
+    );
+    expect(operatingSystem).toMatch(
+      /intelligence_operating_system_summary[\s\S]*security_invoker = true/,
+    );
+    expect(operatingSystem).toMatch(
+      /create or replace function public\.decide_intelligence_recommendation[\s\S]*security invoker/,
+    );
+    expect(operatingSystem).toMatch(
+      /revoke all on function public\.decide_intelligence_recommendation[\s\S]*from public, anon, authenticated;/,
+    );
+    expect(operatingSystem).toContain(
+      "requires_human_acceptance  boolean not null default true",
+    );
+    expect(operatingSystem).toContain(
+      "create trigger intelligence_lesson_specs_no_update_or_delete",
+    );
+    expect(operatingSystem).toMatch(
+      /grant select on table[\s\S]*public\.intelligence_monitoring_events[\s\S]*to authenticated;/,
+    );
+  });
 });

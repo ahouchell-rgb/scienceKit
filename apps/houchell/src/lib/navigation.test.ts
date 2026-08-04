@@ -17,7 +17,7 @@ describe("workspace navigation", () => {
     expect(workspaceLevelFor({ school_role: "slt", trust_role: "trust_lead" })).toBe("trust");
   });
 
-  it("gives every workspace the common curriculum, intelligence and inbox objects", () => {
+  it("gives every workspace the common curriculum, operating system and inbox objects", () => {
     const profiles = [
       {},
       { school_role: "hod" },
@@ -27,7 +27,7 @@ describe("workspace navigation", () => {
     for (const profile of profiles) {
       const hrefs = workspaceNavigation(profile).map((item) => item.href);
       expect(hrefs).toContain("/curriculum");
-      expect(hrefs).toContain("/intel");
+      expect(hrefs).toContain("/intel/operating-system");
       expect(hrefs).toContain("/inbox");
     }
   });

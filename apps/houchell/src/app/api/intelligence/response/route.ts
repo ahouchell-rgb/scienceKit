@@ -1,10 +1,10 @@
 import {
   authenticateIntelligence,
+  canControlIntelligenceWork,
   isMissingDatabaseObject,
   jsonNoStore,
   restAsUser,
   UUID_RE,
-  type IntelligenceAuth,
 } from "@/lib/intelligence/server";
 import { skAdmin } from "@/lib/serverHelpers";
 import { buildResponseSpec, descriptiveOutcome } from "@/lib/responseLoop";
@@ -15,6 +15,10 @@ import {
 } from "@/lib/artifactLineage";
 import { buildCurriculumGraphPrompt } from "@/lib/curriculumGraph";
 import { loadApprovedCurriculumContext } from "@/lib/curriculumGraphServer";
+import {
+  buildLessonBundlePrompt,
+  buildLessonBundleSpec,
+} from "@/lib/intelligence/operatingSystem";
 
 export const runtime = "nodejs";
 export const maxDuration = 300;
@@ -26,32 +30,6 @@ async function loadAction(actionId: string, token: string) {
       token,
     )
   )?.[0];
-}
-
-async function canControl(action: any, auth: IntelligenceAuth) {
-  if (action.owner_id === auth.userId || action.created_by === auth.userId) return true;
-  const profile = auth.profile;
-  const finding = action.finding;
-  if (
-    finding?.school_id &&
-    profile?.school_id === finding.school_id &&
-    (profile.school_role === "hod" || profile.school_role === "slt")
-  ) {
-    return true;
-  }
-  if (profile?.trust_role === "trust_lead") {
-    if (finding?.trust_id && profile.trust_id === finding.trust_id) return true;
-    if (finding?.school_id) {
-      const school = (
-        await restAsUser<any[]>(
-          `schools?id=eq.${finding.school_id}&select=trust_id&limit=1`,
-          auth.token,
-        )
-      )?.[0];
-      if (school?.trust_id && school.trust_id === profile.trust_id) return true;
-    }
-  }
-  return false;
 }
 
 export async function GET(request: Request) {
@@ -136,7 +114,7 @@ export async function POST(request: Request) {
     return jsonNoStore({ error: "Couldn't load the action" }, 500);
   }
   if (!action) return jsonNoStore({ error: "Action not found in your scope" }, 404);
-  if (!(await canControl(action, auth))) {
+  if (!(await canControlIntelligenceWork(auth, action))) {
     return jsonNoStore({ error: "You cannot operate this response loop" }, 403);
   }
 
@@ -187,7 +165,19 @@ export async function POST(request: Request) {
         curriculumGraphPrompt = "";
       }
     }
-    const generationPrompt = [responseSpec.prompt, curriculumGraphPrompt]
+    const lessonBundleSpec = buildLessonBundleSpec({
+      finding: action.finding,
+      responseSpec,
+      liveState,
+      curriculumGraph,
+      unitId,
+      lessonId,
+    });
+    const generationPrompt = [
+      responseSpec.prompt,
+      curriculumGraphPrompt,
+      buildLessonBundlePrompt(lessonBundleSpec),
+    ]
       .filter(Boolean)
       .join("\n\n");
 
@@ -213,6 +203,7 @@ export async function POST(request: Request) {
           },
           generation_spec: {
             ...responseSpec,
+            lessonBundle: lessonBundleSpec,
             curriculumGraph: curriculumGraph
               ? {
                   schemaVersion: curriculumGraph.schemaVersion,
@@ -224,6 +215,7 @@ export async function POST(request: Request) {
           source_model_versions: {
             learnerState: liveState?.model_version || null,
             responseSpec: responseSpec.schemaVersion,
+            lessonBundle: lessonBundleSpec.schemaVersion,
             curriculumGraph:
               curriculumGraph?.provenance?.graphVersion || null,
           },
@@ -232,6 +224,40 @@ export async function POST(request: Request) {
       )?.[0];
     } catch {
       return jsonNoStore({ error: "Couldn't freeze the generation context; no deck was generated" }, 500);
+    }
+
+    let frozenLessonSpec: any = null;
+    try {
+      frozenLessonSpec = (
+        await skAdmin("POST", "intelligence_lesson_specs", {
+          school_id: action.finding.school_id,
+          finding_id: action.finding.id,
+          action_id: actionId,
+          context_snapshot_id: contextSnapshot.id,
+          unit_id: unitId,
+          lesson_id: lessonId,
+          schema_version: lessonBundleSpec.schemaVersion,
+          spec_fingerprint: artifactFingerprint(lessonBundleSpec),
+          specification: lessonBundleSpec,
+          source_versions: {
+            learnerState: liveState?.model_version || null,
+            responseSpec: responseSpec.schemaVersion,
+            curriculumGraph: curriculumGraph?.provenance?.graphVersion || null,
+          },
+          output_contract: {
+            requested: lessonBundleSpec.outputBundle,
+            firstArtifact: "lesson_deck",
+            teacherReviewRequired: true,
+          },
+          created_by: auth.userId,
+        })
+      )?.[0] || null;
+    } catch (error) {
+      if (!isMissingDatabaseObject(error, ["intelligence_lesson_specs"])) {
+        return jsonNoStore({ error: "Couldn't freeze the lesson specification; no deck was generated" }, 500);
+      }
+      // Stage 18 can be activated after the existing response loop. The same
+      // specification remains frozen inside the Stage 10 context snapshot.
     }
 
     const origin = new URL(request.url).origin;
@@ -274,6 +300,8 @@ export async function POST(request: Request) {
           unitId,
           lessonId,
           contextSnapshotId: contextSnapshot.id,
+          lessonSpecId: frozenLessonSpec?.id || null,
+          lessonBundleSpec,
           responseSpec,
           curriculumGraph: curriculumGraph
             ? {
@@ -298,7 +326,12 @@ export async function POST(request: Request) {
         created_by: auth.userId,
         updated_by: auth.userId,
       });
-      return jsonNoStore({ contextSnapshot, artifact: artifacts?.[0], deck: generatedBody }, 201);
+      return jsonNoStore({
+        contextSnapshot,
+        lessonSpec: frozenLessonSpec,
+        artifact: artifacts?.[0],
+        deck: generatedBody,
+      }, 201);
     } catch (error: any) {
       return jsonNoStore(
         {
