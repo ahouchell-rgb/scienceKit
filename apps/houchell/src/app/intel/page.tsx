@@ -70,6 +70,8 @@ export default function IntelPage() {
   const [trail, setTrail] = useState<{ label: string; view: View }[]>([]);
   const [cursor, setCursor] = useState(0);
   const [paletteOpen, setPaletteOpen] = useState(false);
+  // Mobile only: the rail folds to brand + altitudes until expanded.
+  const [railOpen, setRailOpen] = useState(false);
   const mainRef = useRef<HTMLDivElement>(null);
 
   const viewer = useMemo(
@@ -157,15 +159,23 @@ export default function IntelPage() {
     <div style={{
       minHeight: "100dvh", background: `radial-gradient(1200px 700px at 20% -10%, #10243d 0%, ${C.bg} 55%)`,
       color: C.text, fontFamily: C.sans, display: "flex",
-    }}>
+    }} className="intel-shell">
       <style dangerouslySetInnerHTML={{ __html: INTEL_CSS }} />
 
-      {/* ── Level rail ── */}
-      <aside style={{
-        width: 232, flexShrink: 0, borderRight: `1px solid ${C.rule}`,
-        padding: "22px 18px", display: "flex", flexDirection: "column", gap: 4,
-        position: "sticky", top: 0, height: "100dvh", overflowY: "auto",
-      }} className="intel-scroll">
+      {/* ── Level rail ──
+          On a phone this stops being a sticky sidebar and becomes a normal
+          band at the top of the document: a 232px rail on a 375px viewport
+          left ~130px for content, which wrapped the headline one word per
+          line. Teachers read this between lessons on a phone. */}
+      <aside
+        aria-label="Altitude and views"
+        data-open={railOpen ? "1" : "0"}
+        className="intel-scroll intel-rail"
+        style={{
+          flexShrink: 0, borderRight: `1px solid ${C.rule}`,
+          padding: "22px 18px", display: "flex", flexDirection: "column", gap: 4,
+        }}
+      >
         <Link href="/" style={{ textDecoration: "none", color: "inherit", marginBottom: 20, display: "block" }}>
           <div style={{ fontFamily: C.serif, fontSize: 19, letterSpacing: "-0.01em" }}>Northreach</div>
           <Micro style={{ marginTop: 2 }}>Intelligence console</Micro>
@@ -205,7 +215,8 @@ export default function IntelPage() {
           Open shadow forecast lab →
         </Link>
 
-        <Micro style={{ marginBottom: 8 }}>Altitude</Micro>
+        <Micro style={{ marginBottom: 8 }} id="altitude-label">Altitude</Micro>
+        <nav aria-labelledby="altitude-label" className="intel-altitudes">
         {LEVELS.map((l, i) => {
           const def = LEVEL_DEFS[l];
           const on = l === level;
@@ -225,7 +236,20 @@ export default function IntelPage() {
             </button>
           );
         })}
+        </nav>
 
+        <button
+          className="intel-btn intel-rail-toggle"
+          aria-expanded={railOpen}
+          onClick={() => setRailOpen((o) => !o)}
+          style={{
+            marginTop: 10, padding: "8px 12px", borderRadius: 8, cursor: "pointer",
+            border: `1px solid ${C.rule}`, background: "transparent", color: C.muted,
+            fontFamily: C.mono, fontSize: 11, textAlign: "left", width: "100%",
+          }}
+        >{railOpen ? "▾ Hide scope and views" : "▸ Scope, purposes and views"}</button>
+
+        <div className="intel-rail-collapsible">
         <div style={{ marginTop: 14, padding: "11px 12px", borderRadius: 9, background: "rgba(255,255,255,0.035)", border: `1px solid ${C.rule}` }}>
           <Micro style={{ marginBottom: 6 }}>Their job</Micro>
           <div style={{ fontSize: 12.5, lineHeight: 1.55, color: C.muted }}>{LEVEL_DEFS[level].job}</div>
@@ -266,13 +290,16 @@ export default function IntelPage() {
           <RailLink label="Search" hint="⌘K" onClick={() => setPaletteOpen(true)} />
         </div>
 
+        </div>
+
         <div style={{ marginTop: 16, fontSize: 10.5, color: C.faint, lineHeight: 1.6, fontFamily: C.mono }}>
           SYNTHETIC COHORT · no real pupil data<br />ontology v{ONTOLOGY_VERSION}
         </div>
       </aside>
 
       {/* ── Main ── */}
-      <div ref={mainRef} className="intel-scroll" style={{ flex: 1, minWidth: 0, height: "100dvh", overflowY: "auto" }}>
+      <main id="main" tabIndex={-1} ref={mainRef} className="intel-scroll intel-pane"
+            style={{ flex: 1, minWidth: 0, outline: "none" }}>
         {/* Trail */}
         <div style={{
           position: "sticky", top: 0, zIndex: 20, display: "flex", alignItems: "center", gap: 10,
@@ -320,7 +347,7 @@ export default function IntelPage() {
           {view.kind === "progression" && <ProgressionView initialKs2={view.ks2 ?? 101} />}
           {view.kind === "inclusion" && <InclusionView />}
         </div>
-      </div>
+      </main>
 
       {paletteOpen && (
         <Palette viewer={viewer} findings={briefing.findings}
@@ -342,6 +369,9 @@ function Board({
 }) {
   const def = LEVEL_DEFS[viewer.level];
   const live = briefing.findings.filter((f) => !f.suppressed);
+  // A teacher's job is the children in front of them; a leader's job is the
+  // structure around those children. The board leads with whichever it is.
+  const pupilsFirst = viewer.level === "teacher";
   const suppressed = briefing.findings.filter((f) => f.suppressed);
 
   return (
@@ -364,11 +394,57 @@ function Board({
         {briefing.stats.map((s, i) => <StatTile key={s.label} label={s.label} value={s.value} hint={s.hint} delay={i * 70} />)}
       </div>
 
-      <Rule label={`Findings · ${live.length}`} />
+      {/* ORDER IS BY ALTITUDE, not by what the engine happened to compute.
+          A class teacher opening this wants the pupils who changed, not a
+          school-wide structural finding — and previously they got "nothing
+          meets the threshold" at the top of the page while nine pupils sat
+          below the fold. A head wants the opposite: the structural thing only
+          they can change, first. */}
+{pupilsFirst ? (
+        <>
+      {briefing.changes.length > 0 && (
+        <>
+          <Rule label={pupilsFirst
+            ? `Pupils to catch · ${briefing.changes.filter((c) => !c.rtmSuspect).length}`
+            : "Trajectories that changed — descriptive, not predictive"} />
+          <p style={{ fontSize: 13, color: C.faint, lineHeight: 1.6, maxWidth: "70ch", marginBottom: 12 }}>
+            These pupils moved against their own cross-subject baseline. No score, no ranking, no
+            prediction about any child — just what changed, with the evidence attached.
+          </p>
+          <ChangeList changes={briefing.changes}
+            onPupil={(id, subj) => go({ kind: "pupil", pupilId: id, subjectKey: subj })} />
+        </>
+      )}
+
+      <Rule label={pupilsFirst
+        ? `Structural findings · ${live.length}`
+        : `Findings · ${live.length}`} />
       <div style={{ display: "grid", gap: 10 }}>
         {live.length === 0 && (
-          <div style={{ padding: 22, borderRadius: 10, border: `1px dashed ${C.rule}`, color: C.dim, fontFamily: C.mono, fontSize: 12 }}>
-            Nothing meets the threshold at this altitude. That is a result, not an empty state.
+          <div style={{ padding: 22, borderRadius: 10, border: `1px dashed ${C.rule}`, color: C.dim, fontFamily: C.mono, fontSize: 12, lineHeight: 1.7 }}>
+            {pupilsFirst
+              ? "No school-wide structural finding reaches your classes this window. The pupils above are where your attention goes."
+              : "Nothing meets the threshold at this altitude. That is a result, not an empty state."}
+          </div>
+        )}
+        {live.map((f, i) => (
+          <FindingCard key={f.id} finding={f} index={i} cursor={i === cursor}
+            onOpen={() => { setCursor(i); go({ kind: "case", findingId: f.id }); }} />
+        ))}
+      </div>
+
+        </>
+      ) : (
+        <>
+      <Rule label={pupilsFirst
+        ? `Structural findings · ${live.length}`
+        : `Findings · ${live.length}`} />
+      <div style={{ display: "grid", gap: 10 }}>
+        {live.length === 0 && (
+          <div style={{ padding: 22, borderRadius: 10, border: `1px dashed ${C.rule}`, color: C.dim, fontFamily: C.mono, fontSize: 12, lineHeight: 1.7 }}>
+            {pupilsFirst
+              ? "No school-wide structural finding reaches your classes this window. The pupils above are where your attention goes."
+              : "Nothing meets the threshold at this altitude. That is a result, not an empty state."}
           </div>
         )}
         {live.map((f, i) => (
@@ -379,13 +455,18 @@ function Board({
 
       {briefing.changes.length > 0 && (
         <>
-          <Rule label="Trajectories that changed — descriptive, not predictive" />
+          <Rule label={pupilsFirst
+            ? `Pupils to catch · ${briefing.changes.filter((c) => !c.rtmSuspect).length}`
+            : "Trajectories that changed — descriptive, not predictive"} />
           <p style={{ fontSize: 13, color: C.faint, lineHeight: 1.6, maxWidth: "70ch", marginBottom: 12 }}>
             These pupils moved against their own cross-subject baseline. No score, no ranking, no
             prediction about any child — just what changed, with the evidence attached.
           </p>
           <ChangeList changes={briefing.changes}
             onPupil={(id, subj) => go({ kind: "pupil", pupilId: id, subjectKey: subj })} />
+        </>
+      )}
+
         </>
       )}
 

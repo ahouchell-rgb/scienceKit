@@ -41,6 +41,44 @@ export const INTEL_CSS = `
 .intel-scroll::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.14); border-radius: 9px; }
 .intel-scroll::-webkit-scrollbar-track { background: transparent; }
 
+/* ─── Shell layout ───────────────────────────────────────────────────────
+   Desktop: a fixed sticky rail beside a scrolling pane.
+   Narrow:  the rail stops being a sidebar entirely and becomes a band at the
+            top of the document. A 232px rail on a 375px viewport left ~130px
+            for content and wrapped the headline one word per line. */
+.intel-rail { width: 232px; position: sticky; top: 0; height: 100dvh; overflow-y: auto; }
+/* display:contents so the children still take part in the rail's flex column
+   on desktop; the media query swaps it for none/grid on a phone. Declared in
+   CSS rather than inline, because an inline display would outrank it. */
+.intel-rail-collapsible { display: contents; }
+.intel-altitudes { display: grid; gap: 4px; }
+.intel-pane { height: 100dvh; overflow-y: auto; }
+
+@media (max-width: 820px) {
+  .intel-shell { flex-direction: column; }
+  .intel-rail {
+    width: 100%; height: auto; position: static; overflow: visible;
+    border-right: none; border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+  /* The pane scrolls with the document rather than owning its own scroller,
+     so momentum scrolling and the URL bar behave normally on a phone. */
+  .intel-pane { height: auto; overflow: visible; }
+  /* Everything except the brand and the altitude switcher folds away, or the
+     briefing sits ~1600px below the fold on a phone. */
+  .intel-rail-collapsible { display: none; }
+  .intel-rail[data-open="1"] .intel-rail-collapsible { display: grid; gap: 4px; }
+  /* Altitudes become a horizontal strip so all four stay one tap away. */
+  .intel-altitudes { display: flex; flex-direction: row; overflow-x: auto; gap: 6px; padding-bottom: 4px; }
+  /* The buttons carry an inline width:100% for the desktop rail, which would
+     otherwise give one altitude per screen width. !important is the honest
+     tool here — the inline style is what we are overriding. */
+  .intel-altitudes > button { flex: 0 0 auto; width: auto !important; }
+  .intel-altitudes .intel-keycap { display: none; }
+}
+@media (min-width: 821px) {
+  .intel-rail-toggle { display: none !important; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .intel-rise, .intel-pop, .intel-fade { animation: none !important; }
   .intel-card, .intel-btn { transition: none !important; }
@@ -50,19 +88,27 @@ export const INTEL_CSS = `
 
 /* ─── Type ─────────────────────────────────────────────────────────────── */
 
-export function Micro({ children, style }: { children: React.ReactNode; style?: React.CSSProperties }) {
+export function Micro({
+  children, style, id,
+}: { children: React.ReactNode; style?: React.CSSProperties; id?: string }) {
   return (
-    <div style={{ fontFamily: C.mono, fontSize: 9.5, letterSpacing: "0.24em", textTransform: "uppercase", color: C.dim, ...style }}>
+    <div id={id} style={{ fontFamily: C.mono, fontSize: 9.5, letterSpacing: "0.24em", textTransform: "uppercase", color: C.dim, ...style }}>
       {children}
     </div>
   );
 }
 
+/** A section divider. Renders as a real <h2> so the page has a document
+ *  outline — a screen-reader user was previously getting one h1 and then an
+ *  undifferentiated wall of divs with no way to skim. */
 export function Rule({ label }: { label: string }) {
   return (
     <div style={{ display: "flex", alignItems: "center", gap: 12, margin: "26px 0 14px" }}>
-      <Micro>{label}</Micro>
-      <span style={{ flex: 1, height: 1, background: C.rule }} />
+      <h2 style={{
+        fontFamily: C.mono, fontSize: 9.5, letterSpacing: "0.24em", textTransform: "uppercase",
+        color: C.dim, fontWeight: 400, margin: 0,
+      }}>{label}</h2>
+      <span style={{ flex: 1, height: 1, background: C.rule }} aria-hidden />
     </div>
   );
 }
@@ -215,7 +261,7 @@ export function Btn({
 /** Keycap hint. The console is keyboard-first and should say so. */
 export function Key({ children }: { children: React.ReactNode }) {
   return (
-    <kbd style={{
+    <kbd className="intel-keycap" style={{
       fontFamily: C.mono, fontSize: 9.5, padding: "1.5px 5px", borderRadius: 4,
       border: `1px solid ${C.border}`, background: "rgba(255,255,255,0.06)",
       color: C.muted, lineHeight: 1.5,
