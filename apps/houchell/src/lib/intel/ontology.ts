@@ -55,7 +55,7 @@ export interface ObjectTypeDef {
   titleProp: string;
   properties: PropertyDef[];
   /** Lowest role level that may open an instance of this type. */
-  minLevel: "teacher" | "hod" | "head" | "trust";
+  minLevel: "teacher" | "department" | "school" | "trust";
 }
 
 export type ObjectTypeKey =
@@ -96,7 +96,7 @@ export const OBJECT_TYPES: Record<ObjectTypeKey, ObjectTypeDef> = {
   },
   Department: {
     key: "Department", label: "Department", plural: "Departments", glyph: "▦", accent: "accent",
-    titleProp: "name", minLevel: "head",
+    titleProp: "name", minLevel: "school",
     properties: [
       { key: "name", label: "Name", type: "string", sensitivity: "open", why: "Identify the department." },
       { key: "subjectKey", label: "Subject", type: "string", sensitivity: "open", why: "Join to curriculum." },
@@ -105,7 +105,7 @@ export const OBJECT_TYPES: Record<ObjectTypeKey, ObjectTypeDef> = {
   },
   Staff: {
     key: "Staff", label: "Staff", plural: "Staff", glyph: "◍", accent: "amb",
-    titleProp: "name", minLevel: "hod",
+    titleProp: "name", minLevel: "department",
     // NOTE: there is deliberately no performance property on Staff. Teacher
     // value-added is r≈0.4 year-to-year and ~35% misclassified on one year of
     // data; the console diagnoses SLOTS and SEQUENCES, never people.
@@ -127,7 +127,7 @@ export const OBJECT_TYPES: Record<ObjectTypeKey, ObjectTypeDef> = {
   },
   TimetableSlot: {
     key: "TimetableSlot", label: "Timetable slot", plural: "Timetable slots", glyph: "◫", accent: "accent3",
-    titleProp: "label", minLevel: "hod",
+    titleProp: "label", minLevel: "department",
     properties: [
       { key: "label", label: "Slot", type: "string", sensitivity: "open", why: "Name the slot under diagnosis." },
       { key: "day", label: "Day", type: "number", sensitivity: "open", why: "Day-of-week effects are real and fixable." },

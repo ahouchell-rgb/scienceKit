@@ -16,10 +16,30 @@
    ───────────────────────────────────────────────────────────────────────── */
 
 import { SENSITIVITY_RANK, type Sensitivity } from "./ontology";
+import {
+  WORKSPACE_LABEL, WORKSPACE_PURPOSE, workspaceLevelFor,
+  type NavigationProfile, type WorkspaceLevel,
+} from "@/lib/navigation";
 
-export type Level = "trust" | "head" | "hod" | "teacher";
+/* ─── ONE altitude model ───────────────────────────────────────────────────
+   `WorkspaceLevel` in lib/navigation.ts is the single source of truth for
+   what altitude a person is at. The console used to carry its own parallel
+   copy of this idea ("head" / "hod"), which meant the app's navigation and
+   the console's scoping could drift apart — two answers to the same question
+   about the same user. `Level` is now an alias, not a second type, so
+   changing altitude is one concept across the whole product.
 
-export const LEVELS: Level[] = ["trust", "head", "hod", "teacher"];
+   Naming follows navigation.ts deliberately: an altitude is an ORGANISATIONAL
+   SCOPE, not a job title. A school-level view is not only for the
+   headteacher — deputies and SLT sit there too. */
+export type Level = WorkspaceLevel;
+
+export const LEVELS: Level[] = ["trust", "school", "department", "teacher"];
+
+/** The altitude a real signed-in profile sits at. Lets the console open where
+ *  the user actually is instead of at a hardcoded default. */
+export const levelForProfile = (profile?: NavigationProfile | null): Level =>
+  workspaceLevelFor(profile);
 
 /** The smallest group we will ever report a statistic about. */
 export const K_ANONYMITY_FLOOR = 10;
@@ -98,31 +118,34 @@ export const PURPOSES: Record<PurposeKey, PurposeDef> = {
   },
 };
 
+// `label` and `job` are NOT redefined here — they come from navigation.ts, so
+// the nav rail and the console can never disagree about what an altitude is
+// called or what the person there is trying to do.
 export const LEVEL_DEFS: Record<Level, LevelDef> = {
   trust: {
-    key: "trust", label: "Trust", role: "Director of Education", glyph: "◈",
-    job: "Decide where the trust's finite support capacity goes this term.",
+    key: "trust", label: WORKSPACE_LABEL.trust, role: "Director of Education", glyph: "◈",
+    job: WORKSPACE_PURPOSE.trust,
     purposes: ["allocate_trust_support", "monitor_inclusion_gaps", "curate_own_findings"],
     maxPupilGrain: null, // never resolves a child
     accent: "#7aa7ff",
   },
-  head: {
-    key: "head", label: "Headteacher", role: "Headteacher", glyph: "▤",
-    job: "Find the structural things only I can change — timetable, sets, staffing, sequencing.",
+  school: {
+    key: "school", label: WORKSPACE_LABEL.school, role: "Headteacher / SLT", glyph: "▤",
+    job: WORKSPACE_PURPOSE.school,
     purposes: ["assure_curriculum_quality", "monitor_inclusion_gaps", "allocate_trust_support", "curate_own_findings"],
     maxPupilGrain: "internal",
     accent: "#58e0c2",
   },
-  hod: {
-    key: "hod", label: "Head of department", role: "Head of Department", glyph: "▦",
-    job: "Work out what my department should teach differently, and to whom.",
+  department: {
+    key: "department", label: WORKSPACE_LABEL.department, role: "Head of Department", glyph: "▦",
+    job: WORKSPACE_PURPOSE.department,
     purposes: ["plan_department_response", "assure_curriculum_quality", "monitor_inclusion_gaps", "curate_own_findings"],
     maxPupilGrain: "restricted",
     accent: "#ffd166",
   },
   teacher: {
-    key: "teacher", label: "Teacher", role: "Class teacher", glyph: "●",
-    job: "Know what to reteach on Monday, and which four children to catch.",
+    key: "teacher", label: WORKSPACE_LABEL.teacher, role: "Class teacher", glyph: "●",
+    job: WORKSPACE_PURPOSE.teacher,
     purposes: ["plan_next_lesson", "support_individual_pupil", "curate_own_findings"],
     maxPupilGrain: "restricted",
     accent: "#ff9166",

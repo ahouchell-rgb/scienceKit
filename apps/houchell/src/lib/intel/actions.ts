@@ -44,43 +44,43 @@ export const ACTIONS: Record<ActionKey, ActionDef> = {
   readability_pass: {
     key: "readability_pass", label: "Commission a readability pass", glyph: "◎",
     effect: "Raises a task on the department to rewrite the stem of every question above the target reading age, without changing what is assessed.",
-    levels: ["head", "hod", "teacher"], purpose: "assure_curriculum_quality", consequential: true,
+    levels: ["school", "department", "teacher"], purpose: "assure_curriculum_quality", consequential: true,
   },
   timetable_review: {
     key: "timetable_review", label: "Send to timetable review", glyph: "◫",
     effect: "Adds the slot to next year's build constraints with the evidence attached. Names no member of staff.",
-    levels: ["head"], purpose: "assure_curriculum_quality", consequential: true,
+    levels: ["school"], purpose: "assure_curriculum_quality", consequential: true,
   },
   reorder_scheme: {
     key: "reorder_scheme", label: "Propose a sequence change", glyph: "◆",
     effect: "Drafts a scheme-of-work amendment moving the prerequisite before the dependent objective, for the HoD to accept or reject.",
-    levels: ["hod", "head"], purpose: "plan_department_response", consequential: true,
+    levels: ["department", "school"], purpose: "plan_department_response", consequential: true,
   },
   generate_reteach: {
     key: "generate_reteach", label: "Build the reteach", glyph: "▶",
     effect: "Generates a 15-minute reteach sequence and a recheck quiz for the affected objective, using the existing lesson engine.",
-    levels: ["hod", "teacher"], purpose: "plan_next_lesson", consequential: false,
+    levels: ["department", "teacher"], purpose: "plan_next_lesson", consequential: false,
   },
   brief_department: {
     key: "brief_department", label: "Brief the department", glyph: "▦",
     effect: "Produces a one-page brief — the finding, the evidence, the ranked explanations, and what would rule each in or out.",
-    levels: ["trust", "head", "hod"], purpose: "plan_department_response", consequential: false,
+    levels: ["trust", "school", "department"], purpose: "plan_department_response", consequential: false,
   },
   flag_for_scrutiny: {
     key: "flag_for_scrutiny", label: "Add to scrutiny agenda", glyph: "▤",
     effect: "Puts the finding on the next quality-of-education meeting with its evidence pack.",
-    levels: ["trust", "head", "hod"], purpose: "assure_curriculum_quality", consequential: false,
+    levels: ["trust", "school", "department"], purpose: "assure_curriculum_quality", consequential: false,
   },
   note_professional_judgement: {
     key: "note_professional_judgement", label: "Record what you know", glyph: "✎",
     effect: "Attaches your read of the situation to the finding. Your note outranks the analysis and is shown above it from then on.",
-    levels: ["trust", "head", "hod", "teacher"], purpose: "curate_own_findings",
+    levels: ["trust", "school", "department", "teacher"], purpose: "curate_own_findings",
     consequential: false, requiresNote: true,
   },
   dismiss_finding: {
     key: "dismiss_finding", label: "Not a finding", glyph: "✕",
     effect: "Closes it and records why, so the same thing is not raised at you again next window.",
-    levels: ["trust", "head", "hod", "teacher"], purpose: "curate_own_findings",
+    levels: ["trust", "school", "department", "teacher"], purpose: "curate_own_findings",
     consequential: false, requiresNote: true,
   },
 };

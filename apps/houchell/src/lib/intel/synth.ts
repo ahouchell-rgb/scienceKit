@@ -247,22 +247,22 @@ export const PLANTED = {
   literacyGate: {
     id: "planted-literacy",
     summary: "Maths assessments demand a 14.4y reading age, the department assumes 11.0y, and it scaffolds none of the gap. English demands MORE reading and shows no effect, because English scaffolds 78% of it. Weak readers therefore fall behind their own cross-subject mean in maths and nowhere else.",
-    findableAt: ["trust", "head", "hod", "teacher"],
+    findableAt: ["trust", "school", "department", "teacher"],
   },
   slotEffect: {
     id: "planted-slot",
     summary: "Marshfield's Friday period 5 runs ~5 standardised points below par across every subject and teacher timetabled into it — so it is the slot, not the staff. A mild end-of-week gradient exists everywhere but is deliberately kept below the reporting threshold.",
-    findableAt: ["head", "hod"],
+    findableAt: ["school", "department"],
   },
   sequencing: {
     id: "planted-sequence",
     summary: "Riverbank Y8 History taught 'Causation' in week 4, before its prerequisite 'Chronological frameworks' in week 9. Window-2 dip, window-3 recovery.",
-    findableAt: ["hod", "teacher"],
+    findableAt: ["department", "teacher"],
   },
   trajectoryChanges: {
     id: "planted-change",
     summary: "A small number of pupils have a genuine single-subject step change at window 3. Some have a coincident attendance collapse (explained); some do not (needs a human).",
-    findableAt: ["teacher", "hod"],
+    findableAt: ["teacher", "department"],
   },
   rtmDecoy: {
     id: "planted-rtm",
@@ -272,7 +272,7 @@ export const PLANTED = {
   ppGapDecoy: {
     id: "planted-pp-gap",
     summary: "Kesteven Park's English PP gap is real but its group sizes fall under the k-anonymity floor in three year groups. The console must suppress, not estimate.",
-    findableAt: ["head"],
+    findableAt: ["school"],
   },
 } as const;
 

@@ -184,7 +184,7 @@ export function literacyGateFindings(scopePupils: Pupil[], schoolId: string | nu
     out.push({
       id: `lit-${schoolId ?? "trust"}-${subj.key}`,
       kind: "literacy_gate",
-      levels: ["trust", "head", "hod", "teacher"],
+      levels: ["trust", "school", "department", "teacher"],
       schoolId, subjectKey: subj.key,
       headline: `${subj.name}: weak readers score ${Math.abs(gap)} points below their own average`,
       sub: `${weak.length} pupils read below what the ${subj.name.toLowerCase()} paper demands. In their other subjects they are fine — the gap appears here and only here.`,
@@ -298,7 +298,7 @@ export function slotFindings(w: World, schoolId: string, subjectKey?: string): F
     out.push({
       id: `slot-${schoolId}-${slotId}${subjectKey ? "-" + subjectKey : ""}`,
       kind: "slot",
-      levels: ["head", "hod"],
+      levels: ["school", "department"],
       schoolId,
       subjectKey,
       headline: `${slot.label} runs ${Math.abs(eff)} points below par — across ${agg.staff.size} different teachers`,
@@ -389,7 +389,7 @@ export function sequencingFindings(w: World, schoolId: string, subjectKey?: stri
       out.push({
         id: `seq-${schoolId}-${obj.id}`,
         kind: "sequencing",
-        levels: ["hod", "teacher", "head"],
+        levels: ["department", "teacher", "school"],
         schoolId, subjectKey: obj.subjectKey,
         headline: `Year ${obj.year} ${subj.name}: "${obj.name}" is taught ${pre.taughtWeek - obj.taughtWeek} weeks before its prerequisite`,
         sub: `"${pre.name}" lands in week ${pre.taughtWeek}, but "${obj.name}" is taught in week ${obj.taughtWeek}. The cohort dips ${Math.abs(dip)} points in the window that covers it, then recovers.`,
@@ -606,7 +606,7 @@ export function inclusionFindings(w: World, schoolId: string): Finding[] {
       if (dis.length > 0) {
         out.push({
           id: `inc-${schoolId}-${subj.key}-suppressed`,
-          kind: "suppressed", levels: ["head", "trust", "hod"],
+          kind: "suppressed", levels: ["school", "trust", "department"],
           schoolId, subjectKey: subj.key,
           headline: `${subj.name}: disadvantage gap suppressed`,
           sub: `Only ${dis.length} pupils in the group — below the ${K_ANONYMITY_FLOOR}-pupil floor. We suppress rather than estimate.`,
@@ -625,7 +625,7 @@ export function inclusionFindings(w: World, schoolId: string): Finding[] {
     out.push({
       id: `inc-${schoolId}-${subj.key}`,
       kind: "inclusion_gap",
-      levels: ["head", "trust", "hod"],
+      levels: ["school", "trust", "department"],
       schoolId, subjectKey: subj.key,
       headline: `${subj.name}: disadvantaged pupils sit ${Math.abs(gap)} points below peers — in this subject only`,
       sub: `${dis.length} FSM6 pupils at ${school.name}. Because the comparison is within-pupil, this is not the general disadvantage gap; it is specific to ${subj.name.toLowerCase()}.`,
@@ -787,14 +787,14 @@ export function briefingFor(viewer: Viewer): Briefing {
       { label: "Reading below paper demand", value: `${Math.round((allRes.reduce((a, x) => a + x.lit, 0) / w.pupils.length) * 100)}%`, hint: "At least one subject where the paper demands more than they can read" },
       { label: "Findings open", value: String(findings.length) },
     ];
-  } else if (viewer.level === "head") {
+  } else if (viewer.level === "school") {
     const sid = viewer.schoolId!;
     findings = [
       ...slotFindings(w, sid),
       ...inclusionFindings(w, sid),
       ...literacyGateFindings(w.pupilsBySchool.get(sid) || [], sid),
       ...SUBJECTS.flatMap((s) => sequencingFindings(w, sid, s.key)),
-    ].filter((f) => f.levels.includes("head"));
+    ].filter((f) => f.levels.includes("school"));
     const school = w.schoolById.get(sid)!;
     headline = `${school.name} — the things only you can change`;
     stats = [
@@ -803,14 +803,14 @@ export function briefingFor(viewer: Viewer): Briefing {
       { label: "Structural findings", value: String(findings.filter((f) => f.kind === "slot" || f.kind === "sequencing").length), hint: "Timetable and sequencing — yours to fix" },
       { label: "Suppressed", value: String(findings.filter((f) => f.suppressed).length), hint: "Groups below the k-anonymity floor" },
     ];
-  } else if (viewer.level === "hod") {
+  } else if (viewer.level === "department") {
     const sid = viewer.schoolId!;
     findings = [
       ...slotFindings(w, sid, subjectKey),
       ...literacyGateFindings(w.pupilsBySchool.get(sid) || [], sid).filter((f) => f.subjectKey === subjectKey),
       ...sequencingFindings(w, sid, subjectKey),
       ...inclusionFindings(w, sid).filter((f) => f.subjectKey === subjectKey),
-    ].filter((f) => f.levels.includes("hod"));
+    ].filter((f) => f.levels.includes("department"));
     changes = trajectoryChanges(w.pupilsBySchool.get(sid) || [], subjectKey).slice(0, 40);
     headline = `${dept?.name ?? "Department"} — ${w.schoolById.get(sid)!.name}`;
     stats = [

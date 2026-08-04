@@ -52,9 +52,9 @@ function defaultViewer(level: Level, schoolId?: string, departmentId?: string): 
   switch (level) {
     case "trust":
       return { level, schoolId: null, departmentId: null, staffId: null, classIds: [], name: "Director of Education" };
-    case "head":
+    case "school":
       return { level, schoolId: sid, departmentId: null, staffId: null, classIds: [], name: "Headteacher" };
-    case "hod":
+    case "department":
       return { level, schoolId: sid, departmentId: did, staffId: w.departmentById.get(did)?.headStaffId ?? null, classIds: [], name: w.staffById.get(w.departmentById.get(did)?.headStaffId ?? "")?.name ?? "Head of Department" };
     case "teacher":
       return { level, schoolId: sid, departmentId: did, staffId: teacher?.id ?? null, classIds, name: teacher?.name ?? "Class teacher" };
@@ -63,7 +63,7 @@ function defaultViewer(level: Level, schoolId?: string, departmentId?: string): 
 
 export default function IntelPage() {
   const w = useMemo(() => world(), []);
-  const [level, setLevel] = useState<Level>("head");
+  const [level, setLevel] = useState<Level>("school");
   const [schoolId, setSchoolId] = useState("sch-marsh");
   const [departmentId, setDepartmentId] = useState("dept-sch-marsh-science");
   const [view, setView] = useState<View>({ kind: "board" });
@@ -144,10 +144,10 @@ export default function IntelPage() {
   const onPalettePick = (hit: PaletteHit) => {
     if (hit.type === "Finding") go({ kind: "case", findingId: hit.id });
     else if (hit.type === "Pupil") go({ kind: "pupil", pupilId: hit.id });
-    else if (hit.type === "School") { setLevel("head"); setSchoolId(hit.id); }
+    else if (hit.type === "School") { setLevel("school"); setSchoolId(hit.id); }
     else if (hit.type === "Department") {
       const d = w.departmentById.get(hit.id);
-      if (d) { setSchoolId(d.schoolId); setDepartmentId(d.id); setLevel("hod"); }
+      if (d) { setSchoolId(d.schoolId); setDepartmentId(d.id); setLevel("department"); }
     }
   };
 
@@ -169,6 +169,40 @@ export default function IntelPage() {
         <Link href="/" style={{ textDecoration: "none", color: "inherit", marginBottom: 20, display: "block" }}>
           <div style={{ fontFamily: C.serif, fontSize: 19, letterSpacing: "-0.01em" }}>Northreach</div>
           <Micro style={{ marginTop: 2 }}>Intelligence console</Micro>
+        </Link>
+
+        <Link
+          href="/intel/live"
+          style={{
+            textDecoration: "none",
+            color: C.grn,
+            border: `1px solid ${C.grn}55`,
+            background: C.grnS,
+            borderRadius: 9,
+            padding: "9px 11px",
+            fontFamily: C.mono,
+            fontSize: 10,
+            marginBottom: 12,
+          }}
+        >
+          Open live evidence spine →
+        </Link>
+        <Link
+          href="/intel/forecasts"
+          style={{
+            textDecoration: "none",
+            color: C.amb,
+            border: `1px solid ${C.amb}55`,
+            background: C.ambS,
+            borderRadius: 9,
+            padding: "9px 11px",
+            fontFamily: C.mono,
+            fontSize: 10,
+            marginTop: -6,
+            marginBottom: 12,
+          }}
+        >
+          Open shadow forecast lab →
         </Link>
 
         <Micro style={{ marginBottom: 8 }}>Altitude</Micro>
@@ -204,7 +238,7 @@ export default function IntelPage() {
               options={w.schools.map((s) => ({ value: s.id, label: s.name }))} />
           </>
         )}
-        {(level === "hod" || level === "teacher") && (
+        {(level === "department" || level === "teacher") && (
           <>
             <Micro style={{ marginTop: 12, marginBottom: 7 }}>Department</Micro>
             <Select value={departmentId} onChange={setDepartmentId}
@@ -320,7 +354,10 @@ function Board({
         {briefing.headline}
       </h1>
       <p style={{ fontSize: 14.5, color: C.muted, lineHeight: 1.6, maxWidth: "62ch", marginBottom: 24 }}>
-        {def.job} Findings are ordered by effect size, largest first — this is a short list on purpose.
+        {/* The purpose strings come from navigation.ts and are written without
+            terminal punctuation (they read as labels there), so add it here
+            rather than editing the shared source to suit one sentence. */}
+        {def.job.replace(/[.\s]+$/, "")}. Findings are ordered by effect size, largest first — this is a short list on purpose.
       </p>
 
       <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(168px, 1fr))", gap: 10, marginBottom: 8 }}>
