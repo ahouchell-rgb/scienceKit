@@ -135,6 +135,13 @@ export interface OperatingSystemResponse extends IntelligenceApiState {
     modelReleaseReviews: any[];
     lessonQualityChecks: any[];
   };
+  adaptive?: {
+    summary: Record<string, any> | null;
+    signals: any[];
+    decisionMemory: any[];
+    proofSnapshots: any[];
+    safetyRuns: any[];
+  };
   guardrails?: {
     automatedDecisions: false;
     pupilRiskScore: false;
@@ -147,4 +154,19 @@ export interface OperatingSystemResponse extends IntelligenceApiState {
     causalClaimsFromBeforeAfterData?: false;
   };
   generatedAt?: string;
+}
+
+export interface CopilotResponse {
+  answer: {
+    answer: string;
+    citations: Array<{ ref: string; label: string }>;
+    suggestedActions: Array<{
+      label: string;
+      href: string;
+      kind: "review" | "teach" | "monitor";
+    }>;
+  };
+  status: "completed" | "fallback" | "blocked" | "failed";
+  safetyFlags: string[];
+  generatedAt: string;
 }

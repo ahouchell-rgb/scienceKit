@@ -7,7 +7,7 @@
 import { SUPA_URL as SUPA, SUPA_ANON as ANON } from "../../../lib/supaConfig";
 
 export const dynamic = "force-dynamic";
-export const runtime = "edge";
+export const runtime = "nodejs";
 
 // Public Supabase ref + anon key (already shipped in the browser bundle; RLS
 // protects data) — sourced from the shared, env-overridable ./lib/supaConfig.

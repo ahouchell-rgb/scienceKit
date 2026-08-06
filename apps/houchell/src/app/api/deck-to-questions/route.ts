@@ -21,7 +21,7 @@ import {
 import { enforceAiBudget } from "@/lib/aiBudget";
 import { getEntitlement, can } from "@/lib/entitlements";
 
-export const runtime = "edge";
+export const runtime = "nodejs";
 
 const MODEL = AI_MODELS.SONNET; // matches the feynman content routes (chat / feedforward)
 const MAX_OUTPUT_TOKENS = 2400;

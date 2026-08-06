@@ -18,7 +18,7 @@ import {
 import { enforceAiBudget } from "@/lib/aiBudget";
 import { getEntitlement, can } from "@/lib/entitlements";
 
-export const runtime = "edge";
+export const runtime = "nodejs";
 
 const MODEL = AI_MODELS.OPUS;
 const MAX_OUTPUT_TOKENS = 16000; // slide-scoped edits keep output to the change size; the higher ceiling is only for whole-lesson builds (stays under non-streaming HTTP timeouts)

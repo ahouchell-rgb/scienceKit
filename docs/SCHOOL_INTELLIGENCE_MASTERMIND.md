@@ -1129,6 +1129,12 @@ If development starts from this document, take these in order:
     role-scoped golden loop, human-decided recommendations, structured lesson
     contracts, policy evaluation and append-only production monitoring. See
     `STAGES_15_20_TEACHER_OPERATING_SYSTEM.md`.
+14. Activate Stages 21–26: canonical MIS promotion, durable daily orchestration,
+    model governance, lesson-quality evidence and one continuous operating contract.
+15. Activate Stages 27–32: evidence-gated automatic signals, contextual decision
+    memory, the daily teacher loop, a read-only scoped copilot and aggregate safety/
+    operational proof. The system may improve recommendations from recorded use, but
+    it may not accept a response, label a pupil or claim causal impact.
 
 This sequence combines what is already built, protects the valuable foundation, and
 creates the flywheel the vision actually depends on.

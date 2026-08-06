@@ -70,7 +70,7 @@ const CSS = `
 #lp .mock-list { margin-top:20px; display:grid; gap:10px; }
 #lp .mock-list div { display:flex; justify-content:space-between; gap:12px; padding:12px; border-radius:14px; background:rgba(255,255,255,0.055); border:1px solid var(--line); color:var(--muted); font-size:0.9rem; }
 #lp .mock-list strong { color:var(--text); }
-#lp .journey { display:grid; grid-template-columns:1fr 1fr; gap:18px; }
+#lp .journey { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
 #lp .journey-card { border:1px solid var(--line); background:rgba(255,255,255,0.065); border-radius:30px; padding:28px; min-height:280px; }
 #lp .journey-card h3 { font-family:'Instrument Serif',Georgia,serif; font-size:1.9rem; letter-spacing:-0.02em; margin:0 0 14px; }
 #lp .journey-card ol { margin:22px 0 0; padding-left:20px; color:var(--muted); line-height:1.75; }
@@ -112,18 +112,18 @@ export function Landing() {
       <main className="page">
         <section className="hero">
           <div>
-            <div className="eyebrow">⚡ KS3 &amp; GCSE science, built for real classrooms</div>
-            <h1><span>Learn. Revise.<br />Retrieve. Teach.</span></h1>
-            <p>One science platform where pupils build knowledge through guided lessons, interactive revision and AI-marked retrieval — and teachers plan, deliver and check understanding without juggling five tools.</p>
+            <div className="eyebrow">⚡ The adaptive operating system for science education</div>
+            <h1><span>Notice. Decide.<br />Teach. Learn.</span></h1>
+            <p>One connected system for trusts, schools, departments, teachers and pupils. It joins curriculum, MIS data, classroom evidence, lesson generation and delayed rechecks—then learns which human-reviewed responses are useful.</p>
             <div className="hero-actions">
-              <Link className="btn btn-primary" href="/learn">Explore the platform →</Link>
-              <Link className="btn" href="/login">View teacher tools</Link>
+              <Link className="btn btn-primary" href="/login">Explore School Intelligence →</Link>
+              <Link className="btn" href="/learn">View pupil learning</Link>
             </div>
             <div className="trust-row">
-              <span><strong>KS3</strong> foundations</span>
-              <span><strong>GCSE</strong> exam practice</span>
-              <span><strong>AI</strong> marking</span>
-              <span><strong>Teacher</strong> dashboards</span>
+              <span><strong>Trust</strong> assurance</span>
+              <span><strong>School</strong> coordination</span>
+              <span><strong>Department</strong> curriculum</span>
+              <span><strong>Teacher</strong> next action</span>
             </div>
           </div>
 
@@ -131,7 +131,7 @@ export function Landing() {
             <div className="dashboard">
               <div className="dash-top">
                 <div className="traffic"><span className="dot" /><span className="dot" /><span className="dot" /></div>
-                <div className="dash-title">Student learning dashboard</div>
+                <div className="dash-title">School Intelligence · daily briefing</div>
               </div>
               <div className="dash-body">
                 <aside className="side-rail">
@@ -143,21 +143,21 @@ export function Landing() {
                 </aside>
                 <section className="main-panel">
                   <div className="lesson-card">
-                    <h3>Particles: Lesson 4</h3>
-                    <p style={{ margin: 0, color: "var(--muted)", lineHeight: 1.5 }}>Explain why gas pressure increases when temperature rises.</p>
+                    <h3>10X1: particle model needs review</h3>
+                    <p style={{ margin: 0, color: "var(--muted)", lineHeight: 1.5 }}>Fresh class evidence suggests a reteach. Review context before accepting the response.</p>
                     <div className="progress-wrap"><div className="progress" /></div>
-                    <small style={{ color: "var(--muted)", fontWeight: 700 }}>68% complete · 12 XP today</small>
+                    <small style={{ color: "var(--muted)", fontWeight: 700 }}>24 responses · 12 pupils · human decision required</small>
                   </div>
                   <div className="mini-grid">
-                    <div className="mini-card"><small>Retrieval streak</small><strong>9 days</strong></div>
-                    <div className="mini-card"><small>Teacher feedback</small><strong>3 actions</strong></div>
+                    <div className="mini-card"><small>Evidence confidence</small><strong>82%</strong></div>
+                    <div className="mini-card"><small>Responses rechecked</small><strong>12</strong></div>
                   </div>
                   <div className="question-card">
-                    <strong>Hinge question</strong>
-                    <p style={{ color: "var(--muted)", lineHeight: 1.5 }}>What happens to particles when a substance is heated?</p>
-                    <div className="option">A. They get bigger</div>
-                    <div className="option correct">B. They move faster</div>
-                    <div className="option">C. They disappear</div>
+                    <strong>Recommended next move</strong>
+                    <p style={{ color: "var(--muted)", lineHeight: 1.5 }}>Generate an evidence-responsive lesson with a delayed retrieval recheck.</p>
+                    <div className="option correct">Accept and create teaching response</div>
+                    <div className="option">Edit recommendation</div>
+                    <div className="option">Reject with local context</div>
                   </div>
                 </section>
               </div>
@@ -167,8 +167,8 @@ export function Landing() {
 
         <section className="section">
           <div className="section-heading">
-            <h2>Five sections. One learning loop.</h2>
-            <p>Each area has a clear job, but they connect: pupils learn content, revise it, retrieve it — and teachers see exactly what needs reteaching.</p>
+            <h2>One education brain. Every operating level.</h2>
+            <p>Curriculum, evidence and workflow share one governed loop while each role sees only the altitude and detail needed for its job.</p>
           </div>
           <div className="bento">
             <Link className="feature-card large" href="/learn">
@@ -201,9 +201,9 @@ export function Landing() {
             </Link>
             <Link className="feature-card wide" href="/login">
               <div className="feature-icon">👩‍🏫</div>
-              <h3>Teacher</h3>
-              <p>A curriculum-loaded planning workspace: generate and edit slides, store timetables, sequence lessons, assign retrieval and analyse performance — without jumping between five tools.</p>
-              <div className="pill-row"><span className="pill">Editable slides</span><span className="pill">Curriculum map</span><span className="pill">Timetable</span><span className="pill">Class analytics</span><span className="pill">Reteach suggestions</span></div>
+              <h3>School Intelligence</h3>
+              <p>A role-scoped daily operating system: detect material class signals, review recommendations, generate editable lessons, deliver, recheck and learn which responses are operationally useful.</p>
+              <div className="pill-row"><span className="pill">Trust-to-teacher scope</span><span className="pill">Evidence citations</span><span className="pill">Human decisions</span><span className="pill">Lesson generation</span><span className="pill">Decision memory</span></div>
             </Link>
             <Link className="feature-card small" href="/tools">
               <div className="feature-icon">🛠</div>
@@ -216,8 +216,8 @@ export function Landing() {
 
         <section className="section">
           <div className="section-heading">
-            <h2>Built around two journeys.</h2>
-            <p>The platform feels different depending on whether you’re a pupil or a teacher. Same platform, different dashboard.</p>
+            <h2>One truth, three working views.</h2>
+            <p>The system changes altitude for each role without changing the underlying evidence or loosening the decision boundary.</p>
           </div>
           <div className="journey">
             <div className="journey-card">
@@ -240,20 +240,30 @@ export function Landing() {
                 <li>Check AI-marked homework and reteach gaps.</li>
               </ol>
             </div>
+            <div className="journey-card">
+              <h3>For leaders</h3>
+              <p style={{ color: "var(--muted)", lineHeight: 1.65, margin: 0 }}>Aggregate assurance with the evidence, limitations and human decisions kept visible.</p>
+              <ol>
+                <li>See material school and department signals.</li>
+                <li>Unblock data quality and delivery capacity.</li>
+                <li>Review adoption, rechecks and lesson quality.</li>
+                <li>Use descriptive outcomes without causal overclaiming.</li>
+              </ol>
+            </div>
           </div>
         </section>
 
         <section className="cta">
           <div>
-            <h2>Science learning, without the admin drag.</h2>
-            <p>Engaging enough for pupils, rigorous enough for GCSE, and practical enough for busy departments — the bridge between pupil practice and teacher workload.</p>
+            <h2>Turn school evidence into better teaching—then learn from use.</h2>
+            <p>Start with the teacher loop, connect curriculum and MIS evidence, and build a governed proof base across departments and schools.</p>
           </div>
           <Link className="btn btn-primary" href="/login">Get started →</Link>
         </section>
 
         <footer className="footer">
           <span>© Houchell Education</span>
-          <span>Learn · Revise · Retrieve · Teacher · Tools</span>
+          <span>Trust · School · Department · Teacher · Pupil</span>
         </footer>
       </main>
     </div>

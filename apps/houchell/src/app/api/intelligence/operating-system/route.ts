@@ -24,8 +24,10 @@ import {
   jsonNoStore,
   restAsUser,
   UUID_RE,
-  type IntelligenceAuth,
 } from "@/lib/intelligence/server";
+import { runSchoolIntelligenceCycle } from "@/lib/intelligence/orchestrator";
+import { availableIntelligenceSchools } from "@/lib/intelligence/scopeService";
+import { parseOperatingSystemCommand, ValidationError } from "@/lib/intelligence/validation";
 import { skAdmin } from "@/lib/serverHelpers";
 
 export const runtime = "nodejs";
@@ -33,26 +35,8 @@ export const maxDuration = 120;
 
 const rows = <T = any>(value: unknown): T[] => Array.isArray(value) ? value : [];
 
-async function availableSchools(auth: IntelligenceAuth) {
-  if (auth.profile.trust_role === "trust_lead" && auth.profile.trust_id) {
-    return rows<{ id: string; name: string; trust_id?: string | null }>(
-      await restAsUser(
-        `schools?trust_id=eq.${auth.profile.trust_id}&select=id,name,trust_id&order=name.asc`,
-        auth.token,
-      ),
-    );
-  }
-  if (!auth.profile.school_id) return [];
-  return rows<{ id: string; name: string; trust_id?: string | null }>(
-    await restAsUser(
-      `schools?id=eq.${auth.profile.school_id}&select=id,name,trust_id&limit=1`,
-      auth.token,
-    ),
-  );
-}
-
-async function resolveSchool(request: Request, auth: IntelligenceAuth) {
-  const schools = await availableSchools(auth);
+async function resolveSchool(request: Request, auth: Parameters<typeof availableIntelligenceSchools>[0]) {
+  const schools = await availableIntelligenceSchools(auth);
   const requested = new URL(request.url).searchParams.get("schoolId") || "";
   const selected = requested
     ? schools.find((school) => school.id === requested)
@@ -97,6 +81,11 @@ export async function GET(request: Request) {
       modelGovernanceChecks,
       modelReleaseReviews,
       lessonQualityChecks,
+      adaptiveSummaries,
+      signals,
+      decisionMemory,
+      proofSnapshots,
+      safetyRuns,
     ] = await Promise.all([
       restAsUser(
         `intelligence_operating_system_summary?school_id=eq.${schoolId}&select=*&limit=1`,
@@ -158,6 +147,26 @@ export async function GET(request: Request) {
         `intelligence_lesson_quality_evaluations?school_id=eq.${schoolId}&select=*&order=evaluated_at.desc&limit=30`,
         auth.token,
       ),
+      restAsUser(
+        `intelligence_adaptive_os_summary?school_id=eq.${schoolId}&select=*&limit=1`,
+        auth.token,
+      ),
+      restAsUser(
+        `intelligence_signals?school_id=eq.${schoolId}&status=eq.active&select=*&order=materiality_score.desc,last_detected_at.desc&limit=100`,
+        auth.token,
+      ),
+      restAsUser(
+        `intelligence_response_policy_scores?school_id=eq.${schoolId}&select=*&order=evaluated_at.desc,operational_score.desc&limit=30`,
+        auth.token,
+      ),
+      restAsUser(
+        `intelligence_proof_snapshots?school_id=eq.${schoolId}&select=*&order=created_at.desc&limit=12`,
+        auth.token,
+      ),
+      restAsUser(
+        `intelligence_evaluation_runs?school_id=eq.${schoolId}&select=*,suite:intelligence_evaluation_suites(name,suite_type)&order=evaluated_at.desc&limit=12`,
+        auth.token,
+      ),
     ]);
 
     const contract = operatingContract(auth.profile);
@@ -167,6 +176,12 @@ export async function GET(request: Request) {
       (row) => contract.level !== "trust" || row.scope_type !== "pupil",
     );
     const recheckRows = rows(rechecks);
+    const latestDecisionMemory = [
+      ...new Map(rows<any>(decisionMemory).map((row) => [
+        `${row.context_signature}:${row.response_type}`,
+        row,
+      ])).values(),
+    ];
     return jsonNoStore({
       enabled: true,
       profile: auth.profile,
@@ -201,6 +216,13 @@ export async function GET(request: Request) {
         modelReleaseReviews: rows(modelReleaseReviews),
         lessonQualityChecks: rows(lessonQualityChecks),
       },
+      adaptive: {
+        summary: rows(adaptiveSummaries)[0] || null,
+        signals: rows(signals),
+        decisionMemory: latestDecisionMemory,
+        proofSnapshots: rows(proofSnapshots),
+        safetyRuns: rows(safetyRuns),
+      },
       guardrails: {
         automatedDecisions: false,
         pupilRiskScore: false,
@@ -226,9 +248,14 @@ export async function GET(request: Request) {
         "intelligence_model_governance_checks",
         "intelligence_model_release_reviews",
         "intelligence_lesson_quality_evaluations",
+        "intelligence_adaptive_os_summary",
+        "intelligence_signals",
+        "intelligence_response_policy_scores",
+        "intelligence_proof_snapshots",
+        "intelligence_evaluation_runs",
       ])
     ) {
-      return jsonNoStore({ enabled: false, reason: "stage_21_26_migration_pending" });
+      return jsonNoStore({ enabled: false, reason: "stage_27_32_migration_pending" });
     }
     return jsonNoStore({ error: "Couldn't load the teacher operating system" }, 500);
   }
@@ -238,21 +265,34 @@ export async function POST(request: Request) {
   const auth = await authenticateIntelligence(request);
   if (!auth) return jsonNoStore({ error: "Unauthorised" }, 401);
 
-  let body: any;
+  let body;
   try {
-    body = await request.json();
-  } catch {
-    return jsonNoStore({ error: "Invalid JSON" }, 400);
+    body = parseOperatingSystemCommand(await request.json());
+  } catch (error) {
+    return jsonNoStore({ error: error instanceof ValidationError ? error.message : "Invalid JSON" }, 400);
   }
 
-  const schoolId = String(body.schoolId || "");
-  if (!UUID_RE.test(schoolId)) return jsonNoStore({ error: "A valid school is required" }, 400);
-  const schools = await availableSchools(auth).catch(() => []);
+  const schoolId = body.schoolId;
+  const schools = await availableIntelligenceSchools(auth).catch(() => []);
   if (!schools.some((school) => school.id === schoolId)) {
     return jsonNoStore({ error: "School is outside your permitted scope" }, 403);
   }
 
   const operation = String(body.operation || "");
+  if (operation === "run_adaptive_cycle") {
+    if (!(await canManageSchool(auth, schoolId))) {
+      return jsonNoStore({ error: "School intelligence management scope required" }, 403);
+    }
+    try {
+      const result = await runSchoolIntelligenceCycle(schoolId);
+      return jsonNoStore(result, result.reused ? 200 : 201);
+    } catch (error) {
+      if (isMissingDatabaseObject(error, ["intelligence_signal_runs", "audit_adaptive_education_os_security"])) {
+        return jsonNoStore({ error: "Apply the Stage 27-32 migration before running the adaptive cycle" }, 503);
+      }
+      return jsonNoStore({ error: "Couldn't run the adaptive intelligence cycle" }, 500);
+    }
+  }
   if (operation === "refresh_health") {
     if (!(await canManageSchool(auth, schoolId))) {
       return jsonNoStore({ error: "School intelligence management scope required" }, 403);
@@ -296,11 +336,13 @@ export async function POST(request: Request) {
         "reteach", "review_evidence", "curriculum_change", "department_brief",
         "pupil_support", "data_repair", "monitor",
       ];
-      const recommendationType = allowedTypes.includes(body.recommendationType)
-        ? body.recommendationType
+      const requestedRecommendationType = String(body.recommendationType || "");
+      const requestedPriority = String(body.priority || "");
+      const recommendationType = allowedTypes.includes(requestedRecommendationType)
+        ? requestedRecommendationType
         : finding.finding_type === "data_quality" ? "data_repair" : "reteach";
-      const priority = ["low", "normal", "high", "urgent"].includes(body.priority)
-        ? body.priority
+      const priority = ["low", "normal", "high", "urgent"].includes(requestedPriority)
+        ? requestedPriority
         : finding.evidence_strength === "strong" ? "high" : "normal";
       const level = operatingContract(auth.profile).level;
       const defaultPurpose =

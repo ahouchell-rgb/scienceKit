@@ -7,16 +7,20 @@ import {
   TEACHER_OS_ONTOLOGY_VERSION,
 } from "./teacherOS";
 
-describe("continuous teacher OS contract", () => {
-  it("keeps stages 21-26 complete and ordered", () => {
-    expect(CONTINUOUS_TEACHER_OS_STAGES.map((stage) => stage.number)).toEqual([21, 22, 23, 24, 25, 26]);
-    expect(new Set(CONTINUOUS_TEACHER_OS_STAGES.map((stage) => stage.key)).size).toBe(6);
+describe("adaptive teacher OS contract", () => {
+  it("keeps stages 21-32 complete and ordered", () => {
+    expect(CONTINUOUS_TEACHER_OS_STAGES.map((stage) => stage.number)).toEqual([
+      21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32,
+    ]);
+    expect(new Set(CONTINUOUS_TEACHER_OS_STAGES.map((stage) => stage.key)).size).toBe(12);
     expect(TEACHER_OS_ONTOLOGY_VERSION).toMatch(/^0\./);
     expect(TEACHER_OS_ENTITY_TYPES).toContain("MasteryState");
   });
 
   it("closes the evidence loop without removing human governance", () => {
     expect(TEACHER_OS_FLYWHEEL.at(-1)).toBe("govern");
+    expect(TEACHER_OS_FLYWHEEL).toContain("detect_material_signals");
+    expect(TEACHER_OS_FLYWHEEL).toContain("learn_response_usefulness");
     expect(TEACHER_OS_GUARDRAILS.automaticModelPromotion).toBe(false);
     expect(TEACHER_OS_GUARDRAILS.humanAcceptanceRequired).toBe(true);
   });

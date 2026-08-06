@@ -114,7 +114,7 @@ export function RichEditor({ value, onChange, readOnly, minHeight = 120, placeho
   // Sentinel: uninitialised, so the first effect after mount populates innerHTML
   // even when `value` matches itself (was a real bug — content existed but the
   // editor mounted blank because the ref was seeded with `value`).
-  const lastValue = useRef<string | undefined>();
+  const lastValue = useRef<string | undefined>(undefined);
 
   useEffect(() => {
     if (!ref.current) return;

@@ -2,32 +2,19 @@
 
 import { useCallback, useEffect, useState } from "react";
 import { AppShell } from "@/components/AppShell";
+import { DailyBriefing } from "@/components/intelligence/DailyBriefing";
 import {
   IntelligenceGuardrails,
   IntelligenceNotice,
   IntelligencePageHeader,
 } from "@/components/intelligence/IntelligencePage";
+import { ScopedCopilot } from "@/components/intelligence/ScopedCopilot";
 import { intelligenceFetch } from "@/lib/intelligence/client";
 import type {
   OperatingSystemQueueItem,
   OperatingSystemResponse,
 } from "@/lib/intelligence/contracts";
 import { C } from "@/lib/theme";
-
-const STAGES = [
-  ["15", "Brain health"],
-  ["16", "Golden loop"],
-  ["17", "Learning policy"],
-  ["18", "Lesson studio"],
-  ["19", "Role OS"],
-  ["20", "Production"],
-  ["21", "Security"],
-  ["22", "Data plane"],
-  ["23", "Continuous brain"],
-  ["24", "Model lab"],
-  ["25", "Lesson loop"],
-  ["26", "Unified OS"],
-] as const;
 
 const STATUS_COLOUR: Record<string, string> = {
   healthy: C.grn,
@@ -74,19 +61,6 @@ function Metric({ label, value, note }: { label: string; value: unknown; note?: 
       </strong>
       <span style={metaStyle}>{label}</span>
       {note && <span style={{ ...metaStyle, color: C.dim }}>{note}</span>}
-    </div>
-  );
-}
-
-function StageRail() {
-  return (
-    <div className="os-stage-rail" aria-label="Stages 15 to 26">
-      {STAGES.map(([number, label]) => (
-        <div key={number} style={stageStyle}>
-          <span style={{ color: C.grn, fontFamily: C.mono, fontSize: 9 }}>STAGE {number}</span>
-          <strong style={{ color: C.text, fontSize: 11, fontWeight: 600 }}>{label}</strong>
-        </div>
-      ))}
     </div>
   );
 }
@@ -229,14 +203,18 @@ function OperatingSystemContent() {
   const latestModelCheck = continuous?.modelGovernanceChecks?.[0];
   const latestModelReview = continuous?.modelReleaseReviews?.[0];
   const latestLessonCheck = continuous?.lessonQualityChecks?.[0];
+  const adaptive = data?.adaptive;
+  const adaptiveSummary = adaptive?.summary || {};
+  const latestProof = adaptive?.proofSnapshots?.[0];
+  const latestSafety = adaptive?.safetyRuns?.[0];
 
   return (
     <div>
       <IntelligencePageHeader
-        eyebrow="Teacher operating system · Stages 15–26"
+        eyebrow="School Intelligence · Education operating system"
         title={data?.role?.headline || "One brain. Every role. Better decisions."}
         intro={data?.role
-          ? `${data.role.label} mode · ${data.role.job}. The system joins evidence, curriculum, governed recommendations, lesson creation and delayed rechecks into one daily loop.`
+          ? `${data.role.label} mode · ${data.role.job}. Evidence becomes a reviewed teaching response, a generated lesson and a delayed recheck—then the system learns from what happened.`
           : "The operating system joins evidence, curriculum, governed recommendations, lesson creation and delayed rechecks into one daily loop."}
         links={[
           { href: "/intel", label: "Evidence console" },
@@ -245,13 +223,12 @@ function OperatingSystemContent() {
         ]}
       />
 
-      <StageRail />
       {error && <IntelligenceNotice tone="error">{error}</IntelligenceNotice>}
       {!data ? (
         !error && <IntelligenceNotice>Loading your role-scoped operating system…</IntelligenceNotice>
       ) : !data.enabled ? (
         <IntelligenceNotice>
-          Stages 15–26 are built in code. Apply the additive Stage 21–26 database migration to activate the continuous brain and its governed learning loops.
+          The adaptive operating system is built in code. Apply the additive Stage 27–32 database migration to activate signals, decision memory, copilot audit and proof.
         </IntelligenceNotice>
       ) : data.reason === "no_school_scope" ? (
         <IntelligenceNotice>
@@ -286,6 +263,55 @@ function OperatingSystemContent() {
               Generated {data.generatedAt ? new Date(data.generatedAt).toLocaleTimeString("en-GB") : "—"}
             </span>
           </div>
+
+          <DailyBriefing
+            signals={adaptive?.signals || []}
+            summary={adaptiveSummary}
+            canRunCycle={Boolean(data.permissions?.canManageSchool)}
+            busy={busy.startsWith("run_adaptive_cycle")}
+            onRunCycle={() => void operate("run_adaptive_cycle")}
+          />
+
+          <section className="os-two-column">
+            <ScopedCopilot schoolId={selectedSchoolId} />
+            <article style={cardStyle}>
+              <div style={sectionHeadStyle}>
+                <div>
+                  <div style={sectionLabel}>Operational proof and safety</div>
+                  <h2 style={cardTitle}>Is the system useful, complete and governed?</h2>
+                </div>
+                <StatusPill value={latestSafety?.status || (latestProof ? "completed" : "insufficient_data")} />
+              </div>
+              <div style={metricGridStyle}>
+                <Metric label="recommendations" value={latestProof?.recommendation_count || 0} />
+                <Metric label="accepted" value={latestProof?.accepted_count || 0} />
+                <Metric label="delivered" value={latestProof?.delivered_count || 0} />
+                <Metric label="rechecked" value={latestProof?.rechecked_count || 0} />
+                <Metric label="quality checks" value={latestProof?.quality_check_count || 0} />
+                <Metric label="safety pass" value={percent(latestProof?.safety_pass_rate)} />
+              </div>
+              <p style={{ ...copyStyle, marginTop: 12 }}>
+                Proof separates adoption, workflow completion, lesson quality and descriptive outcome change. It never presents a before/after delta as causal impact.
+              </p>
+              {(latestProof?.limitations || []).slice(0, 3).map((limitation: string) => (
+                <div key={limitation} style={{ ...metaStyle, marginTop: 6 }}>• {limitation}</div>
+              ))}
+              {(adaptive?.decisionMemory || []).length > 0 && (
+                <div style={{ marginTop: 14 }}>
+                  <div style={sectionLabel}>What the response loop has learned</div>
+                  {(adaptive?.decisionMemory || []).slice(0, 3).map((segment: any) => (
+                    <div key={segment.id} style={{ ...sourceRowStyle, marginTop: 7 }}>
+                      <div>
+                        <strong style={{ color: C.text, fontSize: 10 }}>{formatStatus(segment.response_type)} · {formatStatus(segment.finding_type)}</strong>
+                        <div style={metaStyle}>{segment.sample_size} examples · {Math.round(Number(segment.confidence || 0) * 100)}% confidence</div>
+                      </div>
+                      <span style={{ color: C.grn, fontFamily: C.mono, fontSize: 10 }}>{percent(segment.operational_score)}</span>
+                    </div>
+                  ))}
+                </div>
+              )}
+            </article>
+          </section>
 
           <section className="os-two-column">
             <article style={cardStyle}>
@@ -341,7 +367,7 @@ function OperatingSystemContent() {
           </section>
 
           <section style={{ marginTop: 16 }}>
-            <div style={sectionLabel}>Stage 16 · The teacher golden loop</div>
+            <div style={sectionLabel}>The daily teacher loop</div>
             <h2 style={largeTitle}>Notice → decide → teach → recheck → learn</h2>
             {(data.queue || []).length === 0 ? (
               <IntelligenceNotice>
@@ -454,7 +480,7 @@ function OperatingSystemContent() {
           </section>
 
           <section style={{ marginTop: 16 }}>
-            <div style={sectionLabel}>Stages 21–26 · Continuous teacher OS</div>
+            <div style={sectionLabel}>Continuous intelligence infrastructure</div>
             <h2 style={largeTitle}>The platform now learns from use without learning past its evidence</h2>
             <p style={{ ...copyStyle, maxWidth: 900, marginBottom: 14 }}>
               MIS data is reconciled into one canonical identity plane, the brain runs on a durable schedule, forecast and lesson quality are evaluated in governed laboratories, and every role reads the same system contract at the right altitude.
@@ -586,17 +612,12 @@ function OperatingSystemContent() {
       )}
 
       <style>{`
-        .os-stage-rail { display: grid; grid-template-columns: repeat(6, 1fr); gap: 8px; margin: 0 0 18px; }
         .os-two-column { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; margin-top: 16px; }
         .os-queue-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 12px; }
         .os-continuous-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
         @media (max-width: 820px) {
-          .os-stage-rail { grid-template-columns: repeat(3, 1fr); }
           .os-two-column { grid-template-columns: 1fr; }
           .os-continuous-grid { grid-template-columns: 1fr; }
-        }
-        @media (max-width: 520px) {
-          .os-stage-rail { grid-template-columns: repeat(2, 1fr); }
         }
       `}</style>
     </div>
@@ -609,7 +630,6 @@ export default function OperatingSystemPage() {
 
 const cardStyle: React.CSSProperties = { border: `1px solid ${C.border}`, borderRadius: 14, background: C.surface, padding: 18 };
 const queueCardStyle: React.CSSProperties = { ...cardStyle, display: "flex", flexDirection: "column", minHeight: 210 };
-const stageStyle: React.CSSProperties = { border: `1px solid ${C.border}`, borderRadius: 10, background: C.surface, padding: 10, display: "grid", gap: 4 };
 const sectionHeadStyle: React.CSSProperties = { display: "flex", alignItems: "flex-start", justifyContent: "space-between", gap: 12 };
 const sectionLabel: React.CSSProperties = { color: C.grn, fontFamily: C.mono, fontSize: 9, letterSpacing: "0.12em", textTransform: "uppercase" };
 const cardTitle: React.CSSProperties = { color: C.text, fontFamily: C.serif, fontSize: 22, fontWeight: 400, margin: "6px 0 10px" };

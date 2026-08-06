@@ -18,7 +18,7 @@ import {
 import { costGBP, enforceAiBudget } from "@/lib/aiBudget";
 import { getEntitlement, can } from "@/lib/entitlements";
 
-export const runtime = "edge";
+export const runtime = "nodejs";
 
 const SK_ANON_KEY = SK_ANON; // public anon key, used as the apikey header alongside the user's bearer
 

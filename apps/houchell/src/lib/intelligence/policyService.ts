@@ -31,22 +31,32 @@ export async function evaluateSchoolResponsePolicy(options: {
     `intelligence_recommendations?school_id=eq.${options.schoolId}&policy_key=eq.${RESPONSE_POLICY_KEY}&policy_version=eq.${RESPONSE_POLICY_VERSION}&select=*&limit=5000`,
   ));
   const actionIds = recommendations.map((row) => row.action_id).filter(Boolean);
-  const actionIdSet = new Set(actionIds);
+  const fetchForActions = async (table: string, select: string) => {
+    const result: any[] = [];
+    for (let index = 0; index < actionIds.length; index += 100) {
+      const chunk = actionIds.slice(index, index + 100);
+      result.push(...rows(await skAdmin(
+        "GET",
+        `${table}?action_id=in.(${chunk.join(",")})&select=${select}&limit=5000`,
+      )));
+    }
+    return result;
+  };
   const [deliveries, rechecks, outcomes, feedback] = await Promise.all([
-    skAdmin("GET", "intelligence_deliveries?select=id,action_id,delivered_at&limit=5000"),
-    skAdmin("GET", "intelligence_rechecks?select=id,action_id,status,due_at,completed_at&limit=5000"),
-    skAdmin("GET", "intelligence_outcomes?select=id,action_id,delta,evaluated_at&limit=5000"),
-    skAdmin("GET", "intelligence_feedback?select=id,action_id,feedback_type,rating,created_at&limit=5000"),
+    fetchForActions("intelligence_deliveries", "id,action_id,delivered_at"),
+    fetchForActions("intelligence_rechecks", "id,action_id,status,due_at,completed_at"),
+    fetchForActions("intelligence_outcomes", "id,action_id,delta,evaluated_at"),
+    fetchForActions("intelligence_feedback", "id,action_id,feedback_type,rating,created_at"),
   ]);
   const evaluation = evaluateResponsePolicy({
     recommendations,
-    deliveries: rows<any>(deliveries).filter((row) => actionIdSet.has(row.action_id)),
-    rechecks: rows<any>(rechecks).filter((row) => actionIdSet.has(row.action_id)),
-    outcomes: rows<any>(outcomes).filter((row) => actionIdSet.has(row.action_id)),
-    feedback: rows<any>(feedback).filter((row) => actionIdSet.has(row.action_id)),
+    deliveries,
+    rechecks,
+    outcomes,
+    feedback,
   });
-  const sourceScanTruncated = [deliveries, rechecks, outcomes, feedback]
-    .some((value) => rows(value).length >= 5000);
+  const sourceScanTruncated = recommendations.length >= 5000 ||
+    [deliveries, rechecks, outcomes, feedback].some((value) => value.length >= 5000);
   const limitations = sourceScanTruncated
     ? [...evaluation.limitations, "The response evidence scan reached its 5,000-row operational cap and is incomplete."]
     : evaluation.limitations;

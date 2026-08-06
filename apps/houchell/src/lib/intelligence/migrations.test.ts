@@ -117,4 +117,26 @@ describe("intelligence migration contracts", () => {
       "create trigger intelligence_lesson_quality_immutable",
     );
   });
+
+  it("keeps the Stage 27-32 adaptive brain scoped, descriptive and human-governed", () => {
+    const adaptive = migration(
+      "20260806132119_stages_27_32_adaptive_education_os.sql",
+    );
+
+    expect(adaptive).toContain("create table public.intelligence_signals");
+    expect(adaptive).toContain("check (current_stage between 21 and 32)");
+    expect(adaptive).toContain("create unique index intelligence_signals_active_fingerprint_idx");
+    expect(adaptive).toContain("create table public.intelligence_response_policy_scores");
+    expect(adaptive).toContain("create table public.intelligence_copilot_runs");
+    expect(adaptive).toContain("Raw prompts and raw responses are deliberately not stored");
+    expect(adaptive).toContain("contains_personal_data boolean not null default false check (contains_personal_data = false)");
+    expect(adaptive).toMatch(
+      /create view public\.intelligence_adaptive_os_summary[\s\S]*security_invoker = true/,
+    );
+    expect(adaptive).toMatch(
+      /create or replace function public\.audit_adaptive_education_os_security[\s\S]*to service_role;/,
+    );
+    expect(adaptive).toContain("requires a named human decision");
+    expect(adaptive).toContain("false as fixed_pupil_risk_labels");
+  });
 });

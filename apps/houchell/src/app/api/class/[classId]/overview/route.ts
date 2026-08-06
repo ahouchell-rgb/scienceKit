@@ -53,9 +53,9 @@ function normaliseClass(row: any, access: "teacher" | "school" | "trust") {
 
 export async function GET(
   request: Request,
-  { params }: { params: { classId: string } },
+  { params }: { params: Promise<{ classId: string }> },
 ) {
-  const classId = params.classId;
+  const { classId } = await params;
   if (!UUID.test(classId)) return json({ error: "Invalid class id" }, 400);
 
   const authorization = request.headers.get("authorization") || "";

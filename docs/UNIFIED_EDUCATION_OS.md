@@ -1144,3 +1144,34 @@ The scheduler runs after the nightly MIS mirror. Every school cycle has a stable
 key, durable step results, counts and an error summary. Retries reuse completed work.
 Model and lesson evaluations are append-only evidence. Neither table is a mechanism for
 automatic promotion or automatic intervention.
+
+---
+
+## 16. Stages 27–32: the adaptive education OS
+
+The next production layer turns the continuous platform into a visibly useful daily
+loop without relaxing its governance:
+
+| Stage | Production capability | Hard boundary |
+|---|---|---|
+| 27 | Next 16/React 19 platform, typed route inputs, loading boundaries and explicit database grants | Production dependencies must pass audit; privileged access stays server-side |
+| 28 | Expiring class/school signals for learning gaps, cross-domain hypotheses, overdue rechecks and data quality | Minimum evidence, pupil-count, uncertainty and freshness gates; no fixed pupil risk score |
+| 29 | Contextual response memory from accept, deliver, recheck, edit and teacher-rating history | Memory ranks an advisory response; descriptive outcomes never self-promote policy |
+| 30 | One-screen briefing and teacher loop | Signal → recommendation → named human decision → existing lesson response workflow |
+| 31 | Role-scoped education copilot with evidence citations | Read-only, no raw prompt storage, no trust pupil drill-down and no consequential tools |
+| 32 | Safety suites and aggregate proof snapshots | Adoption, quality, safety and descriptive outcome measures remain separate |
+
+The adaptive cycle uses yesterday's mature decision-memory segments when preparing new
+recommendations, then refreshes memory after the current cycle. This avoids using a
+result to justify itself. A learned response is used only after minimum sample,
+confidence and operational-usefulness thresholds; otherwise the deterministic reviewed
+policy remains the fallback.
+
+Signals expire when they are not redetected. Their open findings and undecided
+recommendations are superseded at the same time, so stale evidence cannot remain in a
+teacher's live queue. A later recurrence creates a new signal and a new human decision.
+
+The proof snapshot is deliberately plural rather than a single impact score. It records
+recommendations, acceptance, delivery, delayed rechecks, lesson-quality checks, teacher
+ratings, reported time saved, safety-contract results and descriptive outcome change,
+with limitations stored beside the numbers.

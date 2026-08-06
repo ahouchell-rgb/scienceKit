@@ -7,7 +7,8 @@ import { SK_ANON, SK_URL } from "@/lib/serverHelpers";
 export const runtime = "nodejs";
 
 
-export async function GET(req: Request, { params }: { params: { id: string } }) {
+export async function GET(req: Request, { params }: { params: Promise<{ id: string }> }) {
+  const { id } = await params;
   const auth = req.headers.get("authorization") || "";
   if (!auth.startsWith("Bearer ")) return new Response("unauthorized", { status: 401 });
   const token = auth.slice(7);
@@ -15,7 +16,7 @@ export async function GET(req: Request, { params }: { params: { id: string } }) 
   let row: any;
   try {
     row = await supaRest(SK_URL, "feedforward_decks", {
-      params: { id: `eq.${params.id}`, select: "class_label,half_term,pptx_base64" },
+      params: { id: `eq.${id}`, select: "class_label,half_term,pptx_base64" },
       apikey: SK_ANON, bearer: token, single: true,
     });
   } catch { return new Response("not found", { status: 404 }); }
